@@ -353,7 +353,11 @@
 }
 
 /* N A N O */
-
+@media screen and (max-width: 517px) {
+    .global-module-part-main #nearest-event {
+    display: none;
+}
+}
 @media screen and (max-width: 749px) {
     /*.global-module-part-main .nearest-event_left {*/
         /*width: 100%;*/
@@ -367,6 +371,7 @@
     }
     .global-module-part-main .nearest-event_left_image {
         width: 45%;
+        /* display: none; */
     }
     .global-module-part-main .nearest-event_left_text .nearest-event_date {
         padding-left: 10px;
