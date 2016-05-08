@@ -16,4 +16,70 @@
 .common_page-margin {
     margin-top: 130px;
 }
+/* Gallery */
+.gallery_heading-box {
+    border-bottom: 3px solid #EDEDED;
+    padding: 25px 0 25px 0;
+    width: 90%;
+    margin: 0 auto;
+}
+.gallery {
+    padding-bottom: 80px;
+}
+.gallery_filters {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0 20px 0;
+}
+.gallery_year-filter {
+    display: block;
+    float: left;
+    /*margin: 0 15px 15px 5px;*/
+    text-align: center;
 
+}
+.gallery_afisha-grid {
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+}
+.gallery_afisha-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery_afisha {
+    width: 95%;
+    padding: 5%;
+
+}
+.gallery_afisha-image {
+    width: 100%;
+}
+.gallery_menu_paragraph {
+    display: inline-block;
+    position: relative;
+    padding: 0 9px 4px 7px;
+    margin: 0 12px 0 0;
+    text-align: left;
+    cursor: pointer;
+}
+.gallery_menu_paragraph:hover {
+    background: url("../icon/img/arrow-left.png") left bottom no-repeat, url("../icon/img/arrow-right.png")right top no-repeat;
+}
+.filters_active {
+    background: url("../icon/img/arrow-left.png") left bottom no-repeat, url("../icon/img/arrow-right.png")right top no-repeat;
+}
+
+/* G R A Y S C A L E */
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+}
+
+img.grayscale:hover {
+    filter: none;
+    transition: all .7s;
+    -webkit-filter: grayscale(0%);
+}
