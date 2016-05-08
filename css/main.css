@@ -133,6 +133,7 @@
     height: 265px;
     overflow: hidden;
     margin: auto;
+    margin-bottom: 10px;
 }
 .global-module-part-main .nearest-event_right {
     width: 495px;
@@ -354,10 +355,10 @@
 /* N A N O */
 
 @media screen and (max-width: 749px) {
-    .global-module-part-main .nearest-event_left {
-        width: 100%;
-        height: auto;
-    }
+    /*.global-module-part-main .nearest-event_left {*/
+        /*width: 100%;*/
+        /*height: auto;*/
+    /*}*/
     .global-module-part-main .nearest-event_left_text {
         border-bottom: none;
         width: 55%;
@@ -369,6 +370,7 @@
     }
     .global-module-part-main .nearest-event_left_text .nearest-event_date {
         padding-left: 10px;
+        padding-top: 30px;
     }
     .global-module-part-main .nearest-event_left_text .nearest-event_title {
         padding-left: 10px;

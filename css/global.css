@@ -1,6 +1,6 @@
 
 .gb-color-like-red {
-    color: #ED8A8A;;
+    color: #FF0000;;
 }
 
 .common_top-heading {
@@ -65,10 +65,10 @@
     cursor: pointer;
 }
 .gallery_menu_paragraph:hover {
-    background: url("../icon/img/arrow-left.png") left bottom no-repeat, url("../icon/img/arrow-right.png")right top no-repeat;
+    background: url("/icon/img/arrow-left.png") left bottom no-repeat, url("/icon/img/arrow-right.png")right top no-repeat;
 }
 .filters_active {
-    background: url("../icon/img/arrow-left.png") left bottom no-repeat, url("../icon/img/arrow-right.png")right top no-repeat;
+    background: url("/icon/img/arrow-left.png") left bottom no-repeat, url("/icon/img/arrow-right.png")right top no-repeat;
 }
 
 /* G R A Y S C A L E */
@@ -83,3 +83,4 @@ img.grayscale:hover {
     transition: all .7s;
     -webkit-filter: grayscale(0%);
 }
+

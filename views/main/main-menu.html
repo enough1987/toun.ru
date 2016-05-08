@@ -6,7 +6,7 @@
 
 <data-repeat ng-repeat-start="item in mainPage['menu']" >
 </data-repeat>
-              <li class="menu_item">
+              <li class="menu_item" ng-class=" $last ? 'gb-color-like-red menu_last-element' : '' ">
                 <p class="menu_paragraph">
                   <a href="#">
                     <span class="menu_main-span">
@@ -33,38 +33,43 @@
 
           </ul>
       <!-- M O B I L E  M E N U -->
-      <ul class="fe-none accordion" id="menu-small">
+        <ul class="fe-none accordion" id="menu-small">
 
-<data-repeat ng-repeat-start="item in mainPage['menu']" >
-</data-repeat>
+            <data-repeat ng-repeat-start="item in mainPage['menu']">
+            </data-repeat>
 
-<data-set ng-init="itemofmenu='#menu-'+$index" ></data-set>
+            <data-set ng-init="itemofmenu='#menu-'+$index"></data-set>
 
-        <li class="accordion-section">
-          <p class="menu-small_paragraph">
-            <a 
-            set-atr-for-menu-dir datamenuhref='true'
-            class="accordion-section-title menu_main-span inner-box-text"
-        href="#">
-{{ item[languages[language1]]['und'][0]['value'] }} 
-            </a>
-          </p>
-<data-submenu ng-if="item['children']" >
-          <div 
-          set-atr-for-menu-dir datamenuid='true'  
-          class="accordion-section-content">
-            <ul>
-    <data-repeat ng-repeat="child in item['children']"> 
-              <li class="submenu-small_item" ><a href="#"> 
-{{ child[languages[language1]]['und'][0]['value'] }}
-              </a></li>
-    </data-repeat>              
-            </ul>
-          </div>
-</data-submenu> 
-        </li>
-<data-repeat  ng-repeat-end >
-</data-repeat>
+            <li class="accordion-section" ng-class=" $last ? 'gb-color-like-red' : '' ">
+                <p class="menu-small_paragraph">
+
+                    <data-wrap-for-js class='js-only-click-accordion'
+                                      set-atr-for-menu-dir datamenuhref='true'>
+                        <a class="accordion-section-title">
+                            <span class="menu-small-arrow">&#0155</span>
+                        </a>
+                        <a class="menu_main-span menu-small-link" href="#">
+                            {{ item[languages[language1]]['und'][0]['value'] }}
+                        </a>
+                    </data-wrap-for-js>
+
+                </p>
+                <data-submenu ng-if="item['children']">
+                    <div
+                            set-atr-for-menu-dir datamenuid='true'
+                            class="accordion-section-content">
+                        <ul>
+                            <data-repeat ng-repeat="child in item['children']">
+                                <li class="submenu-small_item"><a href="#">
+                                    {{ child[languages[language1]]['und'][0]['value'] }}
+                                </a></li>
+                            </data-repeat>
+                        </ul>
+                    </div>
+                </data-submenu>
+            </li>
+            <data-repeat ng-repeat-end>
+            </data-repeat>
 
 
       </ul>
