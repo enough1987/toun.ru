@@ -79,13 +79,28 @@ $ocLazyLoad,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
+  $scope.getPage = pageService.setup($scope);
+  var xhr = new XMLHttpRequest();      
+  xhr.open("POST", 
+        '/content/go2json/perfomance/'+$routeParams.perfomance);
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            if (xhr.status != 200) {
+  console.log('status ' + xhr.status);
+  $scope.subview = '/views/global/404.html'; 
+  console.log( $scope.subview );   
+            }
+            else {
+  console.log('status ' + xhr.status);              
+  $scope.subview = '/views/perfomance/subview.html';
+  $scope.getPage("/content/go2json/perfomance/"+$routeParams.perfomance, 
+    'perfomance'); 
+  console.log( $scope.subview );
+            }
+        }
+      }
+  xhr.send();
 
-   var subviews = [];
-   subviews ['25'] = true; 
-
-   subviews[$routeParams.perfomance] ?
-   $scope.subview = '/views/perfomance/'+ $routeParams.perfomance +'.html':
-   $scope.subview = '/views/global/404.html';  
 
    $log.debug( $location.path() +" PerfomanceCtrl" );
 
@@ -94,12 +109,10 @@ seoTagsService) {
    $scope.changelanguage = languageService.change($scope );
    $log.debug( $routeParams.perfomance );
 
-   $scope.getPage = pageService.setup($scope);
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
    $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
-   $scope.getPage("/content/go2json/perfomance/"+$routeParams.perfomance, 
-    'perfomance');
+
 
    $scope.routeGoToView = routeService.setup();
 
@@ -121,12 +134,21 @@ ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, getshoworhideFuncService) { 
 
    var subviews = [];
-   subviews ['new'] = true; 
-   subviews ['repertuar'] = true;
+   subviews ['new'] = 'notsort'; 
+   subviews ['repertuar'] = 'sort';
+   subviews ['premier'] = 'sort';
+   subviews ['tour'] = 'sort';
+   subviews ['perfomance'] = 'sort';
+   subviews ['special'] = 'sort';
 
+   if ( subviews[$routeParams.project] == 'notsort' ) {
+      var subview = '/views/projects/notsort.html';  
+   } else {
+      var subview = '/views/projects/sort.html'; 
+   }
 
    subviews[$routeParams.project] ?
-   $scope.subview = '/views/projects/'+ $routeParams.project +'.html':
+   $scope.subview = subview : 
    $scope.subview = '/views/global/404.html';
 
 

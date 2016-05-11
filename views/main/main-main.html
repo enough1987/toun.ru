@@ -198,7 +198,9 @@ ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
 
 						  <div id='wrapper_main_more' >
 
-							   <p class="main_more" style="margin-left: 20px;"> 
+							   <p 
+ng-click="routeGoToView( mainPage['afisha']['static']['link'] )"
+							   class="main_more" style="margin-left: 20px;"> 
 {{ mainPage['afisha']['static'][languages[language1]]['all'] }}
 					<img src="icon/img/event.png" style="position:relative; top: 8px;" /> </p>	
 
@@ -272,7 +274,9 @@ ng-click="routeGoToView( item[languages[language1]]['item']['link_more'] )"
 								  
 								 </ul>
 								 
-								  <p class="main_more" style="margin-left: 20px;">
+<p 
+ng-click="routeGoToView( mainPage['news']['static']['link'] )"
+class="main_more" style="margin-left: 20px;">
 {{ mainPage['news']['static'][languages[language1]]['other'] }}	 
 								  <img src="icon/img/news.png" style="position:relative; top: 8px;" /> </p>
 						  
