@@ -106,6 +106,29 @@ customServices.factory('pageService', function (
                     }); 
 
             }
+        },
+        setupWithStoradge: function(scope){
+            return function(json, nameOfPage) {
+
+                if ( localStorageService.get(nameOfPage) ) {
+                    scope[nameOfPage] = localStorageService.get(nameOfPage); 
+                console.log( 'got json from storadge' );                      
+                console.log( nameOfPage + " : "); 
+                console.log( scope[nameOfPage] );
+                    return scope[nameOfPage];
+                }
+
+                console.log( 'try to get json' );                
+                    ajaxService.post(json, function(data){                 
+                        scope[nameOfPage] = data;
+                console.log( 'got json' ); 
+                console.log( nameOfPage + " : ");                         
+                console.log( scope[nameOfPage] );  
+                        localStorageService.set(nameOfPage, scope[nameOfPage] );
+                        return scope[nameOfPage];                      
+                    }); 
+
+            }
         }
 
     }

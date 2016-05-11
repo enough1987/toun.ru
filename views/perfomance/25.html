@@ -1,4 +1,53 @@
-    
+
+
+    <!-- Header -->
+
+    <header class="about-header">
+
+        <div id="header_center_logo-mobile" class="fe-none">
+            <a href="#">
+                <img class="fe-img" src="icon/img/logo_inverse.jpg">
+            </a>
+        </div>
+
+        <div class="fe-row">
+            <div class="header-h">
+                <h2>
+                    <span class="header-title-big"> 
+{{ perfomance['page']['field_title_header'][languages[language1]][0]['value'] }}
+    </span>
+                            <br>
+                            <span class="header-title-small"> 
+{{ perfomance['page']['field_title_header'][languages[language2]][0]['value'] }}
+                             </span>
+                            </h2>
+                            <h3>
+                    <span class="header-title-smallest">
+
+{{ perfomance['page']['field_description_perfomance'][languages[language1]][0]['value'] }}
+</span>
+                </h3>
+    </div>
+    </div>
+
+    <div class="scroll-arrow" id="scroll-arrow">
+        <img src="icon/img/about-s22-arrow.png" alt="">
+    </div>
+
+    <div id="header_logo" class="fe-none">
+
+        <div id="header_logo_image">
+            <a href="index.html"> <img src="icon/img/icon-logo.png" alt="logo" /> </a>
+        </div>
+
+    </div>
+
+    </header>
+
+
+
+
+
     <!-- Content -->
     <div id="content">
         <div class="fe-row" id="main">
@@ -441,3 +490,16 @@ ng-repeat="item in perfomance['comments']"
         <data-init-dir 
         perfomance-jquery-plagins-init-dir="{{perfomance}}" >
         </data-init-dir >
+
+
+
+
+<div 
+        oc-lazy-load='[
+            "/js/jquery-scroll.js",
+            "/js/waypoints.init.js",
+            "/js/accordion.js",
+            "/js/menu.js"
+        ]'>
+ 
+</div>

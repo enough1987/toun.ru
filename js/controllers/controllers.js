@@ -73,25 +73,37 @@ bool = index <= 11 ? ( ($scope.first_len <= 11) ?
 
 });
 
-taatrApp.controller("PerfomanceCtrl", function ($scope, $location, $log,
+taatrApp.controller("PerfomanceCtrl", function ($scope, $routeParams,
+$location, $log,
 $ocLazyLoad,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
+
+
+   var subviews = [];
+   subviews ['25'] = true; 
+
+   subviews[$routeParams.perfomance] ?
+   $scope.subview = '/views/perfomance/'+ $routeParams.perfomance +'.html':
+   $scope.subview = '/views/global/404.html';  
 
    $log.debug( $location.path() +" PerfomanceCtrl" );
 
    languageService.setup($scope);
 
    $scope.changelanguage = languageService.change($scope );
+   $log.debug( $routeParams.perfomance );
 
    $scope.getPage = pageService.setup($scope);
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
-   $scope.getPage("/content/go2json/first/global", 'global');
-   $scope.getPage("/content/go2json/perfomance/25", 'perfomancePage');
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+   $scope.getPage("/content/go2json/perfomance/"+$routeParams.perfomance, 
+    'perfomance');
 
    $scope.routeGoToView = routeService.setup();
 
-   seoTagsService.setup('perfomancePage');
+   seoTagsService.setup('perfomance');
 
 
    $scope.test = function(item){
@@ -102,28 +114,40 @@ seoTagsService) {
 });
 
 
-
-taatrApp.controller("RepertuarCtrl", function ($scope, $location, $log,
+taatrApp.controller("ProjectsCtrl", function ($scope, $routeParams,
+$location, $log,
 $ocLazyLoad,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, getshoworhideFuncService) { 
 
-   $log.debug( $location.path() +" RepertuarCtrl" );
+   var subviews = [];
+   subviews ['new'] = true; 
+   subviews ['repertuar'] = true;
+
+
+   subviews[$routeParams.project] ?
+   $scope.subview = '/views/projects/'+ $routeParams.project +'.html':
+   $scope.subview = '/views/global/404.html';
+
+
+   $log.debug( $location.path() +" ProjectCtrl" );
+   $log.debug( $routeParams.project );
 
    languageService.setup($scope);
 
    $scope.changelanguage = languageService.change($scope);
 
    $scope.getPage = pageService.setup($scope);
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
-   $scope.getPage("/content/go2json/first/global", 'global');
-   $scope.getPage("/content/go2json/projects/repertuar", 'projects_repertuar');
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+   $scope.getPage("/content/go2json/projects/"+$routeParams.project, 'projects');
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
 
 
-   seoTagsService.setup('projects_repertuar');
+   seoTagsService.setup('projects');
 
    $scope.test = function(item){
         console.log( item ); 
@@ -133,30 +157,6 @@ seoTagsService, getshoworhideFuncService) {
    $scope.showorhide = getshoworhideFuncService.setup();
 
 });
-
-taatrApp.controller("NewCtrl", function ($scope, $location, $log,
-$ocLazyLoad,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) { 
-
-   $log.debug( $location.path() +" ProjectsCtrl" );
-
-   languageService.setup($scope);
-
-   $scope.changelanguage = languageService.change($scope);
-
-   $scope.getPage = pageService.setup($scope);
-
-   $scope.getPage("/content/go2json/first/global", 'global');
-   $scope.getPage("/content/go2json/projects/new", 'projects_new');
-
-   $scope.routeGoToView = routeService.setup();
- 
-   seoTagsService.setup('projects_new');
-
-
-});
-
 
 
 taatrApp.controller("TestCtrl", function ($scope, $location, $log,

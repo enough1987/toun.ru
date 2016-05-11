@@ -3,16 +3,16 @@
     <div class="fe-col-12">
         <div class="gallery_heading-box">
             <div class="common_top-heading">
-{{ projects_repertuar['static'][languages[language1]]['title'] }}
+{{ projects['static'][languages[language1]]['title'] }}
             </div>
             <div class="common_top-subheading">
-{{ projects_repertuar['static'][languages[language1]]['title'] }}
+{{ projects['static'][languages[language1]]['title'] }}
             </div>
         </div>
         <div class="gallery">
             <div class="gallery_filters">
 
-<data-repeat ng-repeat="item in projects_repertuar['filter_menu']">
+<data-repeat ng-repeat="item in projects['filter_menu']">
                <p class="gallery_menu_paragraph"><a class="active gallery_year-filter"
 data-filter="{{ item[languages[language1]]['und'][0]['value'] }}" 
 href="#{{ item[languages[language1]]['und'][0]['value'] }}">
@@ -23,7 +23,7 @@ href="#{{ item[languages[language1]]['und'][0]['value'] }}">
             </div>
             <div class="fe-row gallery_afisha-grid">
 
-<data-repeat ng-repeat="item in projects_repertuar['widget']"
+<data-repeat ng-repeat="item in projects['widget']"
 sort="{{ item[languages[language1]]['item']['sort'] }}"
 link="{{ item[languages[language1]]['item']['link'] }}"
 ng-if="showorhide(hash, item[languages[language1]]['item']['sort'])" 
@@ -38,10 +38,16 @@ alt="{{ item[languages[language1]]['item']['image']['alt'] }}">
                 </a></div></div>
 </data-repeat>
 
-<div style='text-align: center; color: red;'
+<div style='text-align: center; '
 ng-if="!showorhide['notexistblock']" >
     
-    Не существует такой страницы
+    Мы пытаемся найти изображение по хеш тегу :  #{{showorhide.oldhash}}
+    
+        <div id="loader" name='main-loader' >
+        
+             <img src="/icon/img/loader2.gif" alt="loader" />
+        
+        </div>
 
 </div>
 
