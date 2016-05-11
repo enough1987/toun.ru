@@ -1,0 +1,517 @@
+#perfomance-wrapper {
+    max-width: 1920px;
+    min-width: 320px;
+    margin: auto;
+}
+
+#perfomance-wrapper .about-header {
+    height: 100vh;
+    background: url('../img/about-s22-header.jpg') top center no-repeat;
+    background-size: cover;
+    padding-top: 1px;
+}
+
+/* M E N U  A B O U T */
+
+#perfomance-wrapper #menuTop {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    transition: all 1s;
+    z-index: 999;
+}
+#perfomance-wrapper #menu_about {
+    width: 91%;
+    margin: 0 auto;
+    color: white;
+}
+#perfomance-wrapper #menu_about .menu_item {
+    vertical-align: top;
+}
+#perfomance-wrapper #menu_about .submenu {
+    color: black;
+}
+#perfomance-wrapper .inverse-nav {
+    background: white;
+    padding-top: 0 !important;
+}
+#perfomance-wrapper .inverse-menu {
+    color: black !important;
+    padding-top: 10px;
+}
+#perfomance-wrapper #menu_about .inverse-arrows:hover {
+    background: url("../icon/img/arrow-left-white.png") left bottom no-repeat, url("../icon/img/arrow-right-white.png") right top no-repeat;
+}
+#perfomance-wrapper #small-menu-buttton.inverse-small-menu-buttton {
+    background: url("../icon/img/menu-white.png") center no-repeat !important;
+}
+
+/* H E A D E R */
+#perfomance-wrapper .header-h {
+    max-width: 30%;
+    letter-spacing: .04em;
+    margin-top: 170px;
+    margin-left: 8%;
+    color: white;
+    transition: all .5s;
+}
+#perfomance-wrapper .header-h h2 {
+    margin-bottom: 50px;
+}
+#perfomance-wrapper .header-title-big {
+    font-size: 32px;
+}
+#perfomance-wrapper .header-title-small {
+    font-size: 18px;
+}
+#perfomance-wrapper .header-title-smallest {
+    font-size: 14px;
+}
+#perfomance-wrapper .scroll-arrow {
+    position: absolute;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    bottom: 40px;
+    animation-name: arrowDown;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes arrowDown {
+    0%, 100% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(20px)
+    }
+}
+
+/* C O N T E N T */
+#perfomance-wrapper #content {
+    font-size: 14px;
+    overflow: hidden;
+    margin-top: 104px;
+}
+#perfomance-wrapper .about-spectacle {
+    letter-spacing: .08em;
+    margin-left: 8%;
+    margin-right: 4%;
+}
+#perfomance-wrapper .about-spectacle-title {
+    margin-bottom: 40px;
+}
+#perfomance-wrapper .about-spectacle-title h3 {
+    margin-bottom: 40px;
+}
+#perfomance-wrapper .title-big {
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: .1em;
+    color: #000000;
+    font-family: pt-serif-bold;
+}
+#perfomance-wrapper .title-small {
+    font-size: 18px;
+    letter-spacing: .02em;
+    color: #585858;
+}
+
+
+
+#perfomance-wrapper .title-additional {
+    font-size: 18px;
+    letter-spacing: .12em;
+}
+#perfomance-wrapper .people-of-spectacle {
+    margin-left: 15%;
+    margin-right: 12%;
+}
+#perfomance-wrapper .people-of-spectacle-title h3 {
+    margin-bottom: 40px;
+}
+#perfomance-wrapper .people-of-spectacle-col {
+    letter-spacing: .12em;
+    margin-right: 5%;
+}
+#perfomance-wrapper .music-of-spectacle-title {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+#perfomance-wrapper .about-spectacle-ru {
+    margin-bottom: 80px;
+}
+
+#perfomance-wrapper .about-spectacle-kca-mns {
+    margin-bottom: 120px;
+}
+
+#perfomance-wrapper .about-spectacle-p {
+    margin-bottom: 25px;
+}
+
+#perfomance-wrapper .read-piece-a {
+    font-size: 18px;
+    vertical-align: bottom;
+}
+
+#perfomance-wrapper .read-piece-a img {
+    margin-left: 20px;
+}
+
+#perfomance-wrapper .people-position {
+    font-weight: bold;
+    /*font-size: 14px;*/
+}
+
+#perfomance-wrapper .people {
+    /*font-size: 14px;*/
+}
+
+#perfomance-wrapper .people-indent {
+    margin-bottom: 30px;
+}
+
+#perfomance-wrapper .top-heading {
+    text-align: center;
+    font-size: 26px;
+}
+
+#perfomance-wrapper .top-subheading {
+    text-align: center;
+    font-size: 18px;
+    color: #464646;
+}
+
+/* T A B S */
+#perfomance-wrapper .tabs {
+    width: 90%;
+    margin: 80px auto;
+}
+
+#perfomance-wrapper .tabs-item {
+    list-style: none;
+    float: left;
+    margin-left: 5px;
+}
+
+#perfomance-wrapper .tabs-link {
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: black;
+    font-family: pt-serif, sans-serif;
+    font-size: 25px;
+}
+
+#perfomance-wrapper .tabs-content {
+    float: left;
+    width: 98%;
+    background: white;
+    padding: 2%;
+    position: relative;
+}
+
+#perfomance-wrapper .tab {
+    display: none;
+}
+
+#perfomance-wrapper .tabs-subheading {
+    font-size: 17px;
+}
+
+#perfomance-wrapper .tab-active {
+    display: block;
+}
+
+#perfomance-wrapper .about-p {
+    margin-top: 10px;
+    text-align: justify;
+}
+
+/*li.active a, li.active a:hover {
+    background: white;
+    color: #77d9d3;
+}*/
+
+/* O W L  C A R O U S E L  F I X */
+#perfomance-wrapper .owl-carousel {
+    position: relative;
+}
+
+#perfomance-wrapper .owl-carousel .item-video {
+    height: 300px
+}
+
+#perfomance-wrapper .prev-button {
+    position: absolute;
+    left: -1%;
+}
+
+#perfomance-wrapper .next-button {
+    position: absolute;
+    right: -1%;
+}
+
+#perfomance-wrapper .photo-buttons {
+    top: 46%;
+    z-index: 3;
+}
+
+#perfomance-wrapper .video-buttons {
+    top: 45%;
+}
+
+/* A C C O R D I O N */
+#perfomance-wrapper .accordion-about {
+  margin-left: 8%;
+}
+
+/* A U D I O  P L A Y E R */
+#perfomance-wrapper .jp-jplayer, #perfomance-wrapper .jp-audio {
+    /*max-width: 420px;*/
+    margin: 0 auto;
+    /*padding: 0 10px;*/
+}
+
+#perfomance-wrapper .jp-title {
+    float: left;
+    width: 64%;
+    height: 28px;
+    padding: 4px 0 0 25px;
+    font-size: 18px;
+    /* text-align: center; */
+    overflow: hidden;
+}
+
+#perfomance-wrapper .jp-title ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#perfomance-wrapper .jp-gui {
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#perfomance-wrapper .jp-controls {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+#perfomance-wrapper .jp-controls li {
+    display: inline;
+}
+
+#perfomance-wrapper .jp-controls a {
+    color: #fff;
+    outline: none;
+}
+
+#perfomance-wrapper .jp-play, .jp-pause {
+    float: left;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 43px;
+}
+
+#perfomance-wrapper .jp-mute, #perfomance-wrapper .jp-unmute {
+    position: absolute;
+    right: 55px;
+    top: 0;
+    width: 20px;
+    height: 40px;
+    display: inline-block;
+    line-height: 46px;
+}
+
+#perfomance-wrapper .play-stop-icon {
+    margin-bottom: 3px;
+}
+
+#perfomance-wrapper .jp-mute {
+    text-align: left;
+}
+
+#perfomance-wrapper .jp-time-holder {
+    color: black;
+    font-size: 18px;
+    line-height: 14px;
+    position: absolute;
+    right: 10px;
+    top: 11px;
+}
+
+#perfomance-wrapper .jp-current-time {
+    float: right;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+#perfomance-wrapper .jp-progress {
+    background-color: #cdcdcd;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    top: 32px;
+    width: 100%;
+}
+
+#perfomance-wrapper .jp-play-bar {
+    height: 5px;
+    background-color: #a1a1a1;
+}
+
+#perfomance-wrapper .jp-volume-bar {
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 45px;
+    height: 8px;
+    border-radius: 20px 20px 20px 20px;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
+    background-color: #992E18;
+    overflow: hidden;
+}
+
+#perfomance-wrapper .jp-volume-bar-value {
+    background-color: #fff;
+    height: 8px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+/* F E E D B A C K */
+#perfomance-wrapper .feedback-form {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#perfomance-wrapper .feedback-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#perfomance-wrapper .feedback {
+    background: #ececec;
+    border: none;
+    outline: none;
+    padding: 1%;
+    font-size: 18px;
+    color: #aaaaaa;
+}
+
+#perfomance-wrapper .feedback-name {
+    width: 99%;
+    margin: 10px auto;
+    height: 30px;
+}
+
+#perfomance-wrapper .feedback-text {
+    width: 99%;
+    margin: auto;
+    height: 160px;
+    resize: none;
+}
+
+#perfomance-wrapper .submit-button {
+    width: 120px;
+    height: 50px;
+    margin-top: 5px;
+    border: none;
+    font-size: 18px;
+    background: #ececec;
+}
+
+#perfomance-wrapper .post {
+    width: 100%;
+    margin: 15px auto;
+}
+
+#perfomance-wrapper .post-date {
+    font-size: 10px;
+    color: gray;
+    padding-bottom: 15px;
+}
+
+#perfomance-wrapper .post-name {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 949px) {
+    #perfomance-wrapper #menu-small {
+        display: none !important;
+    }
+
+    #perfomance-wrapper .invisible {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 949px) {
+
+    #perfomance-wrapper #header_center_logo-mobile {
+        display: block;
+        width: 180px;
+        margin: 20px 20px;
+    }
+
+    #perfomance-wrapper .people-of-spectacle {
+        margin-top: 80px;
+    }
+
+    #perfomance-wrapper .header-h {
+        margin-top: 89px;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    #perfomance-wrapper .header-h {
+        max-width: 80%;
+        /*text-align: center;*/
+        /*margin: 89px auto;*/
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #perfomance-wrapper .jp-play, #perfomance-wrapper .jp-pause {
+        float: none;
+    }
+
+    #perfomance-wrapper .jp-title {
+        width: 100%;
+        padding: 4px 0 0 0;
+    }
+
+    #perfomance-wrapper .jp-current-time {
+        margin-top: -70px;
+    }
+}
+
+#perfomance-wrapper img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+}
+
+#perfomance-wrapper img.grayscale:hover {
+    filter: none;
+    transition: all .7s;
+    -webkit-filter: grayscale(0%);
+}
+
+#perfomance-wrapper img.grayscale:hover {
+    filter: none;
+    transition: all .7s;
+    -webkit-filter: grayscale(0%);
+}

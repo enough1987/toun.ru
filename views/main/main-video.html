@@ -1,0 +1,40 @@
+
+			<!-- Video -->
+			
+			
+			<div id="video">
+			
+				<video autoplay loop
+			video-set-dir
+			videoid = 'videoid'
+			fildname='video_lenta_mp4'
+			id='videoid'	>
+				</video>
+				
+				<div class="fe-none" id="video-image">
+				
+					 <img class="fe-img"
+  					img-set-dir
+ 					fildname='video_lenta_jpg' 					
+
+					 alt="people"  />
+				
+				</div>
+			
+			</div>
+			
+			
+			<script type="text/javascript">
+			
+				if(screen.width < 1000)
+				{
+				
+					var video      = fe.g("t","video");
+					var videoImage = fe.g("i","video-image");
+					
+					video[0].style.display   = "none";
+					videoImage.style.display = "block";
+				
+				}
+			
+			</script>

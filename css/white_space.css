@@ -1,0 +1,210 @@
+.global_content-wrapper {
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.white-space_repertuar,
+.white-space_docs,
+.white-space_festival-results,
+.white-space_org,
+.white-space_expert,
+.white-space_contacts {
+    margin-top: 30px;
+    padding-top: 45px;
+    border-top: 2px solid #f3f3f3;
+}
+
+/* W H I T E   S P A C E   F E S T I V A L */
+
+.white-space_festival {
+    margin-top: 150px;
+    transition: all .5s;
+}
+
+.white-space_festival_years {
+    border-top: 2px solid #f3f3f3;
+    padding: 10px 0;
+    margin: 30px 0;
+    width: 90%;
+}
+
+.white-space_festival_year {
+    margin-right: 40px;
+}
+
+.white-space_paragraph {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 4% 20px;
+    text-align: justify;
+}
+
+.white-space_festival_link-box {
+    margin: 50px 0 40px;
+}
+
+.white-space_festival_link-text {
+    font-size: 18px;
+    letter-spacing: .12em;
+    margin-right: 20px;
+}
+
+/* W H I T E   S P A C E   R E P E R T U A R */
+
+.white-space_repertuar_date {
+    font-size: 26px;
+    border-bottom: 2px solid #f3f3f3;
+    padding: 0 2% 10px;
+    margin-top: 40px;
+}
+
+.white-space_repertuar_date-item {
+
+    margin: 40px 2% 0;
+}
+
+.white-space_repertuar_title-box {
+    margin-bottom: 20px;
+}
+
+.white-space_repertuar_title {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: .06em;
+}
+
+.white-space_repertuar_age-rating {
+    font-weight: normal;
+}
+
+.white-space_repertuar_subtitle, .white-space_repertuar_time {
+    font-size: 14px;
+    letter-spacing: .06em;
+}
+
+.white-space_repertuar_teatr, .white-space_repertuar_hall {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: .1em;
+    display: block;
+}
+
+.white-space_repertuar_schedule {
+    border-bottom: 2px solid #f3f3f3;
+    padding-bottom: 20px;
+}
+
+/* W H I T E   S P A C E   G A L L E R Y */
+
+.white-space_gallery_docs-item {
+    display: inline-block;
+    font-size: 14px;
+    margin: 6px 10px;
+}
+
+/* W H I T E   S P A C E   C O N T A C T S */
+
+.white-space_contacts_wrapper {
+    margin: 0 2% 0;
+}
+
+.white-space_contacts_item {
+    margin-bottom: 40px;
+}
+
+.white-space_contacts_name {
+    font-size: 14px;
+}
+
+.white-space_contacts_item {
+    /*margin: 0 4% 0;*/
+}
+
+.white-space_contacts_item-wrapper {
+    margin: 20px 8% 0 0;
+}
+
+.white-space_contacts_position {
+    font-size: 12px;
+    text-align: justify;
+}
+
+.white-space_contacts_contacts {
+    font-size: 14px;
+}
+
+.white-space_contacts_section {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: .06em;
+    margin-top: 20px;
+    opacity: .6;
+}
+
+/* D I F F E R E N T */
+
+.white-space_margin {
+    margin-top: 20px;
+}
+.white-space_left {
+    margin-left: 10%;
+}
+.white-space_right {
+    margin-right: 10%;
+}
+.white-space_heading-padding {
+    padding-bottom: 20px;
+}
+.white-space_heading-center{
+    width: 90%;
+}
+.common_top-subheading-center {
+    width: 90%;
+}
+.space_visible {
+    display: none;
+}
+.white_space_media-marginless {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 949px) {
+    .white-space_festival {
+        width: auto;
+        margin-top: 100px;
+        margin-left: 4%;
+        margin-right: 2%;
+    }
+
+    .white-space_festival_logo-box, .white-space_festival_link-box {
+        text-align: center;
+    }
+    .white-space_right,
+    .white-space_left {
+        margin: auto;
+    }
+    .white-space_festival_years {
+        width: 96%;
+    }
+    .white-space_heading-center {
+        width: 100%;
+    }
+    .common_top-subheading-center {
+        width: 100%;
+    }
+    .space_visible {
+        display: block;
+    }
+    .space_invisible {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1500px) {
+    .white-space_festival {
+        width: 100%;
+        margin: 150px 0 0 4%
+    }
+}

@@ -1,0 +1,78 @@
+    <!-- H E A D E R -->
+    <header class="header_main">
+			<div class="fe-row">
+				<!-- H E A D E R  L E F T -->
+				<div class="fe-col-3 fe-col-m-only">
+
+					<div class="header_left">
+<p ng-bind-html="mainPage['header'][languages[language1]]['adress_head']  | replaceNtoBR"></p>
+						<p class="header_left_scheme"> 
+{{ mainPage['header'][languages[language1]]['title_map'] }}
+<img src="icon/img/location.png" alt="icon" style="position: 
+relative; top: 4px; left: 8px;" /> </p>
+					</div>
+
+				</div>
+				<!-- H E A D E R  C E N T E R -->
+				<div class="fe-col-6 fe-col-m-only">
+					<div class="header_center">
+						<p class="header_center_title fe-col-m-only">
+{{ mainPage['header'][languages[language1]]['slogan_top'] | uppercase}}
+</p>
+						<div class="header_center_logo">
+							<a  class="gb-cursor-default"><img 
+src="{{ mainPage['header'][languages[language1]]['logo_horisontal'] }}" alt="logo.png"></a>
+						</div>
+					</div>
+				</div>
+				<!-- H E A D E R  R I G H T -->
+				<div class="fe-col-3 fe-col-m-only">
+					<div class="header_right">
+						<p class="header_right_cecutient"> <a 
+						href="#"
+						> 
+{{ mainPage['header'][languages[language1]]['eyesight'] | firstUpperCase }}
+						<img src="icon/img/glasses.png" alt="icon" style="position: relative; top: 5px;" /> </a> </p>
+
+						
+{{ mainPage['settings']['phone_first'] }}<br />
+{{ mainPage['settings']['phone_second'] }}
+
+						<div class="language">
+							 
+								 <a > <div 								 
+								 ng-click="changelanguage('ru', 1)"
+								 class="{{ language1 == 'ru' ? 'language_element active-language': 'language_element' }}" > 
+								 РУС </div> </a>
+								 <a > <div 								 
+								 ng-click="changelanguage('en', 1)"
+								 class="{{ language1 == 'en' ? 'language_element active-language': 'language_element' }}"> 
+								 ENG </div> </a>
+								 <a > <div 
+								 ng-click="changelanguage('kh', 2)"
+								 class="{{ language2 == 'kh' ? 'language_element active-language': 'language_element' }}"> 
+								 Хнт </div> </a>
+								 <a > <div 
+								 ng-click="changelanguage('mns', 2)"
+								 class="{{ language2 == 'mns' ? 'language_element active-language': 'language_element' }}"> 
+								 Мнс </div> </a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- H E A D E R  C E N T E R  L O G O -->
+		<!--Логотип нужно брать из JSON для англ и рус версии (горизонтальный) !tech!
+			<div id="header_center_logo-mobile" class="fe-none">
+				<a href="index.html"><img class="fe-img" src="icon/img/logo.jpg" alt="logo.jpg"></a>
+			</div>-->
+			<div id="header_logo">
+				<div id="header_logo_image">
+					<a class="gb-cursor-default"> 
+					<img src="icon/img/icon-logo.png" alt="logo" /></a>
+				</div>
+			</div>
+
+		</header>
+
+

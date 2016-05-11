@@ -1,0 +1,13 @@
+.people_all_gallery-box {
+    width: 12.2%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.people_all_gallery_inbox {
+    width: 90%;
+    margin-bottom: 10px;
+}
+.people_gallery-image {
+    width: 100%;
+}

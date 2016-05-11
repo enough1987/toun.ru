@@ -1,0 +1,31 @@
+.mass_media-box {
+    width: 90%;
+    margin: 0 auto;
+}
+.mass_media-icon {
+    float: left;
+    padding: 5px;
+}
+.mass_media-text {
+    float: left;
+    margin-left: 15px;
+}
+.mass_media-link {
+    float: left;
+    width: 100%;
+    margin-left: 15px;
+    padding-bottom: 15px;
+}
+.mass_media-paragraph {
+    width: 90%;
+    margin: auto;
+    padding: 10px 0 10px 0;
+}
+.img-wrap {
+    width: 3%;
+    float: left;
+}
+.text-wrap {
+    width: 97%;
+    float: left;
+}

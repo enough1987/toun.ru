@@ -1,0 +1,52 @@
+<!-- R E P E R T U A R   G A L L E R Y   S T A R T -->
+<div class="fe-row common_page-margin">
+    <div class="fe-col-12">
+        <div class="gallery_heading-box">
+            <div class="common_top-heading">
+{{ projects_repertuar['static'][languages[language1]]['title'] }}
+            </div>
+            <div class="common_top-subheading">
+{{ projects_repertuar['static'][languages[language1]]['title'] }}
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery_filters">
+
+<data-repeat ng-repeat="item in projects_repertuar['filter_menu']">
+               <p class="gallery_menu_paragraph"><a class="active gallery_year-filter"
+data-filter="{{ item[languages[language1]]['und'][0]['value'] }}" 
+href="#{{ item[languages[language1]]['und'][0]['value'] }}">
+{{ item[languages[language1]]['und'][0]['value'] }}
+</a></p>
+</data-repeat>
+                
+            </div>
+            <div class="fe-row gallery_afisha-grid">
+
+<data-repeat ng-repeat="item in projects_repertuar['widget']"
+sort="{{ item[languages[language1]]['item']['sort'] }}"
+link="{{ item[languages[language1]]['item']['link'] }}"
+ng-if="showorhide(hash, item[languages[language1]]['item']['sort'])" 
+>
+
+                <div class="fe-col-n-12 fe-col-3 gallery_afisha-box"
+                >
+                <div class="gallery_afisha"><a href="">
+                <img class="gallery_afisha-image" 
+src="{{ item[languages[language1]]['item']['image']['src'] }}" 
+alt="{{ item[languages[language1]]['item']['image']['alt'] }}">
+                </a></div></div>
+</data-repeat>
+
+<div style='text-align: center; color: red;'
+ng-if="!showorhide['notexistblock']" >
+    
+    Не существует такой страницы
+
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- R E P E R T U A R   G A L L E R Y   E N D -->

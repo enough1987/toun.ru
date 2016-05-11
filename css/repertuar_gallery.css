@@ -1,0 +1,38 @@
+.gallery_heading-box {
+    border-bottom: 3px solid #EDEDED;
+    padding: 25px 0 25px 0;
+    width: 90%;
+    margin: 0 auto;
+}
+.gallery {
+    padding-bottom: 80px;
+}
+.gallery_filters {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+.gallery_year-filter {
+    margin: 15px;
+
+}
+.gallery_afisha-grid {
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+}
+.gallery_afisha-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery_afisha {
+    width: 95%;
+    padding: 5%;
+
+}
+.gallery_afisha-image {
+    width: 100%;
+}
+
+

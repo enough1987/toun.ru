@@ -1,0 +1,82 @@
+.global_content-wrapper {
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+/* W H I T E   S P A C E   C O N T A C T S */
+
+.contacts_content-bg {
+  background: url("../img/contacts_content-bg.jpg") right bottom no-repeat;
+  transition: all .5s;
+}
+.contacts_content {
+  margin-top: 150px;
+  margin-bottom: 105px;
+  transition: all .5s;
+}
+.contacts_content_wrapper {
+  margin: 0 8% 0;
+}
+.contacts_content_item {
+  margin-bottom: 20px;
+}
+.contacts_content_item-location {
+  margin-top: -30px;
+}
+.contacts_content_address {
+  font-size: 14px;
+}
+.contacts_content_position {
+  font-size: 12px;
+}
+.contacts_content_contacts {
+  font-size: 14px;
+}
+.contacts_content_contacts-location-icon {
+  margin: 0 5px;
+}
+.contacts_content_contacts-location-preview {
+  margin-left: 15px;
+}
+.contacts_content_contacts-email {
+  margin-top: 10px;
+}
+.contacts_content_section-wrapper {
+  width: 215px;
+}
+.contacts_content_section {
+  /*display: inline-block;*/
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: .06em;
+  opacity: .6;
+}
+.contacts_content_icons {
+  width: 144px;
+  margin-left: -3px;
+}
+
+.contacts_content_icons #footer_icon li {
+  padding: 0 3px;
+}
+
+@media screen and (max-width: 949px) {
+    .contacts_content {
+      margin-top: 100px;
+      margin-bottom: 400px;
+    }
+    .contacts_content-bg {
+      background: url("../img/contacts_content-bg.jpg") center bottom no-repeat;
+      transition: all .5s;
+    }
+    .contacts_festival_logo-box, .contacts_festival_link-box {
+        text-align: center;
+    }
+}
+@media screen and (min-width: 950px) and (max-width: 1500px) {
+    .contacts_festival {
+        width: 100%;
+        margin: 150px 0 0 4%
+    }
+}

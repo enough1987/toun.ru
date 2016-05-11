@@ -1,0 +1,105 @@
+<!-- M E N U   S T A R T-->
+<!-- D E S C T O P   M E N U -->
+<data-wrapper class='global-module-part-main'>
+
+    <nav class="menu_main" id="menuTop">
+        <ul class="fe-nav fe-col-m-only menu_list" id="menu_main">
+            <!--Логотип нужно брать из JSON для англ и рус версии (вертикальный) !tech!-->
+            <li class="menu-logo">
+                <a href="index.html">
+                    <img src="icon/img/teatr-logo-small-black.png" alt=""/>
+                </a>
+            </li>
+            <data-repeat ng-repeat-start="item in global['menu']">
+            </data-repeat>
+            <li class="menu_item" ng-class=" $last ? 'gb-color-like-red menu_last-element' : '' ">
+                <p class="menu_paragraph">
+                    <a
+ng-click="routeGoToView(item['field_link']['und'][0]['value'])" >
+                    <span class="menu_main-span">
+{{ item[languages[language1]]['und'][0]['value'] }} 
+</span><br/>
+                    <span class="menu_sub-span">
+{{ item[languages[language2]]['und'][0]['value'] }} 
+</span>
+                    </a>
+                </p>
+
+                <data-submenu ng-if="item['children']">
+                    <ul class="submenu">
+                        <data-repeat ng-repeat="child in item['children']">
+                            <li class="submenu_item"><a 
+ng-click="routeGoToView(child['field_link']['und'][0]['value'])"
+                            >
+                                {{ child[languages[language1]]['und'][0]['value'] }} </a></li>
+                        </data-repeat>
+                    </ul>
+
+                </data-submenu>
+            </li>
+            <data-repeat ng-repeat-end>
+            </data-repeat>
+
+        </ul>
+        <!-- M O B I L E  M E N U -->
+        <ul class="fe-none accordion" id="menu-small">
+
+            <data-repeat ng-repeat-start="item in global['menu']">
+            </data-repeat>
+
+            <data-set ng-init="itemofmenu='#menu-'+$index"></data-set>
+
+            <li class="accordion-section" ng-class=" $last ? 'gb-color-like-red menu_last-element' : '' ">
+                <p class="menu-small_paragraph">
+
+                    <data-wrap-for-js class='js-only-click-accordion'
+                                      set-atr-for-menu-dir datamenuhref='true'>
+                        <a class="accordion-section-title">
+                            <!--стрелочка появляется и исчезает если есть дочерние элементы внутри-->
+                            <span class="menu-small-arrow"
+ng-class="item['children'] ? '' : 'gb-opacity-zero' "
+                            >&#0155</span>
+                        </a>
+                        <a class="menu_main-span menu-small-link" 
+ng-click="routeGoToView(item['field_link']['und'][0]['value'])"
+                        >
+                            {{ item[languages[language1]]['und'][0]['value'] }}
+                        </a>
+                    </data-wrap-for-js>
+
+                </p>
+                <data-submenu ng-if="item['children']">
+                    <div
+                            set-atr-for-menu-dir datamenuid='true'
+                            class="accordion-section-content">
+                        <ul>
+                            <data-repeat ng-repeat="child in item['children']">
+                                <li class="submenu-small_item"><a 
+ng-click="routeGoToView(child['field_link']['und'][0]['value'])"
+                                >
+{{ child[languages[language1]]['und'][0]['value'] }}
+                                </a></li>
+                            </data-repeat>
+                        </ul>
+                    </div>
+                </data-submenu>
+            </li>
+            <data-repeat ng-repeat-end>
+            </data-repeat>
+
+
+        </ul>
+
+
+        <div id="header_center_logo-mobile" class="fe-none">
+            <a href="index.html"><img class="fe-img" src="icon/img/logo.jpg" alt="logo.jpg"></a>
+        </div>
+
+        <button class="fe-none" id="small-menu-buttton"></button>
+
+    </nav>
+
+
+</data-wrapper>
+
+<!-- M E N U   E N D -->

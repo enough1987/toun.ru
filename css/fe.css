@@ -1,0 +1,990 @@
+/*===================================================
+
+
+
+---------------------  FE.CSS  --------------------- 
+
+
+
+===================================================*/
+
+
+
+@font-face
+{
+	
+	/* pt-serif */
+
+	font-family: pt-serif;
+    src: url("../fonts/pt-serif/PTF55F.ttf");
+
+}
+	
+	
+@font-face
+{
+	
+	/* pt-serif-bold */
+
+	font-family: pt-serif-bold;
+    src: url("../fonts/pt-serif/PTF75F.ttf");
+
+}
+
+
+*
+{
+
+	padding: 0px;
+	margin:  0px;
+
+	font-family: pt-serif;
+	
+}
+
+
+h1,h2,h3,h4,h5,h6
+{
+
+	font-weight: 100;
+
+}
+
+
+a,a:hover
+{
+
+	text-decoration: none;
+	color: inherit;
+
+}
+
+
+ul
+{
+
+	list-style: none;
+
+}
+
+
+input
+{
+
+	outline: none;
+
+}
+
+
+button
+{
+
+	outline: none;
+	border:  none;
+
+}
+
+
+#fe-wrapper
+{
+
+	opacity: 0;
+
+}
+
+
+.fe-bold
+{
+	
+	font-weight: 700;
+	
+}
+
+
+.fe-text-center
+{
+	
+	text-align: center;
+	
+}
+
+
+.fe-none
+{
+	
+	display: none;
+	
+}
+
+
+.fe-img
+{
+
+	width: 100%;
+
+	vertical-align: bottom;
+
+}
+
+
+.fe-nav
+{
+
+	display: table;
+
+}
+
+
+.fe-nav > li
+{
+
+	display: table-cell;
+	vertical-align: middle;
+
+	text-align: center;
+
+}
+
+
+.fe-row
+{
+
+	overflow: hidden;
+
+}
+
+
+.fe-col-1,.fe-col-2,.fe-col-3,.fe-col-4,.fe-col-5,.fe-col-6,.fe-col-7,.fe-col-8,.fe-col-9,.fe-col-10,.fe-col-11,.fe-col-12,
+.fe-col-b-1,.fe-col-b-2,.fe-col-b-3,.fe-col-b-4,.fe-col-b-5,.fe-col-b-6,.fe-col-b-7,.fe-col-b-8,.fe-col-b-9,.fe-col-b-10,.fe-col-b-11,.fe-col-b-12,
+.fe-col-m-1,.fe-col-m-2,.fe-col-m-3,.fe-col-m-4,.fe-col-m-5,.fe-col-m-6,.fe-col-m-7,.fe-col-m-8,.fe-col-m-9,.fe-col-m-10,.fe-col-m-11,.fe-col-m-12,
+.fe-col-s-1,.fe-col-s-2,.fe-col-s-3,.fe-col-s-4,.fe-col-s-5,.fe-col-s-6,.fe-col-s-7,.fe-col-s-8,.fe-col-s-9,.fe-col-s-10,.fe-col-s-11,.fe-col-s-12,
+.fe-col-n-1,.fe-col-n-2,.fe-col-n-3,.fe-col-n-4,.fe-col-n-5,.fe-col-n-6,.fe-col-n-7,.fe-col-n-8,.fe-col-n-9,.fe-col-n-10,.fe-col-n-11,.fe-col-n-12
+{
+
+	overflow: hidden;
+
+}
+
+
+/*======== Резиновые колонки ========*/
+
+
+.fe-col-1
+{
+
+	width: 8.33%;
+
+	float: left;
+
+}
+
+
+.fe-col-2
+{
+
+	width: 16.66%;
+
+	float: left;
+
+}
+
+
+.fe-col-3
+{
+
+	width: 25%;
+
+	float: left;
+
+}
+
+
+.fe-col-4
+{
+
+	width: 33.33%;
+
+	float: left;
+
+}
+
+
+.fe-col-5
+{
+
+	width: 41.66%;
+
+	float: left;
+
+}
+
+
+.fe-col-6
+{
+
+	width: 50%;
+
+	float: left;
+
+}
+
+
+.fe-col-7
+{
+
+	width: 58.33%;
+
+	float: left;
+
+}
+
+
+.fe-col-8
+{
+
+	width: 66.66%;
+
+	float: left;
+
+}
+
+
+.fe-col-9
+{
+
+	width: 75%;
+
+	float: left;
+
+}
+
+
+.fe-col-10
+{
+
+	width: 83.33%;
+
+	float: left;
+
+}
+
+
+.fe-col-11
+{
+
+	width: 91.66%;
+
+	float: left;
+
+}
+
+
+.fe-col-12
+{
+
+	width: 100%;
+
+	float: left;
+
+}
+
+
+/*======== Адаптивные колонки ========*/
+
+
+/*-------- col-ultra --------*/
+
+
+@media screen and (min-width: 2000px)
+{
+
+	.fe-col-u-1
+	{
+
+		width: 8.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-2
+	{
+
+		width: 16.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-3
+	{
+
+		width: 25%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-4
+	{
+
+		width: 33.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-5
+	{
+
+		width: 41.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-6
+	{
+
+		width: 50%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-7
+	{
+
+		width: 58.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-8
+	{
+
+		width: 66.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-9
+	{
+
+		width: 75%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-10
+	{
+
+		width: 83.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-11
+	{
+
+		width: 91.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-u-12
+	{
+
+		width: 100%;
+
+		float: left;
+
+	}
+
+}
+
+
+@media screen and (max-width: 1999px)
+{
+
+	.fe-col-u-only
+	{
+
+		display: none;
+
+	}
+
+}
+
+
+/*-------- col-big --------*/
+
+
+@media screen and (min-width: 1200px) and (max-width: 1999px)
+{
+
+	.fe-col-b-1
+	{
+
+		width: 8.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-2
+	{
+
+		width: 16.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-3
+	{
+
+		width: 25%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-4
+	{
+
+		width: 33.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-5
+	{
+
+		width: 41.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-6
+	{
+
+		width: 50%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-7
+	{
+
+		width: 58.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-8
+	{
+
+		width: 66.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-9
+	{
+
+		width: 75%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-10
+	{
+
+		width: 83.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-11
+	{
+
+		width: 91.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-b-12
+	{
+
+		width: 100%;
+
+		float: left;
+
+	}
+
+}
+
+
+@media screen and (max-width: 1199px)
+{
+
+	.fe-col-b-only
+	{
+
+		display: none;
+
+	}
+
+}
+
+
+/*-------- col-middle --------*/
+
+
+@media screen and (min-width: 950px) and (max-width: 1199px)
+{
+
+	.fe-col-m-1
+	{
+
+		width: 8.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-2
+	{
+
+		width: 16.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-3
+	{
+
+		width: 25%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-4
+	{
+
+		width: 33.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-5
+	{
+
+		width: 41.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-6
+	{
+
+		width: 50%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-7
+	{
+
+		width: 58.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-8
+	{
+
+		width: 66.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-9
+	{
+
+		width: 75%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-10
+	{
+
+		width: 83.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-11
+	{
+
+		width: 91.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-m-12
+	{
+
+		width: 100%;
+
+		float: left;
+
+	}
+
+}
+
+
+@media screen and (max-width: 949px)
+{
+
+	.fe-col-m-only
+	{
+
+		display: none;
+
+	}
+
+}
+
+
+/*-------- col-small --------*/
+
+
+@media screen and (min-width: 750px) and (max-width: 949px)
+{
+
+	.fe-col-s-1
+	{
+
+		width: 8.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-2
+	{
+
+		width: 16.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-3
+	{
+
+		width: 25%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-4
+	{
+
+		width: 33.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-5
+	{
+
+		width: 41.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-6
+	{
+
+		width: 50%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-7
+	{
+
+		width: 58.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-8
+	{
+
+		width: 66.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-9
+	{
+
+		width: 75%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-10
+	{
+
+		width: 83.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-11
+	{
+
+		width: 91.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-s-12
+	{
+
+		width: 100%;
+
+		float: left;
+
+	}
+
+
+}
+
+
+@media screen and (max-width: 749px)
+{
+
+	.fe-col-s-only
+	{
+
+		display: none;
+
+	}
+
+}
+
+
+/*-------- col-nano --------*/
+
+
+@media screen and (max-width: 749px) 
+{
+
+	.fe-col-n-1
+	{
+
+		width: 8.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-2
+	{
+
+		width: 16.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-3
+	{
+
+		width: 25%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-4
+	{
+
+		width: 33.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-5
+	{
+
+		width: 41.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-6
+	{
+
+		width: 50%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-7
+	{
+
+		width: 58.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-8
+	{
+
+		width: 66.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-9
+	{
+
+		width: 75%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-10
+	{
+
+		width: 83.33%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-11
+	{
+
+		width: 91.66%;
+
+		float: left;
+
+	}
+
+
+	.fe-col-n-12
+	{
+
+		width: 100%;
+
+		float: left;
+
+	}
+
+}
+
+
+
+
+

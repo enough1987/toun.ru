@@ -1,0 +1,68 @@
+			
+			
+			<!-- Content -->
+			
+			
+			<div id="content">
+			
+			
+				<!-- Nearest-event -->
+				
+			
+				<div id="nearest-event">
+				
+					<div id="nearest-event_h"> <h3> <span class="title-big"> 
+{{ mainPage['2-day']['static'][languages[language1]]['title'] }}
+					</span> <br / > <span class="title-small"> 
+{{ mainPage['2-day']['static'][languages[language2]]['title'] }}
+					</span> </h3> </div>
+					
+					<div class="fe-row">
+					
+						<div class="fe-col-u-6 fe-col-b-6 fe-col-m-6"
+ng-repeat="item in 
+mainPage['2-day']['widget']"	
+						>						
+							<div class="nearest-event_left">
+							
+								<div class="nearest-event_left_text">
+							
+								     <p class="nearest-event_date"> <span class="title-big"> 
+{{ item[languages[language1]]['item']['date_full'] }}
+								      <span> </p>
+<data-rout class='gb-cursor-pointer'
+ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
+>									
+									 <p class="nearest-event_title"> <span class="title-big"> <a > 
+{{ item[languages[language1]]['item']['title'] }}
+									  </a> </span> <br /> <span class="title-small"> 
+{{ item[languages[language2]]['item']['title'] }}
+									  </span> </p> 
+									 
+									 <p class="nearest-event_about">
+{{ item[languages[language1]]['item']['body'] | onlyCharacters : 85 }}								  
+									  </p>
+									 
+									 <p class="main_event_elements_status" style="padding-left:66px; margin-top: 10px;" > <a> 
+{{ item[languages[language1]]['item']['premier'] }}
+									  </a> </p> 
+</data-rout>									 
+								</div>
+
+<data-rout class='gb-cursor-pointer'
+ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
+>								 
+								<div class="nearest-event_left_image"> <img class="fe-img grayscale"  src="{{ item[languages[language1]]['item']['img']['src'] }}" 
+								alt="photo" /> </div>
+</data-rout>	
+
+							
+							</div>
+						
+						</div>						
+					
+					</div>
+				
+				</div>
+				
+				

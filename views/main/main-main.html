@@ -1,0 +1,286 @@
+
+				<!-- Main -->
+				
+				
+				 <div class="fe-row" id="main">
+				 
+					 <div class="fe-col-u-6 fe-col-b-6 fe-col-m-6">
+					 
+						 <div id="main_event">
+
+<data-afisha-first_month 
+ng-if="showMonth( mainPage['afisha']['widget']['first_month'], 1 )" >
+
+						 
+							  <h4> <span class="title-big"> 
+{{ mainPage['afisha']['static']['first_month'][languages[language1]]['title'] }}
+							   </span> <br /> <span class="title-small"> 
+{{ mainPage['afisha']['static']['first_month'][languages[language2]]['title'] }}
+							    </span> </h4>
+							  
+							  <ul id="main_event_elements">
+							  
+								 <li class="main_event_element"
+ng-repeat="item in mainPage['afisha']['widget']['first_month']"
+ng-if="showItemMonth( $index, 1 )"
+								 >
+								 
+									 <div class="fe-row">
+									 
+										 <div class="fe-col-8">
+										 
+											 <div class="fe-row">
+												 
+												 <p class="fe-col-2" style="font-size: 14px;  text-align left;  padding-left: 20px;"> 
+{{ item[languages[language1]]['item']['day'] }}       
+</p>
+												 <p class="fe-col-4" style="font-size: 14px;  text-align left;"> 
+{{ item[languages[language1]]['item']['day_week'] }} 
+												 </p>
+												 <p class="fe-col-4" style="font-size: 14px;  text-align left;"> 
+{{ item[languages[language1]]['item']['age'] }} 									   
+												  </p>  
+											 
+											 </div>
+<data-rout class='gb-cursor-pointer'
+ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
+>						 
+											 <p class="main_event_elements_title"> <span class="title-big"> <a 
+											 > 
+{{ item[languages[language1]]['item']['title'] }}
+											  </a> </span> <br /> <span class="title-small"> 
+{{ item[languages[language2]]['item']['title'] }}
+											   </span> </p>
+											 
+											 <p class="main_event_elements_about"> 
+{{ item[languages[language1]]['item']['body'] }}
+											 </p>
+											 
+</data-rout>										 
+										 </div>
+										 
+										 <div class="fe-col-4">
+										 
+											 <div class="fe-row">
+											 
+												 <div class="fe-col-8">
+												 
+													<p class="main_event_elements_time" >
+{{ item[languages[language1]]['item']['time'] }}
+													</p> 
+													 
+													 <p class="main_event_elements_status" > 
+{{ item[languages[language1]]['item']['premier'] }}
+													 </p> 
+													 
+													 <p class="main_event_elements_address"> 
+{{ item[languages[language1]]['item']['place'] }}
+													 </p>
+												 
+												 </div>
+												 
+												 <div class="fe-col-4">
+												 
+<a ng-if="item[languages[language1]]['item']['buy_url']"> 
+<img src="icon/img/buy.png" alt="icon"> 
+</a>
+												 
+												 </div>
+											 
+											 </div>
+										 
+										 </div>
+									 
+									 </div>
+								 
+								 </li>
+								 								 
+							  </ul>
+
+</data-afisha-first_month>
+
+						 </div> 
+
+						 <div id="main_event">
+
+<data-afisha-second_month 
+ng-if="showMonth( mainPage['afisha']['widget']['second_month'], 2 )" >
+
+						 
+							  <h4> <span class="title-big"> 
+{{ mainPage['afisha']['static']['second_month'][languages[language1]]['title'] }}
+							   </span> <br /> <span class="title-small"> 
+{{ mainPage['afisha']['static']['second_month'][languages[language2]]['title'] }}
+							    </span> </h4>
+							  
+							  <ul id="main_event_elements">
+							  
+								 <li class="main_event_element"
+ng-repeat="item in mainPage['afisha']['widget']['second_month']"
+ng-if="showItemMonth( $index, 2 )"
+								 >
+								 
+									 <div class="fe-row">
+									 
+										 <div class="fe-col-8">
+										 
+											 <div class="fe-row">
+											 
+												 <p class="fe-col-2" style="font-size: 14px;  text-align left;  padding-left: 20px;"> 
+{{ item[languages[language1]]['item']['time'] }}
+											     </p>
+												 <p class="fe-col-4" style="font-size: 14px;  text-align left;">
+{{ item[languages[language1]]['item']['day_week'] }} 
+												  </p>
+												 <p class="fe-col-4" style="font-size: 14px;  text-align left;"> 
+{{ item[languages[language1]]['item']['age'] }} 
+												 </p>  
+											 
+											 </div>
+<data-rout class='gb-cursor-pointer'
+ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
+>												 
+											 <p class="main_event_elements_title"> <span class="title-big"> <a > 
+{{ item[languages[language1]]['item']['title'] }}
+											 </a> </span> <br /> <span class="title-small"> 
+{{ item[languages[language2]]['item']['title'] }}
+											 </span> </p>
+											 
+											 <p class="main_event_elements_about"> 
+{{ item[languages[language1]]['item']['body'] }}
+											 </p>
+											 
+</data-rout>										 
+										 </div>
+										 
+										 <div class="fe-col-4">
+										 
+											 <div class="fe-row">
+											 
+												 <div class="fe-col-8">
+												 
+													 <p class="main_event_elements_time" >
+{{ item[languages[language1]]['item']['time'] }}
+													   </p> 
+													 
+													 <p class="main_event_elements_status" > 
+{{ item[languages[language1]]['item']['premier'] }}
+													 </p> 
+													 
+													 <p class="main_event_elements_address"> 
+{{ item[languages[language1]]['item']['place'] }}
+													 </p>
+												 
+												 </div>
+												 
+												 <div class="fe-col-4">
+												 
+<a ng-if="item[languages[language1]]['item']['buy_url']"> 
+<img src="icon/img/buy.png" alt="icon"> 
+</a>
+
+												 </div>
+											 
+											 </div>
+										 
+										 </div>
+									 
+									 </div>
+								 
+								 </li>
+								 								 
+							  </ul>
+
+</data-afisha-second_month>
+
+						  
+						  </div>
+
+						  <div id='wrapper_main_more' >
+
+							   <p class="main_more" style="margin-left: 20px;"> 
+{{ mainPage['afisha']['static'][languages[language1]]['all'] }}
+					<img src="icon/img/event.png" style="position:relative; top: 8px;" /> </p>	
+
+						  </div>
+
+					 </div>
+
+
+					 
+					 
+					 <!-- News -->
+					 
+					 <div class="fe-col-u-6 fe-col-b-6 fe-col-m-6">
+					 
+					         <div id="main_news">
+						 
+								 <h4> <span class="title-big"> 
+{{ mainPage['news']['static'][languages[language1]]['title'] }}	
+								 </span> <br /> <span class="title-small">
+{{ mainPage['news']['static'][languages[language2]]['title'] }}					
+								  </span> </h4>
+								  
+								 <ul id="main_news_elements">
+								  
+									 <li class="main_news_element"
+ng-repeat="item in mainPage['news']['widget']"
+									 >
+									 
+										 <div class="fe-row">
+										 
+											 <div class="fe-col-6">
+											 
+												 <div 
+
+ng-click="routeGoToView( item[languages[language1]]['item']['link_more'] )"
+class="main_news_elements_image gb-cursor-pointer"> 
+<img class="fe-img grayscale" 
+src="{{ item[languages[language1]]['item']['image']['src'] }}" 
+alt="image" /> 
+</div>
+											 
+											 </div>
+											 
+											 <div class="fe-col-6">
+											 
+												 <p class="main_news_elements_title"> <span class="title-big"> 
+{{ item[languages[language1]]['item']['title']  | onlyCharacters : 65 }}
+											     </span> </p>
+												 
+												 <p class="main_news_elements_date"> 
+{{ item[languages[language1]]['item']['created'] }}
+												 </p>
+												  
+												 <p class="main_news_elements_about"> 
+{{ item[languages[language1]]['item']['body'] | onlyCharacters : 125 }} </p>
+												 
+												 <p class="main_news_elements_detalis"> <a 
+class='gb-cursor-pointer'
+ng-click="routeGoToView( item[languages[language1]]['item']['link_more'] )"
+> 
+												
+{{ mainPage['news']['static'][languages[language1]]['more'] }}
+												  > </a> </p>
+											 
+											 </div>
+										 
+										 </div>
+									 
+									 </li>
+
+								  
+								 </ul>
+								 
+								  <p class="main_more" style="margin-left: 20px;">
+{{ mainPage['news']['static'][languages[language1]]['other'] }}	 
+								  <img src="icon/img/news.png" style="position:relative; top: 8px;" /> </p>
+						  
+						  </div>
+					
+					 </div>
+					
+				 
+				 </div>
+				
+			</div>

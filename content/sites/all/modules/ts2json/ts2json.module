@@ -1,0 +1,29 @@
+
+<?
+/**
+ * Implements hook_menu().
+ */
+function ts2json_menu() {
+  $items = array();
+ 
+  $items['menus/json'] = array(
+    'page callback' => '_retrieve_menus',
+    'access callback' => TRUE,
+    'delivery callback' => 'drupal_json_output',
+  );
+ 
+  return $items;
+}
+ 
+function ts2json_retrieve_menus() {
+  $query_string = "SELECT link_title, link_path FROM menu_links WHERE menu_name = 'main-menu'";
+  $result = db_query($query_string);
+ 
+  if ($result) {
+     while ($menu = $result->fetchAssoc()) {
+        $menus[] = $menu;
+     }
+  }
+ 
+  return array('data' => $menus);
+}

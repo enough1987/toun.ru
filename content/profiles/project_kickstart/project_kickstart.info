@@ -1,0 +1,86 @@
+name = "Project Kickstart"
+description = "Kickstart your project with recommended libraries / modules / themes in place."
+core = "7.x"
+
+; The exclusive flag auto-selects the profile during installation, if there
+; are no other exclusive ones.
+exclusive = "1"
+
+; The distribution_name property is used in the installer and other places as
+; a label for the software being installed.
+distribution_name = "Project Kickstart"
+
+; Core
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = field
+dependencies[] = field_sql_storage
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = overlay
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = update
+dependencies[] = user
+
+; Contrib
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = backup_migrate
+dependencies[] = breakpoints
+dependencies[] = ckeditor
+dependencies[] = ctools
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = quickedit
+dependencies[] = email
+dependencies[] = email_registration
+dependencies[] = entity
+dependencies[] = entity_token
+dependencies[] = entityreference
+dependencies[] = features
+;dependencies[] = gridbuilder
+dependencies[] = jquery_update
+dependencies[] = json2
+dependencies[] = layout
+dependencies[] = libraries
+dependencies[] = metatag
+dependencies[] = module_filter
+dependencies[] = page_manager
+dependencies[] = panels
+dependencies[] = panels_ipe
+dependencies[] = pathauto
+dependencies[] = rules
+dependencies[] = rules_admin
+dependencies[] = schema
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = url
+dependencies[] = views
+dependencies[] = views_ui
+
+; Custom
+
+; Features
+
+; Information added by Drupal.org packaging script on 2016-03-02
+version = "7.x-2.13"
+core = "7.x"
+project = "project_kickstart"
+datestamp = "1456918660"
+
