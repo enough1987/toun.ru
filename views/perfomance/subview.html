@@ -294,6 +294,7 @@ src="{{ item['video_id']
 
                             </div>
                         </div>
+
                         <div 
 display-none-dir
 dataa="{{perfomance['page']}}"
@@ -338,14 +339,16 @@ custom-submit-dir
                                         <h4 class="feedback-title">
 {{ perfomance['page']['static'][languages[language1]]['review_title'] }}
 </h4>
-                                        <input class="feedback feedback-name" type="text" 
+                                        <input
+             class="name-from-form feedback feedback-name" type="text" 
 placeholder="
 {{ perfomance['page']['static'][languages[language1]]['placeholder_name'] }}
 "
 required="required" min='1' max="100"
 name='name-from-form'
->
-                                        <textarea class="feedback feedback-text" rows="8" cols="40" 
+/>
+                                        <textarea 
+            class="text-from-form feedback feedback-text" rows="8" cols="40" 
 placeholder="
 {{ perfomance['page']['static'][languages[language1]]['placeholder_text'] }}
 "
@@ -353,7 +356,7 @@ required="required" min='2' max="20000"
 name='text-from-form'
 ></textarea>
                                         <input class="submit-button" type="submit"
-name='name-from-form' 
+ 
 value="
 {{ perfomance['page']['static'][languages[language1]]['send_button'] }}"
 >

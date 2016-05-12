@@ -191,8 +191,10 @@ customDirectives.directive( 'customSubmitDir' , function()
 
 e.preventDefault();
 
-var  name = document.getElementsByName('name-from-form')[0].value;
-var  text = document.getElementsByName('text-from-form')[0].value; 
+var  name = document.getElementsByClassName('name-from-form')[0].value;
+console.log( document.getElementsByClassName('text-from-form') );
+
+var  text = document.getElementsByClassName('text-from-form')[0].value; 
 //var  pageis = document.getElementsByName('text-from-form')[0].pageis; 
             //console.log( pageis );
             

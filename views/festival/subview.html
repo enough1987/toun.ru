@@ -153,7 +153,7 @@ datatargetfortabs="3"
 
                 <li 
 display-none-dir
-dataa="{{ festival['page']['field_title_photo']
+dataa="{{ festival['page']['field_title_docu']
 [languages[language1]][0]['value'] }}"
 datatargetfortabs="4"
                 class="tabs-item"><a class="tabs-link" 
@@ -182,7 +182,8 @@ datatargetfortabs="5"
                     </span></a></li>
 
                         <li 
-                        class="tabs-item"><a class="tabs-link" href="#tab5">
+                        class="tabs-item"><a class="tabs-link" 
+                        href="#tab6">
 {{ festival['page']['field_title_comments'][languages[language1]][0]['value'] }}
                         <br> <span
                                 class="tabs-subheading">
@@ -192,7 +193,7 @@ datatargetfortabs="5"
             <div class="tabs-content">
 
 
-                        <div
+                <div
 display-none-dir
 dataa="{{festival['page']
 ['field_project_photo']['und']}}"
@@ -218,159 +219,164 @@ src="{{item['filename'] | changestartpath :
                                 </div>
 </data-repeat>
 
-<!--
-                        <div class="item" data-src="img/big_image.jpg">
-                            <img src="img/s22_pic2.jpg" alt="image2.jpg"/>
-                        </div>
-                        <div class="item" data-src="img/big_image.jpg">
-                            <img src="img/s22_pic3.jpg" alt="image3.jpg"/>
-                        </div>
-                        <div class="item" data-src="img/big_image.jpg">
-                            <img src="img/s22_pic4.jpg" alt="image4.jpg"/>
-                        </div>
-                        <div class="item" data-src="img/big_image.jpg">
-                            <img src="img/s22_pic1.jpg" alt="image5.jpg"/>
-                        </div>
-                        <div class="item" data-src="img/big_image.jpg">
-                            <img src="img/s22_pic2.jpg" alt="image6.jpg"/>
-                        </div>
-                        <div class="item" data-src="img/big_image.jpg">
-                            <img src="img/s22_pic3.jpg" alt="image7.jpg"/>
-                        </div>
-                        <div class="item" data-src="img/big_image.jpg">
-                            <img src="img/s22_pic4.jpg" alt="image8.jpg"/>
-                        </div>
--->
                     </div>
                 </div>
 
 
-                <div id="tab2" class="tab">
-                    <!-- V I D E O   C A R O U S E L -->
-                    <div class="prev-button video-buttons"><img src="icon/img/prev_button.png" alt="button-left.png">
-                    </div>
-                    <div class="next-button video-buttons"><img src="icon/img/next_button.png" alt="button-right.png">
-                    </div>
-                    <div id="video-gallery" class="owl-carousel owl-theme">
-                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=G8KpPw303PY">
-                            <img class="grayscale" src="http://img.youtube.com/vi/G8KpPw303PY/hqdefault.jpg"/>
+
+                        <div 
+display-none-dir
+dataa="{{festival['page']
+['field_project_video']['und']}}"
+datatargettab="2"
+                        id="tab2" class="tab">
+                            <!-- V I D E O   C A R O U S E L -->
+                            <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
+                            <div class="next-button video-buttons"><img src="/icon/img/next_button.png" alt=""></div>
+                            <div id="video-gallery" class="owl-carousel owl-theme">
+                                <!--<div class="light-gal-item" data-src="https://www.youtube.com/watch?v=G8KpPw303PY">-->
+
+
+   
+<data-repeat ng-repeat="item in festival['page']
+['field_project_video']['und']" >
+                                <div class="light-gal-item" 
+data-src="{{ item['input'] | trusted }}">
+                                    <img class="grayscale" 
+src="{{ item['video_id'] 
+| changestartpath : 
+'http://img.youtube.com/vi/' 
+| changeendpath : 
+'/hqdefault.jpg' 
+ }}" />
+                                </div>
+   
+</data-repeat>                                
+
+
+
+                            </div>
                         </div>
-                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=PHAc3_MEjgQ">
-                            <img class="grayscale" src="http://img.youtube.com/vi/PHAc3_MEjgQ/hqdefault.jpg"/>
-                        </div>
-                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=kFv4qYZQz1g">
-                            <img class="grayscale" src="http://img.youtube.com/vi/kFv4qYZQz1g/hqdefault.jpg"/>
-                        </div>
-                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=ZpMp7RK2TMQ">
-                            <img class="grayscale" src="http://img.youtube.com/vi/ZpMp7RK2TMQ/hqdefault.jpg"/>
-                        </div>
-                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=N8l1Cjnm9Wg">
-                            <img class="grayscale" src="http://img.youtube.com/vi/N8l1Cjnm9Wg/hqdefault.jpg"/>
-                        </div>
-                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=e3PdcKcUvDY">
-                            <img class="grayscale" src="http://img.youtube.com/vi/e3PdcKcUvDY/hqdefault.jpg"/>
-                        </div>
-                    </div>
-                </div>
-                <div id="tab3" class="tab">
+
+
+                <div 
+display-none-dir
+dataa="{{festival['page']
+['field_press'][languages[language1]]}}"
+datatargettab="3"
+                id="tab3" class="tab">
                     <!-- P U B L I C A T I O N S -->
                     <div class="fe-col-12">
                         <!--<div class="gallery_heading-box">-->
                             <!--<div class="common_top-heading">Пресса</div>-->
                             <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
                         <!--</div>-->
+<data-repeat ng-repeat="item in festival['page']
+['field_press'][languages[language1]]" >
                         <div class="mass_media-box white_space_media-marginless">
                             <div class="mass_media-paragraph white_space_media-marginless">
                                 <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
                                 <div class="text-wrap">
-                                    <span class="mass_media-text">Участник программы «Маска Плюс» Фестиваля 2015 года. Спектакль “И дольше века длится день”</span><br>
-                                    <a class="mass_media-link" href="">http://www.goldenmask.ru/spect.php?id=1154</a>
+
+                                    <span class="mass_media-text">
+{{ item['title'] }}
+                                    </span><br>
+                                    <a class="mass_media-link" 
+                                    href="{{ item['value'] }} "
+                                    target="_blank"
+                                    >
+{{ item['value'] }}                                    
+
+</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
-                    <span class="mass_media-text">Номинации на Премию «Золотая Маска» 2014г. - «Лучший спектакль в театре кукол», «Лучшая работа режиссера»,
-«Лучшая работа художника». Спектакль “Дети неба”</span><br>
-                                    <a class="mass_media-link" href="">http://www.goldenmask.ru/spect.php?id=1060</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
-                                    <span class="mass_media-text">О театре обско-угорских народов “Солнце”</span><br>
-                                    <a class="mass_media-link" href="">http://tonkosti.ru/Театр_обско-угорских_народов_«Солнце»</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
-                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
-                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
-                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
-                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
-                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
-                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
-                                </div>
-                            </div>
-                        </div>
+</data-repeat>
+
                     </div>
                 </div>
-                <div id="tab4" class="tab">
+
+                <div 
+display-none-dir
+dataa="{{festival['page']['field_docu'][languages[language1]]}}"
+datatargettab="4"
+                id="tab4" class="tab">
                     <!-- D O C S -->
+
+<data-repeat ng-repeat="item in 
+festival['page']['field_docu'][languages[language1]]" >
                     <p>
-                        <a ><img src="icon/img/docs.png" alt=""/><span class="white-space_gallery_docs-item">Положение фестиваля</span></a>
+                        <a ><img 
+src="{{ item['uri'] }}" 
+alt=""/><span 
+class="white-space_gallery_docs-item">
+{{ item['filename'] }}
+</span></a>
                     </p>
+
                     <p>
                         <a ><img src="icon/img/docs.png" alt=""/><span class="white-space_gallery_docs-item">Заявка на участие</span></a>
                     </p>
+
                 </div>
-                <div id="tab5" class="tab">
+
+                <div 
+display-none-dir
+dataa="{{ festival['page']['field_title_photo']
+[languages[language1]][0]['value'] }}"
+datatargettab="5"
+                id="tab5" class="tab">
                     <!-- F E S T I V A L   R E S U L T S -->
                     <p>Описательный текст с итогами фестиваля.</p>
                 </div>
+
                 <!---->
                 <div id="tab6" class="tab">
                     <!-- F E E D B A C K -->
                     <div class="fe-row">
                         <div class="fe-col-12">
-                            <div class="post">
-                                <p class="post-name">Александр</p>
-                                <p class="post-date">02/05/2016</p>
-                                <p class="post-message">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit. Commodi, dolore dolorem fugiat hic labore laboriosam magni nemo nisi
-                                    nobis non, nostrum provident quibusdam repellat reprehenderit repudiandae
-                                    rerum temporibus
-                                    vel voluptatum!</p>
-                            </div>
-                            <form class="feedback-form" action="feedback">
-                                <h4 class="feedback-title">Оставить отзыв:</h4>
-                                <input class="feedback feedback-name" type="text" placeholder="Имя Фамилия">
-                                <textarea class="feedback feedback-text" name="textarea" rows="8" cols="40"
-                                          placeholder="Текст отзыва"></textarea>
+
+                            <form id="formx"
+                            class="feedback-form" 
+custom-submit-dir
+                            >
+                                <h4 class="feedback-title">
+{{ festival['page']['static'][languages[language1]]['review_title'] }}
+                                </h4>
+                                <input 
+                class="name-from-form feedback feedback-name" type="text" 
+placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_name'] }}"
+required="required" min='1' max="100"
+name='name-from-form'
+/>
+                                <textarea 
+                class="name-from-form feedback feedback-text" name="textarea" rows="8" cols="40"
+placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_text'] }}"
+required="required" min='2' max="20000"
+name='text-from-form'
+> 
+                                </textarea>
                                 <input class="submit-button" type="submit" name="submit-button"
-                                       value="Отправить">
+value="{{ festival['page']['static'][languages[language1]]['send_button'] }}"
+
+>
                             </form>
+
+
+                                    <div 
+ng-repeat="item in festival['comments']"
+                                    class="post" >
+                                        <p class="post-name">
+{{ item['comment_body']['#object']['subject'] }}
+                                        </p>
+                                        <p class="post-date">
+{{ item['comment_body']['#object']['created'] | fromtimestamp }}
+</p>
+                                        <p class="post-message">
+{{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
+ </p>
+                                    </div>  
+
                         </div>
                     </div>
                 </div>
