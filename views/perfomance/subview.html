@@ -2,7 +2,8 @@
 
     <!-- Header -->
 
-    <header class="about-header">
+ <header class="about-header" 
+ style="background: url('{{ perfomance['page']['field_bamper']['und'][0]['uri'] }}') top center no-repeat; background-size: cover;">
 
         <div id="header_center_logo-mobile" class="fe-none">
             <a href="/">
@@ -81,12 +82,20 @@ perfomance['page']['field_project_about'][languages[language1]][0]['value']">
 perfomance['page']['field_project_about'][languages[language2]][0]['value']">
 </data-div>
 
-                    <a href="#" class="read-piece-a">
+<data-repeat class="wrap_read" ng-repeat="target in
+perfomance['page']['field_docu'][languages[language1]]">
+                        <img 
+ng-if="target['description']"
+                        src="icon/img/read-piece.png" alt="" />
 
-{{ perfomance['page']['field_docu'][languages[language1]][0]['description'] }}  
+                    <a target="_blank"
+href="{{ target['uri'] }}" 
+ class="read-piece-a">
 
-                        <img src="icon/img/read-piece.png" alt="">
+{{ target['description'] }}  
+
                     </a>
+</data-repeat>
 
                 </div>
             </div>
@@ -162,32 +171,50 @@ perfomance['page']['field_project_people'][languages[language1]][0]['value']">
                 <div class="tabs">
 
                     <ul class="tabs-links">
-                        <li class="active tabs-item"><a class="tabs-link" href="#tab1">
+                        <li 
+display-none-dir
+dataa="{{ perfomance['page']['field_title_photo']
+[languages[language1]][0]['value'] }}"
+                        class="active tabs-item"><a class="tabs-link" href="#tab1">
 {{ perfomance['page']['field_title_photo'][languages[language1]][0]['value'] }}
 
                          &nbsp;&nbsp;&nbsp;|<br>
                             <span class="tabs-subheading">
 {{ perfomance['page']['field_title_photo'][languages[language2]][0]['value'] }}
 </span></a></li>
-                        <li class="tabs-item"><a class="tabs-link" href="#tab2">
+                        <li 
+display-none-dir
+dataa="{{perfomance['page']['field_title_video']
+[languages[language1]][0]['value']}}"
+                        class="tabs-item"><a class="tabs-link" href="#tab2">
 {{ perfomance['page']['field_title_video'][languages[language1]][0]['value'] }}
                          &nbsp;&nbsp;&nbsp;| <br> <span
                                 class="tabs-subheading">
 {{ perfomance['page']['field_title_video'][languages[language2]][0]['value'] }}
                                 </span></a></li>
-                        <li class="tabs-item"><a class="tabs-link" href="#tab3">
+                        <li
+display-none-dir
+dataa="{{perfomance['page']['field_title_press']
+[languages[language1]][0]['value']}}"
+                         class="tabs-item"><a class="tabs-link" href="#tab3">
 {{ perfomance['page']['field_title_press'][languages[language1]][0]['value'] }}
                        
                             &nbsp;&nbsp;&nbsp;|<br> <span class="tabs-subheading">
 {{ perfomance['page']['field_title_press'][languages[language2]][0]['value'] }}
                          </span></a></li>
-                        <li class="tabs-item"><a class="tabs-link" href="#tab4">
+                        <li
+display-none-dir
+dataa="{{perfomance['page']['field_title_awards']
+[languages[language1]][0]['value']}}"
+                         class="tabs-item"><a class="tabs-link" href="#tab4">
 {{ perfomance['page']['field_title_awards'][languages[language1]][0]['value'] }}
                         &nbsp;&nbsp;&nbsp;|<br> <span
                                 class="tabs-subheading">
 {{ perfomance['page']['field_title_awards'][languages[language2]][0]['value'] }}
                                 </span></a></li>
-                        <li class="tabs-item"><a class="tabs-link" href="#tab5">
+                        <li 
+
+                        class="tabs-item"><a class="tabs-link" href="#tab5">
 {{ perfomance['page']['field_title_comments'][languages[language1]][0]['value'] }}
                         <br> <span
                                 class="tabs-subheading">
@@ -196,7 +223,11 @@ perfomance['page']['field_project_people'][languages[language1]][0]['value']">
                     </ul>
 
                     <div class="tabs-content">
-                        <div id="tab1" class="tab tab-active fe-col-12">
+                        <div
+display-none-dir
+dataa="{{perfomance['page']
+['field_project_photo']['und']}}"
+                        id="tab1" class="tab tab-active fe-col-12">
 
                             <!-- P H O T O   C A R O U S E L -->
                             <div class="prev-button photo-buttons"><img src="icon/img/prev_button.png" alt=""></div>
@@ -223,7 +254,11 @@ src="
                                 
                             </div>
                         </div>
-                        <div id="tab2" class="tab">
+                        <div 
+display-none-dir
+dataa="{{perfomance['page']
+['field_project_video']['und']}}"
+                        id="tab2" class="tab">
                             <!-- V I D E O   C A R O U S E L -->
                             <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
                             <div class="next-button video-buttons"><img src="/icon/img/next_button.png" alt=""></div>
@@ -251,7 +286,10 @@ src="{{ item['video_id']
 
                             </div>
                         </div>
-                        <div id="tab3" class="tab">
+                        <div 
+display-none-dir
+dataa="{{perfomance['page']}}"
+                        id="tab3" class="tab">
                             <!-- P U B L I C A T I O N S -->
 
                             <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda ipsum nisi, optio quas quis ullam veritatis! Deleniti excepturi ipsam, maxime mollitia nam nesciunt, praesentium quaerat recusandae reprehenderit sunt
@@ -262,7 +300,10 @@ src="{{ item['video_id']
                             </p>
                             <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea eaque id ipsa iste iure provident quas quis repellat vitae. Eligendi hic laboriosam qui sapiente voluptas! At eveniet harum id!</p>
                         </div>
-                        <div id="tab4" class="tab">
+                        <div 
+display-none-dir
+dataa="{{perfomance['page']}}"
+                        id="tab4" class="tab">
                             <!-- A W A R D S -->
                             <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda ipsum nisi, optio quas quis ullam veritatis! Deleniti excepturi ipsam, maxime mollitia nam nesciunt, praesentium quaerat recusandae reprehenderit sunt
                                 voluptatem.
@@ -433,6 +474,7 @@ src="{{ item['video_id']
 
 
                                     <form
+                                    pageis
                                     class="feedback-form" action=""
 custom-submit >
                                         <h4 class="feedback-title">

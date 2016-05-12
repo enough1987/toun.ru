@@ -3,7 +3,9 @@
 <div class="fe-row common_page-margin" 
         apply>
     <div class="fe-col-12">
-        <div class="gallery_heading-box">
+        <div 
+ng-if="projects"
+        class="gallery_heading-box">
             <div class="common_top-heading">
 {{ projects['static'][languages[language1]]['title'] }}
             </div>
@@ -15,7 +17,9 @@
             <div class="gallery_filters">
 
 <data-repeat ng-repeat="item  in projects['filter_menu']" >
-                <p class="gallery_menu_paragraph"><a class="active gallery_year-filter" data-filter="repertuar" href="#">
+                <p class="gallery_menu_paragraph"><a class="active gallery_year-filter" data-filter="repertuar" 
+ng-click="routeGoToView(item['field_link']['und'][0]['value'])" 
+                >
                 {{ item[languages[language1]]['und'][0]['value'] }}
                 </a></p>
 </data-repeat>
@@ -27,7 +31,9 @@
 <data-repeat ng-repeat="item  in projects['widget']" >
                 <div  class="fe-col-n-12 fe-col-3 gallery_afisha-box"><div class="gallery_afisha"><a ><img class="gallery_afisha-image" 
 src="{{ item[languages[language1]]['item']['image']['src'] }}"
-alt="{{ item[languages[language1]]['item']['image']['alt'] }}">
+alt="{{ item[languages[language1]]['item']['image']['alt'] }}"
+ng-click="routeGoToView(item[languages[language1]]['item']['link'])" 
+>
 </a></div></div>
 </data-repeat>             
 

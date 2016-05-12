@@ -4,7 +4,9 @@
 				<!-- H E A D E R  L E F T -->
 				<div class="fe-col-3 fe-col-m-only">
 
-					<div class="header_left">
+					<div class="header_left"
+ng-click="routeGoToView(mainPage['header']['map_link'])"
+					>
 <p ng-bind-html="mainPage['header'][languages[language1]]['adress_head']  | replaceNtoBR"></p>
 						<p class="header_left_scheme"> 
 {{ mainPage['header'][languages[language1]]['title_map'] }}
@@ -21,7 +23,8 @@ relative; top: 4px; left: 8px;" /> </p>
 </p>
 						<div class="header_center_logo">
 							<a  class="gb-cursor-default"><img 
-src="{{ mainPage['header'][languages[language1]]['logo_horisontal'] }}" alt="logo.png"></a>
+src="{{ global['settings'][languages[language1]]
+['logo_horisontal'] }}" alt="logo.png"></a>
 						</div>
 					</div>
 				</div>
@@ -29,10 +32,10 @@ src="{{ mainPage['header'][languages[language1]]['logo_horisontal'] }}" alt="log
 				<div class="fe-col-3 fe-col-m-only">
 					<div class="header_right">
 						<p class="header_right_cecutient"> <a 
-						href="#"
 						> 
 {{ mainPage['header'][languages[language1]]['eyesight'] | firstUpperCase }}
-						<img src="icon/img/glasses.png" alt="icon" style="position: relative; top: 5px;" /> </a> </p>
+						<img 
+src="icon/img/glasses.png" alt="icon" style="position: relative; top: 5px;" /> </a> </p>
 
 						
 {{ mainPage['settings']['phone_first'] }}<br />
@@ -68,8 +71,11 @@ src="{{ mainPage['header'][languages[language1]]['logo_horisontal'] }}" alt="log
 			</div>-->
 			<div id="header_logo">
 				<div id="header_logo_image">
-					<a class="gb-cursor-default"> 
-					<img src="icon/img/icon-logo.png" alt="logo" /></a>
+					<a 
+ng-click="routeGoToView(mainPage['header']['sun_link'])"
+					class="gb-cursor-default"> 
+					<img 
+					src="/icon/img/icon-logo.png" alt="logo" /></a>
 				</div>
 			</div>
 

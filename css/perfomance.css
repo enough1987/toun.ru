@@ -6,7 +6,6 @@
 
 #perfomance-wrapper .about-header {
     height: 100vh;
-    background: url('../img/about-s22-header.jpg') top center no-repeat;
     background-size: cover;
     padding-top: 1px;
 }

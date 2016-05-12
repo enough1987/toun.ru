@@ -23,7 +23,9 @@ ng-click="routeGoToView(item['field_link']['und'][0]['value'])" >
 <data-submenu ng-if="item['children']" >
                 <ul class="submenu">
     <data-repeat ng-repeat="child in item['children']">              
-                  <li class="submenu_item" ><a 
+                  <li class="submenu_item
+                  gb-cursor-pointer" ><a 
+
 ng-click="routeGoToView(child['field_link']['und'][0]['value'])"
                   > 
 {{ child[languages[language1]]['und'][0]['value'] }} </a></li>

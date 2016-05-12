@@ -80,8 +80,10 @@ ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
 												 </div>
 												 
 												 <div class="fe-col-4">
-												 
-<a ng-if="item[languages[language1]]['item']['buy_url']"> 
+												 											 
+<a target="_blank"
+href="{{ item[languages[language1]]['item']['buy_url'] }}"
+ng-if="item[languages[language1]]['item']['buy_url']"> 
 <img src="icon/img/buy.png" alt="icon"> 
 </a>
 												 
@@ -174,11 +176,11 @@ ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
 												 </div>
 												 
 												 <div class="fe-col-4">
-												 
-<a ng-if="item[languages[language1]]['item']['buy_url']"> 
+<a target="_blank"
+href="{{ item[languages[language1]]['item']['buy_url'] }}"
+ng-if="item[languages[language1]]['item']['buy_url']"> 
 <img src="icon/img/buy.png" alt="icon"> 
-</a>
-
+</a>												 
 												 </div>
 											 
 											 </div>
@@ -245,10 +247,15 @@ alt="image" />
 											 </div>
 											 
 											 <div class="fe-col-6">
-											 
-												 <p class="main_news_elements_title"> <span class="title-big"> 
+
+ <p gb-cursor-pointer
+ ng-click="routeGoToView( item[languages[language1]]['item']['link_more'] )"  
+ class="main_news_elements_title
+gb-cursor-pointer
+ "> <span class="title-big"> 
 {{ item[languages[language1]]['item']['title']  | onlyCharacters : 65 }}
-											     </span> </p>
+                </span> </p>
+
 												 
 												 <p class="main_news_elements_date"> 
 {{ item[languages[language1]]['item']['created'] }}

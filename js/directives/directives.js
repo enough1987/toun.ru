@@ -193,14 +193,16 @@ e.preventDefault();
 
 var  name = document.getElementsByName('name-from-form')[0].value;
 var  text = document.getElementsByName('text-from-form')[0].value; 
-
+//var  pageis = document.getElementsByName('text-from-form')[0].pageis; 
+            //console.log( pageis );
+            
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/content/go2json/comment_add/25");
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     // xhr.responseText
-                    alert( 'youare awesome' );
+                    alert( 'комментарий ушел' );
 document.getElementsByName('name-from-form')[0].value = '';
 document.getElementsByName('text-from-form')[0].value = '';                                
                 }
@@ -344,6 +346,51 @@ if( ! $('*').is('.tabs-links li a') ||
                     });
                 }
         }
+});
+
+
+customDirectives.directive('displayNoneDir', function () {
+    return {
+        restrict: 'A', 
+        scope : false,       
+        link: function (scope, element, attr) {
+                element.ready(function () {
+var intervalID = setInterval(function(){ 
+ 
+if ( !scope.$parent.perfomance ||
+     !scope.perfomance
+    ) { return '' };
+
+if ( attr["dataa"] ) {
+    element.removeAttr( 'gb-display-none' );
+    console.log( 'removeAttr' );
+          
+} else {
+    element.addClass( 'gb-display-none' ); 
+    console.log( 'addClass' );
+}
+    
+    clearInterval(intervalID);
+    /* 
+    var tabs = document.getElementsByClassName('tabs-item');
+    var owl = document.getElementsByClassName('owl-item');
+
+    for (var i = 0; i <= tabs.length; i++) {
+        if (! tabs[i].classList.contains("gb-display-none") ) {
+            tabs[i].classList.add("active");
+            owl[i].classList.add("active"); 
+            console.log( i );
+                                  
+            break;
+        }
+
+    }
+    */
+
+}, 3000 ); 
+                });
+        }
+    }
 });
 
 

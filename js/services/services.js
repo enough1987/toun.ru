@@ -141,7 +141,7 @@ customServices.factory('routeService', function ($location, $log) {
         setup: function(){
             return function(path) {
                 $log.debug( "go to rout" + " ' "+ path + " ' " );
-                $location.path(path);
+                //$location.path(path);
 
             }
         },

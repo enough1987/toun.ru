@@ -10,6 +10,10 @@
     opacity: 0 !important;
 }
 
+.gb-display-none {
+    display: none !important;
+}
+
 .gb-color-like-red {
     color: #ED8A8A;
 }
