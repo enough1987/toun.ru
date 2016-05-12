@@ -3,6 +3,9 @@
  */
 $(document).ready(function() {
 
+    console.log( 'accordion.js is going' );
+    
+
     $('.activeContent').show();
 
     $('.js-only-click-accordion').click(function(e) {

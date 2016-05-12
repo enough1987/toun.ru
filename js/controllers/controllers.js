@@ -8,8 +8,8 @@ $scope, $location, $log) {
 
 });
 
-taatrApp.controller("MainCtrl", function (
-$scope, $location, $route, $log,
+taatrApp.controller("MainCtrl", function ($scope, 
+$routeParams, $location, $route, $log,
 $ocLazyLoad,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, feInitService) {
@@ -21,10 +21,10 @@ seoTagsService, feInitService) {
 
    $scope.changelanguage = languageService.change($scope );
 
-   $scope.getPage = pageService.setup($scope);
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
-   $scope.global = $scope.getPage("/content/go2json/first/global", 'global');
-   $scope.page = $scope.getPage("/content/go2json/first/frontpage", 'mainPage');
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+   $scope.getPageWithStoradge("/content/go2json/first/frontpage", 'mainPage');
 
    $scope.routeGoToView = routeService.setup();
  
@@ -72,7 +72,7 @@ bool = index <= 11 ? ( ($scope.first_len <= 11) ?
 
 
 });
-
+ 
 taatrApp.controller("PerfomanceCtrl", function ($scope, $routeParams,
 $location, $log,
 $ocLazyLoad,
@@ -180,25 +180,85 @@ seoTagsService, getshoworhideFuncService) {
 
 });
 
-
-taatrApp.controller("TestCtrl", function ($scope, $location, $log,
-$ocLazyLoad,
+taatrApp.controller("FestivalCtrl", function ($scope, $location, $log,
+$ocLazyLoad, $routeParams,
 ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) { 
+seoTagsService) {
 
-   $log.debug( $location.path() +" PeopleallCtrl" );
+
+  $scope.getPage = pageService.setup($scope);
+  var xhr = new XMLHttpRequest();      
+  xhr.open("POST", 
+        "/content/go2json/festival/"+$routeParams.festival);
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            if (xhr.status != 200) {
+  console.log('status ' + xhr.status);
+  $scope.subview = '/views/global/404.html'; 
+  console.log( $scope.subview );   
+            }
+            else {
+  console.log('status ' + xhr.status);              
+  $scope.subview = '/views/festival/subview.html';
+  $scope.getPage("/content/go2json/festival/"+$routeParams.festival, 
+    'festival'); 
+  console.log( $scope.subview );
+            }
+        }
+      }
+  xhr.send(); 
+
+
+   $log.debug( $location.path() +" FestivalCtrl" );
+   $log.debug( $routeParams.festival );
 
    languageService.setup($scope);
 
    $scope.changelanguage = languageService.change($scope);
 
-   $scope.getPage = pageService.setup($scope);
 
-   $scope.global = $scope.getPage("/content/go2json/first/global", 'global');
-   $scope.getPage("/content/go2json/first/frontpage", 'mainPage');
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
    $scope.routeGoToView = routeService.setup();
- 
+   $scope.hash = routeService.gethash();
+
+   seoTagsService.setup('festival');
+
+   $scope.test = function(item){
+        console.log( item ); 
+        return item;       
+   };
+
+});
+
+
+taatrApp.controller("TestCtrl", function ($scope, $location, $log,
+$ocLazyLoad, $routeParams,
+ajaxService, localStorageService, languageService, pageService, routeService,
+seoTagsService) { 
+
+   $log.debug( $location.path() +" TestCtrl" );
+   $log.debug( $routeParams.project );
+
+   languageService.setup($scope);
+
+   $scope.changelanguage = languageService.change($scope);
+
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+   $scope.getPageWithStoradge("/content/go2json/first/frontpage", 'mainPage');
+
+   $scope.routeGoToView = routeService.setup();
+   $scope.hash = routeService.gethash();
+
+
    seoTagsService.setup('mainPage');
+
+   $scope.test = function(item){
+        console.log( item ); 
+        return item;       
+   };
 
 });

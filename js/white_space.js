@@ -1,3 +1,7 @@
+// Не используем этот файл
+
+function whitespaceFuncInit() {
+
 $(document).ready(function() {
 
     // T A B S
@@ -79,3 +83,4 @@ $(document).ready(function() {
     });
 
 });
+};

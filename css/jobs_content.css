@@ -1,0 +1,23 @@
+.jobs_box {
+    width: 90%;
+    margin: auto;
+}
+.vacancy {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0 20px 0;
+    border-top: 3px solid #EDEDED;
+}
+.job_title {
+    padding-bottom: 20px;
+}
+.jobs_title_text {
+    font-family: pt-serif-bold, sans-serif;
+    padding-left: 10px;
+}
+.job_description {
+    padding-bottom: 20px;
+}
+.job_description_text {
+    padding-left: 10px;
+}

@@ -1,0 +1,33 @@
+.awards_content {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0 20px 0;
+}
+.awards_content_name {
+    padding-bottom: 20px;
+}
+.awards_content_name_text {
+    padding-left: 10px;
+}
+.awards_content_message {
+    padding-bottom: 20px;
+}
+.awards_content_message_text {
+    padding-left: 10px;
+}
+.awards_content-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.awards_content-date {
+  margin-top: 20px;
+}
+.awards_content-separator {
+  border-bottom: 2px solid #f3f3f3;
+}
+.awards_content-img-border {
+  border: 2px solid #f3f3f3;
+}
+.awards_content-fix {
+    width: 85%;
+}

@@ -1,0 +1,902 @@
+
+
+<data-div id="perfomance-wrapper">
+<!--  
+    perfomance-wrapper needs to be for usedge perfomance.css
+-->
+
+
+
+<!-- W H I T E   S P A C E   F E S T I V A L   S T A R T -->
+<div class="fe-row">
+  <div class="white-space_festival global_content-wrapper">
+    <h2 class="common_top-heading white-space_heading-center">
+{{ festival['page']['field_title_header'][languages[language1]][0]['value']  }}
+</h2>
+    <div class="common_top-subheading common_top-subheading-center">
+{{ festival['page']['field_title_header'][languages[language2]][0]['value']  }}
+    </div>
+    <div class="white-space_festival_years">
+
+<data-repeat ng-repeat="item in festival['filter_menu']"
+ng-click="routeGoToView(item['field_link']['und'][0]['value'])" >
+      <p class="gallery_menu_paragraph"><a class="gallery_year-filter" 
+data-filter="{{ item[languages[language1]]['und'][0]['value']  }}" 
+>
+{{ item[languages[language1]]['und'][0]['value']  }} 
+      </a></p>
+</data-repeat>
+
+    </div>
+    <div class="fe-row">
+      <div class="fe-col-b-3 fe-col-m-4 space_visible">
+        <div class="fe-row white-space_festival_logo-box">
+          <img src="icon/img/white-space-logo.png" alt="" />
+        </div>
+      </div>
+      <div class="fe-col-b-9 fe-col-m-8">
+        <div class="white-space_festival_article_ru">
+          <p class="white-space_paragraph">
+{{ festival['page']['field_description_festival']
+[languages[language1]][0]['value']  }}
+
+          </p>
+        </div>
+        <br><br>
+        <div class="white-space_festival_article_kca-mns">
+          <p class="white-space_paragraph">
+{{ festival['page']['field_description_festival']
+[languages[language2]][0]['value']  }}
+          </p>
+        </div>
+      </div>
+      <div class="fe-col-b-3 fe-col-m-4 space_invisible">
+        <div class="fe-row white-space_festival_logo-box">
+<img src="{{ festival['page']['field_festival_logo']
+[languages[language1]][0]['uri']  }}" alt="" />
+        </div>
+        <div class="fe-row white-space_festival_link-box">
+          <a class="" 
+ng-click="routeGoToView(festival['page']['field_festival_links']
+[languages[language1]][0]['value'])"          
+>
+            <span class="white-space_festival_link-text">
+{{ festival['page']['field_festival_links']
+[languages[language1]][0]['title']  }}
+            </span><img src="icon/img/read-piece.png" alt=""/>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- W H I T E   S P A C E   F E S T I V A L   E N D -->
+
+
+
+<!-- W H I T E   S P A C E   R E P E R T U A R   S T A R T -->
+<div class="fe-row">
+  <div class="white-space_repertuar white-space_margin global_content-wrapper">
+    <h2 class="common_top-heading heading_top_border">
+{{ festival['page']['field_title_program']
+[languages[language1]][0]['value'] }}
+</h2>
+
+
+
+
+<data-div ng-bind-html="
+festival['page']['field_program']
+[languages[language1]][0]['value']">
+</data-div>
+
+
+
+  </div>
+</div>
+<!-- W H I T E   S P A C E   R E P E R T U A R   E N D -->
+
+
+
+
+<!-- W H I T E   S P A C E   G A L L E R Y   S T A R T -->
+<div class="fe-row">
+    <div class="fe-col-12 fe-col-m-only">
+        <!--T A B S-->
+        <div class="tabs">
+            <ul class="tabs-links">
+
+                <li 
+display-none-dir
+dataa="{{ festival['page']['field_title_photo']
+[languages[language1]][0]['value'] }}"
+datatargetfortabs="1"
+                class="active tabs-item"><a class="tabs-link" 
+                href="#tab1">
+{{ festival['page']['field_title_photo']
+[languages[language1]][0]['value'] }} 
+                &nbsp;&nbsp;&nbsp;|<br> 
+                    <span class="tabs-subheading">
+{{ festival['page']['field_title_photo']
+[languages[language2]][0]['value'] }}                                       
+                    </span></a></li>
+
+                <li 
+display-none-dir
+dataa="{{ festival['page']['field_title_photo']
+[languages[language1]][0]['value'] }}"
+datatargetfortabs="2"
+                class="tabs-item"><a class="tabs-link" 
+                href="#tab2">
+{{ festival['page']['field_title_video']
+[languages[language1]][0]['value'] }} 
+                &nbsp;&nbsp;&nbsp;|<br> 
+                    <span class="tabs-subheading">
+{{ festival['page']['field_title_video']
+[languages[language2]][0]['value'] }}                                       
+                    </span></a></li>
+
+                <li 
+display-none-dir
+dataa="{{ festival['page']['field_title_photo']
+[languages[language1]][0]['value'] }}"
+datatargetfortabs="3"
+                class="tabs-item"><a class="tabs-link" 
+                href="#tab3">
+{{ festival['page']['field_title_press']
+[languages[language1]][0]['value'] }} 
+                &nbsp;&nbsp;&nbsp;|<br> 
+                    <span class="tabs-subheading">
+{{ festival['page']['field_title_press']
+[languages[language2]][0]['value'] }}                                       
+                    </span></a></li>
+
+                <li 
+display-none-dir
+dataa="{{ festival['page']['field_title_photo']
+[languages[language1]][0]['value'] }}"
+datatargetfortabs="4"
+                class="tabs-item"><a class="tabs-link" 
+                href="#tab4">
+{{ festival['page']['field_title_docu']
+[languages[language1]][0]['value'] }} 
+                &nbsp;&nbsp;&nbsp;|<br> 
+                    <span class="tabs-subheading">
+{{ festival['page']['field_title_docu']
+[languages[language2]][0]['value'] }}                                       
+                    </span></a></li>
+
+                <li 
+display-none-dir
+dataa="{{ festival['page']['field_title_photo']
+[languages[language1]][0]['value'] }}"
+datatargetfortabs="5"
+                class="tabs-item"><a class="tabs-link" 
+                href="#tab5">
+{{ festival['page']['field_title_awards']
+[languages[language1]][0]['value'] }} 
+                &nbsp;&nbsp;&nbsp;|<br> 
+                    <span class="tabs-subheading">
+{{ festival['page']['field_title_awards']
+[languages[language2]][0]['value'] }}                                       
+                    </span></a></li>
+
+                        <li 
+                        class="tabs-item"><a class="tabs-link" href="#tab5">
+{{ festival['page']['field_title_comments'][languages[language1]][0]['value'] }}
+                        <br> <span
+                                class="tabs-subheading">
+{{ festival['page']['field_title_comments'][languages[language2]][0]['value'] }}
+                         </span></a></li>
+            </ul>
+            <div class="tabs-content">
+
+
+                        <div
+display-none-dir
+dataa="{{festival['page']
+['field_project_photo']['und']}}"
+datatargettab="1"
+                        id="tab1" class="tab tab-active fe-col-12">
+                    <!-- P H O T O   C A R O U S E L -->
+                    <div class="prev-button photo-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
+                    <div class="next-button photo-buttons"><img src="/icon/img/next_button.png" alt=""></div>
+                    <div id="lightgallery" class="owl-carousel owl-theme">
+
+
+<data-repeat ng-repeat="item in festival['page']
+['field_project_photo']['und']" >
+   
+                                <div 
+                                class="item" 
+data-src="{{item['uri']}}"
+                                >
+                                    <img 
+src="{{item['filename'] | changestartpath : 
+'/content/sites/default/files/styles/medium/public/' }}" 
+                                    />
+                                </div>
+</data-repeat>
+
+<!--
+                        <div class="item" data-src="img/big_image.jpg">
+                            <img src="img/s22_pic2.jpg" alt="image2.jpg"/>
+                        </div>
+                        <div class="item" data-src="img/big_image.jpg">
+                            <img src="img/s22_pic3.jpg" alt="image3.jpg"/>
+                        </div>
+                        <div class="item" data-src="img/big_image.jpg">
+                            <img src="img/s22_pic4.jpg" alt="image4.jpg"/>
+                        </div>
+                        <div class="item" data-src="img/big_image.jpg">
+                            <img src="img/s22_pic1.jpg" alt="image5.jpg"/>
+                        </div>
+                        <div class="item" data-src="img/big_image.jpg">
+                            <img src="img/s22_pic2.jpg" alt="image6.jpg"/>
+                        </div>
+                        <div class="item" data-src="img/big_image.jpg">
+                            <img src="img/s22_pic3.jpg" alt="image7.jpg"/>
+                        </div>
+                        <div class="item" data-src="img/big_image.jpg">
+                            <img src="img/s22_pic4.jpg" alt="image8.jpg"/>
+                        </div>
+-->
+                    </div>
+                </div>
+
+
+                <div id="tab2" class="tab">
+                    <!-- V I D E O   C A R O U S E L -->
+                    <div class="prev-button video-buttons"><img src="icon/img/prev_button.png" alt="button-left.png">
+                    </div>
+                    <div class="next-button video-buttons"><img src="icon/img/next_button.png" alt="button-right.png">
+                    </div>
+                    <div id="video-gallery" class="owl-carousel owl-theme">
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=G8KpPw303PY">
+                            <img class="grayscale" src="http://img.youtube.com/vi/G8KpPw303PY/hqdefault.jpg"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=PHAc3_MEjgQ">
+                            <img class="grayscale" src="http://img.youtube.com/vi/PHAc3_MEjgQ/hqdefault.jpg"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=kFv4qYZQz1g">
+                            <img class="grayscale" src="http://img.youtube.com/vi/kFv4qYZQz1g/hqdefault.jpg"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=ZpMp7RK2TMQ">
+                            <img class="grayscale" src="http://img.youtube.com/vi/ZpMp7RK2TMQ/hqdefault.jpg"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=N8l1Cjnm9Wg">
+                            <img class="grayscale" src="http://img.youtube.com/vi/N8l1Cjnm9Wg/hqdefault.jpg"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=e3PdcKcUvDY">
+                            <img class="grayscale" src="http://img.youtube.com/vi/e3PdcKcUvDY/hqdefault.jpg"/>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab3" class="tab">
+                    <!-- P U B L I C A T I O N S -->
+                    <div class="fe-col-12">
+                        <!--<div class="gallery_heading-box">-->
+                            <!--<div class="common_top-heading">Пресса</div>-->
+                            <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
+                        <!--</div>-->
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">Участник программы «Маска Плюс» Фестиваля 2015 года. Спектакль “И дольше века длится день”</span><br>
+                                    <a class="mass_media-link" href="">http://www.goldenmask.ru/spect.php?id=1154</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                    <span class="mass_media-text">Номинации на Премию «Золотая Маска» 2014г. - «Лучший спектакль в театре кукол», «Лучшая работа режиссера»,
+«Лучшая работа художника». Спектакль “Дети неба”</span><br>
+                                    <a class="mass_media-link" href="">http://www.goldenmask.ru/spect.php?id=1060</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">О театре обско-угорских народов “Солнце”</span><br>
+                                    <a class="mass_media-link" href="">http://tonkosti.ru/Театр_обско-угорских_народов_«Солнце»</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
+                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
+                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
+                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab4" class="tab">
+                    <!-- D O C S -->
+                    <p>
+                        <a ><img src="icon/img/docs.png" alt=""/><span class="white-space_gallery_docs-item">Положение фестиваля</span></a>
+                    </p>
+                    <p>
+                        <a ><img src="icon/img/docs.png" alt=""/><span class="white-space_gallery_docs-item">Заявка на участие</span></a>
+                    </p>
+                </div>
+                <div id="tab5" class="tab">
+                    <!-- F E S T I V A L   R E S U L T S -->
+                    <p>Описательный текст с итогами фестиваля.</p>
+                </div>
+                <!---->
+                <div id="tab6" class="tab">
+                    <!-- F E E D B A C K -->
+                    <div class="fe-row">
+                        <div class="fe-col-12">
+                            <div class="post">
+                                <p class="post-name">Александр</p>
+                                <p class="post-date">02/05/2016</p>
+                                <p class="post-message">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit. Commodi, dolore dolorem fugiat hic labore laboriosam magni nemo nisi
+                                    nobis non, nostrum provident quibusdam repellat reprehenderit repudiandae
+                                    rerum temporibus
+                                    vel voluptatum!</p>
+                            </div>
+                            <form class="feedback-form" action="feedback">
+                                <h4 class="feedback-title">Оставить отзыв:</h4>
+                                <input class="feedback feedback-name" type="text" placeholder="Имя Фамилия">
+                                <textarea class="feedback feedback-text" name="textarea" rows="8" cols="40"
+                                          placeholder="Текст отзыва"></textarea>
+                                <input class="submit-button" type="submit" name="submit-button"
+                                       value="Отправить">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--A C C O R D E O N-->
+    <div class="invisible fe-col-12">
+        <div class="accordion accordion-about">
+            <div class="accordion-section">
+                <a class="accordion-section-title activeTitle" href="#accordion-1"><span
+                        class="inner-box-text">Фото</span></a>
+
+                <div id="accordion-1" class="accordion-section-content activeContent">
+                    <div id="tab1" class="tab tab-active fe-col-12">
+                        <!-- P H O T O   C A R O U S E L -->
+                        <div id="lightgallery2" class="owl-carousel owl-theme">
+                            <div class="item"
+                                 data-src="http://1.bp.blogspot.com/-y8SPaO6KnVA/UOh1kJWZifI/AAAAAAAAheA/4Lj8eQx7AVw/s1600/sydney+australia+rubber+duck+6.jpg">
+                                <img class="grayscale"
+                                     src="https://flavorwire.files.wordpress.com/2016/04/5181176-3x2-940x627.jpg?w=205&h=138&crop=1"
+                                     alt="image1.jpg"/>
+                            </div>
+                            <div class="item" data-src="img/big_image.jpg">
+                                <img src="img/s22_pic2.jpg" alt="image2.jpg"/>
+                            </div>
+                            <div class="item" data-src="img/big_image.jpg">
+                                <img src="img/s22_pic3.jpg" alt="image3.jpg"/>
+                            </div>
+                            <div class="item" data-src="img/big_image.jpg">
+                                <img src="img/s22_pic4.jpg" alt="image4.jpg"/>
+                            </div>
+                            <div class="item" data-src="img/big_image.jpg">
+                                <img src="img/s22_pic1.jpg" alt="image5.jpg"/>
+                            </div>
+                            <div class="item" data-src="img/big_image.jpg">
+                                <img src="img/s22_pic2.jpg" alt="image6.jpg"/>
+                            </div>
+                            <div class="item" data-src="img/big_image.jpg">
+                                <img src="img/s22_pic3.jpg" alt="image7.jpg"/>
+                            </div>
+                            <div class="item" data-src="img/big_image.jpg">
+                                <img src="img/s22_pic4.jpg" alt="image8.jpg"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-section">
+                <a class="accordion-section-title" href="#accordion-2"><span
+                        class="inner-box-text">Видео</span></a>
+
+                <div id="accordion-2" class="accordion-section-content">
+                    <!-- V I D E O   C A R O U S E L -->
+                    <div id="video-gallery2" class="owl-carousel owl-theme">
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=G8KpPw303PY">
+                            <img src="http://img.youtube.com/vi/G8KpPw303PY/hqdefault.jpg" alt="video1"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=PHAc3_MEjgQ">
+                            <img src="http://img.youtube.com/vi/PHAc3_MEjgQ/hqdefault.jpg" alt="video2"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=kFv4qYZQz1g">
+                            <img src="http://img.youtube.com/vi/kFv4qYZQz1g/hqdefault.jpg" alt="video3"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=ZpMp7RK2TMQ">
+                            <img src="http://img.youtube.com/vi/ZpMp7RK2TMQ/hqdefault.jpg" alt="video4"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=N8l1Cjnm9Wg">
+                            <img src="http://img.youtube.com/vi/N8l1Cjnm9Wg/hqdefault.jpg" alt="video5"/>
+                        </div>
+                        <div class="light-gal-item" data-src="https://www.youtube.com/watch?v=e3PdcKcUvDY">
+                            <img src="http://img.youtube.com/vi/e3PdcKcUvDY/hqdefault.jpg" alt="video6"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-section">
+                <a class="accordion-section-title" href="#accordion-3"><span
+                        class="inner-box-text">Пресса о спектакле</span></a>
+
+                <div id="accordion-3" class="accordion-section-content">
+                    <!-- P U B L I C A T I O N S -->
+                    <div class="fe-col-12">
+                        <!--<div class="gallery_heading-box">-->
+                            <!--<div class="common_top-heading">Пресса</div>-->
+                            <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
+                        <!--</div>-->
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">Участник программы «Маска Плюс» Фестиваля 2015 года. Спектакль “И дольше века длится день”</span><br>
+                                    <a class="mass_media-link" href="">http://www.goldenmask.ru/spect.php?id=1154</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                    <span class="mass_media-text">Номинации на Премию «Золотая Маска» 2014г. - «Лучший спектакль в театре кукол», «Лучшая работа режиссера»,
+«Лучшая работа художника». Спектакль “Дети неба”</span><br>
+                                    <a class="mass_media-link" href="">http://www.goldenmask.ru/spect.php?id=1060</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">О театре обско-угорских народов “Солнце”</span><br>
+                                    <a class="mass_media-link" href="">http://tonkosti.ru/Театр_обско-угорских_народов_«Солнце»</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
+                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
+                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mass_media-box white_space_media-marginless">
+                            <div class="mass_media-paragraph white_space_media-marginless">
+                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
+                                <div class="text-wrap">
+                                    <span class="mass_media-text">В Ханты-Мансийске показали спектакль «И дольше века длится день»</span><br>
+                                    <a class="mass_media-link" href="">http://toun.ru/news_archive/news?news=1337961567&tape=</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <a class="accordion-section-title" href="#accordion-4"><span
+                        class="inner-box-text">Документы</span></a>
+
+                <div id="accordion-4" class="accordion-section-content">
+                    <!-- D O C S -->
+                    <p>
+                        <a href=""><img src="icon/img/docs.png" alt=""/><span class="white-space_gallery_docs-item">Положение фестиваля</span></a>
+                    </p>
+                    <p>
+                        <a href=""><img src="icon/img/docs.png" alt=""/><span class="white-space_gallery_docs-item">Заявка на участие</span></a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <a class="accordion-section-title" href="#accordion-5"><span
+                        class="inner-box-text">Итоги фестиваля</span></a>
+
+                <div id="accordion-5" class="accordion-section-content">
+                    <!-- F E S T I V A L   R E S U L T S -->
+                    <p>Описательный текст с итогами фестиваля.</p>
+                </div>
+            </div>
+
+            <div class="accordion-section">
+                <a class="accordion-section-title" href="#accordion-6"><span
+                        class="inner-box-text">Отзывы</span></a>
+
+                <div id="accordion-6" class="accordion-section-content">
+                    <!--F E E D B A C K-->
+                    <div class="fe-row">
+                        <div class="fe-col-12">
+                            <div class="post">
+                                <p class="post-name">Александр</p>
+                                <p class="post-date">02/05/2016</p>
+                                <p class="post-message">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit. Commodi, dolore dolorem fugiat hic labore laboriosam magni nemo nisi
+                                    nobis non, nostrum provident quibusdam repellat reprehenderit repudiandae
+                                    rerum temporibus
+                                    vel voluptatum!</p>
+                            </div>
+                            <form class="feedback-form" action="feedback">
+                                <h4 class="feedback-title">Оставить отзыв:</h4>
+                                <input class="feedback feedback-name" type="text" placeholder="Имя Фамилия">
+                                <textarea class="feedback feedback-text" name="textarea" rows="8" cols="40"
+                                          placeholder="Текст отзыва"></textarea>
+                                <input class="submit-button" type="submit" name="submit-button"
+                                       value="Отправить">
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- W H I T E   S P A C E   G A L L E R Y   E N D -->
+
+
+
+<!-- W H I T E   S P A C E   E X P E R T   S T A R T -->
+<div class="fe-row">
+    <div class="fe-col-6 fe-col-n-12">
+        <div class="white-space_expert global_content-wrapper white-space_left">
+            <h2 class="common_top-heading white-space_heading-padding">Экспертный комитет</h2>
+            <div class="white-space_contacts_wrapper">
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Владимир Васильевич Орел</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">Народный артист России, артист Тюменского
+                                драматического театра, Председатель Тюменского отделения Союза театральных деятелей
+                                России.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Арина Александровна Шепелева</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">Театральный критик, старший преподаватель РГИСИ,
+                                член номинационного совета Высшей театральной премии Санкт-Петербурга "Золотой софит",
+                                член жюри множества международных фестивалей театра кукол.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Куприна Владислава Дмитриевна</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">Театральный критик, заведующая литературной частью
+                                МТЮЗа, педагог РУТИ (ГИТИС). Печатается в "Петербургском театральном журнале", журнале
+                                "Сцена", газете "Экран и сцена" и др. Член жюри множества российских театральных
+                                фестивалей.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Евгений Александрович Авраменко</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">Театральный критик, преподаватель
+                                Санкт-Петербургской Школы русской драмы, эксперт премий "Золотая маска" и "Золотой
+                                софит".</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fe-col-6 fe-col-n-12">
+        <div class="white-space_org global_content-wrapper white-space_right">
+            <h2 class="common_top-heading white-space_heading-padding">Организационный комитет</h2>
+            <div class="white-space_contacts_wrapper">
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Буторина Светлана Михайловна</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">начальник управления по вопросам культурной политики и культурных ценностей
+                                Департамента культуры Ханты-Мансийского автономного округа - Югры</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Кравчук Ирина Петровна</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">начальник отдела профессионального искусства и народного творчества
+                                Департамента культуры Ханты-Мансийского автономного округа - Югры</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Литвинчук Евгений Леонидович</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">директор бюджетного учреждения Ханты-Мансийского автономного округа - Югры
+                                "Театр обско-угорских народов - Солнце"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Журавлева Лариса Николаевна</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">исполнительный директор автономного учреждения Ханты-Мансийского автономного округа - Югры
+                                "Концертно-театральный центр "Югра-классик"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Вишневская Анна Владимировна</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">художественный руководитель бюджетного учреждения Ханты-Мансийского автономного округа - Югры
+                                "Театр обско-угорских народов - Солнце</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Архипов Леонид Андреевич</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">Заслуженный работник культуры Ханты-Мансийского автономного округа - Югры, член союза театральных деятелей по
+                                Тюменской области</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Моор Зинаида Федоровна</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">Заслуженный работник культуры Ханты-Мансийского автономного округа - Югры</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fe-row white-space_contacts_item">
+                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+                        <div class="white-space_contacts_item-wrapper">
+                            <h4 class="white-space_contacts_name">Журавлев Виктор Михайлович</h4>
+                        </div>
+                    </div>
+                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
+                        <div class="white-space_contacts_item-wrapper">
+                            <p class="white-space_contacts_position">тележурналист, режиссер, лауреат премии Ханты-Мансийского автономного округа - Югры, член Союза
+                                журналистов РФ, начальник редакции финно-угорских программ ОТРК-Югра</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- W H I T E   S P A C E   E X P E R T   E N D -->
+
+
+
+
+<!-- W H I T E   S P A C E   C O N T A C T S   S T A R T -->
+<div class="fe-row">
+  <div class="white-space_contacts global_content-wrapper">
+    <h2 class="common_top-heading">Контакты</h2>
+    <div class="white-space_contacts_wrapper">
+      <div class="fe-row">
+        <div class="fe-col-3 fe-col-n-12">
+          <span class="white-space_contacts_section">Список критиков:</span>
+        </div>
+      </div>
+      <div class="fe-row white-space_contacts_item">
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+          <div class="white-space_contacts_item-wrapper">
+            <h4 class="white-space_contacts_name">Владимир Васильевич Орел</h4>
+          </div>
+        </div>
+        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_position">Народный артист России, артист Тюменского драматического театра. Председатель Тюменского отделения Союза театральных деятелей России.</p>
+          </div>
+        </div>
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_contacts">т/ф 8 (3452) 20-03-28</p>
+            <p class="white-space_contacts_contacts">8 (912) 920-71-60</p>
+            <p class="white-space_contacts_contacts">std-tmn@mail.ru</p>
+          </div>
+        </div>
+      </div>
+      <div class="fe-row white-space_contacts_item">
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+          <div class="white-space_contacts_item-wrapper">
+            <h4 class="white-space_contacts_name">Людмила Анатольевна Магина</h4>
+          </div>
+        </div>
+        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_position">Помощник в СТД</p>
+          </div>
+        </div>
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_contacts">8 (952) 345-83-75</p>
+          </div>
+        </div>
+      </div>
+      <div class="fe-row white-space_contacts_item">
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+          <div class="white-space_contacts_item-wrapper">
+            <h4 class="white-space_contacts_name">Арина Александровна Шепелева</h4>
+          </div>
+        </div>
+        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_position">Театральный критик, старший преподаватель РГИСИ, член номинационного совета Высшей театральной премии Санкт-Петербурга "Золотой софит", член жюри множества международных фестивалей театра кукол.</p>
+          </div>
+        </div>
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_contacts">8 (921) 588-23-90</p>
+            <p class="white-space_contacts_contacts">д. т. (812) 764 59 93</p>
+            <p class="white-space_contacts_contacts">nora-ra@yandex.ru</p>
+          </div>
+        </div>
+      </div>
+      <div class="fe-row white-space_contacts_item">
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+          <div class="white-space_contacts_item-wrapper">
+            <h4 class="white-space_contacts_name">Куприна Владислава Дмитриевна</h4>
+          </div>
+        </div>
+        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_position">Театральный критик, заведующая литературной частью МТЮЗа, педагог РУТИ (ГИТИС). Печатается в "Петербургском театральном журнале", журнале "Сцена", газете "Экран и сцена" и др. Член жюри множества российских театральных фестивалей.</p>
+          </div>
+        </div>
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_contacts">с. 8 (926) 300-28-43</p>
+            <p class="white-space_contacts_contacts">р. 8 (495) 699-49-61</p>
+            <p class="white-space_contacts_contacts">vladikuprina@mail.ru</p>
+            <p class="white-space_contacts_contacts">vladislavakuprina.1@mail.ru</p>
+          </div>
+        </div>
+      </div>
+      <div class="fe-row white-space_contacts_item">
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+          <div class="white-space_contacts_item-wrapper">
+            <h4 class="white-space_contacts_name">Евгений Александрович Авраменко</h4>
+          </div>
+        </div>
+        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_position">Театральный критик, преподаватель Санкт-Петербургской Школы русской драмы, эксперт премий "Золотая маска" и "Золотой софит".</p>
+          </div>
+        </div>
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
+          <div class="white-space_contacts_item-wrapper">
+            <p class="white-space_contacts_contacts">8 951 657 55 42</p>
+          </div>
+        </div>
+      </div>
+      <div class="fe-row">
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
+          <span class="white-space_contacts_section">Телефон для справок:</span>
+        </div>
+        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
+          <span>&nbsp;</span>
+        </div>
+        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
+          <p class="white-space_contacts_contacts">8(3467) 33-54-61</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- W H I T E   S P A C E   C O N T A C T S   E N D -->
+
+
+
+<data-init-dir 
+        perfomance-jquery-plagins-init-dir="{{festival}}" >
+</data-init-dir >
+
+
+<div 
+oc-lazy-load='[
+"/js/menu.js",
+"/js/accordion.js"
+]'>
+ 
+</div>
+
+
+
+
+
+</data-div>

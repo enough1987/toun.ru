@@ -1,0 +1,26 @@
+.documents_content_year-wrapper {
+    position: relative;
+    width: 90%;
+    height: 20px;
+    margin: 20px auto 15px;
+    border-bottom: 2px solid #f3f3f3;
+}
+.documents_content_year {
+    position: absolute;
+    display: inline-block;
+    bottom: -6px;
+    left: 12%;
+    color: #464646;
+    background: white;
+    padding: 30px 10px 0;
+}
+.documents_content_documents-wrapper {
+  width: 75%;
+  margin: auto;
+}
+.documents_content_document-wrapper {
+  margin: 10px 0;
+}
+.documents_content_document-title {
+  margin-left: 6px;
+}

@@ -1,5 +1,8 @@
 $(function () {
 
+    console.log( 'menu.js is going' );
+    
+
     var smallMenuButtton = fe.g("i", "small-menu-buttton");
     var btnState = false;
 

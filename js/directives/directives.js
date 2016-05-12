@@ -358,34 +358,33 @@ customDirectives.directive('displayNoneDir', function () {
 var intervalID = setInterval(function(){ 
  
 if ( !scope.$parent.perfomance ||
-     !scope.perfomance
+     !scope.perfomance 
     ) { return '' };
 
 if ( attr["dataa"] ) {
-    element.removeAttr( 'gb-display-none' );
-    console.log( 'removeAttr' );
-          
+    element.removeAttr( 'gb-display-none' );         
 } else {
     element.addClass( 'gb-display-none' ); 
-    console.log( 'addClass' );
 }
     
     clearInterval(intervalID);
-    /* 
+/*
     var tabs = document.getElementsByClassName('tabs-item');
-    var owl = document.getElementsByClassName('owl-item');
-
+    var tab = document.getElementsByClassName('tab');
     for (var i = 0; i <= tabs.length; i++) {
         if (! tabs[i].classList.contains("gb-display-none") ) {
-            tabs[i].classList.add("active");
-            owl[i].classList.add("active"); 
-            console.log( i );
-                                  
-            break;
+        
+tabs[i].classList.add("active");
+var target = tabs[i].getAttribute('datatargetfortabs');
+if ( target != '2') return '';
+if( ! target ) { console.log('did not set datatarget for'); return ''};
+var targetdiv = document.querySelector( 'div[datatargettab="'+target+'"]' );
+if( ! targetdiv ) { console.log('did not set datatarget'); return ''};
+targetdiv.classList.add("tab-active");
+ break;
         }
-
     }
-    */
+*/
 
 }, 3000 ); 
                 });

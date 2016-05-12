@@ -15,7 +15,7 @@
  */
  
  
- 
+
  
  
  
@@ -147,7 +147,9 @@ function go2json_get_data($type, $id) {
 	(array)$out;
 	//rr($out,'safe_value');
 
-	$replace = json_encode($out, JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE);
+	//$replace = json_encode($out, JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE);
+
+$replace = json_encode($out, JSON_HEX_TAG|JSON_HEX_QUOT|JSON_UNESCAPED_UNICODE);
 	$replace = str_replace("\"ru\"","\"field_lang_ru\"",$replace);
 	$replace = str_replace("\"en\"","\"field_lang_en\"",$replace);
 	$replace = str_replace("\"Kh\"","\"field_lang_kh\"",$replace);
@@ -624,8 +626,8 @@ $coms = comment_load_multiple($cids);
   $out['page'] = $node;
   $out['seo']["field_lang_en"]['title'] = $node["field_title_header"]["en"][0]["value"];
   $out['seo']["field_lang_ru"]['title'] = $node["field_title_header"]["ru"][0]["value"];
-  $out['seo']["field_lang_ru"]['description'] = $node["field_description_festival"]["ru"][0]["value"];
-  $out['seo']["field_lang_en"]['description'] = $node["field_description_festival"]["en"][0]["value"];
+  $out['seo']["field_lang_ru"]['description'] = $node["field__seo_"]["ru"][0]["value"];
+  $out['seo']["field_lang_en"]['description'] = $node["field__seo_"]["en"][0]["value"];
   
   $out['page']['static']['field_lang_ru']['send_button']="Отправить";
   $out['page']['static']['field_lang_en']['send_button']="Send";
@@ -921,6 +923,10 @@ $theme_setting['field_lang_en']['logo_vertical'] = theme_get_setting('bootstrap_
 $theme_setting['field_lang_en']['logo_vertical_invert'] = theme_get_setting('bootstrap_en_logo_invert2');
 $theme_setting['field_lang_ru']['logo_vertical'] = theme_get_setting('bootstrap_ru_logo2');
 $theme_setting['field_lang_ru']['logo_vertical_invert'] = theme_get_setting('bootstrap_ru_logo_invert2');
+$theme_setting['field_lang_en']['logo_horisontal'] = theme_get_setting('bootstrap_en_logo1');
+$theme_setting['field_lang_en']['logo_horisontal_invert'] = theme_get_setting('bootstrap_en_logo_invert1');
+$theme_setting['field_lang_ru']['logo_horisontal'] = theme_get_setting('bootstrap_ru_logo1');
+$theme_setting['field_lang_ru']['logo_horisontal_invert'] = theme_get_setting('bootstrap_ru_logo_invert1');
 
 
 
@@ -951,16 +957,13 @@ $head['field_lang_ru']['eyesight'] = theme_get_setting('bootstrap_ru_eyesight');
 $head['field_lang_en']['eyesight'] = theme_get_setting('bootstrap_en_eyesight');
 $head['bootstrap_eyesight_link'] = theme_get_setting('bootstrap_eyesight_link');
 
-$head['field_lang_en']['logo_horisontal'] = theme_get_setting('bootstrap_en_logo1');
-$head['field_lang_en']['logo_horisontal_invert'] = theme_get_setting('bootstrap_en_logo_invert1');
-$head['field_lang_ru']['logo_horisontal'] = theme_get_setting('bootstrap_ru_logo1');
-$head['field_lang_ru']['logo_horisontal_invert'] = theme_get_setting('bootstrap_ru_logo_invert1');
 
 
 
 $head['field_lang_ru']['title_map'] = theme_get_setting('bootstrap_ru_title_map');
 $head['field_lang_en']['title_map'] = theme_get_setting('bootstrap_en_title_map');
 $head['sun_link'] = "/video";
+$head['map_link'] = "/video";
 return $head;
 }
 
@@ -972,6 +975,8 @@ $lenta['video_lenta_webm'] = theme_get_setting('bootstrap_video_lenta_webm');
 $lenta['video_lenta_ogv'] = theme_get_setting('bootstrap_video_lenta_ogv');
 $lenta['video_lenta_jpg'] = theme_get_setting('bootstrap_video_lenta_jpg');
 $lenta['video_lenta_link'] = theme_get_setting('bootstrap_video_lenta_link');
+$lenta['video_lenta_link'] = "/test";
+
 
   return $lenta;
 }
@@ -1016,8 +1021,13 @@ function _go2json_get_error_message_type($type) {
  */
 function _go2json_get_error_message_id($id) {
   drupal_add_http_header('Status', '404', $append = FALSE);
+  //header("HTTP/1.x 404 Not Found");
+  header("HTTP/1.0 404 Not Found");
+  header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
+  //exit();
+  //return header("HTTP/1.0 404 Not Found");
   return array(
-    "error" => t( "The given ID didn't contain any return data. The argument was (@id)", array(
+    "error" => t( "404", array(
       "@id" => $id 
     ) ) 
   );

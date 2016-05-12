@@ -22,22 +22,46 @@ var taatrApp = angular.module("TaatrApp",
         templateUrl: '/views/projects/init.html',
         controller: 'ProjectsCtrl'        
       }).
+      when('/festival/:festival', {
+        templateUrl: '/views/festival/init.html',
+        controller: 'FestivalCtrl'        
+      }).      
       when('/peopleall', {
         templateUrl: '/views/peopleall/init.html',
         controller: 'TestCtrl'        
       }).
-      when('/page_mass_media', {
-        templateUrl: '/views/page_mass_media/init.html',
+      when('/mass_media', {
+        templateUrl: '/views/mass_media/init.html',
         controller: 'TestCtrl'        
       }).
-      when('/page_contacts', {
-        templateUrl: '/views/page_contacts/init.html',
+      when('/contacts', {
+        templateUrl: '/views/contacts/init.html',
         controller: 'TestCtrl'        
       }).   
       when('/page_white_space', {
         templateUrl: '/views/page_white_space/init.html',
         controller: 'TestCtrl'        
-      }).      
+      }). 
+      when('/jobs', {
+        templateUrl: '/views/jobs/init.html',
+        controller: 'TestCtrl'         
+      }).
+      when('/awards', {
+        templateUrl: '/views/awards/init.html',
+        controller: 'TestCtrl'         
+      }). 
+      when('/documents', {
+        templateUrl: '/views/documents/init.html',
+        controller: 'TestCtrl'         
+      }). 
+      when('/afisha', {
+        templateUrl: '/views/afisha/init.html',
+        controller: 'TestCtrl'         
+      }). 
+      when('/feedback', {
+        templateUrl: '/views/feedback/init.html',
+        controller: 'TestCtrl'         
+      }).           
       otherwise({
         redirectTo: '/'
       });

@@ -365,9 +365,9 @@ function url_fetch_title($url) {
  */
 function url_validate_url(&$element, &$form_state) {
   $value = trim($element['#value']);
-  form_set_value($element, $value, $form_state);
+ form_set_value($element, $value, $form_state);
 
   if ($value !== '' && !valid_url($value, TRUE)) {
-    form_error($element, t('The URL %url is not valid.', array('%url' => $value)));
+   //form_error($element, t('The URL %url is not valid.', array('%url' => $value)));
   }
 }

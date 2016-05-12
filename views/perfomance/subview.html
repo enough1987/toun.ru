@@ -9,7 +9,7 @@
             <a href="/">
                 <img class="fe-img" 
 src="{{ global['settings']
-[languages[language1]]['logo_vertical_invert'] }}">
+[languages[language1]]['logo_horisontal_invert'] }}">
             </a>
         </div>
 
@@ -175,6 +175,7 @@ perfomance['page']['field_project_people'][languages[language1]][0]['value']">
 display-none-dir
 dataa="{{ perfomance['page']['field_title_photo']
 [languages[language1]][0]['value'] }}"
+datatargetfortabs="1"
                         class="active tabs-item"><a class="tabs-link" href="#tab1">
 {{ perfomance['page']['field_title_photo'][languages[language1]][0]['value'] }}
 
@@ -186,6 +187,7 @@ dataa="{{ perfomance['page']['field_title_photo']
 display-none-dir
 dataa="{{perfomance['page']['field_title_video']
 [languages[language1]][0]['value']}}"
+datatargetfortabs="2"
                         class="tabs-item"><a class="tabs-link" href="#tab2">
 {{ perfomance['page']['field_title_video'][languages[language1]][0]['value'] }}
                          &nbsp;&nbsp;&nbsp;| <br> <span
@@ -196,6 +198,7 @@ dataa="{{perfomance['page']['field_title_video']
 display-none-dir
 dataa="{{perfomance['page']['field_title_press']
 [languages[language1]][0]['value']}}"
+datatargetfortabs="3"
                          class="tabs-item"><a class="tabs-link" href="#tab3">
 {{ perfomance['page']['field_title_press'][languages[language1]][0]['value'] }}
                        
@@ -206,6 +209,7 @@ dataa="{{perfomance['page']['field_title_press']
 display-none-dir
 dataa="{{perfomance['page']['field_title_awards']
 [languages[language1]][0]['value']}}"
+datatargetfortabs="4"
                          class="tabs-item"><a class="tabs-link" href="#tab4">
 {{ perfomance['page']['field_title_awards'][languages[language1]][0]['value'] }}
                         &nbsp;&nbsp;&nbsp;|<br> <span
@@ -213,7 +217,6 @@ dataa="{{perfomance['page']['field_title_awards']
 {{ perfomance['page']['field_title_awards'][languages[language2]][0]['value'] }}
                                 </span></a></li>
                         <li 
-
                         class="tabs-item"><a class="tabs-link" href="#tab5">
 {{ perfomance['page']['field_title_comments'][languages[language1]][0]['value'] }}
                         <br> <span
@@ -222,15 +225,19 @@ dataa="{{perfomance['page']['field_title_awards']
                          </span></a></li>
                     </ul>
 
+
                     <div class="tabs-content">
+
+
                         <div
 display-none-dir
 dataa="{{perfomance['page']
 ['field_project_photo']['und']}}"
+datatargettab="1"
                         id="tab1" class="tab tab-active fe-col-12">
 
                             <!-- P H O T O   C A R O U S E L -->
-                            <div class="prev-button photo-buttons"><img src="icon/img/prev_button.png" alt=""></div>
+                            <div class="prev-button photo-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
                             <div class="next-button photo-buttons"><img src="/icon/img/next_button.png" alt=""></div>
                             <div id="lightgallery" class="owl-carousel owl-theme">
 
@@ -243,8 +250,7 @@ dataa="{{perfomance['page']
 data-src="{{item['uri']}}"
                                 >
                                     <img 
-src="
-{{item['filename'] | changestartpath : 
+src="{{item['filename'] | changestartpath : 
 '/content/sites/default/files/styles/medium/public/' }}
 " 
                                     />
@@ -254,10 +260,12 @@ src="
                                 
                             </div>
                         </div>
+
                         <div 
 display-none-dir
 dataa="{{perfomance['page']
 ['field_project_video']['und']}}"
+datatargettab="2"
                         id="tab2" class="tab">
                             <!-- V I D E O   C A R O U S E L -->
                             <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
@@ -289,6 +297,7 @@ src="{{ item['video_id']
                         <div 
 display-none-dir
 dataa="{{perfomance['page']}}"
+datatargettab="3"
                         id="tab3" class="tab">
                             <!-- P U B L I C A T I O N S -->
 
@@ -303,6 +312,7 @@ dataa="{{perfomance['page']}}"
                         <div 
 display-none-dir
 dataa="{{perfomance['page']}}"
+datatargettab="4"
                         id="tab4" class="tab">
                             <!-- A W A R D S -->
                             <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda ipsum nisi, optio quas quis ullam veritatis! Deleniti excepturi ipsam, maxime mollitia nam nesciunt, praesentium quaerat recusandae reprehenderit sunt
@@ -531,9 +541,9 @@ ng-repeat="item in perfomance['comments']"
     </div>
 
 
-        <data-init-dir 
+<data-init-dir 
         perfomance-jquery-plagins-init-dir="{{perfomance}}" >
-        </data-init-dir >
+</data-init-dir >
 
 
 

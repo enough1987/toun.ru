@@ -1,0 +1,171 @@
+.global_content-wrapper {
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.white-space_docs,
+.white-space_festival-results,
+.white-space_org,
+.white-space_expert,
+.white-space_contacts {
+    margin-top: 30px;
+    padding-top: 45px;
+    border-top: 2px solid #f3f3f3;
+}
+
+/* W H I T E   S P A C E   R E P E R T U A R */
+
+.contacts_content-bg {
+  background: url('../img/page_afisha_content-bg.jpg') right top repeat-y;
+  transition: all .5s;
+}
+
+.afisha_content {
+    width: 64%;
+    margin-top: 150px;
+    margin-left: 11%;
+    margin-right: 25%;
+    transition: all .5s;
+    /*border-bottom: 2px solid #f3f3f3;*/
+}
+.afisha_content_top-heading-kca-mns {
+  font-size: 18px;
+}
+.afisha_content_month {
+    font-size: 26px;
+    padding: 0 2% 10px;
+    margin-top: 40px;
+}
+.afisha_content_month-kca-mns {
+    font-size: 12px;
+    /*border-bottom: 2px solid #f3f3f3;*/
+    padding: 0 2% 10px;
+}
+.afisha_content_head {
+    color: silver;
+    margin: 15px 2% 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f3f3f3;
+}
+.afisha_content_date-item {
+    margin: 20px 2% 0;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f3f3f3;
+}
+.afisha_content_date {
+  display: inline-block;
+  width: 35px;
+}
+.afisha_content_weekday {
+  display: inline-block;
+  width: 90px;
+}
+.afisha_content_title-box {
+    margin-bottom: 20px;
+}
+.afisha_content_title {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: .02em;
+}
+.afisha_content_title-kca-mns {
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: .04em;
+}
+.afisha_content_age-rating {
+    font-weight: normal;
+}
+
+.afisha_content_subtitle, .afisha_content_time {
+    font-size: 14px;
+    letter-spacing: .06em;
+}
+.afisha_content_time {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.afisha_content_address-box {
+  margin-bottom: 20px;
+}
+.afisha_content_teatr, .afisha_content_hall {
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: .1em;
+    display: block;
+}
+.afisha_content_buy-icon {
+  margin-left: 10px;
+  vertical-align: sub;
+}
+
+.afisha_content_schedule {
+    /*border-bottom: 2px solid #f3f3f3;*/
+    padding-bottom: 20px;
+}
+
+/* D I F F E R E N T */
+
+.white-space_heading-padding {
+    padding-bottom: 20px;
+}
+.white-space_heading-center{
+    width: 90%;
+}
+.common_top-subheading-center {
+    width: 90%;
+}
+.space_visible {
+    display: none;
+}
+.white_space_media-marginless {
+    margin-left: 0;
+}
+
+@media screen and (max-width: 949px) {
+    .white-space_festival {
+        width: auto;
+        margin-top: 100px;
+        margin-left: 4%;
+        margin-right: 2%;
+    }
+    .white-space_right,
+    .white-space_left {
+        margin: auto;
+    }
+    .white-space_festival_years {
+        width: 96%;
+    }
+    .white-space_heading-center {
+        width: 100%;
+    }
+    .common_top-subheading-center {
+        width: 100%;
+    }
+    .space_visible {
+        display: block;
+    }
+    .space_invisible {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .afisha_content {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contacts_content-bg {
+      background-position: 50vw top;
+    }
+    .afisha_content {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
