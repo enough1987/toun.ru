@@ -121,7 +121,8 @@ festival['page']['field_program']
 display-none-dir
 dataa="{{ festival['page']['field_title_photo']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="1"
+datatargetfortabs="#tab1"
+dircanbestart="{{ festival['page']['vid'] }}"
                 class="active tabs-item"><a class="tabs-link  gb-cursor-pointer" 
                 datahref="#tab1">
 {{ festival['page']['field_title_photo']
@@ -136,7 +137,8 @@ datatargetfortabs="1"
 display-none-dir
 dataa="{{ festival['page']['field_title_photo']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="2"
+datatargetfortabs="#tab2"
+dircanbestart="{{ festival['page']['vid'] }}"
                 class="tabs-item"><a class="tabs-link  gb-cursor-pointer" 
                 datahref="#tab2">
 {{ festival['page']['field_title_video']
@@ -151,7 +153,8 @@ datatargetfortabs="2"
 display-none-dir
 dataa="{{ festival['page']['field_title_photo']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="3"
+datatargetfortabs="#tab3"
+dircanbestart="{{ festival['page']['vid'] }}"
                 class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
                 datahref="#tab3">
 {{ festival['page']['field_title_press']
@@ -166,7 +169,8 @@ datatargetfortabs="3"
 display-none-dir
 dataa="{{ festival['page']['field_title_docu']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="4"
+datatargetfortabs="#tab4"
+dircanbestart="{{ festival['page']['vid'] }}"
                 class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
                 datahref="#tab4">
 {{ festival['page']['field_title_docu']
@@ -179,9 +183,11 @@ datatargetfortabs="4"
 
                 <li 
 display-none-dir
+show-node-tabs-dir
 dataa="{{ festival['page']['field_title_photo']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="5"
+datatargetfortabs="#tab5"
+dircanbestart="{{ festival['page']['vid'] }}"
                 class="tabs-item"><a class="tabs-link  gb-cursor-pointer" 
                 datahref="#tab5">
 {{ festival['page']['field_title_awards']
@@ -205,10 +211,11 @@ datatargetfortabs="5"
 
 
                 <div
-display-none-dir
+
 dataa="{{festival['page']
 ['field_project_photo']['und']}}"
-datatargettab="1"
+dircanbestart="{{ festival['page']['vid'] }}"
+datatargettab="#tab1"
                         id="tab1" class="tab tab-active fe-col-12">
                     <!-- P H O T O   C A R O U S E L -->
                     <div class="prev-button photo-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
@@ -236,10 +243,11 @@ src="{{item['filename'] | changestartpath :
 
 
                         <div 
-display-none-dir
+
 dataa="{{festival['page']
 ['field_project_video']['und']}}"
-datatargettab="2"
+dircanbestart="{{ festival['page']['vid'] }}"
+datatargettab="#tab2"
                         id="tab2" class="tab">
                             <!-- V I D E O   C A R O U S E L -->
                             <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
@@ -271,10 +279,11 @@ src="{{ item['video_id']
 
 
                 <div 
-display-none-dir
+
 dataa="{{festival['page']
 ['field_press'][languages[language1]]}}"
-datatargettab="3"
+dircanbestart="{{ festival['page']['vid'] }}"
+datatargettab="#tab3"
                 id="tab3" class="tab">
                     <!-- P U B L I C A T I O N S -->
                     <div class="fe-col-12">
@@ -308,9 +317,10 @@ datatargettab="3"
                 </div>
 
                 <div 
-display-none-dir
+
 dataa="{{festival['page']['field_docu'][languages[language1]]}}"
-datatargettab="4"
+dircanbestart="{{ festival['page']['vid'] }}"
+datatargettab="#tab4"
                 id="tab4" class="tab">
                     <!-- D O C S -->
 
@@ -331,10 +341,11 @@ class="white-space_gallery_docs-item">
                 </div>
 
                 <div 
-display-none-dir
+
 dataa="{{ festival['page']['field_festival_awards']
 [languages[language1]][0]['value'] }}"
-datatargettab="5"
+dircanbestart="{{ festival['page']['vid'] }}"
+datatargettab="#tab5"
                 id="tab5" class="tab">
                     <!-- F E S T I V A L   R E S U L T S -->
                 
@@ -400,8 +411,9 @@ ng-repeat="item in festival['comments']"
     <!--A C C O R D E O N-->
     <div class="invisible fe-col-12">
         <div class="accordion accordion-about">
+
             <div class="accordion-section">
-                <a class="accordion-section-title activeTitle gb-cursor-pointer" 
+                <a class="accordion-section-title activeTitle gb-cursor-pointer"
                 datahref="#accordion-1"><span
                         class="inner-box-text">
 {{ festival['page']['field_title_photo']
@@ -434,6 +446,7 @@ src="
                     </div>
                 </div>
             </div>
+
             <div class="accordion-section">
                 <a class="accordion-section-title gb-cursor-pointer" 
                 datahref="#accordion-2"><span

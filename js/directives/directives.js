@@ -194,15 +194,15 @@ e.preventDefault();
 
 console.log( e );
 console.log( 'Name is :' );
-console.log( e.currentTarget[0].value );
+console.log( e.target[0].value );
 console.log( 'Comment is :' );
-console.log( e.currentTarget[1].value );
+console.log( e.target[1].value );
 console.log( 'Id of page is :' );
-console.log( e.currentTarget[0].alt );
+console.log( e.target[0].alt );
 
-var  name = e.currentTarget[0].value;
-var  text = e.currentTarget[1].value;
-var  id = e.currentTarget[0].alt
+var  name = e.target[0].value;
+var  text = e.target[1].value;
+var  id = e.target[0].alt
 
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/content/go2json/comment_add/"+id);
@@ -214,8 +214,8 @@ var  id = e.currentTarget[0].alt
                     } else {
                         // xhr.responseText
                         alert( 'комментарий ушел' );
-                        e.currentTarget[0].value = '';
-                        e.currentTarget[1].value = '';  
+                        e.target[0].value = '';
+                        e.target[1].value = '';  
                     }         
                 } 
             }
@@ -276,6 +276,7 @@ if( ! $('*').is('.tabs-links li a') ||
     // T A B S
     $('.tabs-links li a').on('click', function(e)  {
         var currentAttrValue = $(this).attr('datahref');
+       console.log( 'tabs are going' );
        
 
         // Show/Hide Tabs
@@ -414,38 +415,20 @@ customDirectives.directive('displayNoneDir', function () {
     return {
         restrict: 'A', 
         scope : false,       
-        link: function (scope, element, attr) {
+        link: function displayNoneDir(scope, element, attr) {
                 element.ready(function () {
+
 var intervalID = setInterval(function(){ 
  
-if ( !scope.$parent.perfomance ||
-     !scope.perfomance 
-    ) { return '' };
+if( ! attr['dircanbestart'] ) { return '' };
 
 if ( attr["dataa"] ) {
-    element.removeAttr( 'gb-display-none' );         
+    element.removeAttr( 'gb-display-none' );
 } else {
     element.addClass( 'gb-display-none' ); 
-}
-    
+}    
     clearInterval(intervalID);
-/*
-    var tabs = document.getElementsByClassName('tabs-item');
-    var tab = document.getElementsByClassName('tab');
-    for (var i = 0; i <= tabs.length; i++) {
-        if (! tabs[i].classList.contains("gb-display-none") ) {
-        
-tabs[i].classList.add("active");
-var target = tabs[i].getAttribute('datatargetfortabs');
-if ( target != '2') return '';
-if( ! target ) { console.log('did not set datatarget for'); return ''};
-var targetdiv = document.querySelector( 'div[datatargettab="'+target+'"]' );
-if( ! targetdiv ) { console.log('did not set datatarget'); return ''};
-targetdiv.classList.add("tab-active");
- break;
-        }
-    }
-*/
+
 
 }, 3000 ); 
                 });
@@ -454,3 +437,31 @@ targetdiv.classList.add("tab-active");
 });
 
 
+customDirectives.directive('showNodeTabsDir', function () {
+    return {
+        restrict: 'A', 
+        scope : false,       
+        link: function displayNoneDir(scope, element, attr) {
+                element.ready(function () {
+
+var intervalID = setInterval(function(){ 
+ 
+        if( ! attr['dircanbestart'] ) { return '' };
+
+        var targets = document.querySelectorAll('[datatargetfortabs]') ;
+
+        for (var i = 0; i < targets.length; i++) {
+            if( targets[i].getAttribute('dataa') ){
+
+    var  currentAttrValue = targets[i].getAttribute('datatargetfortabs');
+    $('.tabs ' + currentAttrValue).show().siblings().hide();
+    break;
+    clearInterval(intervalID);    
+            };           
+        }
+
+}, 3000 ); 
+                });
+        }
+    }
+});

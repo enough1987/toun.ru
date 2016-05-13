@@ -175,7 +175,9 @@ perfomance['page']['field_project_people'][languages[language1]][0]['value']">
 display-none-dir
 dataa="{{ perfomance['page']['field_title_photo']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="1"
+datatargetfortabs="#tab1"
+dircanbestart="{{ perfomance['page']['vid'] }}"
+
                         class="active tabs-item"><a class="tabs-link gb-cursor-pointer" 
                         datahref="#tab1">
 {{ perfomance['page']['field_title_photo'][languages[language1]][0]['value'] }}
@@ -188,7 +190,9 @@ datatargetfortabs="1"
 display-none-dir
 dataa="{{perfomance['page']['field_title_video']
 [languages[language1]][0]['value']}}"
-datatargetfortabs="2"
+datatargetfortabs="#tab2"
+dircanbestart="{{ perfomance['page']['vid'] }}"
+
                         class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
                         datahref="#tab2">
 {{ perfomance['page']['field_title_video'][languages[language1]][0]['value'] }}
@@ -200,7 +204,8 @@ datatargetfortabs="2"
 display-none-dir
 dataa="{{perfomance['page']['field_title_press']
 [languages[language1]][0]['value']}}"
-datatargetfortabs="3"
+datatargetfortabs="#tab3"
+dircanbestart="{{ perfomance['page']['vid'] }}"
                          class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
                          datahref="#tab3">
 {{ perfomance['page']['field_title_press'][languages[language1]][0]['value'] }}
@@ -210,9 +215,11 @@ datatargetfortabs="3"
                          </span></a></li>
                         <li
 display-none-dir
+show-node-tabs-dir
 dataa="{{perfomance['page']['field_title_awards']
 [languages[language1]][0]['value']}}"
-datatargetfortabs="4"
+datatargetfortabs="#tab4"
+dircanbestart="{{ perfomance['page']['vid'] }}"
                          class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
                          datahref="#tab4">
 {{ perfomance['page']['field_title_awards'][languages[language1]][0]['value'] }}
@@ -235,10 +242,12 @@ datatargetfortabs="4"
 
 
                         <div
-display-none-dir
+
 dataa="{{perfomance['page']
-['field_project_photo']['und']}}"
-datatargettab="1"
+['field_project_photo']['und']}}" 
+dircanbestart="{{ perfomance['page']['vid'] }}"
+datatargettab="#tab1"
+
                         id="tab1" class="tab tab-active fe-col-12">
 
                             <!-- P H O T O   C A R O U S E L -->
@@ -267,10 +276,12 @@ src="{{item['filename'] | changestartpath :
                         </div>
 
                         <div 
-display-none-dir
+
 dataa="{{perfomance['page']
 ['field_project_video']['und']}}"
-datatargettab="2"
+dircanbestart="{{ perfomance['page']['vid'] }}"
+datatargettab="#tab2"
+
                         id="tab2" class="tab">
                             <!-- V I D E O   C A R O U S E L -->
                             <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
@@ -301,9 +312,11 @@ src="{{ item['video_id']
                         </div>
 
                         <div 
-display-none-dir
+
 dataa="{{perfomance['page']}}"
-datatargettab="3"
+dircanbestart="{{ perfomance['page']['vid'] }}"
+datatargettab="#tab3"
+
                         id="tab3" class="tab">
                             <!-- P U B L I C A T I O N S -->
 
@@ -316,9 +329,10 @@ datatargettab="3"
                             <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea eaque id ipsa iste iure provident quas quis repellat vitae. Eligendi hic laboriosam qui sapiente voluptas! At eveniet harum id!</p>
                         </div>
                         <div 
-display-none-dir
+
 dataa="{{perfomance['page']}}"
-datatargettab="4"
+dircanbestart="{{ perfomance['page']['vid'] }}"
+datatargettab="#tab4"
                         id="tab4" class="tab">
                             <!-- A W A R D S -->
                             <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda ipsum nisi, optio quas quis ullam veritatis! Deleniti excepturi ipsam, maxime mollitia nam nesciunt, praesentium quaerat recusandae reprehenderit sunt

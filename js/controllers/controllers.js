@@ -229,6 +229,7 @@ seoTagsService) {
         console.log( item ); 
         return item;       
    };
+   
 
 });
 
