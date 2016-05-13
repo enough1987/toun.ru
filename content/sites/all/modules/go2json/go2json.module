@@ -525,7 +525,7 @@ foreach ($mns2 as $value) {
 }
  
  return $out;
-
+ 
 }
 
 ////
@@ -543,11 +543,9 @@ return false;
 /////
 function _go2json_perfomance($id) {
  //$node = node_load( $id );
-  $node = node_load( $id );
+$node = node_load( $id );
 
 
-$cids = comment_get_thread($node, 'COMMENT_PUBLISHED', 100);
-$coms = comment_load_multiple($cids);
 
 
   $node = (array)$node;
@@ -598,6 +596,13 @@ function _go2json_festival($id) {
   $node = node_load( $id );
 // если нужно ддобавить новый фестиваль то это делается так: меню загружается из термина таксономи по id, а у  фестиваля будет сортивка по терминам таксонмии. и у каждого свое меню
 
+//if ($node['page']['type'] != 'festival') {
+    //drupal_add_http_header('Status', '404', $append = FALSE);
+
+ // }
+
+
+
 $cids = comment_get_thread($node, 'COMMENT_PUBLISHED', 100);
 $coms = comment_load_multiple($cids);
 
@@ -640,7 +645,7 @@ $coms = comment_load_multiple($cids);
   
   // comment_node_load( $id, );
   $out['comments'] = comment_view_multiple($coms, $node);
-  $out['filter_menu'] = _go2json_get_taxonomy_vocabulary('menu_projects');
+  $out['filter_menu'] = _go2json_get_taxonomy_vocabulary('menu_white');
   return  $out;
  
 }
@@ -778,20 +783,7 @@ return $request;
 
 
 
-/**
- * Get a menu by ID (machine-name) and return (modified by hook) data
- *
- * @uses     Drupal Hook to modify the menu to custom format
- * @example  function mymodule_go2json_get_menu($menu-name) {
- *             $menu_array = array();
- *             $menu_array['id'] = $menu->cid;
- *             $menu_array['name'] = $menu->name;
- *
- *             return $menu_array;
- *           }
- * @param string $id
- * @return object|array
- */
+
 function _go2json_get_menu($id) {
   $menu = menu_tree_all_data( $id );
   // Check permissions
@@ -808,20 +800,14 @@ function _go2json_get_menu($id) {
   return $menu;
 }
 
-/**
- * Get a taxonomy_term by ID and return (modified by hook) data
- * 
- * @uses     Drupal Hook to modify the taxonomy_term to custom format
- * @example  function mymodule_go2json_get_taxonomy_term($taxonomy_term) {
- *             $taxonomy_term_array = array();
- *             $taxonomy_term_array['id'] = $taxonomy_term->tid;
- *             $taxonomy_term_array['name'] = $taxonomy_term->name;
- *         
- *             return $taxonomy_term_array;
- *           }
- * @param int $id
- * @return object|array
- */
+
+
+
+
+
+
+
+
 function _go2json_get_taxonomy_term($id) {
   $taxonomy_term = taxonomy_term_load($id);
   
@@ -834,20 +820,7 @@ function _go2json_get_taxonomy_term($id) {
   return $taxonomy_term;
 }
 
-/**
- * Get a taxonomy_vocabulary by ID and return (modified by hook) data
- * 
- * @uses     Drupal Hook to modify the taxonomy_vocabulary to custom format
- * @example  function mymodule_go2json_get_taxonomy_vocabulary($taxonomy_vocabulary) {
- *             $taxonomy_vocabulary_array = array();
- *             $taxonomy_vocabulary_array['id'] = $taxonomy_vocabulary->vid;
- *             $taxonomy_vocabulary_array['name'] = $taxonomy_vocabulary->name;
- *         
- *             return $taxonomy_vocabulary_array;
- *           }
- * @param int $id
- * @return object|array
- */
+
  
  function onix_reportes_build_tree($flatTree){
 	$tree = array();
@@ -884,23 +857,11 @@ function _go2json_get_taxonomy_vocabulary($id) {
   return $tree;
   
   
- // $vocabularies = taxonomy_vocabulary_load($id);
- /// return reset($vocabularies);
+
+  
 }
 
-/**
- * Get a custom_data by ID and return (modified by hook) data
- * 
- * @uses     Drupal Hook to modify the custom_data to custom format
- * @example  function mymodule_go2json_get_custom_data($custom_data) {
- *             $custom_data_array = array();
- *             $custom_data_array['id'] = 0;
- *             $custom_data_array['title'] = "example";
- *         
- *             return $custom_data_array;
- *           }
- * @return FALSE|array
- */
+
 function _go2json_get_custom_data() {
   $custom_data = FALSE;
   
@@ -983,12 +944,7 @@ $lenta['video_lenta_link'] = "/test";
 
 
 
-/**
- * Return an error message when the user doesn't have any permissions for the content
- * 
- * @param string $type
- * @return array
- */
+
 function _go2json_get_error_message_permission($type, $id) {
   return array(
     "error" => t( "You don't have any permissions to view this content. The arguments were (@type) and (@id)", array(

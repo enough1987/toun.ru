@@ -71,6 +71,8 @@ customFilters.filter('trusted', function ($sce) {
 customFilters.filter('fromtimestamp', function () {
     return function(value) {
         if (angular.isNumber(+value) && value != '' ) { 
+            console.log( value  );
+            
             var timestamp = +value;          
             var date = new Date(timestamp*1000);
 

@@ -215,7 +215,7 @@ dircanbestart="{{ perfomance['page']['vid'] }}"
                          </span></a></li>
                         <li
 display-none-dir
-show-node-tabs-dir
+shownodetabsdir
 dataa="{{perfomance['page']['field_title_awards']
 [languages[language1]][0]['value']}}"
 datatargetfortabs="#tab4"
@@ -313,7 +313,7 @@ src="{{ item['video_id']
 
                         <div 
 
-dataa="{{perfomance['page']}}"
+dataa="{{ perfomance['page']['vid'] }}"
 dircanbestart="{{ perfomance['page']['vid'] }}"
 datatargettab="#tab3"
 
@@ -330,7 +330,7 @@ datatargettab="#tab3"
                         </div>
                         <div 
 
-dataa="{{perfomance['page']}}"
+dataa="{{ perfomance['page']['vid'] }}"
 dircanbestart="{{ perfomance['page']['vid'] }}"
 datatargettab="#tab4"
                         id="tab4" class="tab">
@@ -354,7 +354,8 @@ datatargettab="#tab4"
 
                                     class="feedback-form" 
 custom-submit-dir
-                                    >
+dataa="{{ perfomance['page']['vid'] }}"
+dircanbestart="{{ perfomance['page']['vid'] }}"                                   >
                                         <h4 class="feedback-title">
 {{ perfomance['page']['static'][languages[language1]]['review_title'] }}
 </h4>

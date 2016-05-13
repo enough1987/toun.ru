@@ -437,31 +437,3 @@ if ( attr["dataa"] ) {
 });
 
 
-customDirectives.directive('showNodeTabsDir', function () {
-    return {
-        restrict: 'A', 
-        scope : false,       
-        link: function displayNoneDir(scope, element, attr) {
-                element.ready(function () {
-
-var intervalID = setInterval(function(){ 
- 
-        if( ! attr['dircanbestart'] ) { return '' };
-
-        var targets = document.querySelectorAll('[datatargetfortabs]') ;
-
-        for (var i = 0; i < targets.length; i++) {
-            if( targets[i].getAttribute('dataa') ){
-
-    var  currentAttrValue = targets[i].getAttribute('datatargetfortabs');
-    $('.tabs ' + currentAttrValue).show().siblings().hide();
-    break;
-    clearInterval(intervalID);    
-            };           
-        }
-
-}, 3000 ); 
-                });
-        }
-    }
-});

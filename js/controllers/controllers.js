@@ -124,6 +124,33 @@ seoTagsService) {
         return item;       
    };
 
+
+
+   $scope.showNodeTabsDir  = function () {
+
+    var intervalID = setInterval(function(){ 
+    
+        if( ! document.querySelectorAll('[dircanbestart]') ) { return '' };
+
+        var targets = document.querySelectorAll('[datatargetfortabs]') ;
+
+        for (var i = 0; i < targets.length; i++) {
+            if( targets[i].getAttribute('dataa') ){
+
+    var  currentAttrValue = targets[i].getAttribute('datatargetfortabs');
+    $('.tabs ' + currentAttrValue).show().siblings().hide();
+    clearInterval(intervalID); 
+document.querySelectorAll('[shownodetabsdir]')[0].setAttribute('shownodetabsdir', 'true'); 
+    break;        
+            };           
+        }
+
+    }, 3000 ); 
+
+  };
+  $scope.showNodeTabsDir(); 
+
+
 });
 
 
@@ -229,6 +256,31 @@ seoTagsService) {
         console.log( item ); 
         return item;       
    };
+
+   
+   $scope.showNodeTabsDir  = function () {
+
+    var intervalID = setInterval(function(){ 
+    
+        if( ! document.querySelectorAll('[dircanbestart]') ) { return '' };
+
+        var targets = document.querySelectorAll('[datatargetfortabs]') ;
+
+        for (var i = 0; i < targets.length; i++) {
+            if( targets[i].getAttribute('dataa') ){
+
+    var  currentAttrValue = targets[i].getAttribute('datatargetfortabs');
+    $('.tabs ' + currentAttrValue).show().siblings().hide();
+    clearInterval(intervalID); 
+document.querySelectorAll('[shownodetabsdir]')[0].setAttribute('shownodetabsdir', 'true'); 
+    break;        
+            };           
+        }
+
+    }, 3000 ); 
+
+  };
+  $scope.showNodeTabsDir(); 
    
 
 });
