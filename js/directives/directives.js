@@ -191,23 +191,33 @@ customDirectives.directive( 'customSubmitDir' , function()
 
 e.preventDefault();
 
-var  name = document.getElementsByClassName('name-from-form')[0].value;
-console.log( document.getElementsByClassName('text-from-form') );
 
-var  text = document.getElementsByClassName('text-from-form')[0].value; 
-//var  pageis = document.getElementsByName('text-from-form')[0].pageis; 
-            //console.log( pageis );
-            
+console.log( e );
+console.log( 'Name is :' );
+console.log( e.currentTarget[0].value );
+console.log( 'Comment is :' );
+console.log( e.currentTarget[1].value );
+console.log( 'Id of page is :' );
+console.log( e.currentTarget[0].alt );
+
+var  name = e.currentTarget[0].value;
+var  text = e.currentTarget[1].value;
+var  id = e.currentTarget[0].alt
+
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/content/go2json/comment_add/25");
+            xhr.open("POST", "/content/go2json/comment_add/"+id);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // xhr.responseText
-                    alert( 'комментарий ушел' );
-document.getElementsByName('name-from-form')[0].value = '';
-document.getElementsByName('text-from-form')[0].value = '';                                
-                }
+                if (xhr.readyState == 4) {
+                    if ( xhr.status != 200) {
+                        alert( 'что то пошло не так, повторите попытку' );                    
+                    } else {
+                        // xhr.responseText
+                        alert( 'комментарий ушел' );
+                        e.currentTarget[0].value = '';
+                        e.currentTarget[1].value = '';  
+                    }         
+                } 
             }
             xhr.send("name="+name+"&text="+text);
 

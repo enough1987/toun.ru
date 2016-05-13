@@ -55,17 +55,22 @@ data-filter="{{ item[languages[language1]]['und'][0]['value']  }}"
 <img src="{{ festival['page']['field_festival_logo']
 [languages[language1]][0]['uri']  }}" alt="" />
         </div>
+
+<data-repeat ng-repeat="item in festival['page']['field_festival_links']
+[languages[language1]]" >
         <div class="fe-row white-space_festival_link-box">
           <a class="" 
-ng-click="routeGoToView(festival['page']['field_festival_links']
-[languages[language1]][0]['value'])"          
+ng-click="routeGoToView(item['value'])"          
 >
             <span class="white-space_festival_link-text">
-{{ festival['page']['field_festival_links']
-[languages[language1]][0]['title']  }}
-            </span><img src="icon/img/read-piece.png" alt=""/>
+{{ item['title']  }}
+            </span><img 
+src="icon/img/read-piece.png" 
+alt=""/>
           </a>
         </div>
+</data-repeat>
+
       </div>
     </div>
   </div>
@@ -81,6 +86,10 @@ ng-click="routeGoToView(festival['page']['field_festival_links']
 {{ festival['page']['field_title_program']
 [languages[language1]][0]['value'] }}
 </h2>
+    <h4 class="common_top-heading heading_top_border">
+{{ festival['page']['field_title_program']
+[languages[language2]][0]['value'] }}
+</h4>
 
 
 
@@ -306,28 +315,32 @@ datatargettab="4"
 <data-repeat ng-repeat="item in 
 festival['page']['field_docu'][languages[language1]]" >
                     <p>
-                        <a ><img 
-src="{{ item['uri'] }}" 
+                        <a target="_blank"
+href="{{ item['uri'] }}"
+                        ><img  
+src="/icon/img/docs.png"  
 alt=""/><span 
 class="white-space_gallery_docs-item">
 {{ item['filename'] }}
 </span></a>
                     </p>
 
-                    <p>
-                        <a ><img src="icon/img/docs.png" alt=""/><span class="white-space_gallery_docs-item">Заявка на участие</span></a>
-                    </p>
 
                 </div>
 
                 <div 
 display-none-dir
-dataa="{{ festival['page']['field_title_photo']
+dataa="{{ festival['page']['field_festival_awards']
 [languages[language1]][0]['value'] }}"
 datatargettab="5"
                 id="tab5" class="tab">
                     <!-- F E S T I V A L   R E S U L T S -->
-                    <p>Описательный текст с итогами фестиваля.</p>
+                
+                    <p>
+{{ festival['page']['field_festival_awards']
+[languages[language1]][0]['value'] }}
+                   </p>
+
                 </div>
 
                 <!---->
@@ -344,22 +357,20 @@ custom-submit-dir
 {{ festival['page']['static'][languages[language1]]['review_title'] }}
                                 </h4>
                                 <input 
-                class="name-from-form feedback feedback-name" type="text" 
+                class=" feedback feedback-name" type="text" 
 placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_name'] }}"
 required="required" min='1' max="100"
-name='name-from-form'
+alt="{{ festival['page']['vid'] }}"
 />
                                 <textarea 
-                class="name-from-form feedback feedback-text" name="textarea" rows="8" cols="40"
+                class=" feedback feedback-text" name="textarea" rows="8" cols="40"
 placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_text'] }}"
 required="required" min='2' max="20000"
-name='text-from-form'
-> 
-                                </textarea>
+></textarea>
                                 <input class="submit-button" type="submit" name="submit-button"
 value="{{ festival['page']['static'][languages[language1]]['send_button'] }}"
 
->
+/>
                             </form>
 
 
@@ -557,23 +568,47 @@ ng-repeat="item in festival['comments']"
                     <!--F E E D B A C K-->
                     <div class="fe-row">
                         <div class="fe-col-12">
-                            <div class="post">
-                                <p class="post-name">Александр</p>
-                                <p class="post-date">02/05/2016</p>
-                                <p class="post-message">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit. Commodi, dolore dolorem fugiat hic labore laboriosam magni nemo nisi
-                                    nobis non, nostrum provident quibusdam repellat reprehenderit repudiandae
-                                    rerum temporibus
-                                    vel voluptatum!</p>
-                            </div>
-                            <form class="feedback-form" action="feedback">
-                                <h4 class="feedback-title">Оставить отзыв:</h4>
-                                <input class="feedback feedback-name" type="text" placeholder="Имя Фамилия">
-                                <textarea class="feedback feedback-text" name="textarea" rows="8" cols="40"
-                                          placeholder="Текст отзыва"></textarea>
+
+                            <form id="formx"
+                            class="feedback-form" 
+custom-submit-dir
+                            >
+                                <h4 class="feedback-title">
+{{ festival['page']['static'][languages[language1]]['review_title'] }}
+                                </h4>
+                                <input 
+                class=" feedback feedback-name" type="text" 
+placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_name'] }}"
+required="required" min='1' max="100"
+alt="{{ festival['page']['vid'] }}"
+/>
+                                <textarea 
+                class=" feedback feedback-text" name="textarea" rows="8" cols="40"
+placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_text'] }}"
+required="required" min='2' max="20000"
+></textarea>
                                 <input class="submit-button" type="submit" name="submit-button"
-                                       value="Отправить">
+value="{{ festival['page']['static'][languages[language1]]['send_button'] }}"
+
+/>
                             </form>
+
+
+                                    <div 
+ng-repeat="item in festival['comments']"
+                                    class="post" >
+                                        <p class="post-name">
+{{ item['comment_body']['#object']['subject'] }}
+                                        </p>
+                                        <p class="post-date">
+{{ item['comment_body']['#object']['created'] | fromtimestamp }}
+</p>
+                                        <p class="post-message">
+{{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
+ </p>
+                                    </div>  
+
+
                         </div>
                     </div>
 
@@ -589,179 +624,24 @@ ng-repeat="item in festival['comments']"
 <!-- W H I T E   S P A C E   E X P E R T   S T A R T -->
 <div class="fe-row">
     <div class="fe-col-6 fe-col-n-12">
-        <div class="white-space_expert global_content-wrapper white-space_left">
-            <h2 class="common_top-heading white-space_heading-padding">Экспертный комитет</h2>
-            <div class="white-space_contacts_wrapper">
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Владимир Васильевич Орел</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">Народный артист России, артист Тюменского
-                                драматического театра, Председатель Тюменского отделения Союза театральных деятелей
-                                России.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Арина Александровна Шепелева</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">Театральный критик, старший преподаватель РГИСИ,
-                                член номинационного совета Высшей театральной премии Санкт-Петербурга "Золотой софит",
-                                член жюри множества международных фестивалей театра кукол.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Куприна Владислава Дмитриевна</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">Театральный критик, заведующая литературной частью
-                                МТЮЗа, педагог РУТИ (ГИТИС). Печатается в "Петербургском театральном журнале", журнале
-                                "Сцена", газете "Экран и сцена" и др. Член жюри множества российских театральных
-                                фестивалей.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Евгений Александрович Авраменко</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">Театральный критик, преподаватель
-                                Санкт-Петербургской Школы русской драмы, эксперт премий "Золотая маска" и "Золотой
-                                софит".</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<data-div ng-bind-html="
+festival['page']['field_left_column']
+[languages[language1]][0]['value']">
+</data-div>
+       
+
     </div>
+
     <div class="fe-col-6 fe-col-n-12">
-        <div class="white-space_org global_content-wrapper white-space_right">
-            <h2 class="common_top-heading white-space_heading-padding">Организационный комитет</h2>
-            <div class="white-space_contacts_wrapper">
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Буторина Светлана Михайловна</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">начальник управления по вопросам культурной политики и культурных ценностей
-                                Департамента культуры Ханты-Мансийского автономного округа - Югры</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Кравчук Ирина Петровна</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">начальник отдела профессионального искусства и народного творчества
-                                Департамента культуры Ханты-Мансийского автономного округа - Югры</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Литвинчук Евгений Леонидович</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">директор бюджетного учреждения Ханты-Мансийского автономного округа - Югры
-                                "Театр обско-угорских народов - Солнце"</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Журавлева Лариса Николаевна</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">исполнительный директор автономного учреждения Ханты-Мансийского автономного округа - Югры
-                                "Концертно-театральный центр "Югра-классик"</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Вишневская Анна Владимировна</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">художественный руководитель бюджетного учреждения Ханты-Мансийского автономного округа - Югры
-                                "Театр обско-угорских народов - Солнце</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Архипов Леонид Андреевич</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">Заслуженный работник культуры Ханты-Мансийского автономного округа - Югры, член союза театральных деятелей по
-                                Тюменской области</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Моор Зинаида Федоровна</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">Заслуженный работник культуры Ханты-Мансийского автономного округа - Югры</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="fe-row white-space_contacts_item">
-                    <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-                        <div class="white-space_contacts_item-wrapper">
-                            <h4 class="white-space_contacts_name">Журавлев Виктор Михайлович</h4>
-                        </div>
-                    </div>
-                    <div class="fe-col-9 fe-col-n-12 fe-col-s-8">
-                        <div class="white-space_contacts_item-wrapper">
-                            <p class="white-space_contacts_position">тележурналист, режиссер, лауреат премии Ханты-Мансийского автономного округа - Югры, член Союза
-                                журналистов РФ, начальник редакции финно-угорских программ ОТРК-Югра</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<data-div ng-bind-html="
+festival['page']['field_right_column']
+[languages[language1]][0]['value']">
+</data-div>
+
     </div>
+
 </div>
 <!-- W H I T E   S P A C E   E X P E R T   E N D -->
 
@@ -770,121 +650,21 @@ ng-repeat="item in festival['comments']"
 
 <!-- W H I T E   S P A C E   C O N T A C T S   S T A R T -->
 <div class="fe-row">
-  <div class="white-space_contacts global_content-wrapper">
-    <h2 class="common_top-heading">Контакты</h2>
-    <div class="white-space_contacts_wrapper">
-      <div class="fe-row">
-        <div class="fe-col-3 fe-col-n-12">
-          <span class="white-space_contacts_section">Список критиков:</span>
-        </div>
-      </div>
-      <div class="fe-row white-space_contacts_item">
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-          <div class="white-space_contacts_item-wrapper">
-            <h4 class="white-space_contacts_name">Владимир Васильевич Орел</h4>
-          </div>
-        </div>
-        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_position">Народный артист России, артист Тюменского драматического театра. Председатель Тюменского отделения Союза театральных деятелей России.</p>
-          </div>
-        </div>
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_contacts">т/ф 8 (3452) 20-03-28</p>
-            <p class="white-space_contacts_contacts">8 (912) 920-71-60</p>
-            <p class="white-space_contacts_contacts">std-tmn@mail.ru</p>
-          </div>
-        </div>
-      </div>
-      <div class="fe-row white-space_contacts_item">
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-          <div class="white-space_contacts_item-wrapper">
-            <h4 class="white-space_contacts_name">Людмила Анатольевна Магина</h4>
-          </div>
-        </div>
-        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_position">Помощник в СТД</p>
-          </div>
-        </div>
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_contacts">8 (952) 345-83-75</p>
-          </div>
-        </div>
-      </div>
-      <div class="fe-row white-space_contacts_item">
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-          <div class="white-space_contacts_item-wrapper">
-            <h4 class="white-space_contacts_name">Арина Александровна Шепелева</h4>
-          </div>
-        </div>
-        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_position">Театральный критик, старший преподаватель РГИСИ, член номинационного совета Высшей театральной премии Санкт-Петербурга "Золотой софит", член жюри множества международных фестивалей театра кукол.</p>
-          </div>
-        </div>
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_contacts">8 (921) 588-23-90</p>
-            <p class="white-space_contacts_contacts">д. т. (812) 764 59 93</p>
-            <p class="white-space_contacts_contacts">nora-ra@yandex.ru</p>
-          </div>
-        </div>
-      </div>
-      <div class="fe-row white-space_contacts_item">
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-          <div class="white-space_contacts_item-wrapper">
-            <h4 class="white-space_contacts_name">Куприна Владислава Дмитриевна</h4>
-          </div>
-        </div>
-        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_position">Театральный критик, заведующая литературной частью МТЮЗа, педагог РУТИ (ГИТИС). Печатается в "Петербургском театральном журнале", журнале "Сцена", газете "Экран и сцена" и др. Член жюри множества российских театральных фестивалей.</p>
-          </div>
-        </div>
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_contacts">с. 8 (926) 300-28-43</p>
-            <p class="white-space_contacts_contacts">р. 8 (495) 699-49-61</p>
-            <p class="white-space_contacts_contacts">vladikuprina@mail.ru</p>
-            <p class="white-space_contacts_contacts">vladislavakuprina.1@mail.ru</p>
-          </div>
-        </div>
-      </div>
-      <div class="fe-row white-space_contacts_item">
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-          <div class="white-space_contacts_item-wrapper">
-            <h4 class="white-space_contacts_name">Евгений Александрович Авраменко</h4>
-          </div>
-        </div>
-        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_position">Театральный критик, преподаватель Санкт-Петербургской Школы русской драмы, эксперт премий "Золотая маска" и "Золотой софит".</p>
-          </div>
-        </div>
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
-          <div class="white-space_contacts_item-wrapper">
-            <p class="white-space_contacts_contacts">8 951 657 55 42</p>
-          </div>
-        </div>
-      </div>
-      <div class="fe-row">
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-12">
-          <span class="white-space_contacts_section">Телефон для справок:</span>
-        </div>
-        <div class="fe-col-6 fe-col-n-12 fe-col-s-8">
-          <span>&nbsp;</span>
-        </div>
-        <div class="fe-col-3 fe-col-n-12 fe-col-s-4">
-          <p class="white-space_contacts_contacts">8(3467) 33-54-61</p>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
+<data-div ng-bind-html="
+festival['page']['field_contacts']
+[languages[language1]][0]['value']">
+</data-div>
+
 </div>
 <!-- W H I T E   S P A C E   C O N T A C T S   E N D -->
+
+
+
+
+
+
 
 
 

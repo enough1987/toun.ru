@@ -340,15 +340,15 @@ custom-submit-dir
 {{ perfomance['page']['static'][languages[language1]]['review_title'] }}
 </h4>
                                         <input
-             class="name-from-form feedback feedback-name" type="text" 
+             class="namefromform feedback feedback-name" type="text" 
 placeholder="
 {{ perfomance['page']['static'][languages[language1]]['placeholder_name'] }}
 "
 required="required" min='1' max="100"
-name='name-from-form'
+alt="{{ perfomance['page']['vid'] }}"
 />
                                         <textarea 
-            class="text-from-form feedback feedback-text" rows="8" cols="40" 
+            class="textfromform feedback feedback-text" rows="8" cols="40" 
 placeholder="
 {{ perfomance['page']['static'][languages[language1]]['placeholder_text'] }}
 "
@@ -388,7 +388,9 @@ ng-repeat="item in perfomance['comments']"
                 <div class="accordion">
                     <div class="accordion-section">
                         <a class="accordion-section-title activeTitle" href="#accordion-1"><span
-                                class="inner-box-text">Фото</span></a>
+                                class="inner-box-text">
+{{ perfomance['page']['field_title_photo'][languages[language1]][0]['value'] }}
+</span></a>
 
                         <div id="accordion-1" class="accordion-section-content activeContent">
                             <div id="tab1" class="tab tab-active fe-col-12">
@@ -486,36 +488,37 @@ src="{{ item['video_id']
                                 <div class="fe-col-12">
 
 
-                                    <form
-                                    pageis
-                                    class="feedback-form" action=""
-custom-submit >
+
+
+                                    <form id="formx"
+
+                                    class="feedback-form" 
+custom-submit-dir
+                                    >
                                         <h4 class="feedback-title">
 {{ perfomance['page']['static'][languages[language1]]['review_title'] }}
 </h4>
-                                        <input class="feedback feedback-name" type="text"
+                                        <input
+             class="namefromform feedback feedback-name" type="text" 
 placeholder="
 {{ perfomance['page']['static'][languages[language1]]['placeholder_name'] }}
 "
-required="required" 
->
-
+required="required" min='1' max="100"
+alt="{{ perfomance['page']['vid'] }}"
+/>
                                         <textarea 
-                                        class="feedback feedback-text" name="textarea" rows="8" cols="40" 
+            class="textfromform feedback feedback-text" rows="8" cols="40" 
 placeholder="
 {{ perfomance['page']['static'][languages[language1]]['placeholder_text'] }}
 "
-required="required" 
->
-</textarea>
-                                        <input class="submit-button" type="submit" name="submit-button" 
+required="required" min='2' max="20000"
+></textarea>
+                                        <input class="submit-button" type="submit"
+ 
 value="
 {{ perfomance['page']['static'][languages[language1]]['send_button'] }}"
 >
                                     </form>
- 
-<div id="feedback-block">
-</div>
 
                                     <div 
 ng-repeat="item in perfomance['comments']"
@@ -530,6 +533,7 @@ ng-repeat="item in perfomance['comments']"
 {{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
  </p>
                                     </div>  
+
 
 
                                 </div>
