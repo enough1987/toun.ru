@@ -176,7 +176,8 @@ display-none-dir
 dataa="{{ perfomance['page']['field_title_photo']
 [languages[language1]][0]['value'] }}"
 datatargetfortabs="1"
-                        class="active tabs-item"><a class="tabs-link" href="#tab1">
+                        class="active tabs-item"><a class="tabs-link gb-cursor-pointer" 
+                        datahref="#tab1">
 {{ perfomance['page']['field_title_photo'][languages[language1]][0]['value'] }}
 
                          &nbsp;&nbsp;&nbsp;|<br>
@@ -188,7 +189,8 @@ display-none-dir
 dataa="{{perfomance['page']['field_title_video']
 [languages[language1]][0]['value']}}"
 datatargetfortabs="2"
-                        class="tabs-item"><a class="tabs-link" href="#tab2">
+                        class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
+                        datahref="#tab2">
 {{ perfomance['page']['field_title_video'][languages[language1]][0]['value'] }}
                          &nbsp;&nbsp;&nbsp;| <br> <span
                                 class="tabs-subheading">
@@ -199,7 +201,8 @@ display-none-dir
 dataa="{{perfomance['page']['field_title_press']
 [languages[language1]][0]['value']}}"
 datatargetfortabs="3"
-                         class="tabs-item"><a class="tabs-link" href="#tab3">
+                         class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
+                         datahref="#tab3">
 {{ perfomance['page']['field_title_press'][languages[language1]][0]['value'] }}
                        
                             &nbsp;&nbsp;&nbsp;|<br> <span class="tabs-subheading">
@@ -210,14 +213,16 @@ display-none-dir
 dataa="{{perfomance['page']['field_title_awards']
 [languages[language1]][0]['value']}}"
 datatargetfortabs="4"
-                         class="tabs-item"><a class="tabs-link" href="#tab4">
+                         class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
+                         datahref="#tab4">
 {{ perfomance['page']['field_title_awards'][languages[language1]][0]['value'] }}
                         &nbsp;&nbsp;&nbsp;|<br> <span
                                 class="tabs-subheading">
 {{ perfomance['page']['field_title_awards'][languages[language2]][0]['value'] }}
                                 </span></a></li>
                         <li 
-                        class="tabs-item"><a class="tabs-link" href="#tab5">
+                        class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
+                        datahref="#tab5">
 {{ perfomance['page']['field_title_comments'][languages[language1]][0]['value'] }}
                         <br> <span
                                 class="tabs-subheading">
@@ -387,7 +392,8 @@ ng-repeat="item in perfomance['comments']"
             <div class="invisible fe-col-12">
                 <div class="accordion">
                     <div class="accordion-section">
-                        <a class="accordion-section-title activeTitle" href="#accordion-1"><span
+                        <a class="accordion-section-title activeTitle gb-cursor-pointer" 
+                        datahref="#accordion-1"><span
                                 class="inner-box-text">
 {{ perfomance['page']['field_title_photo'][languages[language1]][0]['value'] }}
 </span></a>
@@ -396,9 +402,6 @@ ng-repeat="item in perfomance['comments']"
                             <div id="tab1" class="tab tab-active fe-col-12">
                                 <!-- P H O T O   C A R O U S E L -->
                                 <div id="lightgallery2" class="owl-carousel owl-theme">
-                                    <div class="item" data-src="http://1.bp.blogspot.com/-y8SPaO6KnVA/UOh1kJWZifI/AAAAAAAAheA/4Lj8eQx7AVw/s1600/sydney+australia+rubber+duck+6.jpg">
-                                        <img class="grayscale" src="https://flavorwire.files.wordpress.com/2016/04/5181176-3x2-940x627.jpg?w=205&h=138&crop=1" />
-                                    </div>
 
 
 <data-repeat ng-repeat="item in perfomance['page']
@@ -422,8 +425,11 @@ src="
                         </div>
                     </div>
                     <div class="accordion-section">
-                        <a class="accordion-section-title" href="#accordion-2"><span
-                                class="inner-box-text">Видео</span></a>
+                        <a class="accordion-section-title gb-cursor-pointer" 
+                        datahref="#accordion-2"><span
+                                class="inner-box-text">
+{{ perfomance['page']['field_title_video'][languages[language1]][0]['value'] }}
+</span></a>
 
                         <div id="accordion-2" class="accordion-section-content">
                             <!-- V I D E O   C A R O U S E L -->
@@ -448,7 +454,10 @@ src="{{ item['video_id']
                         </div>
                     </div>
                     <div class="accordion-section">
-                        <a class="accordion-section-title" href="#accordion-3"><span class="inner-box-text">Пресса о спектакле</span></a>
+                        <a class="accordion-section-title gb-cursor-pointer" 
+                        datahref="#accordion-3"><span class="inner-box-text">
+{{ perfomance['page']['field_title_press'][languages[language1]][0]['value'] }}
+                        </span></a>
 
                         <div id="accordion-3" class="accordion-section-content">
                             <!-- P U B L I C A T I O N S -->
@@ -463,8 +472,11 @@ src="{{ item['video_id']
                     </div>
 
                     <div class="accordion-section">
-                        <a class="accordion-section-title" href="#accordion-4"><span
-                                class="inner-box-text">Награды</span></a>
+                        <a class="accordion-section-title gb-cursor-pointer" 
+                        datahref="#accordion-4"><span
+                                class="inner-box-text">
+{{ perfomance['page']['field_title_awards'][languages[language1]][0]['value'] }}
+                                </span></a>
 
                         <div id="accordion-4" class="accordion-section-content">
                             <!-- A W A R D S -->
@@ -479,8 +491,11 @@ src="{{ item['video_id']
                     </div>
 
                     <div class="accordion-section">
-                        <a class="accordion-section-title" href="#accordion-5"><span
-                                class="inner-box-text">Отзывы</span></a>
+                        <a class="accordion-section-title gb-cursor-pointer" 
+                        datahref="#accordion-5"><span
+                                class="inner-box-text">
+{{ perfomance['page']['field_title_comments'][languages[language1]][0]['value'] }}
+</span></a>
 
                         <div id="accordion-5" class="accordion-section-content">
                             <!--F E E D B A C K-->
