@@ -93,8 +93,7 @@ seoTagsService) {
             else {
   console.log('status ' + xhr.status);              
   $scope.subview = '/views/perfomance/subview.html';
-  $scope.getPage("/content/go2json/perfomance/"+$routeParams.perfomance, 
-    'perfomance'); 
+  $scope.getPage("/content/go2json/perfomance/"+$routeParams.perfomance); 
   console.log( $scope.subview );
             }
         }
@@ -116,40 +115,13 @@ seoTagsService) {
 
    $scope.routeGoToView = routeService.setup();
 
-   seoTagsService.setup('perfomance');
+   seoTagsService.setup();
 
 
    $scope.test = function(item){
         console.log( item ); 
         return item;       
    };
-
-
-
-   $scope.showNodeTabsDir  = function () {
-
-    var intervalID = setInterval(function(){ 
-    
-        if( ! document.querySelectorAll('[dircanbestart]') ) { return '' };
-
-        var targets = document.querySelectorAll('[datatargetfortabs]') ;
-
-        for (var i = 0; i < targets.length; i++) {
-            if( targets[i].getAttribute('dataa') ){
-
-    var  currentAttrValue = targets[i].getAttribute('datatargetfortabs');
-    $('.tabs ' + currentAttrValue).show().siblings().hide();
-    clearInterval(intervalID); 
-document.querySelectorAll('[shownodetabsdir]')[0].setAttribute('shownodetabsdir', 'true'); 
-    break;        
-            };           
-        }
-
-    }, 3000 ); 
-
-  };
-  $scope.showNodeTabsDir(); 
-
 
 });
 
@@ -190,13 +162,13 @@ seoTagsService, getshoworhideFuncService) {
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
    $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
-   $scope.getPage("/content/go2json/projects/"+$routeParams.project, 'projects');
+   $scope.getPage("/content/go2json/projects/"+$routeParams.project);
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
 
 
-   seoTagsService.setup('projects');
+   seoTagsService.setup();
 
    $scope.test = function(item){
         console.log( item ); 
@@ -227,8 +199,7 @@ seoTagsService) {
             else {
   console.log('status ' + xhr.status);              
   $scope.subview = '/views/festival/subview.html';
-  $scope.getPage("/content/go2json/festival/"+$routeParams.festival, 
-    'festival'); 
+  $scope.getPage("/content/go2json/festival/"+$routeParams.festival); 
   console.log( $scope.subview );
             }
         }
@@ -250,38 +221,13 @@ seoTagsService) {
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
 
-   seoTagsService.setup('festival');
+   seoTagsService.setup();
 
    $scope.test = function(item){
         console.log( item ); 
         return item;       
    };
 
-   
-   $scope.showNodeTabsDir  = function () {
-
-    var intervalID = setInterval(function(){ 
-    
-        if( ! document.querySelectorAll('[dircanbestart]') ) { return '' };
-
-        var targets = document.querySelectorAll('[datatargetfortabs]') ;
-
-        for (var i = 0; i < targets.length; i++) {
-            if( targets[i].getAttribute('dataa') ){
-
-    var  currentAttrValue = targets[i].getAttribute('datatargetfortabs');
-    $('.tabs ' + currentAttrValue).show().siblings().hide();
-    clearInterval(intervalID); 
-document.querySelectorAll('[shownodetabsdir]')[0].setAttribute('shownodetabsdir', 'true'); 
-    break;        
-            };           
-        }
-
-    }, 3000 ); 
-
-  };
-  $scope.showNodeTabsDir(); 
-   
 
 });
 

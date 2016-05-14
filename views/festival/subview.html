@@ -9,16 +9,16 @@
 
 <!-- W H I T E   S P A C E   F E S T I V A L   S T A R T -->
 <div class="fe-row">
-  <div class="white-space_festival global_content-wrapper">
+  <div class="white-space_page global_content-wrapper">
     <h2 class="common_top-heading white-space_heading-center">
-{{ festival['page']['field_title_header'][languages[language1]][0]['value']  }}
+{{ page['page']['field_title_header'][languages[language1]][0]['value']  }}
 </h2>
     <div class="common_top-subheading common_top-subheading-center">
-{{ festival['page']['field_title_header'][languages[language2]][0]['value']  }}
+{{ page['page']['field_title_header'][languages[language2]][0]['value']  }}
     </div>
-    <div class="white-space_festival_years">
+    <div class="white-space_page_years">
 
-<data-repeat ng-repeat="item in festival['filter_menu']"
+<data-repeat ng-repeat="item in page['filter_menu']"
 ng-click="routeGoToView(item['field_link']['und'][0]['value'])" >
       <p class="gallery_menu_paragraph"><a class="gallery_year-filter" 
 data-filter="{{ item[languages[language1]]['und'][0]['value']  }}" 
@@ -30,41 +30,41 @@ data-filter="{{ item[languages[language1]]['und'][0]['value']  }}"
     </div>
     <div class="fe-row">
       <div class="fe-col-b-3 fe-col-m-4 space_visible">
-        <div class="fe-row white-space_festival_logo-box">
+        <div class="fe-row white-space_page_logo-box">
 
-          <img src="{{ festival['page']['field_festival_logo']
+          <img src="{{ page['page']['field_page_logo']
 [languages[language1]][0]['uri']  }}" alt="" />
         </div>
       </div>
       <div class="fe-col-b-9 fe-col-m-8">
-        <div class="white-space_festival_article_ru">
+        <div class="white-space_page_article_ru">
           <p class="white-space_paragraph">
-{{ festival['page']['field_description_festival']
+{{ page['page']['field_description_page']
 [languages[language1]][0]['value']  }}
 
           </p>
         </div>
         <br><br>
-        <div class="white-space_festival_article_kca-mns">
+        <div class="white-space_page_article_kca-mns">
           <p class="white-space_paragraph">
-{{ festival['page']['field_description_festival']
+{{ page['page']['field_description_page']
 [languages[language2]][0]['value']  }}
           </p>
         </div>
       </div>
       <div class="fe-col-b-3 fe-col-m-4 space_invisible">
-        <div class="fe-row white-space_festival_logo-box">
-<img src="{{ festival['page']['field_festival_logo']
+        <div class="fe-row white-space_page_logo-box">
+<img src="{{ page['page']['field_page_logo']
 [languages[language1]][0]['uri']  }}" alt="" />
         </div>
 
-<data-repeat ng-repeat="item in festival['page']['field_festival_links']
+<data-repeat ng-repeat="item in page['page']['field_page_links']
 [languages[language1]]" >
-        <div class="fe-row white-space_festival_link-box">
+        <div class="fe-row white-space_page_link-box">
           <a class="" 
 ng-click="routeGoToView(item['value'])"          
 >
-            <span class="white-space_festival_link-text">
+            <span class="white-space_page_link-text">
 {{ item['title']  }}
             </span><img 
 src="icon/img/read-piece.png" 
@@ -85,11 +85,11 @@ alt=""/>
 <div class="fe-row">
   <div class="white-space_repertuar white-space_margin global_content-wrapper">
     <h2 class="common_top-heading heading_top_border">
-{{ festival['page']['field_title_program']
+{{ page['page']['field_title_program']
 [languages[language1]][0]['value'] }}
 </h2>
     <h4 class="common_top-heading heading_top_border">
-{{ festival['page']['field_title_program']
+{{ page['page']['field_title_program']
 [languages[language2]][0]['value'] }}
 </h4>
 
@@ -97,7 +97,7 @@ alt=""/>
 
 
 <data-div ng-bind-html="
-festival['page']['field_program']
+page['page']['field_program']
 [languages[language1]][0]['value']">
 </data-div>
 
@@ -110,527 +110,8 @@ festival['page']['field_program']
 
 
 
-<!-- W H I T E   S P A C E   G A L L E R Y   S T A R T -->
-<div class="fe-row">
-    <div class="fe-col-12 fe-col-m-only">
-        <!--T A B S-->
-        <div class="tabs">
-            <ul class="tabs-links">
 
-                <li 
-display-none-dir
-dataa="{{ festival['page']['field_title_photo']
-[languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab1"
-dircanbestart="{{ festival['page']['vid'] }}"
-                class="active tabs-item"><a class="tabs-link  gb-cursor-pointer" 
-                datahref="#tab1">
-{{ festival['page']['field_title_photo']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
-                    <span class="tabs-subheading">
-{{ festival['page']['field_title_photo']
-[languages[language2]][0]['value'] }}                                       
-                    </span></a></li>
-
-                <li 
-display-none-dir
-dataa="{{ festival['page']['field_title_photo']
-[languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab2"
-dircanbestart="{{ festival['page']['vid'] }}"
-                class="tabs-item"><a class="tabs-link  gb-cursor-pointer" 
-                datahref="#tab2">
-{{ festival['page']['field_title_video']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
-                    <span class="tabs-subheading">
-{{ festival['page']['field_title_video']
-[languages[language2]][0]['value'] }}                                       
-                    </span></a></li>
-
-                <li 
-display-none-dir
-dataa="{{ festival['page']['field_title_photo']
-[languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab3"
-dircanbestart="{{ festival['page']['vid'] }}"
-                class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                datahref="#tab3">
-{{ festival['page']['field_title_press']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
-                    <span class="tabs-subheading">
-{{ festival['page']['field_title_press']
-[languages[language2]][0]['value'] }}                                       
-                    </span></a></li>
-
-                <li 
-display-none-dir
-dataa="{{ festival['page']['field_title_docu']
-[languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab4"
-dircanbestart="{{ festival['page']['vid'] }}"
-                class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                datahref="#tab4">
-{{ festival['page']['field_title_docu']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
-                    <span class="tabs-subheading">
-{{ festival['page']['field_title_docu']
-[languages[language2]][0]['value'] }}                                       
-                    </span></a></li>
-
-                <li 
-display-none-dir
-shownodetabsdir
-dataa="{{ festival['page']['field_title_photo']
-[languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab5"
-dircanbestart="{{ festival['page']['vid'] }}"
-                class="tabs-item"><a class="tabs-link  gb-cursor-pointer" 
-                datahref="#tab5">
-{{ festival['page']['field_title_awards']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
-                    <span class="tabs-subheading">
-{{ festival['page']['field_title_awards']
-[languages[language2]][0]['value'] }}                                       
-                    </span></a></li>
-
-                        <li 
-                        class="tabs-item"><a class="tabs-link  gb-cursor-pointer" 
-                        datahref="#tab6">
-{{ festival['page']['field_title_comments'][languages[language1]][0]['value'] }}
-                        <br> <span
-                                class="tabs-subheading">
-{{ festival['page']['field_title_comments'][languages[language2]][0]['value'] }}
-                         </span></a></li>
-            </ul>
-            <div class="tabs-content">
-
-
-                <div
-
-dataa="{{festival['page']
-['field_project_photo']['und']}}"
-dircanbestart="{{ festival['page']['vid'] }}"
-datatargettab="#tab1"
-                        id="tab1" class="tab tab-active fe-col-12">
-                    <!-- P H O T O   C A R O U S E L -->
-                    <div class="prev-button photo-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
-                    <div class="next-button photo-buttons"><img src="/icon/img/next_button.png" alt=""></div>
-                    <div id="lightgallery" class="owl-carousel owl-theme">
-
-
-<data-repeat ng-repeat="item in festival['page']
-['field_project_photo']['und']" >
-   
-                                <div 
-                                class="item" 
-data-src="{{item['uri']}}"
-                                >
-                                    <img 
-src="{{item['filename'] | changestartpath : 
-'/content/sites/default/files/styles/medium/public/' }}" 
-                                    />
-                                </div>
-</data-repeat>
-
-                    </div>
-                </div>
-
-
-
-                        <div 
-
-dataa="{{festival['page']
-['field_project_video']['und']}}"
-dircanbestart="{{ festival['page']['vid'] }}"
-datatargettab="#tab2"
-                        id="tab2" class="tab">
-                            <!-- V I D E O   C A R O U S E L -->
-                            <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
-                            <div class="next-button video-buttons"><img src="/icon/img/next_button.png" alt=""></div>
-                            <div id="video-gallery" class="owl-carousel owl-theme">
-                                <!--<div class="light-gal-item" data-src="https://www.youtube.com/watch?v=G8KpPw303PY">-->
-
-
-   
-<data-repeat ng-repeat="item in festival['page']
-['field_project_video']['und']" >
-                                <div class="light-gal-item" 
-data-src="{{ item['input'] | trusted }}">
-                                    <img class="grayscale" 
-src="{{ item['video_id'] 
-| changestartpath : 
-'http://img.youtube.com/vi/' 
-| changeendpath : 
-'/hqdefault.jpg' 
- }}" />
-                                </div>
-   
-</data-repeat>                                
-
-
-
-                            </div>
-                        </div>
-
-
-                <div 
-
-dataa="{{festival['page']
-['field_press'][languages[language1]]}}"
-dircanbestart="{{ festival['page']['vid'] }}"
-datatargettab="#tab3"
-                id="tab3" class="tab">
-                    <!-- P U B L I C A T I O N S -->
-                    <div class="fe-col-12">
-                        <!--<div class="gallery_heading-box">-->
-                            <!--<div class="common_top-heading">Пресса</div>-->
-                            <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
-                        <!--</div>-->
-<data-repeat ng-repeat="item in festival['page']
-['field_press'][languages[language1]]" >
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
-
-                                    <span class="mass_media-text">
-{{ item['title'] }}
-                                    </span><br>
-                                    <a class="mass_media-link" 
-                                    href="{{ item['value'] }} "
-                                    target="_blank"
-                                    >
-{{ item['value'] }}                                    
-
-</a>
-                                </div>
-                            </div>
-                        </div>
-</data-repeat>
-
-                    </div>
-                </div>
-
-                <div 
-
-dataa="{{festival['page']['field_docu'][languages[language1]]}}"
-dircanbestart="{{ festival['page']['vid'] }}"
-datatargettab="#tab4"
-                id="tab4" class="tab">
-                    <!-- D O C S -->
-
-<data-repeat ng-repeat="item in 
-festival['page']['field_docu'][languages[language1]]" >
-                    <p>
-                        <a target="_blank"
-href="{{ item['uri'] }}"
-                        ><img  
-src="/icon/img/docs.png"  
-alt=""/><span 
-class="white-space_gallery_docs-item">
-{{ item['filename'] }}
-</span></a>
-                    </p>
-</data-repeat>
-
-                </div>
-
-                <div 
-
-dataa="{{ festival['page']['field_festival_awards']
-[languages[language1]][0]['value'] }}"
-dircanbestart="{{ festival['page']['vid'] }}"
-datatargettab="#tab5"
-                id="tab5" class="tab">
-                    <!-- F E S T I V A L   R E S U L T S -->
-                
-                    <p>
-{{ festival['page']['field_festival_awards']
-[languages[language1]][0]['value'] }}
-                   </p>
-
-                </div>
-
-                <!---->
-                <div id="tab6" class="tab">
-                    <!-- F E E D B A C K -->
-                    <div class="fe-row">
-                        <div class="fe-col-12">
-
-                            <form id="formx"
-                            class="feedback-form" 
-custom-submit-dir
-                            >
-                                <h4 class="feedback-title">
-{{ festival['page']['static'][languages[language1]]['review_title'] }}
-                                </h4>
-                                <input 
-                class=" feedback feedback-name" type="text" 
-placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_name'] }}"
-required="required" min='1' max="100"
-alt="{{ festival['page']['vid'] }}"
-/>
-                                <textarea 
-                class=" feedback feedback-text" name="textarea" rows="8" cols="40"
-placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_text'] }}"
-required="required" min='2' max="20000"
-></textarea>
-                                <input class="submit-button" type="submit" name="submit-button"
-value="{{ festival['page']['static'][languages[language1]]['send_button'] }}"
-
-/>
-                            </form>
-
-
-                                    <div 
-ng-repeat="item in festival['comments']"
-                                    class="post" >
-                                        <p class="post-name">
-{{ item['comment_body']['#object']['subject'] }}
-                                        </p>
-                                        <p class="post-date">
-{{ item['comment_body']['#object']['created'] | fromtimestamp }}
-</p>
-                                        <p class="post-message">
-{{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
- </p>
-                                    </div>  
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!--A C C O R D E O N-->
-    <div class="invisible fe-col-12">
-        <div class="accordion accordion-about">
-
-            <div class="accordion-section">
-                <a class="accordion-section-title activeTitle gb-cursor-pointer"
-                datahref="#accordion-1"><span
-                        class="inner-box-text">
-{{ festival['page']['field_title_photo']
-[languages[language1]][0]['value'] }} 
-                        </span></a>
-
-                <div id="accordion-1" class="accordion-section-content activeContent">
-                    <div id="tab1" class="tab tab-active fe-col-12">
-                        <!-- P H O T O   C A R O U S E L -->
-                        <div id="lightgallery2" class="owl-carousel owl-theme">
-
-
-<data-repeat ng-repeat="item in festival['page']
-['field_project_photo']['und']" >  
-                                <div 
-                                class="item" 
-data-src="{{item['uri']}}"
-                                >
-                                    <img 
-src="
-{{item['filename'] | changestartpath : 
-'/content/sites/default/files/styles/medium/public/' }}
-" 
-                                    />
-                                </div>
-</data-repeat>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-2"><span
-                        class="inner-box-text">
-{{ festival['page']['field_title_video']
-[languages[language1]][0]['value'] }} 
-                        </span></a>
-
-                <div id="accordion-2" class="accordion-section-content">
-                    <!-- V I D E O   C A R O U S E L -->
-                    <div id="video-gallery2" class="owl-carousel owl-theme">
-
-<data-repeat ng-repeat="item in festival['page']
-['field_project_video']['und']" >
-                                <div class="light-gal-item" 
-data-src="{{ item['input'] | trusted }}">
-                                    <img  
-src="{{ item['video_id'] 
-| changestartpath : 
-'http://img.youtube.com/vi/' 
-| changeendpath : 
-'/hqdefault.jpg' 
- }}" />
-                                </div>
-   
-</data-repeat>   
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-3"><span
-                        class="inner-box-text">
-{{ festival['page']['field_title_docu']
-[languages[language1]][0]['value'] }} 
-                </span></a>
-
-                <div id="accordion-3" class="accordion-section-content">
-
-                    <!-- P U B L I C A T I O N S -->
-                    <div class="fe-col-12">
-                        <!--<div class="gallery_heading-box">-->
-                            <!--<div class="common_top-heading">Пресса</div>-->
-                            <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
-                        <!--</div>-->
-
-<data-repeat ng-repeat="item in festival['page']
-['field_press'][languages[language1]]" >
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
-
-                                    <span class="mass_media-text">
-{{ item['title'] }}
-                                    </span><br>
-                                    <a class="mass_media-link" 
-                                    href="{{ item['value'] }} "
-                                    target="_blank"
-                                    >
-{{ item['value'] }}                                    
-
-</a>
-                                </div>
-                            </div>
-                        </div>
-</data-repeat>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-4"><span
-                        class="inner-box-text">
-{{ festival['page']['field_title_docu']
-[languages[language1]][0]['value'] }} 
-                </span></a>
-
-                <div id="accordion-4" class="accordion-section-content">
-                    <!-- D O C S -->
-
-
-<data-repeat ng-repeat="item in 
-festival['page']['field_docu'][languages[language1]]" >
-                    <p>
-                        <a target="_blank"
-href="{{ item['uri'] }}"
-                        ><img  
-src="/icon/img/docs.png"  
-alt=""/><span 
-class="white-space_gallery_docs-item">
-{{ item['filename'] }}
-</span></a>
-                    </p>
-</data-repeat>
-
-                </div>
-            </div>
-
-            <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-5"><span
-                        class="inner-box-text">
-{{ festival['page']['field_title_awards']
-[languages[language1]][0]['value'] }} 
-                </span></a>
-
-                <div id="accordion-5" class="accordion-section-content">
-                    <!-- F E S T I V A L   R E S U L T S -->
-
-                    <p>
-{{ festival['page']['field_festival_awards']
-[languages[language1]][0]['value'] }}
-                   </p>
-                    
-                </div>
-            </div>
-
-            <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-6"><span
-                        class="inner-box-text">
-{{ festival['page']['field_title_comments'][languages[language1]][0]['value'] }}
-                    </span></a>
-
-                <div id="accordion-6" class="accordion-section-content">
-                    <!--F E E D B A C K-->
-                    <div class="fe-row">
-                        <div class="fe-col-12">
-
-                            <form id="formx"
-                            class="feedback-form" 
-custom-submit-dir
-                            >
-                                <h4 class="feedback-title">
-{{ festival['page']['static'][languages[language1]]['review_title'] }}
-                                </h4>
-                                <input 
-                class=" feedback feedback-name" type="text" 
-placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_name'] }}"
-required="required" min='1' max="100"
-alt="{{ festival['page']['vid'] }}"
-/>
-                                <textarea 
-                class=" feedback feedback-text" name="textarea" rows="8" cols="40"
-placeholder="{{ festival['page']['static'][languages[language1]]['placeholder_text'] }}"
-required="required" min='2' max="20000"
-></textarea>
-                                <input class="submit-button" type="submit" name="submit-button"
-value="{{ festival['page']['static'][languages[language1]]['send_button'] }}"
-
-/>
-                            </form>
-
-
-                                    <div 
-ng-repeat="item in festival['comments']"
-                                    class="post" >
-                                        <p class="post-name">
-{{ item['comment_body']['#object']['subject'] }}
-                                        </p>
-                                        <p class="post-date">
-{{ item['comment_body']['#object']['created'] | fromtimestamp }}
-</p>
-                                        <p class="post-message">
-{{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
- </p>
-                                    </div>  
-
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- W H I T E   S P A C E   G A L L E R Y   E N D -->
+    <ng-include src="'/views/global/tabs.html'"></ng-include> 
 
 
 
@@ -639,7 +120,7 @@ ng-repeat="item in festival['comments']"
     <div class="fe-col-6 fe-col-n-12">
 
 <data-div ng-bind-html="
-festival['page']['field_left_column']
+page['page']['field_left_column']
 [languages[language1]][0]['value']">
 </data-div>
        
@@ -649,7 +130,7 @@ festival['page']['field_left_column']
     <div class="fe-col-6 fe-col-n-12">
 
 <data-div ng-bind-html="
-festival['page']['field_right_column']
+page['page']['field_right_column']
 [languages[language1]][0]['value']">
 </data-div>
 
@@ -666,7 +147,7 @@ festival['page']['field_right_column']
 
 
 <data-div ng-bind-html="
-festival['page']['field_contacts']
+page['page']['field_contacts'] 
 [languages[language1]][0]['value']">
 </data-div>
 
@@ -682,7 +163,7 @@ festival['page']['field_contacts']
 
 
 <data-init-dir 
-        perfomance-jquery-plagins-init-dir="{{festival}}" >
+        perfomance-jquery-plagins-init-dir="{{page}}" >
 </data-init-dir >
 
 

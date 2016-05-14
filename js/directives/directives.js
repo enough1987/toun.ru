@@ -229,7 +229,7 @@ var  id = e.target[0].alt
 
 
 
-customDirectives.directive('perfomanceJqueryPlaginsInitDir', function () {
+customDirectives.directive('tabsJqueryPlaginsInitDir', function () {
     return {
         restrict: "A",
         scope : false,
@@ -238,7 +238,9 @@ customDirectives.directive('perfomanceJqueryPlaginsInitDir', function () {
 
 function JqueryPlaginsInit (){
 
-if( ! element.attr('perfomance-jquery-plagins-init-dir') ) {    
+
+
+if( ! element.attr('tabs-jquery-plagins-init-dir') ) {    
     console.log( 'page is not exist, so Jquery plagins can not be start' );    
     return '' 
 }
@@ -402,6 +404,25 @@ if( ! $('*').is('.tabs-links li a') ||
         } catch(e) {
             console.log( e ); 
         }        
+    }, 3000 );
+
+
+    var intervalID2 = setInterval(function(){ 
+    
+if( ! document.querySelectorAll('[dircanbestart]') ) { return '' };
+
+var targets = document.querySelectorAll('[datatargetfortabs]') ;
+
+for (var i = 0; i < targets.length; i++) {
+    if( targets[i].getAttribute('dataa') ){
+        var  currentAttrValue = targets[i].getAttribute('datatargetfortabs');
+        $('.tabs ' + currentAttrValue).show().siblings().hide();
+        clearInterval(intervalID2); 
+document.querySelectorAll('[shownodetabsdir]')[0].setAttribute('shownodetabsdir', 'true'); 
+        break;        
+    };           
+}
+
     }, 3000 );                     
 
 

@@ -85,24 +85,15 @@ customServices.factory('pageService', function (
     return {
 
         setup: function(scope){
-            return function(json, nameOfPage) {
-                /*
-                if ( localStorageService.get(nameOfPage) ) {
-                    scope[nameOfPage] = localStorageService.get(nameOfPage); 
-                console.log( 'got json from storadge' );                      
-                console.log( nameOfPage + " : "); 
-                console.log( scope[nameOfPage] );
-                    return scope[nameOfPage];
-                }
-                */
+            return function(json) {
                 console.log( 'try to get json' );                
                     ajaxService.post(json, function(data){                 
-                        scope[nameOfPage] = data;
+                        scope['page'] = data;
                 console.log( 'got json' ); 
-                console.log( nameOfPage + " : ");                         
-                console.log( scope[nameOfPage] );  
-                        localStorageService.set(nameOfPage, scope[nameOfPage] );
-                        return scope[nameOfPage];                      
+                console.log( 'page' + " : ");                         
+                console.log( scope['page'] );  
+                        localStorageService.set('page', scope['page'] );
+                        return scope['page'];                      
                     }); 
 
             }
@@ -158,13 +149,14 @@ customServices.factory('routeService', function ($location, $log) {
 customServices.factory('seoTagsService', function (localStorageService) {
     return {
 
-        setup: function(nameOfPage){
+        setup: function(name){
 
+if ( !name ) { var name  = 'page' };
 var ar = [];
 ar['en'] = 'field_lang_en';
 ar['ru'] = 'field_lang_ru';
 
-var page = localStorageService.get(nameOfPage);
+var page = localStorageService.get(name);
 if ( ! page ) { return false };
 var lang = localStorageService.get('language1');
 if ( ! lang ) { return false };
@@ -242,7 +234,7 @@ function feInit() {
     if(screen.height < 800) {
         headerLogo = fe.g("i","header_logo");
         headerLogo.style.padding = "25px 0px 22px";
-    }
+    } 
 
     var headerLogoImage = fe.g("i","header_logo_image");
     headerLogoImage.addEventListener("mouseover",function() {
@@ -263,3 +255,6 @@ function feInit() {
 
     }
 });
+
+
+

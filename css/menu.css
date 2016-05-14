@@ -16,7 +16,7 @@
     margin: 0 auto;
 }
 .menu_item {
-    vertical-align: top;
+    vertical-align: top !important;
     position: relative;
     padding-bottom: 10px;
 }
@@ -193,4 +193,35 @@
     }
 }
 
-
+#menuTop {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    transition: all 1s;
+    z-index: 999;
+}
+#menu_about {
+    width: 91%;
+    margin: 0 auto;
+    color: white;
+}
+#menu_about .menu_item {
+    vertical-align: top;
+}
+#menu_about .submenu {
+    color: black;
+}
+.inverse-nav {
+    background: white;
+    padding-top: 0 !important;
+}
+.inverse-menu {
+    color: black !important;
+    padding-top: 10px;
+}
+#menu_about .inverse-arrows:hover {
+    background: url("../icon/img/arrow-left-white.png") left bottom no-repeat, url("../icon/img/arrow-right-white.png") right top no-repeat;
+}
+#small-menu-buttton.inverse-small-menu-buttton {
+    background: url("../icon/img/menu-white.png") center no-repeat !important;
+}

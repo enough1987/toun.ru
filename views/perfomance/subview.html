@@ -3,7 +3,7 @@
     <!-- Header -->
 
  <header class="about-header" 
- style="background: url('{{ perfomance['page']['field_bamper']['und'][0]['uri'] }}') top center no-repeat; background-size: cover;">
+ style="background: url('{{ page['page']['field_bamper']['und'][0]['uri'] }}') top center no-repeat; background-size: cover;">
 
         <div id="header_center_logo-mobile" class="fe-none">
             <a href="/">
@@ -17,17 +17,17 @@ src="{{ global['settings']
             <div class="header-h">
                 <h2>
                     <span class="header-title-big"> 
-{{ perfomance['page']['field_title_header'][languages[language1]][0]['value'] }}
+{{ page['page']['field_title_header'][languages[language1]][0]['value'] }}
     </span>
                             <br>
                             <span class="header-title-small"> 
-{{ perfomance['page']['field_title_header'][languages[language2]][0]['value'] }}
+{{ page['page']['field_title_header'][languages[language2]][0]['value'] }}
                              </span>
                             </h2>
                             <h3>
                     <span class="header-title-smallest">
 
-{{ perfomance['page']['field_description_perfomance'][languages[language1]][0]['value'] }}
+{{ page['page']['field_description_page'][languages[language1]][0]['value'] }}
 </span>
                 </h3>
     </div>
@@ -59,31 +59,31 @@ src="{{ global['settings']
                     <div class="about-spectacle-title">
                         <h3>
                             <span class="title-big"> 
-{{ perfomance['page']['field_header_2'][languages[language1]][0]['value'] }}
+{{ page['page']['field_header_2'][languages[language1]][0]['value'] }}
                             </span>
                             <br>
                             <span class="title-small"> 
-{{ perfomance['page']['field_header_2'][languages[language2]][0]['value'] }}
+{{ page['page']['field_header_2'][languages[language2]][0]['value'] }}
                              </span>
                         </h3>
                         <p class="title-additional">
-{{ perfomance['page']['field_project_lenght'][languages[language1]][0]['value'] 
+{{ page['page']['field_project_lenght'][languages[language1]][0]['value'] 
 + ' | '}} 
-{{ perfomance['page']['field_age'][languages[language1]][0]['value'] }}                       
+{{ page['page']['field_age'][languages[language1]][0]['value'] }}                       
                         
                         </p>
                     </div>
 
 <data-div ng-bind-html="
-perfomance['page']['field_project_about'][languages[language1]][0]['value']">
+page['page']['field_project_about'][languages[language1]][0]['value']">
 </data-div>
 
 <data-div ng-bind-html="
-perfomance['page']['field_project_about'][languages[language2]][0]['value']">
+page['page']['field_project_about'][languages[language2]][0]['value']">
 </data-div>
 
 <data-repeat class="wrap_read" ng-repeat="target in
-perfomance['page']['field_docu'][languages[language1]]">
+page['page']['field_docu'][languages[language1]]">
                         <img 
 ng-if="target['description']"
                         src="icon/img/read-piece.png" alt="" />
@@ -108,11 +108,11 @@ href="{{ target['uri'] }}"
                         <div class="people-of-spectacle-title">
                             <h3>
                                 <span class="title-big">
-{{ perfomance['page']['field_title_people'][languages[language1]][0]['value'] }} 
+{{ page['page']['field_title_people'][languages[language1]][0]['value'] }} 
                                  </span>
                                 <br>
                                 <span class="title-small"> 
-{{ perfomance['page']['field_title_people'][languages[language2]][0]['value'] }}
+{{ page['page']['field_title_people'][languages[language2]][0]['value'] }}
                                 </span>
                             </h3>
                         </div>
@@ -120,7 +120,7 @@ href="{{ target['uri'] }}"
 
 
 <data-div ng-bind-html="
-perfomance['page']['field_project_people'][languages[language1]][0]['value']">
+page['page']['field_project_people'][languages[language1]][0]['value']">
 </data-div>
 
 
@@ -128,16 +128,17 @@ perfomance['page']['field_project_people'][languages[language1]][0]['value']">
                         <div class="music-of-spectacle-title">
                             <h3>
                                 <span class="title-big"> 
-{{ perfomance['page']['field_title_music'][languages[language1]][0]['value'] }}
+{{ page['page']['field_title_music'][languages[language1]][0]['value'] }}
                                 </span>
                                 <br>
                                 <span class="title-small">
-{{ perfomance['page']['field_title_music'][languages[language2]][0]['value'] }}
+{{ page['page']['field_title_music'][languages[language2]][0]['value'] }}
 
                                  </span>
                             </h3>
                         </div>
                     </div>
+
 
                     <div class="fe-row">
                         <div class="fe-col-12">
@@ -151,10 +152,10 @@ perfomance['page']['field_project_people'][languages[language1]][0]['value']">
         <div id="audioplayer" class="aplayer"></div>
         
         <data-init audio-player-dir="
-        {{perfomance['page']['field_music_file'][languages[language1]]}}
+        {{page['page']['field_music_file'][languages[language1]]}}
 
         ">
-        </data-init>
+        </data-init> 
     </div>
    
 
@@ -165,432 +166,8 @@ perfomance['page']['field_project_people'][languages[language1]][0]['value']">
         </div>
 
 
-        <div class="fe-row">
-            <div class="fe-col-12 fe-col-m-only">
-                <!--T A B S-->
-                <div class="tabs">
-
-                    <ul class="tabs-links">
-                        <li 
-display-none-dir
-dataa="{{ perfomance['page']['field_title_photo']
-[languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab1"
-dircanbestart="{{ perfomance['page']['vid'] }}"
-
-                        class="active tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                        datahref="#tab1">
-{{ perfomance['page']['field_title_photo'][languages[language1]][0]['value'] }}
-
-                         &nbsp;&nbsp;&nbsp;|<br>
-                            <span class="tabs-subheading">
-{{ perfomance['page']['field_title_photo'][languages[language2]][0]['value'] }}
-</span></a></li>
-                        <li 
-display-none-dir
-dataa="{{perfomance['page']['field_title_video']
-[languages[language1]][0]['value']}}"
-datatargetfortabs="#tab2"
-dircanbestart="{{ perfomance['page']['vid'] }}"
-
-                        class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                        datahref="#tab2">
-{{ perfomance['page']['field_title_video'][languages[language1]][0]['value'] }}
-                         &nbsp;&nbsp;&nbsp;| <br> <span
-                                class="tabs-subheading">
-{{ perfomance['page']['field_title_video'][languages[language2]][0]['value'] }}
-                                </span></a></li>
-                        <li
-display-none-dir
-dataa="{{perfomance['page']['field_title_press']
-[languages[language1]][0]['value']}}"
-datatargetfortabs="#tab3"
-dircanbestart="{{ perfomance['page']['vid'] }}"
-                         class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                         datahref="#tab3">
-{{ perfomance['page']['field_title_press'][languages[language1]][0]['value'] }}
-                       
-                            &nbsp;&nbsp;&nbsp;|<br> <span class="tabs-subheading">
-{{ perfomance['page']['field_title_press'][languages[language2]][0]['value'] }}
-                         </span></a></li>
-                        <li
-display-none-dir
-shownodetabsdir
-dataa="{{perfomance['page']['field_title_awards']
-[languages[language1]][0]['value']}}"
-datatargetfortabs="#tab4"
-dircanbestart="{{ perfomance['page']['vid'] }}"
-                         class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                         datahref="#tab4">
-{{ perfomance['page']['field_title_awards'][languages[language1]][0]['value'] }}
-                        &nbsp;&nbsp;&nbsp;|<br> <span
-                                class="tabs-subheading">
-{{ perfomance['page']['field_title_awards'][languages[language2]][0]['value'] }}
-                                </span></a></li>
-                        <li 
-                        class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                        datahref="#tab5">
-{{ perfomance['page']['field_title_comments'][languages[language1]][0]['value'] }}
-                        <br> <span
-                                class="tabs-subheading">
-{{ perfomance['page']['field_title_comments'][languages[language2]][0]['value'] }}
-                         </span></a></li>
-                    </ul>
-
-
-                    <div class="tabs-content">
-
-
-                        <div
-
-dataa="{{perfomance['page']
-['field_project_photo']['und']}}" 
-dircanbestart="{{ perfomance['page']['vid'] }}"
-datatargettab="#tab1"
-
-                        id="tab1" class="tab tab-active fe-col-12">
-
-                            <!-- P H O T O   C A R O U S E L -->
-                            <div class="prev-button photo-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
-                            <div class="next-button photo-buttons"><img src="/icon/img/next_button.png" alt=""></div>
-                            <div id="lightgallery" class="owl-carousel owl-theme">
-
-
-<data-repeat ng-repeat="item in perfomance['page']
-['field_project_photo']['und']" >
-   
-                                <div 
-                                class="item" 
-data-src="{{item['uri']}}"
-                                >
-                                    <img 
-src="{{item['filename'] | changestartpath : 
-'/content/sites/default/files/styles/medium/public/' }}
-" 
-                                    />
-                                </div>
-</data-repeat>
-
-                                
-                            </div>
-                        </div>
-
-                        <div 
-
-dataa="{{perfomance['page']
-['field_project_video']['und']}}"
-dircanbestart="{{ perfomance['page']['vid'] }}"
-datatargettab="#tab2"
-
-                        id="tab2" class="tab">
-                            <!-- V I D E O   C A R O U S E L -->
-                            <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
-                            <div class="next-button video-buttons"><img src="/icon/img/next_button.png" alt=""></div>
-                            <div id="video-gallery" class="owl-carousel owl-theme">
-                                <!--<div class="light-gal-item" data-src="https://www.youtube.com/watch?v=G8KpPw303PY">-->
-
-
-   
-<data-repeat ng-repeat="item in perfomance['page']
-['field_project_video']['und']" >
-                                <div class="light-gal-item" 
-data-src="{{ item['input'] | trusted }}">
-                                    <img class="grayscale" 
-src="{{ item['video_id'] 
-| changestartpath : 
-'http://img.youtube.com/vi/' 
-| changeendpath : 
-'/hqdefault.jpg' 
- }}" />
-                                </div>
-   
-</data-repeat>                                
-
-
-
-                            </div>
-                        </div>
-
-                        <div 
-
-dataa="{{ perfomance['page']['vid'] }}"
-dircanbestart="{{ perfomance['page']['vid'] }}"
-datatargettab="#tab3"
-
-                        id="tab3" class="tab">
-                            <!-- P U B L I C A T I O N S -->
-
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda ipsum nisi, optio quas quis ullam veritatis! Deleniti excepturi ipsam, maxime mollitia nam nesciunt, praesentium quaerat recusandae reprehenderit sunt
-                                voluptatem.
-                            </p>
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur distinctio, impedit ipsam minus nostrum obcaecati odit officiis! Accusantium architecto at dolorem, ducimus ea facilis iusto molestiae nesciunt nihil
-                                sit.
-                            </p>
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea eaque id ipsa iste iure provident quas quis repellat vitae. Eligendi hic laboriosam qui sapiente voluptas! At eveniet harum id!</p>
-                        </div>
-                        <div 
-
-dataa="{{ perfomance['page']['vid'] }}"
-dircanbestart="{{ perfomance['page']['vid'] }}"
-datatargettab="#tab4"
-                        id="tab4" class="tab">
-                            <!-- A W A R D S -->
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda ipsum nisi, optio quas quis ullam veritatis! Deleniti excepturi ipsam, maxime mollitia nam nesciunt, praesentium quaerat recusandae reprehenderit sunt
-                                voluptatem.
-                            </p>
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur distinctio, impedit ipsam minus nostrum obcaecati odit officiis! Accusantium architecto at dolorem, ducimus ea facilis iusto molestiae nesciunt nihil
-                                sit.
-                            </p>
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea eaque id ipsa iste iure provident quas quis repellat vitae. Eligendi hic laboriosam qui sapiente voluptas! At eveniet harum id!</p>
-                        </div>
-                        <!---->
-                        <div id="tab5" class="tab">
-                            <!-- F E E D B A C K -->
-                            <div class="fe-row">
-                                <div class="fe-col-12">
-
-
-                                    <form id="formx"
-
-                                    class="feedback-form" 
-custom-submit-dir
-dataa="{{ perfomance['page']['vid'] }}"
-dircanbestart="{{ perfomance['page']['vid'] }}"                                   >
-                                        <h4 class="feedback-title">
-{{ perfomance['page']['static'][languages[language1]]['review_title'] }}
-</h4>
-                                        <input
-             class="namefromform feedback feedback-name" type="text" 
-placeholder="
-{{ perfomance['page']['static'][languages[language1]]['placeholder_name'] }}
-"
-required="required" min='1' max="100"
-alt="{{ perfomance['page']['vid'] }}"
-/>
-                                        <textarea 
-            class="textfromform feedback feedback-text" rows="8" cols="40" 
-placeholder="
-{{ perfomance['page']['static'][languages[language1]]['placeholder_text'] }}
-"
-required="required" min='2' max="20000"
-name='text-from-form'
-></textarea>
-                                        <input class="submit-button" type="submit"
- 
-value="
-{{ perfomance['page']['static'][languages[language1]]['send_button'] }}"
->
-                                    </form>
-
-                                    <div 
-ng-repeat="item in perfomance['comments']"
-                                    class="post" >
-                                        <p class="post-name">
-{{ item['comment_body']['#object']['subject'] }}
-                                        </p>
-                                        <p class="post-date">
-{{ item['comment_body']['#object']['created'] | fromtimestamp }}
-</p>
-                                        <p class="post-message">
-{{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
- </p>
-                                    </div>                                  
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!--A C C O R D E O N-->
-            <div class="invisible fe-col-12">
-                <div class="accordion">
-                    <div class="accordion-section">
-                        <a class="accordion-section-title activeTitle gb-cursor-pointer" 
-                        datahref="#accordion-1"><span
-                                class="inner-box-text">
-{{ perfomance['page']['field_title_photo'][languages[language1]][0]['value'] }}
-</span></a>
-
-                        <div id="accordion-1" class="accordion-section-content activeContent">
-                            <div id="tab1" class="tab tab-active fe-col-12">
-                                <!-- P H O T O   C A R O U S E L -->
-                                <div id="lightgallery2" class="owl-carousel owl-theme">
-
-
-<data-repeat ng-repeat="item in perfomance['page']
-['field_project_photo']['und']" >  
-                                <div 
-                                class="item" 
-data-src="{{item['uri']}}"
-                                >
-                                    <img 
-src="
-{{item['filename'] | changestartpath : 
-'/content/sites/default/files/styles/medium/public/' }}
-" 
-                                    />
-                                </div>
-</data-repeat>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-section">
-                        <a class="accordion-section-title gb-cursor-pointer" 
-                        datahref="#accordion-2"><span
-                                class="inner-box-text">
-{{ perfomance['page']['field_title_video'][languages[language1]][0]['value'] }}
-</span></a>
-
-                        <div id="accordion-2" class="accordion-section-content">
-                            <!-- V I D E O   C A R O U S E L -->
-                            <div id="video-gallery2" class="owl-carousel owl-theme">
-  
-<data-repeat ng-repeat="item in perfomance['page']
-['field_project_video']['und']" >
-                                <div class="light-gal-item" 
-data-src="{{ item['input'] | trusted }}">
-                                    <img class="grayscale" 
-src="{{ item['video_id'] 
-| changestartpath : 
-'http://img.youtube.com/vi/' 
-| changeendpath : 
-'/hqdefault.jpg' 
- }}" />
-                                </div>   
-</data-repeat>  
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-section">
-                        <a class="accordion-section-title gb-cursor-pointer" 
-                        datahref="#accordion-3"><span class="inner-box-text">
-{{ perfomance['page']['field_title_press'][languages[language1]][0]['value'] }}
-                        </span></a>
-
-                        <div id="accordion-3" class="accordion-section-content">
-                            <!-- P U B L I C A T I O N S -->
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda ipsum nisi, optio quas quis ullam veritatis! Deleniti excepturi ipsam, maxime mollitia nam nesciunt, praesentium quaerat recusandae reprehenderit sunt
-                                voluptatem.
-                            </p>
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur distinctio, impedit ipsam minus nostrum obcaecati odit officiis! Accusantium architecto at dolorem, ducimus ea facilis iusto molestiae nesciunt nihil
-                                sit.
-                            </p>
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea eaque id ipsa iste iure provident quas quis repellat vitae. Eligendi hic laboriosam qui sapiente voluptas! At eveniet harum id!</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-section">
-                        <a class="accordion-section-title gb-cursor-pointer" 
-                        datahref="#accordion-4"><span
-                                class="inner-box-text">
-{{ perfomance['page']['field_title_awards'][languages[language1]][0]['value'] }}
-                                </span></a>
-
-                        <div id="accordion-4" class="accordion-section-content">
-                            <!-- A W A R D S -->
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda ipsum nisi, optio quas quis ullam veritatis! Deleniti excepturi ipsam, maxime mollitia nam nesciunt, praesentium quaerat recusandae reprehenderit sunt
-                                voluptatem.
-                            </p>
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur distinctio, impedit ipsam minus nostrum obcaecati odit officiis! Accusantium architecto at dolorem, ducimus ea facilis iusto molestiae nesciunt nihil
-                                sit.
-                            </p>
-                            <p class="about-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea eaque id ipsa iste iure provident quas quis repellat vitae. Eligendi hic laboriosam qui sapiente voluptas! At eveniet harum id!</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-section">
-                        <a class="accordion-section-title gb-cursor-pointer" 
-                        datahref="#accordion-5"><span
-                                class="inner-box-text">
-{{ perfomance['page']['field_title_comments'][languages[language1]][0]['value'] }}
-</span></a>
-
-                        <div id="accordion-5" class="accordion-section-content">
-                            <!--F E E D B A C K-->
-                            <div class="fe-row">
-                                <div class="fe-col-12">
-
-
-
-
-                                    <form id="formx"
-
-                                    class="feedback-form" 
-custom-submit-dir
-                                    >
-                                        <h4 class="feedback-title">
-{{ perfomance['page']['static'][languages[language1]]['review_title'] }}
-</h4>
-                                        <input
-             class="namefromform feedback feedback-name" type="text" 
-placeholder="
-{{ perfomance['page']['static'][languages[language1]]['placeholder_name'] }}
-"
-required="required" min='1' max="100"
-alt="{{ perfomance['page']['vid'] }}"
-/>
-                                        <textarea 
-            class="textfromform feedback feedback-text" rows="8" cols="40" 
-placeholder="
-{{ perfomance['page']['static'][languages[language1]]['placeholder_text'] }}
-"
-required="required" min='2' max="20000"
-></textarea>
-                                        <input class="submit-button" type="submit"
- 
-value="
-{{ perfomance['page']['static'][languages[language1]]['send_button'] }}"
->
-                                    </form>
-
-                                    <div 
-ng-repeat="item in perfomance['comments']"
-                                    class="post" >
-                                        <p class="post-name">
-{{ item['comment_body']['#object']['subject'] }}
-                                        </p>
-                                        <p class="post-date">
-{{ item['comment_body']['#object']['created'] | fromtimestamp }}
-</p>
-                                        <p class="post-message">
-{{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
- </p>
-                                    </div>  
-
-
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <ng-include src="'/views/global/tabs.html'"></ng-include> 
 
     </div>
 
 
-<data-init-dir 
-        perfomance-jquery-plagins-init-dir="{{perfomance}}" >
-</data-init-dir >
-
-
-
-
-<div 
-        oc-lazy-load='[
-            "/js/jquery-scroll.js",
-            "/js/waypoints.init.js",
-            "/js/accordion.js",
-            "/js/menu.js"
-        ]'>
- 
-</div>

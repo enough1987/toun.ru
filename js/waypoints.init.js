@@ -1,5 +1,11 @@
 
+
+
+
 $(function() {
+ 
+  if ( document.getElementById('content') ) {
+  console.log( "waypoint are going" );     
   var waypoint = new Waypoint({
     element: document.getElementById('content'),
     handler: function(direction) {
@@ -10,5 +16,9 @@ $(function() {
     },
     offset: 180
   });
-
+  }else {
+    console.log( "waypoint has no id content, so waypoint are not going " );    
+  }
+ 
 });
+

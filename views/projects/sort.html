@@ -2,19 +2,19 @@
 <div class="fe-row common_page-margin">
     <div class="fe-col-12">
         <div 
-ng-if="projects"
+ng-if="page"
         class="gallery_heading-box">
             <div class="common_top-heading">
-{{ projects['static'][languages[language1]]['title'] }}
+{{ page['static'][languages[language1]]['title'] }}
             </div>
             <div class="common_top-subheading">
-{{ projects['static'][languages[language1]]['title'] }}
+{{ page['static'][languages[language1]]['title'] }}
             </div>
         </div>
         <div class="gallery">
             <div class="gallery_filters">
 
-<data-repeat ng-repeat="item in projects['filter_menu']">
+<data-repeat ng-repeat="item in page['filter_menu']">
                <p class="gallery_menu_paragraph"><a class="active gallery_year-filter"
 data-filter="{{ item[languages[language1]]['und'][0]['value'] }}" 
 href="#{{ item[languages[language1]]['und'][0]['value'] }}">
@@ -25,7 +25,7 @@ href="#{{ item[languages[language1]]['und'][0]['value'] }}">
             </div>
             <div class="fe-row gallery_afisha-grid">
 
-<data-repeat ng-repeat="item in projects['widget']"
+<data-repeat ng-repeat="item in page['widget']"
 sort="{{ item[languages[language1]]['item']['sort'] }}"
 link="{{ item[languages[language1]]['item']['link'] }}"
 ng-if="showorhide(hash, item[languages[language1]]['item']['sort'])" 
