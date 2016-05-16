@@ -59,6 +59,35 @@ customFilters.filter("changeendpath", function () {
     };
 });
 
+customFilters.filter('getpropfromstring', function ($sce) {
+    return function(value) {
+        if ( angular.isString(value) && value ) { 
+
+            var args = {};
+
+            var query = value.split('?')[1]; 
+    
+            var pairs = query.split("&");                   
+
+            for (var i = 0; i < pairs.length; i++) {
+
+                var pos = pairs[i].indexOf('=');            
+                if (pos == -1) {                            
+                    continue;                    
+                }
+
+                var argname = pairs[i].substring(0, pos);   
+                var value = pairs[i].substring(pos + 1);    
+
+                args[argname] = value;                      
+
+            }           
+
+            return args['v']; 
+        }
+    };
+});
+
 customFilters.filter('trusted', function ($sce) {
     return function(url) {
         if (angular.isString(url)) { 

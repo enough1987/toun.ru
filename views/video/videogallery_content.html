@@ -1,0 +1,60 @@
+<!-- V I D E O   G A L L E R Y   S T A R T -->
+<div class="fe-row common_page-margin">
+    <div class="fe-col-12">
+        <div class="gallery_heading-box">
+            <div class="common_top-heading">
+{{ page['static'][languages[language1]]['header'] }}  
+            </div>
+            <div class="common_top-subheading">
+{{ page['static'][languages[language2]]['header'] }} 
+            </div>
+        </div>
+        <div class="gallery">
+
+            <div class="gallery_filters">
+
+<data-repeat ng-repeat="item in page['filter_menu']">
+                <p class="gallery_menu_paragraph">
+                <a class="active gallery_year-filter"
+href="{{item['field_link']['und'][0]['value']}}">
+{{item[languages[language1]]['und'][0]['value']}}
+                </a></p>
+</data-repeat>
+
+            </div>
+
+            <div class="fe-row gallery_afisha-grid videogallery">
+
+<data-repeat ng-repeat-start="item in page['widget']" ></data-repeat>
+<data-repeat ng-repeat-end ng-repeat="video in 
+    item[languages[language1]]['item']['video'].split(',')" >
+                <div class="fe-col-n-12 fe-col-3">
+                    <div class="videogallery_box light-gal-item" 
+data-src="{{video | trusted }}">
+<img class="videogallery_image grayscale" 
+src="{{ video | getpropfromstring
+| changestartpath : 
+'http://img.youtube.com/vi/' 
+| changeendpath : 
+'/hqdefault.jpg' 
+ }}"
+  alt="video1"/>
+                    </div>
+                </div>
+</data-repeat>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- V I D E O   G A L L E R Y   E N D -->
+
+
+<div 
+        oc-lazy-load='[
+            "/js/accordion.js",
+            "/js/menu.js",
+            "/js/videogallery.js"
+        ]'>
+</div>

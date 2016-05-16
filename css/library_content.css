@@ -1,0 +1,29 @@
+.library_content_top-heading-kca-mns {
+  font-size: 18px;
+}
+.library_content_year-wrapper {
+    position: relative;
+    width: 90%;
+    height: 20px;
+    margin: 20px auto 15px;
+    border-bottom: 2px solid #f3f3f3;
+}
+.library_content_year {
+    position: absolute;
+    display: inline-block;
+    bottom: -6px;
+    left: 12%;
+    color: #464646;
+    background: white;
+    padding: 30px 10px 0;
+}
+.library_content_library-wrapper {
+  width: 75%;
+  margin: auto;
+}
+.library_content_document-wrapper {
+  margin: 10px 0;
+}
+.library_content_document-title {
+  margin-left: 6px;
+}

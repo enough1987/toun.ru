@@ -28,6 +28,18 @@ var taatrApp = angular.module("TaatrApp",
       when('/festival/:festival', {
         templateUrl: '/views/festival/init.html',
         controller: 'FestivalCtrl'        
+      }).
+      when('/request/awards', {
+        templateUrl: '/views/awards/init.html',
+        controller: 'AwardsCtrl'         
+      }).  
+      when('/request/video', {
+        templateUrl: '/views/video/init.html',
+        controller: 'VideoCtrl'         
+      }).
+      when('/request/library', {
+        templateUrl: '/views/library/init.html',
+        controller: 'LibraryCtrl'         
       }).      
       when('/mass_media', {
         templateUrl: '/views/mass_media/init.html',
@@ -45,10 +57,6 @@ var taatrApp = angular.module("TaatrApp",
         templateUrl: '/views/jobs/init.html',
         controller: 'TestCtrl'         
       }).
-      when('/awards', {
-        templateUrl: '/views/awards/init.html',
-        controller: 'TestCtrl'         
-      }). 
       when('/documents', {
         templateUrl: '/views/documents/init.html',
         controller: 'TestCtrl'         
@@ -62,7 +70,9 @@ var taatrApp = angular.module("TaatrApp",
         controller: 'TestCtrl'         
       }).           
       otherwise({
-        redirectTo: '/'
+        //redirectTo: '/'
+        templateUrl: '/views/global/weareworking.html',
+        controller: 'TestCtrl'         
       });
 
       $locationProvider.html5Mode(true);

@@ -1,0 +1,59 @@
+<!-- L I B R A R Y   C O N T E N T   S T A R T -->
+<div class="fe-row common_page-margin">
+    <div class="gallery_heading-box">
+          <h2 class="common_top-heading">
+{{ page['static'][languages[language1]]['header'] }} 
+          </h2>
+          <h2 class="common_top-heading  library_content_top-heading-kca-mns">
+{{ page['static'][languages[language2]]['header'] }} 
+          </h2>
+    </div>
+    <div class="gallery">
+        <div class="gallery_filters">
+
+<data-repeat ng-repeat="item in page['filter_menu']">
+            <p class="gallery_menu_paragraph"><a class="gallery_year-filter" 
+href="{{item['field_link']['und'][0]['value']}}">
+{{item[languages[language1]]['und'][0]['value']}}
+            </a></p>
+</data-repeat>
+
+        </div>
+
+        <div class="fe-row">
+
+<data-repeat ng-repeat="item in page['widget']" >
+            <div 
+ng-if="hash == '' || hash == item[languages[language1]]['item']['sort']"
+            class="library_content_library-wrapper">
+
+                <p class="library_content_document-wrapper">
+                  <a
+href="{{item[languages[language1]]['item']['file']}}"
+                  >
+                    <img src="icon/img/docs.png" alt="" />
+                    <span class="library_content_document-title">
+{{item[languages[language1]]['item']['title']}}
+                    </span>
+                  </a>
+                </p>            
+
+            </div>
+</data-repeat>
+
+        </div>
+
+
+
+    </div>
+</div>
+<!-- L I B R A R Y    C O N T E N T   E N D -->
+
+<div 
+        oc-lazy-load='[
+            "/js/accordion.js",
+            "/js/menu.js",
+            "/js/library_content_scroll.js"
+        ]'>
+</div>
+

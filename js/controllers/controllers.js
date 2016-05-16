@@ -226,7 +226,7 @@ seoTagsService, getshoworhideFuncService) {
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
-   console.log( $scope.hash  );
+   console.log( $scope.hash );
    
 
    seoTagsService.setup();
@@ -293,6 +293,105 @@ seoTagsService) {
 });
 
 
+taatrApp.controller("AwardsCtrl", function ($scope, $location, $log,
+$ocLazyLoad, 
+ajaxService, localStorageService, languageService, pageService, routeService,
+seoTagsService) {
+
+   $log.debug( $location.path() +" AwardsCtrl" );
+
+
+   languageService.setup($scope);
+
+   $scope.changelanguage = languageService.change($scope);
+
+   $scope.getPage = pageService.setup($scope);
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+   $scope.getPage("/content/go2json/request/awards"); 
+
+   $scope.routeGoToView = routeService.setup();
+   $scope.hash = routeService.gethash();
+
+   console.log( $scope.hash );
+   
+
+   seoTagsService.setup();
+
+   $scope.test = function(item){
+        console.log( item ); 
+        return item;       
+   };
+
+
+});
+
+taatrApp.controller("VideoCtrl", function ($scope, $location, $log,
+$ocLazyLoad, 
+ajaxService, localStorageService, languageService, pageService, routeService,
+seoTagsService) {
+
+   $log.debug( $location.path() +" VideoCtrl" );
+
+
+   languageService.setup($scope);
+
+   $scope.changelanguage = languageService.change($scope);
+
+   $scope.getPage = pageService.setup($scope);
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+   $scope.getPage("/content/go2json/request/video"); 
+
+   $scope.routeGoToView = routeService.setup();
+   $scope.hash = routeService.gethash();
+
+   console.log( $scope.hash );
+   
+   seoTagsService.setup();
+
+   $scope.test = function(item){
+        console.log( item ); 
+        return item;       
+   };
+
+
+});
+
+taatrApp.controller("LibraryCtrl", function ($scope, $location, $log,
+$ocLazyLoad, 
+ajaxService, localStorageService, languageService, pageService, routeService,
+seoTagsService) {
+
+   $log.debug( $location.path() +" LibraryCtrl" );
+
+
+   languageService.setup($scope);
+
+   $scope.changelanguage = languageService.change($scope);
+
+   $scope.getPage = pageService.setup($scope);
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+   $scope.getPage("/content/go2json/request/library"); 
+
+   $scope.routeGoToView = routeService.setup();
+   $scope.hash = routeService.gethash();
+
+   console.log( $scope.hash );
+   
+   seoTagsService.setup();
+
+   $scope.test = function(item){
+        console.log( item ); 
+        return item;       
+   };
+
+
+});
 taatrApp.controller("TestCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams,
 ajaxService, localStorageService, languageService, pageService, routeService,
