@@ -1,0 +1,80 @@
+<!-- P E O P L E   A L L   G A L L E R Y   S T A R T -->
+<div class="fe-row common_page-margin">
+    <div class="fe-col-12">
+        <div class="gallery_heading-box">
+            <div class="common_top-heading">
+{{ item[languages[language1]]['und'][0]['value'] }}
+            Хозяева</div>
+            <div class="common_top-subheading">
+
+            театрын мирт</div>
+        </div>
+        <div class="gallery">
+
+            <div class="gallery_filters">
+
+<data-repeat ng-repeat="item in page['filter_menu']" >
+                <p class="gallery_menu_paragraph "><a class="active gallery_year-filter" 
+href="{{item['field_hashtag']['und'][0]['value']}}"
+                >
+{{ item[languages[language1]]['und'][0]['value'] }}
+                </a></p>
+</data-repeat>
+                
+            </div>
+
+            <div class="gallery_afisha-grid"> 
+
+                <div ng-class="hash == '' ? '' : 'gallery_width'"> 
+                <!-- gallery_width -->
+
+<data-repeat ng-repeat="item in page['widget']" >
+                    <div class= "people_all_gallery-box width-big"
+ng-if="hash == '' ||  '#'+hash == item[languages[language1]]['item']['people_category']"
+>
+<!-- ng-class="hash == '' ? 'width-big' : 'width-small' " no use-->                     
+                        <div class="people_all_gallery_inbox">
+
+<a ng-click="routeGoToView(item[languages[language1]]['item']['link'])" >
+<img class="people_gallery-image grayscale"                     
+people_category="{{ item[languages[language1]]['item']['people_category'] }}"
+src="{{item[languages[language1]]['item']['photo']['src']}}" 
+/>
+</a>
+                        </div>
+                    </div>
+</data-repeat>
+
+                </div>
+
+                <div class="actors_list"
+ng-class="hash == '' ? 'gb-display-none' : '' ">
+
+                    <ul ng-repeat="item in page['widget']">
+                        <li
+ng-if="'#'+hash == item[languages[language1]]['item']['people_category']"
+                        ><a class="actor_name" 
+ng-click="routeGoToView(item[languages[language1]]['item']['link'])"
+people_category="{{ item[languages[language1]]['item']['people_category'] }}"
+                        >
+{{ item[languages[language1]]['item']['title'] }}
+                        </a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- P E O P L E   A L L   G A L L E R Y   E N D -->
+
+
+
+<div 
+oc-lazy-load='[
+"/js/menu.js",
+"/js/accordion.js"
+]'>
+</div>

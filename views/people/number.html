@@ -1,0 +1,121 @@
+<!-- A B O U T   A C T O R  C O N T E N T   S T A R T -->
+
+<data-wrapper id="perfomance-wrapper" >
+
+<div class="fe-row common_page-margin">
+    <div class="gallery_heading-box">
+        <h2 class="common_top-heading">
+
+        Хозяева</h2>
+        <h2 class="common_top-heading  library_content_top-heading-kca-mns">
+        театрын мирт</h2>
+    </div>
+    <div class="gallery_filters">
+
+<data-repeat ng-repeat="item in page['filter_menu']" >
+        <p class="gallery_menu_paragraph">
+        <a class="gallery_year-filter" data-filter="1" 
+ng-click="routeGoToView(item['field_link']['und'][0]['value'])"
+        >
+{{ item[languages[language1]]['und'][0]['value'] }}
+
+        </a></p>
+</data-repeat>
+
+    </div>
+</div>
+<div class="fe-row about-actor22_content-wrapper">
+    <div class="fe-col-n-12 fe-col-s-5 fe-col-m-5 fe-col-b-4 fe-col-u-3">
+
+        <div>
+            <img 
+src="{{ page['page']['field_people_photo']['und'][0]['uri'] }}" 
+alt="" class="about-actor22_actor-photo" />
+        </div>
+
+        <div class="about-actor22_actor-spectacles">
+
+            <h4 class="about-actor22_content_title">
+{{ page['page']['field_title_summary'][languages[language1]]
+[0]['value'] }}
+            </h4>
+
+            <p class="about-actor22_content_subtitle">
+                <span>
+
+                Черная песня</span>
+                <span class="about-actor22_content_separator">
+
+                И дольше века длится день</span>
+                <span class="about-actor22_content_separator">
+
+                Дети неба</span>
+            </p>
+        </div>
+
+
+        <div class="about-actor22_audio-player">
+            <h4 class="about-actor22_content_title">
+{{ page['page']['field_title_music'][languages[language1]]
+[0]['value'] }}</h4>
+
+    <!-- 
+        https://github.com/DIYgod/APlayer
+        http://www.jqueryrain.com/?eaSgq611
+     -->
+
+        <div id="audioplayer" class="aplayer"></div>
+        
+        <data-init audio-player-dir="
+        {{page['page']['field_music_file'][languages[language1]]}}
+
+        ">
+        </data-init> 
+
+        </div>
+    </div>
+    <div class="fe-col-n-12 fe-col-s-7 fe-col-m-7 fe-col-b-8 fe-col-u-9">
+        <div class="about-actor22_content_biography-wrapper">
+
+            <h3 class="about-actor22_content_title">
+{{ page['page']['field_name'][languages[language1]][0]['value'] }}
+{{ page['page']['field_sourname'][languages[language1]][0]['value'] }}
+{{ page['page']['field_patronymic'][languages[language1]][0]['value'] }}
+            <span class="about-actor22_content_actor-position">
+{{ page['page']['field_position'][languages[language1]][0]['value'] }}        
+            Актриса</span></h3>
+
+            <p class="about-actor22_content_biography-paragraph">
+        {{ page['page']['field_body'][languages[language1]][0]['value'] }}                
+            </p>
+
+            <p class="about-actor22_content_biography-paragraph">
+        {{ page['page']['field_body'][languages[language2]][0]['value'] }}                
+            </p>
+
+            <p class="about-actor22_content_img">
+                <img 
+src="{{ page['page']['field_tamgi']['und'][0]['uri'] }}" alt="">
+            </p>
+
+        </div>
+    </div>
+</div>
+
+
+<ng-include src="'/views/global/tabs.html'"></ng-include> 
+
+
+</data-wrapper>
+
+<!-- A B O U T   A C T O R   C O N T E N T   E N D -->
+
+
+
+<div 
+oc-lazy-load='[
+"/js/menu.js",
+"/js/accordion.js",
+"/js/about-actor22_content_scroll.js"
+]'>
+</div>

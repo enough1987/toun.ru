@@ -179,6 +179,67 @@ seoTagsService, getshoworhideFuncService) {
 
 });
 
+taatrApp.controller("PeopleCtrl", function ($scope, $routeParams,
+$location, $log,
+$ocLazyLoad,
+ajaxService, localStorageService, languageService, pageService, routeService,
+seoTagsService, getshoworhideFuncService) { 
+
+  $scope.getPage = pageService.setup($scope);
+  var xhr = new XMLHttpRequest();      
+  xhr.open("POST", 
+        '/content/go2json/people/'+$routeParams.people);
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            if (xhr.status != 200) {
+  console.log('status ' + xhr.status);
+  $scope.subview = '/views/global/404.html'; 
+  console.log( $scope.subview );   
+            }
+            else {
+  console.log('status ' + xhr.status);              
+  if( !isNaN(parseFloat($routeParams.people)) && 
+  isFinite($routeParams.people) ) {
+      $scope.subview = '/views/people/number.html';
+      console.log( $scope.subview );
+          
+  } else {
+      $scope.subview = '/views/people/notnumber.html'; 
+      console.log( $scope.subview );
+  }
+  $scope.getPage("/content/go2json/people/"+$routeParams.people); 
+            }
+        }
+      }
+  xhr.send();
+
+   $log.debug( $location.path() +" PeopleCtrl" );
+   $log.debug( $routeParams.people );
+
+   languageService.setup($scope);
+
+   $scope.changelanguage = languageService.change($scope);
+
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+
+   $scope.routeGoToView = routeService.setup();
+   $scope.hash = routeService.gethash();
+   console.log( $scope.hash  );
+   
+
+   seoTagsService.setup();
+
+   $scope.test = function(item){
+        console.log( item ); 
+        return item;       
+   };
+
+   $scope.showorhide = getshoworhideFuncService.setup();
+
+});
+
 taatrApp.controller("FestivalCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams,
 ajaxService, localStorageService, languageService, pageService, routeService,

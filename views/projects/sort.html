@@ -17,7 +17,7 @@ ng-if="page"
 <data-repeat ng-repeat="item in page['filter_menu']">
                <p class="gallery_menu_paragraph"><a class="active gallery_year-filter"
 data-filter="{{ item[languages[language1]]['und'][0]['value'] }}" 
-href="#{{ item[languages[language1]]['und'][0]['value'] }}">
+href="#{{item[languages[language1]]['und'][0]['value']}}">
 {{ item[languages[language1]]['und'][0]['value'] }}
 </a></p>
 </data-repeat>
@@ -37,7 +37,7 @@ ng-if="showorhide(hash, item[languages[language1]]['item']['sort'])"
                 <img class="gallery_afisha-image" 
 src="{{ item[languages[language1]]['item']['image']['src'] }}" 
 alt="{{ item[languages[language1]]['item']['image']['alt'] }}"
-ng-click="routeGoToView(item[languages[language1]]['item']['link'])" 
+href="{{item[languages[language1]]['item']['link']}}" 
 >
                 </a></div></div>
 </data-repeat>

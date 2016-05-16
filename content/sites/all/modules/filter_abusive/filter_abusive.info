@@ -1,3 +1,0 @@
-name = Filter abusive words
-description = Replace all russian abusive words in text by a given one.
-core = 7.x

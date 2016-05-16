@@ -18,10 +18,17 @@
     display: none !important;
 }
 
+.gb-display-block  {
+    display: block !important;    
+}
+
 .gb-color-like-red {
     color: #ED8A8A;
 }
 
+/* C O M M O N */
+
+/* Headings */
 .common_top-heading {
     text-align: center;
     font-size: 26px;
@@ -32,9 +39,12 @@
     font-size: 18px;
     color: #464646;
 }
+
+/* All pages margin top */
 .common_page-margin {
     margin-top: 130px;
 }
+
 /* Gallery */
 .gallery_heading-box {
     border-bottom: 3px solid #EDEDED;
@@ -42,14 +52,17 @@
     width: 90%;
     margin: 0 auto;
 }
+
 .gallery {
     padding-bottom: 80px;
 }
+
 .gallery_filters {
     width: 90%;
     margin: auto;
     padding: 10px 0 20px 0;
 }
+
 .gallery_year-filter {
     display: block;
     float: left;
@@ -57,24 +70,29 @@
     text-align: center;
 
 }
+
 .gallery_afisha-grid {
     width: 90%;
     margin: 0 auto;
-    text-align: justify;
+    /*text-align: justify;*/
 }
+
 .gallery_afisha-box {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .gallery_afisha {
     width: 95%;
     padding: 5%;
 
 }
+
 .gallery_afisha-image {
     width: 100%;
 }
+
 .gallery_menu_paragraph {
     display: inline-block;
     position: relative;
@@ -83,11 +101,13 @@
     text-align: left;
     cursor: pointer;
 }
+
 .gallery_menu_paragraph:hover {
-    background: url("../icon/img/arrow-left.png") left bottom no-repeat, url("../icon/img/arrow-right.png")right top no-repeat;
+    background: url("../icon/img/arrow-left.png") left bottom no-repeat, url("../icon/img/arrow-right.png") right top no-repeat;
 }
+
 .filters_active {
-    background: url("../icon/img/arrow-left.png") left bottom no-repeat, url("../icon/img/arrow-right.png")right top no-repeat;
+    background: url("../icon/img/arrow-left.png") left bottom no-repeat, url("../icon/img/arrow-right.png") right top no-repeat;
 }
 
 /* G R A Y S C A L E */
@@ -103,7 +123,39 @@ img.grayscale:hover {
     -webkit-filter: grayscale(0%);
 }
 
-/ F E E D B A C K /
+.gb-display-hide {
+    display: none;
+}
+
+.gb-display-show {
+    display: block;
+}
+
+.inner-box-text {
+    padding: 4%;
+}
+.gb-display-none {
+    display: none;
+}
+
+.gb-display-block {
+    display: block;
+}
+.gb-cursor-default {
+    cursor: default !important;
+}
+
+.gb-opacity-zero {
+    opacity: 0 !important;
+}
+.gb-cursor-pointer {
+    cursor: pointer !important;
+}
+.borderless {
+    border: none;
+}
+
+/* F E E D B A C K */
 .feedback-form {
     width: 100%;
     margin: 0 auto;

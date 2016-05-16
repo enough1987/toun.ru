@@ -16,20 +16,19 @@ var taatrApp = angular.module("TaatrApp",
       when('/perfomance/:perfomance', {
         templateUrl: '/views/perfomance/init.html',
         controller: 'PerfomanceCtrl'
-      }).
-       
+      }).       
       when('/projects/:project', {
         templateUrl: '/views/projects/init.html',
         controller: 'ProjectsCtrl'        
+      }).
+      when('/people/:people', {
+        templateUrl: '/views/people/init.html',
+        controller: 'PeopleCtrl'        
       }).
       when('/festival/:festival', {
         templateUrl: '/views/festival/init.html',
         controller: 'FestivalCtrl'        
       }).      
-      when('/peopleall', {
-        templateUrl: '/views/peopleall/init.html',
-        controller: 'TestCtrl'        
-      }).
       when('/mass_media', {
         templateUrl: '/views/mass_media/init.html',
         controller: 'TestCtrl'        
