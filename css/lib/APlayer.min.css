@@ -62,41 +62,41 @@
     line-height: 1em
 }
 
-.aplayer .aplayer-icon-play:before {
-    content: '\e806'
-}
+/*.aplayer .aplayer-icon-play:before {*/
+    /*!*content: '\e806'*!*/
+/*}*/
 
-.aplayer .aplayer-icon-pause:before {
-    content: '\e807'
-}
+/*.aplayer .aplayer-icon-pause:before {*/
+    /*!*content: '\e807'*!*/
+/*}*/
 
-.aplayer .aplayer-icon-to-start:before {
-    content: '\e808'
-}
+/*.aplayer .aplayer-icon-to-start:before {*/
+    /*content: '\e808'*/
+/*}*/
 
-.aplayer .aplayer-icon-to-end:before {
-    content: '\e809'
-}
+/*.aplayer .aplayer-icon-to-end:before {*/
+    /*content: '\e809'*/
+/*}*/
 
-.aplayer .aplayer-icon-loop:before {
-    content: '\e803'
-}
+/*.aplayer .aplayer-icon-loop:before {*/
+    /*content: '\e803'*/
+/*}*/
 
-.aplayer .aplayer-icon-menu:before {
-    content: '\e80b'
-}
+/*.aplayer .aplayer-icon-menu:before {*/
+    /*content: '\e80b'*/
+/*}*/
 
-.aplayer .aplayer-icon-volume-off:before {
-    content: '\e800'
-}
+/*.aplayer .aplayer-icon-volume-off:before {*/
+    /*content: '\e800'*/
+/*}*/
 
-.aplayer .aplayer-icon-volume-down:before {
-    content: '\e801'
-}
+/*.aplayer .aplayer-icon-volume-down:before {*/
+    /*content: '\e801'*/
+/*}*/
 
-.aplayer .aplayer-icon-volume-up:before {
-    content: '\e802'
-}
+/*.aplayer .aplayer-icon-volume-up:before {*/
+    /*content: '\e802'*/
+/*}*/
 
 .aplayer .aplayer-lrc-content {
     display: none
@@ -384,7 +384,7 @@
 
 .aplayer .aplayer-list {
     max-height: 300px;
-    overflow: auto;
+    /*overflow: auto;*/
     -webkit-transition: all .5s ease;
     transition: all .5s ease
 }

@@ -1,0 +1,51 @@
+<!-- D O C U M E N T S   C O N T E N T   S T A R T -->
+<div class="fe-row common_page-margin">
+    <div class="gallery_heading-box">
+        <div class="common_top-heading">
+{{ page['static'][languages[language1]]['header'] }} 
+</div>
+        <div class="common_top-subheading">
+{{ page['static'][languages[language2]]['header'] }} 
+</div>
+    </div>
+    <div class="gallery">
+
+        <div class="gallery_filters">
+
+<data-repeat ng-repeat="item in page['filter_menu']">
+            <p class="gallery_menu_paragraph"><a class="gallery_year-filter" 
+href="{{item['field_link']['und'][0]['value']}}">
+{{item[languages[language1]]['und'][0]['value']}}
+            </a></p>
+</data-repeat>
+
+        </div> 
+
+        <div class="fe-row">
+            <div class="documents_content_documents-wrapper">
+
+<data-repeat ng-repeat="item in page['widget']" >
+                <p 
+ng-if="hash == '' || '#'+hash == item[languages[language1]]['item']['sort']"
+                class="documents_content_document-wrapper">
+                  <a 
+href="{{item[languages[language1]]['item']['file']}}"
+>
+                    <img src="icon/img/docs.png" alt="" />
+                    <span class="documents_content_document-title">
+{{item[languages[language1]]['item']['title']}}
+                    </span>
+                  </a>
+                </p>
+</data-repeat>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- D O C U M E N T S    C O N T E N T   E N D -->
+
+
+<ng-include src="'/views/global/lazyload.html'"></ng-include>

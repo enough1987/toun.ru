@@ -133,6 +133,7 @@ customServices.factory('routeService', function ($location, $log) {
             return function(path) {
                 $log.debug( "go to rout" + " ' "+ path + " ' " );
                 $location.path(path);
+                $location.hash('');
 
             }
         },

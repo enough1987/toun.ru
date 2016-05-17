@@ -17,9 +17,10 @@ href="{{item['field_link']['und'][0]['value']}}">
             
         </div>
 
-<data-repeat ng-repeat="item in page['widget']" >        
+<data-repeat ng-repeat="item in page['widget']" > 
+       
         <div class="fe-row gallery_afisha-grid awards_content-separator"
-ng-if="hash == '' || hash == item[languages[language1]]['item']['sort']"
+ng-if="hash == '' || '#'+hash == item[languages[language1]]['item']['sort']"
         >
             <div class="awards_content">
                 <div class="fe-col-3 fe-col-n-12 fe-col-s-4 awards_content_name">
@@ -44,3 +45,7 @@ alt="" class="awards_content-img-border" />
     </div>
 </div>
 <!-- F E E D B A C K   C O N T E N T   E N D -->
+
+
+
+<ng-include src="'/views/global/lazyload.html'"></ng-include>

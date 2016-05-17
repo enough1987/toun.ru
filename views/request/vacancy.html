@@ -1,0 +1,40 @@
+<!-- J O B S   C O N T E N T   S T A R T -->
+<div class="fe-row common_page-margin">
+    <div class="fe-col-12">
+        <div class="gallery_heading-box borderless">
+            <div class="common_top-heading">
+{{ page['static'][languages[language1]]['header'] }} 
+            </div>
+            <div class="common_top-subheading">
+{{ page['static'][languages[language2]]['header'] }} 
+            </div>
+        </div>
+        <div class="jobs_box">
+
+            <div  
+ng-repeat="item in page['widget']"
+            class="fe-col-12 vacancy">
+
+                <div class="fe-col-3 fe-col-n-12 fe-col-s-12 job_title">
+                    <p class="jobs_title_text">
+{{ item[languages[language1]]['item']['title'] }} 
+                    </p>
+                </div>
+
+
+                <div class="fe-col-9 fe-col-n-12 fe-col-s-12 job_description">
+                    <div>
+                        <p class="job_description_text">Требуется на постоянную работу:<br>
+{{ item[languages[language1]]['item']['body'] }} 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- J O B S   C O N T E N T   E N D -->
+
+
+<ng-include src="'/views/global/lazyload.html'"></ng-include>   

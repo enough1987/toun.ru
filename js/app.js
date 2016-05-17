@@ -29,38 +29,22 @@ var taatrApp = angular.module("TaatrApp",
         templateUrl: '/views/festival/init.html',
         controller: 'FestivalCtrl'        
       }).
-      when('/request/awards', {
-        templateUrl: '/views/awards/init.html',
-        controller: 'AwardsCtrl'         
+      when('/request/:request', {
+        // awards
+        // video
+        // library
+        // documents
+        // vacancy
+        // press
+        // partners
+        templateUrl: '/views/request/init.html',
+        controller: 'RequestCtrl'  
       }).  
-      when('/request/video', {
-        templateUrl: '/views/video/init.html',
-        controller: 'VideoCtrl'         
-      }).
-      when('/request/library', {
-        templateUrl: '/views/library/init.html',
-        controller: 'LibraryCtrl'         
-      }).      
-      when('/mass_media', {
-        templateUrl: '/views/mass_media/init.html',
-        controller: 'TestCtrl'        
-      }).
+      
       when('/contacts', {
         templateUrl: '/views/contacts/init.html',
         controller: 'TestCtrl'        
-      }).   
-      when('/page_white_space', {
-        templateUrl: '/views/page_white_space/init.html',
-        controller: 'TestCtrl'        
-      }). 
-      when('/jobs', {
-        templateUrl: '/views/jobs/init.html',
-        controller: 'TestCtrl'         
-      }).
-      when('/documents', {
-        templateUrl: '/views/documents/init.html',
-        controller: 'TestCtrl'         
-      }). 
+      }).    
       when('/afisha', {
         templateUrl: '/views/afisha/init.html',
         controller: 'TestCtrl'         

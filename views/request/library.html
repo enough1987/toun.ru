@@ -24,7 +24,7 @@ href="{{item['field_link']['und'][0]['value']}}">
 
 <data-repeat ng-repeat="item in page['widget']" >
             <div 
-ng-if="hash == '' || hash == item[languages[language1]]['item']['sort']"
+ng-if="hash == '' || '#'+hash == item[languages[language1]]['item']['sort']"
             class="library_content_library-wrapper">
 
                 <p class="library_content_document-wrapper">

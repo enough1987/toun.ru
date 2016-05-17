@@ -1,0 +1,37 @@
+<!-- M A S S   M E D I A   S T A R T-->
+<div class="fe-row common_page-margin">
+    <div class="fe-col-12">
+
+        <div class="gallery_heading-box">
+            <div class="common_top-heading">
+{{ page['static'][languages[language1]]['header'] }} 
+            </div>
+            <div class="common_top-subheading">
+{{ page['static'][languages[language2]]['header'] }} 
+            </div>
+        </div>
+
+<data-repeat ng-repeat="item in page['widget']" >
+        <div class="mass_media-box">
+            <div class="mass_media-paragraph">
+                <div class="img-wrap"><img class="mass_media-icon" 
+                src="icon/img/pen.png" alt=""/></div>
+                <div class="text-wrap">
+                    <span class="mass_media-text">
+{{item[languages[language1]]['item']['title']}}
+                    </span><br>
+                    <a class="mass_media-link" 
+                    target="_blank"
+href="{{item[languages[language1]]['item']['link']}}">
+{{item[languages[language1]]['item']['link']}}</a>
+                </div>
+            </div>
+        </div>
+</data-repeat>
+
+    </div>
+</div>
+
+<!-- M A S S   M E D I A   E N D-->
+
+<ng-include src="'/views/global/lazyload.html'"></ng-include>
