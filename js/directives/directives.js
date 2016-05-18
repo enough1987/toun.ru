@@ -458,3 +458,19 @@ if ( attr["dataa"] ) {
 });
 
 
+customDirectives.directive('noneIfDir', function () {
+    return {
+        restrict: 'A', 
+        scope : false,       
+        link: function displayNoneDir(scope, element, attr) {
+                element.ready(function () {
+                    console.log( attr );                   
+                    if( attr['start'] ){
+                        element.addClass('gb-display-none');
+                        console.log( attr );                        
+                    }
+                });
+        }
+    }
+});
+

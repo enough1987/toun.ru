@@ -1,5 +1,12 @@
 
-<div id="perfomance-wrapper">
+<div id="loader" ng-class="page ? 'gb-display-none' : 'gb-display-block'" >
+		
+	<img src="/icon/img/loader2.gif" alt="loader" />
+		
+</div>
+
+<div ng-class="page ? 'gb-display-block' : 'gb-display-none'"
+id="perfomance-wrapper">
 
     <ng-include src="'/views/perfomance/perfomance-menutop.html'"></ng-include> 
 

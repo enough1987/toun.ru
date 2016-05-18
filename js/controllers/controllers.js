@@ -386,6 +386,17 @@ seoTagsService) {
 
    seoTagsService.setup();
 
+   $scope.changelanguagelocaly = function(cas){
+      if(cas  == '2'){
+        $('#lang1show').removeClass('gb-display-block').addClass('gb-display-none');
+        $('#lang2show').addClass('gb-display-block').removeClass('gb-display-none');        
+      }
+      if(cas  == '1'){
+        $('#lang2show').removeClass('gb-display-block').addClass('gb-display-none');
+        $('#lang1show').addClass('gb-display-block').removeClass('gb-display-none');        
+      }      
+   };
+
    $scope.test = function(item){
         console.log( item ); 
         return item;       

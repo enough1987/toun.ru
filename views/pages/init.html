@@ -1,4 +1,12 @@
 
+<div id="loader" ng-class="page ? 'gb-display-none' : 'gb-display-block'" >
+		
+	<img src="/icon/img/loader2.gif" alt="loader" />
+		
+</div>
+
+<div ng-class="page ? 'gb-display-block' : 'gb-display-none'" >
+
 		<ng-include src="'/views/global/global-menu.html'"></ng-include>	
 
 		<ng-include src="subview"></ng-include> 
@@ -6,4 +14,6 @@
 		<ng-include src="'/views/global/tabs.html'"></ng-include>  
 
 		<ng-include src="'/views/global/global-footer.html'"></ng-include>
+
+</div>
 	
