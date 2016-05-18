@@ -36,13 +36,14 @@
     transition: color 0.3s;
 }
 .menu_main-span:hover {
-    color: #ED8A8A;
+    /*color: #ED8A8A;*/
 }
 .menu_sub-span {
     font-size: 12px;
 }
 .menu_item:hover .submenu {
     display: block;
+    z-index: 100;
 }
 .submenu {
     /* width: 100%; */
@@ -65,9 +66,12 @@
     padding: 4px;
     transition: all .5s;
 }
+.submenu_item a {
+    cursor: pointer;
+}
 
 .submenu_item:hover {
-    color: #ED8A8A;
+    /*color: #ED8A8A;*/
 }
 
 /* M O B I L E   M E N U */

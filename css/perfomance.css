@@ -264,128 +264,128 @@
 
 /* A C C O R D I O N */
 #perfomance-wrapper .accordion-about {
-  margin-left: 8%;
+  /*margin-left: 8%;*/
 }
 
 /* A U D I O  P L A Y E R */
-#perfomance-wrapper .jp-jplayer, #perfomance-wrapper .jp-audio {
-    /*max-width: 420px;*/
-    margin: 0 auto;
-    /*padding: 0 10px;*/
-}
+/*#perfomance-wrapper .jp-jplayer, #perfomance-wrapper .jp-audio {*/
+    /*!*max-width: 420px;*!*/
+    /*margin: 0 auto;*/
+    /*!*padding: 0 10px;*!*/
+/*}*/
 
-#perfomance-wrapper .jp-title {
-    float: left;
-    width: 64%;
-    height: 28px;
-    padding: 4px 0 0 25px;
-    font-size: 18px;
-    /* text-align: center; */
-    overflow: hidden;
-}
+/*#perfomance-wrapper .jp-title {*/
+    /*float: left;*/
+    /*width: 64%;*/
+    /*height: 28px;*/
+    /*padding: 4px 0 0 25px;*/
+    /*font-size: 18px;*/
+    /*!* text-align: center; *!*/
+    /*overflow: hidden;*/
+/*}*/
 
-#perfomance-wrapper .jp-title ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
+/*#perfomance-wrapper .jp-title ul {*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+    /*list-style: none;*/
+/*}*/
 
-#perfomance-wrapper .jp-gui {
-    position: relative;
-    overflow: hidden;
-    margin-top: 10px;
-}
+/*#perfomance-wrapper .jp-gui {*/
+    /*position: relative;*/
+    /*overflow: hidden;*/
+    /*margin-top: 10px;*/
+/*}*/
 
-#perfomance-wrapper .jp-controls {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
-}
+/*#perfomance-wrapper .jp-controls {*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+    /*list-style: none;*/
+    /*text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);*/
+/*}*/
 
-#perfomance-wrapper .jp-controls li {
-    display: inline;
-}
+/*#perfomance-wrapper .jp-controls li {*/
+    /*display: inline;*/
+/*}*/
 
-#perfomance-wrapper .jp-controls a {
-    color: #fff;
-    outline: none;
-}
+/*#perfomance-wrapper .jp-controls a {*/
+    /*color: #fff;*/
+    /*outline: none;*/
+/*}*/
 
-#perfomance-wrapper .jp-play, .jp-pause {
-    float: left;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    text-align: center;
-    line-height: 43px;
-}
+/*#perfomance-wrapper .jp-play, .jp-pause {*/
+    /*float: left;*/
+    /*width: 40px;*/
+    /*height: 40px;*/
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    /*line-height: 43px;*/
+/*}*/
 
-#perfomance-wrapper .jp-mute, #perfomance-wrapper .jp-unmute {
-    position: absolute;
-    right: 55px;
-    top: 0;
-    width: 20px;
-    height: 40px;
-    display: inline-block;
-    line-height: 46px;
-}
+/*#perfomance-wrapper .jp-mute, #perfomance-wrapper .jp-unmute {*/
+    /*position: absolute;*/
+    /*right: 55px;*/
+    /*top: 0;*/
+    /*width: 20px;*/
+    /*height: 40px;*/
+    /*display: inline-block;*/
+    /*line-height: 46px;*/
+/*}*/
 
-#perfomance-wrapper .play-stop-icon {
-    margin-bottom: 3px;
-}
+/*#perfomance-wrapper .play-stop-icon {*/
+    /*margin-bottom: 3px;*/
+/*}*/
 
-#perfomance-wrapper .jp-mute {
-    text-align: left;
-}
+/*#perfomance-wrapper .jp-mute {*/
+    /*text-align: left;*/
+/*}*/
 
-#perfomance-wrapper .jp-time-holder {
-    color: black;
-    font-size: 18px;
-    line-height: 14px;
-    position: absolute;
-    right: 10px;
-    top: 11px;
-}
+/*#perfomance-wrapper .jp-time-holder {*/
+    /*color: black;*/
+    /*font-size: 18px;*/
+    /*line-height: 14px;*/
+    /*position: absolute;*/
+    /*right: 10px;*/
+    /*top: 11px;*/
+/*}*/
 
-#perfomance-wrapper .jp-current-time {
-    float: right;
-    font-size: 18px;
-    padding: 5px 10px;
-}
+/*#perfomance-wrapper .jp-current-time {*/
+    /*float: right;*/
+    /*font-size: 18px;*/
+    /*padding: 5px 10px;*/
+/*}*/
 
-#perfomance-wrapper .jp-progress {
-    background-color: #cdcdcd;
-    overflow: hidden;
-    position: absolute;
-    right: 10px;
-    top: 32px;
-    width: 100%;
-}
+/*#perfomance-wrapper .jp-progress {*/
+    /*background-color: #cdcdcd;*/
+    /*overflow: hidden;*/
+    /*position: absolute;*/
+    /*right: 10px;*/
+    /*top: 32px;*/
+    /*width: 100%;*/
+/*}*/
 
-#perfomance-wrapper .jp-play-bar {
-    height: 5px;
-    background-color: #a1a1a1;
-}
+/*#perfomance-wrapper .jp-play-bar {*/
+    /*height: 5px;*/
+    /*background-color: #a1a1a1;*/
+/*}*/
 
-#perfomance-wrapper .jp-volume-bar {
-    position: absolute;
-    right: 10px;
-    top: 17px;
-    width: 45px;
-    height: 8px;
-    border-radius: 20px 20px 20px 20px;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
-    background-color: #992E18;
-    overflow: hidden;
-}
+/*#perfomance-wrapper .jp-volume-bar {*/
+    /*position: absolute;*/
+    /*right: 10px;*/
+    /*top: 17px;*/
+    /*width: 45px;*/
+    /*height: 8px;*/
+    /*border-radius: 20px 20px 20px 20px;*/
+    /*-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;*/
+    /*box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;*/
+    /*background-color: #992E18;*/
+    /*overflow: hidden;*/
+/*}*/
 
-#perfomance-wrapper .jp-volume-bar-value {
-    background-color: #fff;
-    height: 8px;
-    border-radius: 20px 20px 20px 20px;
-}
+/*#perfomance-wrapper .jp-volume-bar-value {*/
+    /*background-color: #fff;*/
+    /*height: 8px;*/
+    /*border-radius: 20px 20px 20px 20px;*/
+/*}*/
 
 /* F E E D B A C K */
 #perfomance-wrapper .feedback-form {

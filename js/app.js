@@ -40,7 +40,14 @@ var taatrApp = angular.module("TaatrApp",
         templateUrl: '/views/request/init.html',
         controller: 'RequestCtrl'  
       }).  
-      
+      when('/feedback/:feedback', {
+        templateUrl: '/views/feedback/init.html',
+        controller: 'FeedbackCtrl'          
+      }).
+      when('/pages/:pages', {
+        templateUrl: '/views/pages/init.html',
+        controller: 'PagesCtrl'          
+      }).        
       when('/contacts', {
         templateUrl: '/views/contacts/init.html',
         controller: 'TestCtrl'        
@@ -48,11 +55,7 @@ var taatrApp = angular.module("TaatrApp",
       when('/afisha', {
         templateUrl: '/views/afisha/init.html',
         controller: 'TestCtrl'         
-      }). 
-      when('/feedback', {
-        templateUrl: '/views/feedback/init.html',
-        controller: 'TestCtrl'         
-      }).           
+      }).          
       otherwise({
         //redirectTo: '/'
         templateUrl: '/views/global/weareworking.html',
