@@ -1,0 +1,40 @@
+.logo-box {
+    width: 50%;
+    margin: auto;
+}
+.logo-box img {
+    width: 100%;
+}
+.last-box {
+    width: 30%;
+}
+.easter_paragraph {
+    padding: 40px;
+    margin-bottom: 60px;
+}
+.easter_text {
+    font-family: pt-serif-bold, sans-serif;
+}
+.easter_margin {
+    padding-left: 40px;
+}
+.copyright {
+    font-size: 18px;
+    margin-top: 40px;
+    text-align: center;
+}
+.copyright a {
+    font-family: pt-serif-bold, sans-serif;
+    color: darkblue;
+}
+.nyan-box {
+    width: 60%;
+    margin: 60px auto;
+}
+.nyan-box img {
+    width: 100%;
+    max-width: 300px;
+}
+audio {
+    display: none;
+}

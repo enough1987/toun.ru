@@ -53,7 +53,11 @@ var taatrApp = angular.module("TaatrApp",
       when('/contacts', {
         templateUrl: '/views/contacts/init.html',
         controller: 'TestCtrl'        
-      }).            
+      }). 
+      when('/copyright', {
+        templateUrl: '/views/copyright/init.html',
+        controller: 'TestCtrl'        
+      }).          
       otherwise({
         //redirectTo: '/'
         templateUrl: '/views/global/weareworking.html',
