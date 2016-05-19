@@ -27,18 +27,39 @@
             <div class="fe-row">
                 <div class="fe-col-8 left-box">
 
-                    <div class="fe-col-12 gb-display-block"  id='lang1show' >
- <data-div ng-bind-html="
-page['page']['field_pages_content'][languages[language1]][0]['value']">
+                    <div 
+                    none-if-ru-dir
+                    class="fe-col-12 "  id='lang1show' >
+ <data-div 
+ ng-bind-html="page['page']['field_pages_content']['field_lang_ru'][0]['value']">
 </data-div>
                     </div>
 
-                    <div class="fe-col-12 gb-display-none"  id='lang2show' >
-                     text for testing 
- <data-div ng-bind-html="
-page['page']['field_pages_content'][languages[language2]][0]['value']">
+                    <div 
+                    none-if-en-dir
+ng-if="page['page']['field_pages_content']['field_lang_en']"
+                    class="fe-col-12 "  id='lang2show' >
+ <data-div 
+ ng-bind-html="page['page']['field_pages_content']['field_lang_en'][0]['value']">
 </data-div>
                     </div>
+
+                    <div 
+ng-if="page['page']['field_pages_content']['field_lang_kh']"
+                    class="fe-col-12 gb-display-none"  id='lang3show' >
+ <data-div 
+ ng-bind-html="page['page']['field_pages_content']['field_lang_kh'][0]['value']">
+</data-div>
+                    </div>
+
+                    <div 
+ng-if="page['page']['field_pages_content']['field_lang_mns']"
+                    class="fe-col-12 gb-display-none"  id='lang4show' >
+ <data-div 
+ ng-bind-html="page['page']['field_pages_content']['field_lang_mns'][0]['value']">
+</data-div>
+                    </div>
+
 
                     <div class="fe-col-12 ">
                         <a class="more_button" >
@@ -51,8 +72,37 @@ page['page']['field_pages_content'][languages[language2]][0]['value']">
                     <div class="empty-fix"></div>
                     <div class="fixed_aside">
 
+                        <div 
+ng-if="page['page']['field_pages_content']['field_lang_en'] &&
+page['page']['field_pages_content']['field_lang_kh'] &&
+page['page']['field_pages_content']['field_lang_mns']"
+                        class="language_box">
+                            <p class="main_contents_title">Оглавление</p>
+                            <img src="/icon/img/book.png" alt="">
+                            <p class="contents_title">Перевод:
+                                <a class="language_item gb-cursor-pointer"
+ng-click="changelanguagelocaly(1)" 
+                                >РУС</a>
+                                <a 
+ng-if="page['page']['field_pages_content']['field_lang_en']"
+                                class="language_item gb-cursor-pointer"
+ ng-click="changelanguagelocaly(2)"                                 
+                                >ENG</a>
+                                <a 
+ng-if="page['page']['field_pages_content']['field_lang_kh']"
+                                class="language_item gb-cursor-pointer" 
+ng-click="changelanguagelocaly(3)" 
+                                >Хнт</a>
+                                <a 
+ng-if="page['page']['field_pages_content']['field_lang_mns']"
+                                class="language_item gb-cursor-pointer" 
+ng-click="changelanguagelocaly(4)" 
+                                >Мнс</a>
+                            </p>
+                        </div>
+
 <data-div ng-bind-html="
-page['page']['field_right_side'][languages[language1]]['value']">
+page['page']['field_right_side'][languages[language1]][0]['value']">
 </data-div>
 
 <!--

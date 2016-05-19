@@ -307,7 +307,9 @@ seoTagsService) {
         $routeParams.request == 'documents' ||
         $routeParams.request == 'vacancy' ||
         $routeParams.request == 'press' ||
-        $routeParams.request == 'partners'
+        $routeParams.request == 'partners' ||
+        $routeParams.request == 'afisha' ||
+        $routeParams.request == 'news'        
         ) {
       $scope.getPage("/content/go2json/request/"+$routeParams.request);
       $scope.subview = '/views/request/'+$routeParams.request+'.html'; 
@@ -327,10 +329,65 @@ seoTagsService) {
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
 
-   console.log( $scope.hash );
+   console.log( 'hash  - '+ $scope.hash );
    
 
    seoTagsService.setup();
+
+
+   $scope.showMonth = function( obj ) {  
+        var bool = false;
+
+            $scope.len = 0; 
+            for(var prs in obj)  { 
+                if(obj.hasOwnProperty(prs)) $scope.len++;
+            } 
+            bool = $scope.len >= 1 ? true : false; 
+
+                
+        return bool;
+   };
+
+  if ( $routeParams.request == 'news' ) {
+    var intervalID = setInterval(function(){ 
+      $scope.currentPage = 0;
+      $scope.itemsPerPage = 5;
+      
+      if ( ! $scope.page ) { return '' };
+      $scope.items = [];
+      for(var prs in $scope.page['widget'])  {         
+        
+        if($scope.page['widget'].hasOwnProperty(prs)) {       
+           $scope.items[prs] = $scope.page['widget'][prs];             
+        };
+      }  
+
+      $scope.firstPage = function() {
+        return $scope.currentPage == 0;
+      }
+      $scope.lastPage = function() {
+        var lastPageNum = Math.ceil($scope.items.length / $scope.itemsPerPage - 1);
+        return $scope.currentPage == lastPageNum;
+      }
+      $scope.numberOfPages = function(){
+        return Math.ceil($scope.items.length / $scope.itemsPerPage);
+      }
+      $scope.startingItem = function() {
+        return $scope.currentPage * $scope.itemsPerPage;
+      }
+      $scope.pageBack = function() {
+        $scope.currentPage = $scope.currentPage - 1;
+      }
+      $scope.pageForward = function() {
+        $scope.currentPage = $scope.currentPage + 1;
+      }
+      console.log( 'pagination is good, all news are ' );
+      console.log( $scope.items );
+      
+      clearInterval(intervalID); 
+      $scope.$apply();
+    }, 1000);
+  }
 
    $scope.test = function(item){
         console.log( item ); 
@@ -387,14 +444,30 @@ seoTagsService) {
    seoTagsService.setup();
 
    $scope.changelanguagelocaly = function(cas){
+      if(cas  == '1'){
+        $('#lang1show').removeClass('gb-display-none').addClass('gb-display-block');
+        $('#lang2show').removeClass('gb-display-block').addClass('gb-display-none'); 
+        $('#lang3show').removeClass('gb-display-block').addClass('gb-display-none'); 
+        $('#lang4show').removeClass('gb-display-block').addClass('gb-display-none');        
+      }
       if(cas  == '2'){
         $('#lang1show').removeClass('gb-display-block').addClass('gb-display-none');
-        $('#lang2show').addClass('gb-display-block').removeClass('gb-display-none');        
+        $('#lang2show').removeClass('gb-display-none').addClass('gb-display-block'); 
+        $('#lang3show').removeClass('gb-display-block').addClass('gb-display-none'); 
+        $('#lang4show').removeClass('gb-display-block').addClass('gb-display-none');          
+      } 
+      if(cas  == '3'){
+        $('#lang1show').removeClass('gb-display-block').addClass('gb-display-none');
+        $('#lang2show').removeClass('gb-display-block').addClass('gb-display-none'); 
+        $('#lang3show').removeClass('gb-display-none').addClass('gb-display-block'); 
+        $('#lang4show').removeClass('gb-display-block').addClass('gb-display-none');          
       }
-      if(cas  == '1'){
-        $('#lang2show').removeClass('gb-display-block').addClass('gb-display-none');
-        $('#lang1show').addClass('gb-display-block').removeClass('gb-display-none');        
-      }      
+      if(cas  == '4'){
+        $('#lang1show').removeClass('gb-display-block').addClass('gb-display-none');
+        $('#lang2show').removeClass('gb-display-block').addClass('gb-display-none'); 
+        $('#lang3show').removeClass('gb-display-block').addClass('gb-display-none'); 
+        $('#lang4show').removeClass('gb-display-none').addClass('gb-display-block');          
+      }     
    };
 
    $scope.test = function(item){
@@ -456,6 +529,7 @@ seoTagsService) {
    };
 
 });
+
 
 
 taatrApp.controller("TestCtrl", function ($scope, $location, $log,

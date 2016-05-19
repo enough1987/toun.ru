@@ -458,19 +458,31 @@ if ( attr["dataa"] ) {
 });
 
 
-customDirectives.directive('noneIfDir', function () {
+customDirectives.directive('noneIfRuDir', function () {
     return {
         restrict: 'A', 
         scope : false,       
         link: function displayNoneDir(scope, element, attr) {
                 element.ready(function () {
-                    console.log( attr );                   
-                    if( attr['start'] ){
-                        element.addClass('gb-display-none');
-                        console.log( attr );                        
+                    console.log( scope.languages[scope.language1] );                    
+                    if( scope.languages[scope.language1] != 'field_lang_ru' ){
+                        element.addClass('gb-display-none');                      
                     }
                 });
         }
     }
 });
 
+customDirectives.directive('noneIfEnDir', function () {
+    return {
+        restrict: 'A', 
+        scope : false,       
+        link: function displayNoneDir(scope, element, attr) {
+                element.ready(function () {                  
+                    if( scope.languages[scope.language1] != 'field_lang_en' ){
+                        element.addClass('gb-display-none');                      
+                    }
+                });
+        }
+    }
+});

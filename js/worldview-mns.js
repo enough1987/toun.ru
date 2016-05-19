@@ -8,15 +8,15 @@ $(function () {
     var topPadding;
     $(window).scroll(function () {
         var currentScroll = $(window).scrollTop();
-   //     console.log(270 + parseInt($('.big_text-box').css('height')) - parseInt($('.aside-height').css('height')));
-   //     console.log('ASIDE HEIGHT ' + $('.aside-height').css('height'));
-   //     console.log('CURRENT SCROLL '+currentScroll);
+        console.log(270 + parseInt($('.big_text-box').css('height')) - parseInt($('.aside-height').css('height')));
+        console.log('ASIDE HEIGHT ' + $('.aside-height').css('height'));
+        console.log('CURRENT SCROLL '+currentScroll);
         if ($( window ).width() > 950 && currentScroll < (270 + parseInt($('.big_text-box').css('height')) - parseInt($('.aside-height').css('height')))) { //на мобиле не елозим и задаем ограничитель, чтобы aside не вылетал вниз. 
             if (currentScroll > prevScroll && currentScroll > offset.top) {
                 // ЕДЕМ ВНИЗ
                 $(".fixed_aside").stop().animate({marginTop: currentScroll - offset.top});
                 $('.empty-fix').css('height', 20);
-            //    console.log('offset', $('.fixed_aside').offset().top);
+                console.log('offset', $('.fixed_aside').offset().top);
             }
             else if(currentScroll < prevScroll && currentScroll > offset.top) {
                 // ЕДЕМ ВВЕРХ
@@ -28,9 +28,9 @@ $(function () {
                 else {
                     $('.empty-fix').css('height', 20);
                 }
-           //     console.log(currentScroll);
+                console.log(currentScroll);
                 
-           //     console.log('offset', $('.fixed_aside').offset().top);
+                console.log('offset', $('.fixed_aside').offset().top);
             }
         }
         prevScroll = currentScroll;

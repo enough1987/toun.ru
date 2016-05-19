@@ -1,0 +1,81 @@
+<!-- N E W S   C O N T E N T   S T A R T -->
+<div class="fe-row common_page-margin">
+    <div class="fe-col-12">
+
+        <div class="gallery_heading-box borderless">
+            <div class="common_top-heading">
+{{ page['static'][languages[language1]]['header'] }}
+            </div>
+            <div class="common_top-subheading">
+{{ page['static'][languages[language2]]['header'] }}
+            </div>
+        </div>
+
+        <div class="fe-row gallery_afisha-grid">
+
+<data-if ng-if="items" >
+<data-repeat ng-repeat="item in items | startFrom: startingItem() | 
+limitTo: itemsPerPage" >
+            <div ng-if="item[languages[language1]]['item']['title']"
+            class="fe-col-12 news_box">
+                <div class="fe-col-3 fe-col-m-6 fe-col-s-12 fe-col-n-12 news_image_box">
+                    <div class="news_image_container">
+                        <img class="news_image" 
+src="{{ item[languages[language1]]['item']['image']['src'] }}" 
+alt="{{ item[languages[language1]]['item']['image']['alt'] }}">
+                    </div>
+                </div>
+                <div class="fe-col-9 fe-col-m-6 fe-col-s-12 fe-col-n-12 news_content">
+                    <p class="news_header">
+{{ item[languages[language1]]['item']['title'] }}
+                    </p>
+                    <p class="news_text">
+{{ item[languages[language1]]['item']['body'] }}
+                    </p>
+                    <p class="news_date">
+{{ item[languages[language1]]['item']['date'] }}
+                    </p>
+                    <a 
+href="{{ item[languages[language1]]['item']['link_more'] }}" 
+                    class="more_link">
+{{ page['static'][languages[language1]]['more'] }}
+                    <img src="/icon/img/more_link.png" alt=""></a>
+                </div>
+            </div>
+</data-repeat>
+</data-if>
+
+            <div class="fe-col-12">
+                <ul class="pagination">
+
+                    <li class="pag_item"><button 
+ng-disabled="firstPage()" ng-click="pageBack()"
+                    class="pag_link prev" ><img src="icon/img/pag_prev.png" alt=""> &nbsp; <span class="hide_text">
+{{ page['static'][languages[language1]]['back'] }}
+                    </span> &nbsp; |</button></li>
+
+                    <li class="pag_item"><a class="pag_link" >
+                      {{currentPage+1}} 
+
+ {{ page['static'][languages[language1]]['from'] }}
+
+                      {{numberOfPages()}}      
+                    </a></li>
+
+                    <li class="pag_item"><button
+ng-disabled="lastPage()" ng-click="pageForward()"
+                    class="pag_link next" >| &nbsp; <span class="hide_text">
+{{ page['static'][languages[language1]]['next'] }}
+                    </span> &nbsp; <img src="icon/img/pag_next.png" alt=""></button></li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- N E W S   C O N T E N T   E N D -->
+
+
+<ng-include src="'/views/global/lazyload.html'"></ng-include> 

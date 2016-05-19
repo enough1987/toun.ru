@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1"/>
+    <title>Single Page Simulator</title>
+
+    <!-- S T Y L E S -->
+    <!--<link rel="stylesheet" href="css/libs/owl.carousel.min.css"/>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.18/css/lightgallery.css">-->
+    <link rel="stylesheet" href="css/fe.css"/>
+    <!--<link rel="stylesheet" href="css/main.css"/>-->
+    <link rel="stylesheet" href="css/accordion.css">
+    <link rel="stylesheet" href="css/menu.css" />
+    <!--<link rel="stylesheet" href="css/about_s22.css">-->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="page_news/news_content/news_content.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="js/fe.js"></script>
+    <script src="js/fe-event-handler.js"></script>
+
+</head>
+<body>
+
+<!-- D A T A   T A G   I N I T -->
+
+<data-teg id='menu'></data-teg>
+<data-teg id='news'></data-teg>
+<data-teg id='footer'></data-teg>
+
+<script>
+
+    var loader = {};
+
+    loader.require = function (id, file) {
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", file, false);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+                if (xhr.status == 200) {
+                    document.getElementById(id).innerHTML = xhr.responseText;
+                }
+            }
+        };
+
+        xhr.send();
+    };
+
+    loader.init = function () {
+
+//    ADD CODE HERE (this.require('id', 'path/to/file');
+
+        this.require('menu', 'common/common_menu/common_menu.html');
+        this.require('news', 'page_news/news_content/news_content.html');
+        this.require('footer', 'common/common_footer/common_footer.html');
+
+    };
+
+    loader.init();
+
+</script>
+
+<!-- S C R I P T S -->
+<script>
+    console.log('start');
+
+    var arr2 = [
+        "js/accordion.js",
+        "js/menu.js"
+    ];
+
+
+    console.log(document.getElementsByTagName('head')[0]);
+
+    setTimeout(function () {
+
+        for (var i = arr2.length - 1; i >= 0; i--) {
+            var script = document.createElement('script');
+            script.src = arr2[i];
+            var head = document.getElementsByTagName('head')[0];
+            head.appendChild(script);
+        }
+    }, 2500);
+
+</script>
+</body>
+</html>

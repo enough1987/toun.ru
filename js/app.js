@@ -37,6 +37,8 @@ var taatrApp = angular.module("TaatrApp",
         // vacancy
         // press
         // partners
+        // afisha
+        // news
         templateUrl: '/views/request/init.html',
         controller: 'RequestCtrl'  
       }).  
@@ -51,11 +53,7 @@ var taatrApp = angular.module("TaatrApp",
       when('/contacts', {
         templateUrl: '/views/contacts/init.html',
         controller: 'TestCtrl'        
-      }).    
-      when('/afisha', {
-        templateUrl: '/views/afisha/init.html',
-        controller: 'TestCtrl'         
-      }).          
+      }).            
       otherwise({
         //redirectTo: '/'
         templateUrl: '/views/global/weareworking.html',
