@@ -9,14 +9,14 @@
 }
 
 /*@font-face {*/
-    /*font-family: 'lg';*/
-    /*src: url("../fonts/lg.eot?n1z373");*/
-    /*src: url("../fonts/lg.eot?#iefixn1z373") format("embedded-opentype"),*/
-    /*url("../fonts/lg.woff?n1z373") format("woff"),*/
-    /*url("../fonts/lg.ttf?n1z373") format("truetype"),*/
-    /*url("../fonts/lg.svg?n1z373#lg") format("svg");*/
-    /*font-weight: 400;*/
-    /*font-style: normal*/
+/*font-family: 'lg';*/
+/*src: url("../fonts/lg.eot?n1z373");*/
+/*src: url("../fonts/lg.eot?#iefixn1z373") format("embedded-opentype"),*/
+/*url("../fonts/lg.woff?n1z373") format("woff"),*/
+/*url("../fonts/lg.ttf?n1z373") format("truetype"),*/
+/*url("../fonts/lg.svg?n1z373#lg") format("svg");*/
+/*font-weight: 400;*/
+/*font-style: normal*/
 /*}*/
 
 .lg-icon {
@@ -40,7 +40,8 @@
     margin-top: -10px;
     padding: 8px 10px 9px;
     position: absolute;
-    top: 50%
+    top: 50%;
+    transform: scale(.4);
 }
 
 .lg-actions .lg-next.disabled, .lg-actions .lg-prev.disabled {
@@ -59,7 +60,7 @@
 .lg-actions .lg-next:before {
     /*content: "\e095"*/
     content: url(/icon/img/right-arrow.png);
-    zoom: .5
+    /* zoom: .4; */
 }
 
 .lg-actions .lg-prev {
@@ -69,7 +70,7 @@
 .lg-actions .lg-prev:after {
     /*content: "\e094"*/
     content: url(/icon/img/left-arrow.png);
-    zoom: .5
+    /* zoom: .4; */
 }
 
 @-webkit-keyframes lg-right-end {
@@ -176,7 +177,9 @@
     text-align: center;
     width: 50px;
     text-decoration: none !important;
-    outline: 0
+    outline: 0;
+    /*! zoom: .3; */
+    transform: scale(.35);
 }
 
 .lg-toolbar .lg-icon:hover {
@@ -186,7 +189,7 @@
 .lg-toolbar .lg-close:after {
     /*content: "\e070"*/
     content: url(/icon/img/letter-x.png);
-    zoom: .5
+    /* zoom: .3; */
 }
 
 .lg-toolbar .lg-download:after {
@@ -663,7 +666,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-fullscreen:after {
     /*content: "\e20c"*/
     content: url(/icon/img/expand.png);
-    zoom: .5;
+    /* zoom: 0.3; */
 }
 
 .lg-fullscreen-on .lg-fullscreen:after {

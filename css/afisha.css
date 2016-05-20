@@ -17,8 +17,8 @@
 /* W H I T E   S P A C E   R E P E R T U A R */
 
 .contacts_content-bg {
-  background: url('../img/page_afisha_content-bg.jpg') right top repeat-y;
-  transition: all .5s;
+    background: url('../img/page_afisha_content-bg.jpg') right top repeat-y;
+    transition: all .5s;
 }
 
 .afisha_content {
@@ -30,7 +30,7 @@
     /*border-bottom: 2px solid #f3f3f3;*/
 }
 .afisha_content_top-heading-kca-mns {
-  font-size: 18px;
+    font-size: 18px;
 }
 .afisha_content_month {
     font-size: 26px;
@@ -54,12 +54,12 @@
     border-bottom: 2px solid #f3f3f3;
 }
 .afisha_content_date {
-  display: inline-block;
-  width: 35px;
+    display: inline-block;
+    width: 35px;
 }
 .afisha_content_weekday {
-  display: inline-block;
-  width: 90px;
+    display: inline-block;
+    width: 90px;
 }
 .afisha_content_title-box {
     margin-bottom: 20px;
@@ -87,7 +87,7 @@
     margin-bottom: 20px;
 }
 .afisha_content_address-box {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .afisha_content_teatr, .afisha_content_hall {
     font-size: 12px;
@@ -96,8 +96,8 @@
     display: block;
 }
 .afisha_content_buy-icon {
-  margin-left: 10px;
-  vertical-align: sub;
+    margin-left: 10px;
+    vertical-align: sub;
 }
 
 .afisha_content_schedule {
@@ -111,10 +111,13 @@
     padding-bottom: 20px;
 }
 .white-space_heading-center{
-    width: 90%;
+    width: 100%;
 }
 .common_top-subheading-center {
-    width: 90%;
+    width: 100%;
+    padding-bottom: 40px;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #EDEDED;
 }
 .space_visible {
     display: none;
@@ -161,7 +164,7 @@
 
 @media screen and (max-width: 480px) {
     .contacts_content-bg {
-      background-position: 50vw top;
+        background-position: 50vw top;
     }
     .afisha_content {
         width: 90%;

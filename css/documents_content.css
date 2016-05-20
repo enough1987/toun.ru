@@ -15,12 +15,12 @@
     padding: 30px 10px 0;
 }
 .documents_content_documents-wrapper {
-  width: 75%;
-  margin: auto;
+    width: 90%;
+    margin: auto;
 }
 .documents_content_document-wrapper {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 .documents_content_document-title {
-  margin-left: 6px;
+    margin-left: 6px;
 }

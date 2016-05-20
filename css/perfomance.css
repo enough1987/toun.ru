@@ -14,13 +14,15 @@
 
 #perfomance-wrapper #menuTop {
     width: 100%;
+    /* margin: auto; */
     position: fixed;
     top: 0;
     transition: all 1s;
     z-index: 999;
 }
 #perfomance-wrapper #menu_about {
-    width: 91%;
+    width: 85%;
+    max-width: 1350px;
     margin: 0 auto;
     color: white;
 }
@@ -50,7 +52,7 @@
     max-width: 30%;
     letter-spacing: .04em;
     margin-top: 170px;
-    margin-left: 8%;
+    margin-left: 9%;
     color: white;
     transition: all .5s;
 }
@@ -58,15 +60,15 @@
     margin-bottom: 50px;
 }
 #perfomance-wrapper .header-title-big {
-    font-size: 32px;
+    font-size: 1.1em;
 }
 #perfomance-wrapper .header-title-small {
-    font-size: 18px;
+    font-size: 0.8em;
 }
 #perfomance-wrapper .header-title-smallest {
-    font-size: 14px;
+    font-size: .7em;
 }
-#perfomance-wrapper .scroll-arrow {
+.scroll-arrow {
     position: absolute;
     cursor: pointer;
     width: 100%;
@@ -90,7 +92,7 @@
 #perfomance-wrapper #content {
     font-size: 14px;
     overflow: hidden;
-    margin-top: 104px;
+    padding-top: 104px;
 }
 #perfomance-wrapper .about-spectacle {
     letter-spacing: .08em;
@@ -264,127 +266,127 @@
 
 /* A C C O R D I O N */
 #perfomance-wrapper .accordion-about {
-  /*margin-left: 8%;*/
+    /*margin-left: 8%;*/
 }
 
 /* A U D I O  P L A Y E R */
 /*#perfomance-wrapper .jp-jplayer, #perfomance-wrapper .jp-audio {*/
-    /*!*max-width: 420px;*!*/
-    /*margin: 0 auto;*/
-    /*!*padding: 0 10px;*!*/
+/*!*max-width: 420px;*!*/
+/*margin: 0 auto;*/
+/*!*padding: 0 10px;*!*/
 /*}*/
 
 /*#perfomance-wrapper .jp-title {*/
-    /*float: left;*/
-    /*width: 64%;*/
-    /*height: 28px;*/
-    /*padding: 4px 0 0 25px;*/
-    /*font-size: 18px;*/
-    /*!* text-align: center; *!*/
-    /*overflow: hidden;*/
+/*float: left;*/
+/*width: 64%;*/
+/*height: 28px;*/
+/*padding: 4px 0 0 25px;*/
+/*font-size: 18px;*/
+/*!* text-align: center; *!*/
+/*overflow: hidden;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-title ul {*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-    /*list-style: none;*/
+/*padding: 0;*/
+/*margin: 0;*/
+/*list-style: none;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-gui {*/
-    /*position: relative;*/
-    /*overflow: hidden;*/
-    /*margin-top: 10px;*/
+/*position: relative;*/
+/*overflow: hidden;*/
+/*margin-top: 10px;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-controls {*/
-    /*padding: 0;*/
-    /*margin: 0;*/
-    /*list-style: none;*/
-    /*text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);*/
+/*padding: 0;*/
+/*margin: 0;*/
+/*list-style: none;*/
+/*text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);*/
 /*}*/
 
 /*#perfomance-wrapper .jp-controls li {*/
-    /*display: inline;*/
+/*display: inline;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-controls a {*/
-    /*color: #fff;*/
-    /*outline: none;*/
+/*color: #fff;*/
+/*outline: none;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-play, .jp-pause {*/
-    /*float: left;*/
-    /*width: 40px;*/
-    /*height: 40px;*/
-    /*display: inline-block;*/
-    /*text-align: center;*/
-    /*line-height: 43px;*/
+/*float: left;*/
+/*width: 40px;*/
+/*height: 40px;*/
+/*display: inline-block;*/
+/*text-align: center;*/
+/*line-height: 43px;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-mute, #perfomance-wrapper .jp-unmute {*/
-    /*position: absolute;*/
-    /*right: 55px;*/
-    /*top: 0;*/
-    /*width: 20px;*/
-    /*height: 40px;*/
-    /*display: inline-block;*/
-    /*line-height: 46px;*/
+/*position: absolute;*/
+/*right: 55px;*/
+/*top: 0;*/
+/*width: 20px;*/
+/*height: 40px;*/
+/*display: inline-block;*/
+/*line-height: 46px;*/
 /*}*/
 
 /*#perfomance-wrapper .play-stop-icon {*/
-    /*margin-bottom: 3px;*/
+/*margin-bottom: 3px;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-mute {*/
-    /*text-align: left;*/
+/*text-align: left;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-time-holder {*/
-    /*color: black;*/
-    /*font-size: 18px;*/
-    /*line-height: 14px;*/
-    /*position: absolute;*/
-    /*right: 10px;*/
-    /*top: 11px;*/
+/*color: black;*/
+/*font-size: 18px;*/
+/*line-height: 14px;*/
+/*position: absolute;*/
+/*right: 10px;*/
+/*top: 11px;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-current-time {*/
-    /*float: right;*/
-    /*font-size: 18px;*/
-    /*padding: 5px 10px;*/
+/*float: right;*/
+/*font-size: 18px;*/
+/*padding: 5px 10px;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-progress {*/
-    /*background-color: #cdcdcd;*/
-    /*overflow: hidden;*/
-    /*position: absolute;*/
-    /*right: 10px;*/
-    /*top: 32px;*/
-    /*width: 100%;*/
+/*background-color: #cdcdcd;*/
+/*overflow: hidden;*/
+/*position: absolute;*/
+/*right: 10px;*/
+/*top: 32px;*/
+/*width: 100%;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-play-bar {*/
-    /*height: 5px;*/
-    /*background-color: #a1a1a1;*/
+/*height: 5px;*/
+/*background-color: #a1a1a1;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-volume-bar {*/
-    /*position: absolute;*/
-    /*right: 10px;*/
-    /*top: 17px;*/
-    /*width: 45px;*/
-    /*height: 8px;*/
-    /*border-radius: 20px 20px 20px 20px;*/
-    /*-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;*/
-    /*box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;*/
-    /*background-color: #992E18;*/
-    /*overflow: hidden;*/
+/*position: absolute;*/
+/*right: 10px;*/
+/*top: 17px;*/
+/*width: 45px;*/
+/*height: 8px;*/
+/*border-radius: 20px 20px 20px 20px;*/
+/*-webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;*/
+/*box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1) inset;*/
+/*background-color: #992E18;*/
+/*overflow: hidden;*/
 /*}*/
 
 /*#perfomance-wrapper .jp-volume-bar-value {*/
-    /*background-color: #fff;*/
-    /*height: 8px;*/
-    /*border-radius: 20px 20px 20px 20px;*/
+/*background-color: #fff;*/
+/*height: 8px;*/
+/*border-radius: 20px 20px 20px 20px;*/
 /*}*/
 
 /* F E E D B A C K */

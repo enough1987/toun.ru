@@ -532,6 +532,60 @@ seoTagsService) {
 
 
 
+taatrApp.controller("SimpleCtrl", function ($scope, $location, $log,
+$ocLazyLoad, $routeParams, 
+ajaxService, localStorageService, languageService, pageService, routeService,
+seoTagsService) {
+
+  $scope.getPage = pageService.setup($scope);
+  var xhr = new XMLHttpRequest();      
+  xhr.open("POST", 
+        "/content/go2json/simple/"+$routeParams.simple);
+      xhr.onreadystatechange = function () {
+          if (xhr.readyState == 4) {
+            if (xhr.status != 200) {
+  console.log('status ' + xhr.status);
+  $scope.subview = '/views/global/404.html'; 
+  console.log( $scope.subview );   
+            }
+            else {
+  console.log('status ' + xhr.status);              
+  $scope.getPage("/content/go2json/simple/"+$routeParams.simple); 
+  $scope.subview = '/views/simple/contacts_content.html'; 
+            }
+        }
+      }
+  xhr.send(); 
+
+   $log.debug( $location.path() +" SimpleCtrl" );
+   $log.debug( $routeParams.simple );
+ 
+
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+
+   languageService.setup($scope);
+
+   $scope.changelanguage = languageService.change($scope);
+
+
+   $scope.routeGoToView = routeService.setup();
+   $scope.hash = routeService.gethash();
+
+   console.log( $scope.hash );
+   
+
+   seoTagsService.setup();
+
+   $scope.test = function(item){
+        console.log( item ); 
+        return item;       
+   };
+
+});
+
+
 taatrApp.controller("TestCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams,
 ajaxService, localStorageService, languageService, pageService, routeService,

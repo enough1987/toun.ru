@@ -1,0 +1,22 @@
+
+<div id="loader" ng-class="global ? 'gb-display-none' : 'gb-display-block'" >
+		
+	<img src="/icon/img/loader2.gif" alt="loader" />
+		
+</div>
+
+<div ng-class="global ? 'gb-display-block' : 'gb-display-none'" >
+
+		<ng-include src="'/views/global/global-menu.html'"></ng-include>	
+
+		<ng-include src="subview">
+		</ng-include>
+
+		<ng-include 
+ng-if="page['page']['field_footer_chk'][languages[language1]]['und'][0]['value']  "
+		src="'/views/global/global-footer.html'"></ng-include>	
+
+		<ng-include src="'/views/global/lazyload.html'"></ng-include>
+
+</div>	
+	

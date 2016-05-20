@@ -1,13 +1,15 @@
 
 /* M E N U */
 .menu_main {
-    width: 95%;
+    width: 87%;
     /*position: relative;*/
     margin: auto;
 }
 .menu_list {
-    width: 100%;
+    width: 82%;
     color: black;
+    max-width: 1200px;
+    margin: auto;
     padding-top: 30px;
     transition: all .3s;
 }
@@ -167,6 +169,7 @@
 
 /* F O O T E R */
 .footer {
+    zoom: .9;
     border-top: 3px solid #EDEDED;
     margin-top: 80px;
     padding: 20px 0px;

@@ -1,6 +1,6 @@
 .testclass {
     border: 4px solid red;
-} 
+}
 
 .gb-cursor-pointer {
     cursor: pointer !important;
@@ -19,7 +19,7 @@
 }
 
 .gb-display-block  {
-    display: block !important;    
+    display: block !important;
 }
 
 .gb-color-like-red {
@@ -31,12 +31,12 @@
 /* Headings */
 .common_top-heading {
     text-align: center;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .common_top-subheading {
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     color: #464646;
 }
 

@@ -50,9 +50,9 @@ var taatrApp = angular.module("TaatrApp",
         templateUrl: '/views/pages/init.html',
         controller: 'PagesCtrl'          
       }).        
-      when('/contacts', {
-        templateUrl: '/views/contacts/init.html',
-        controller: 'TestCtrl'        
+      when('/simple/:simple', {
+        templateUrl: '/views/simple/init.html',
+        controller: 'SimpleCtrl'        
       }). 
       when('/copyright', {
         templateUrl: '/views/copyright/init.html',
