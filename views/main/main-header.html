@@ -5,12 +5,12 @@
 				<div class="fe-col-3 fe-col-m-only">
 
 					<div class="header_left"
-ng-click="routeGoToView(mainPage['header']['map_link'])"
+ng-click="routeGoToView(page['header']['map_link'])"
 					>
-<p ng-bind-html="mainPage['header'][languages[language1]]['adress_head']  | replaceNtoBR"></p>
+<p ng-bind-html="page['header'][languages[language1]]['adress_head']  | replaceNtoBR"></p>
 						<p class="header_left_scheme"> 
-{{ mainPage['header'][languages[language1]]['title_map'] }}
-<img src="icon/img/location.png" alt="icon" style="position: 
+{{ page['header'][languages[language1]]['title_map'] }}
+<img src="/icon/img/location.png" alt="icon" style="position: 
 relative; top: 4px; left: 8px;" /> </p>
 					</div>
 
@@ -19,7 +19,7 @@ relative; top: 4px; left: 8px;" /> </p>
 				<div class="fe-col-6 fe-col-m-only">
 					<div class="header_center">
 						<p class="header_center_title fe-col-m-only">
-{{ mainPage['header'][languages[language1]]['slogan_top'] | uppercase}}
+{{ page['header'][languages[language1]]['slogan_top'] | uppercase}}
 </p>
 						<div class="header_center_logo">
 							<a  class="gb-cursor-default"><img 
@@ -33,13 +33,13 @@ src="{{ global['settings'][languages[language1]]
 					<div class="header_right">
 						<p class="header_right_cecutient"> <a 
 						> 
-{{ mainPage['header'][languages[language1]]['eyesight'] | firstUpperCase }}
+{{ page['header'][languages[language1]]['eyesight'] | firstUpperCase }}
 						<img 
-src="icon/img/glasses.png" alt="icon" style="position: relative; top: 5px;" /> </a> </p>
+src="/icon/img/glasses.png" alt="icon" style="position: relative; top: 5px;" /> </a> </p>
 
 						
-{{ mainPage['settings']['phone_first'] }}<br />
-{{ mainPage['settings']['phone_second'] }}
+{{ page['settings']['phone_first'] }}<br />
+{{ page['settings']['phone_second'] }}
 
 						<div class="language">
 							 
@@ -72,7 +72,7 @@ src="icon/img/glasses.png" alt="icon" style="position: relative; top: 5px;" /> <
 			<div id="header_logo">
 				<div id="header_logo_image">
 					<a 
-ng-click="routeGoToView(mainPage['header']['sun_link'])"
+ng-click="routeGoToView(page['header']['sun_link'])"
 					class="gb-cursor-default"> 
 					<img 
 					src="/icon/img/icon-logo.png" alt="logo" /></a>

@@ -81,7 +81,7 @@ customServices.factory('languageService', function (
 });
 
 customServices.factory('pageService', function (
-    localStorageService, ajaxService) {
+    localStorageService, ajaxService, $cookies, $location ) {
     return {
 
         setup: function(scope){
@@ -100,12 +100,34 @@ customServices.factory('pageService', function (
         },
         setupWithStoradge: function(scope){
             return function(json, nameOfPage) {
+                if( !nameOfPage ) {var nameOfPage = 'page'};
+                var lss = false;
+                if ( localStorageService.get('cache') == $cookies.get('cache') ) {
+                        lss = true;
+                }
 
-                if ( localStorageService.get(nameOfPage) ) {
-                    scope[nameOfPage] = localStorageService.get(nameOfPage); 
+                console.log( $cookies.get('cache') );
+                console.log( localStorageService.get('cache') );
+                console.log( lss );
+                console.log( $location.path() );
+                
+                
+
+                if ( lss && nameOfPage == 'page' && localStorageService.get($location.path())  ||
+                    lss && nameOfPage == 'global' && localStorageService.get('global') ) {
+if( nameOfPage == 'page' ) {
+    scope[nameOfPage] = localStorageService.get($location.path()); 
+} 
+if ( nameOfPage == 'global' ) {
+    scope[nameOfPage] = localStorageService.get('global');
+}
                 console.log( 'got json from storadge' );                      
                 console.log( nameOfPage + " : "); 
                 console.log( scope[nameOfPage] );
+                    localStorageService.set('cache', $cookies.get('cache') );
+if( ! localStorageService.get( $location.path() ) && nameOfPage == 'page' ) {
+    localStorageService.set( $location.path(), scope[nameOfPage] );   
+}
                     return scope[nameOfPage];
                 }
 
@@ -114,8 +136,12 @@ customServices.factory('pageService', function (
                         scope[nameOfPage] = data;
                 console.log( 'got json' ); 
                 console.log( nameOfPage + " : ");                         
-                console.log( scope[nameOfPage] );  
+                console.log( scope[nameOfPage] ); 
+                        localStorageService.set('cache', $cookies.get('cache') ); 
                         localStorageService.set(nameOfPage, scope[nameOfPage] );
+if(nameOfPage == 'page') {
+    localStorageService.set($location.path(), scope[nameOfPage] );    
+}
                         return scope[nameOfPage];                      
                     }); 
 

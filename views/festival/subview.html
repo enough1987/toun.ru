@@ -1,5 +1,3 @@
-
-
 <data-div id="perfomance-wrapper">
 <!--  
     perfomance-wrapper needs to be for usedge perfomance.css
@@ -8,15 +6,15 @@
 
 
 <!-- W H I T E   S P A C E   F E S T I V A L   S T A R T -->
-<div class="fe-row">
-  <div class="white-space_page global_content-wrapper">
-    <h2 class="common_top-heading white-space_heading-center common_page-margin">
+<div class="fe-row common_page-margin">
+  <div class="white-space_festival global_content-wrapper">
+    <h2 class="common_top-heading white-space_heading-center">
 {{ page['page']['field_title_header'][languages[language1]][0]['value']  }}
 </h2>
     <div class="common_top-subheading common_top-subheading-center">
 {{ page['page']['field_title_header'][languages[language2]][0]['value']  }}
     </div>
-    <div class="white-space_page_years">
+    <div class="white-space_festival_years">
 
 <data-repeat ng-repeat="item in page['filter_menu']"
 ng-click="routeGoToView(item['field_link']['und'][0]['value'])" >
@@ -30,45 +28,50 @@ data-filter="{{ item[languages[language1]]['und'][0]['value']  }}"
     </div>
     <div class="fe-row">
       <div class="fe-col-b-3 fe-col-m-4 space_visible">
-        <div class="fe-row white-space_page_logo-box">
+        <div class="fe-row white-space_festival_logo-box">
 
-          <img src="{{ page['page']['field_page_logo']
+          <img src="{{ page['page']['field_festival_logo']
 [languages[language1]][0]['uri']  }}" alt="" />
         </div>
       </div>
       <div class="fe-col-b-9 fe-col-m-8">
-        <div class="white-space_page_article_ru">
+        <div class="white-space_festival_article_ru">
           <p class="white-space_paragraph">
-{{ page['page']['field_description_page']
-[languages[language1]][0]['value']  }}
+
+<data-div ng-bind-html="page['page']['field_description_festival']
+[languages[language1]][0]['value']">
+</data-div>
 
           </p>
         </div>
         <br><br>
-        <div class="white-space_page_article_kca-mns">
+        <div class="white-space_festival_article_kca-mns">
           <p class="white-space_paragraph">
-{{ page['page']['field_description_page']
-[languages[language2]][0]['value']  }}
+              
+<data-div ng-bind-html="page['page']['field_description_festival']
+[languages[language2]][0]['value']">
+</data-div>
+
           </p>
         </div>
       </div>
       <div class="fe-col-b-3 fe-col-m-4 space_invisible">
-        <div class="fe-row white-space_page_logo-box">
-<img src="{{ page['page']['field_page_logo']
+        <div class="fe-row white-space_festival_logo-box">
+<img src="{{ page['page']['field_festival_logo']
 [languages[language1]][0]['uri']  }}" alt="" />
         </div>
 
-<data-repeat ng-repeat="item in page['page']['field_page_links']
+<data-repeat ng-repeat="item in page['page']['field_festival_links']
 [languages[language1]]" >
-        <div class="fe-row white-space_page_link-box">
+        <div class="fe-row white-space_festival_link-box">
           <a class="" 
 ng-click="routeGoToView(item['value'])"          
 >
-            <span class="white-space_page_link-text">
-{{ item['title']  }}
-            </span><img 
+           <img 
 src="icon/img/read-piece.png" 
-alt=""/>
+alt=""/> <span class="white-space_festival_link-text">
+{{ item['title']  }}
+            </span>
           </a>
         </div>
 </data-repeat>
@@ -88,10 +91,10 @@ alt=""/>
 {{ page['page']['field_title_program']
 [languages[language1]][0]['value'] }}
 </h2>
-    <!--<h4 class="common_top-heading heading_top_border">-->
-<!--{{ page['page']['field_title_program']-->
-<!--[languages[language2]][0]['value'] }}-->
-<!--</h4>-->
+    <h4 class="common_top-heading heading_top_border">
+{{ page['page']['field_title_program']
+[languages[language2]][0]['value'] }}
+</h4>
 
 
 
@@ -106,9 +109,6 @@ page['page']['field_program']
   </div>
 </div>
 <!-- W H I T E   S P A C E   R E P E R T U A R   E N D -->
-
-
-
 
 
     <ng-include src="'/views/global/tabs.html'"></ng-include> 
@@ -171,7 +171,8 @@ page['page']['field_contacts']
 oc-lazy-load='[
 "/js/menu.js",
 "/js/accordion.js"
-]'> 
+]'>
+ 
 </div>
 
 

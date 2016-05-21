@@ -8,7 +8,7 @@ customDirectives.directive('initFeJsDir', function () {
         scope : false,       
         link: function (scope, element, attr) {
                 element.ready(function () {
-        setTimeout(fe_init, 2000);         
+        setTimeout(fe_init, 2500);         
                 });
         }
     }
@@ -68,8 +68,8 @@ customDirectives.directive('videoSetDir', function () {
 
 
                 var intervalID = setInterval(function(){ 
-if(!scope['mainPage']) { return '' }                            
-if(!scope['mainPage']['lenta']) { return '' }  
+if(!scope['page']) { return '' }                            
+if(!scope['page']['lenta']) { return '' }  
 
 
     var fild = attr['fildname'];
@@ -80,7 +80,7 @@ if(!scope['mainPage']['lenta']) { return '' }
         return '';
     }
     var source = document.createElement('source');
-    source.setAttribute('src', scope['mainPage']['lenta'][fild]);
+    source.setAttribute('src', scope['page']['lenta'][fild]);
     video.appendChild(source);
     video.setAttribute('itisdone', ' true ')
     clearInterval(intervalID);    
@@ -103,15 +103,15 @@ customDirectives.directive('imgSetDir', function () {
 
 
                     var intervalID = setInterval(function(){ 
-if(!scope['mainPage']) { return '' }                         
-if(!scope['mainPage']['lenta']) { return '' }   
+if(!scope['page']) { return '' }                         
+if(!scope['page']['lenta']) { return '' }   
 if( element.attr('src') ) {  
         clearInterval(intervalID) 
         return '';
 }
      
     var fild = attr['fildname'];
-    element.attr('src', scope['mainPage']['lenta'][fild]);
+    element.attr('src', scope['page']['lenta'][fild]);
     clearInterval(intervalID);
                     }, 1000 );                     
 
@@ -213,7 +213,7 @@ var  id = e.target[0].alt
                         alert( 'что то пошло не так, повторите попытку' );                    
                     } else {
                         // xhr.responseText
-                        alert( 'комментарий ушел' );
+                        alert( 'Ваше сообщение отправлено' );
                         e.target[0].value = '';
                         e.target[1].value = '';  
                     }         
@@ -245,19 +245,25 @@ if( ! element.attr('tabs-jquery-plagins-init-dir') ) {
     return '' 
 }
 
-if( ! $('*').is('.tabs-links li a') ||
+
+if( 
     ! $('*').is('.owl-carousel') ||
     ! $('*').is('.next-button') ||
-    ! $('*').is('.prev-button') ||
-
+    ! $('*').is('.prev-button') 
+  ) {
+    console.log('/.owl-carousel or .next-button or .prev-button/ are not exist, so jquery plagins can not be start');
+    return '';  
+}
+else if( 
     ! $('*').is('#lightgallery')  || 
     ! $('*').is('#lightgallery2') ||
     ! $('*').is('#video-gallery') ||
     ! $('*').is('#video-gallery2')
   ) {
-    console.log('DOM is not exist, so jquery plagins can not be start');
-    return '';  
-}{
+    console.log('/#lightgallery or #lightgallery2 or #video-gallery or #video-gallery2/ are not exist, so jquery plagins can not be start');
+    return '';   
+} 
+else  {
     console.log( 'jquery plagins are going' );    
 }
 
@@ -418,7 +424,7 @@ for (var i = 0; i < targets.length; i++) {
         var  currentAttrValue = targets[i].getAttribute('datatargetfortabs');
         $('.tabs ' + currentAttrValue).show().siblings().hide();
         clearInterval(intervalID2); 
-document.querySelectorAll('[shownodetabsdir]')[0].setAttribute('shownodetabsdir', 'true'); 
+
         break;        
     };           
 }

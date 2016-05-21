@@ -3,7 +3,7 @@
 }
 
 .width-big {
-    width: 19%; 
+    width: 19.5%;
 }
 
 .people_all_gallery-box {
@@ -13,7 +13,7 @@
     align-items: center;
 }
 .people_all_gallery_inbox {
-    width: 90%;
+    width: 95%;
     margin-bottom: 10px;
 }
 .people_gallery-image {
@@ -32,6 +32,7 @@
     /*line-height: 1.8;*/
     display: block;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 949px) {

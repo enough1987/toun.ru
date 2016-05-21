@@ -1,36 +1,44 @@
+<!-- Header -->
 
 
-    <!-- Header -->
+<!-- if video -->
+<header ng-if="page['page']['field_bamper_video']['und'][0]['uri']"
 
- <header class="about-header" 
- style="background: url('{{ page['page']['field_bamper']['und'][0]['uri'] }}') top center no-repeat; background-size: cover;">
-
-        <div id="header_center_logo-mobile" class="fe-none">
-            <a href="/">
-                <img class="fe-img" 
-src="{{ global['settings']
+class="about-header video-container">
+        <!--style="background: url('{{ page['page']['field_bamper']['und'][0]['uri'] }}') top center no-repeat; background-size: cover;">-->
+   
+   
+<video 
+autoplay loop class="fillWidth">
+        <source src="/video/back.m4v" type="video/mp4" /></video>
+        
+    <div id="header_center_logo-mobile" class="fe-none">
+        <a href="/">
+            <img class="fe-img"
+                 src="{{ global['settings']
 [languages[language1]]['logo_horisontal_invert'] }}">
-            </a>
-        </div>
+        </a>
+    </div>
 
-        <div class="fe-row">
-            <div class="header-h">
-                <h2>
+    <div class="fe-row">
+        <div class="header-h">
+            <h2>
                     <span class="header-title-big"> 
 {{ page['page']['field_title_header'][languages[language1]][0]['value'] }}
     </span>
-                            <br>
+                <br>
                             <span class="header-title-small"> 
 {{ page['page']['field_title_header'][languages[language2]][0]['value'] }}
                              </span>
-                            </h2>
-                            <h3>
+            </h2>
+            <h3>
                     <span class="header-title-smallest">
 
-{{ page['page']['field_description_page'][languages[language1]][0]['value'] }}
+{{ page['page']['field_description_perfomance'][languages[language1]][0]['value'] }}
+
 </span>
-                </h3>
-    </div>
+            </h3>
+        </div>
     </div>
 
     <div class="scroll-arrow" id="scroll-arrow">
@@ -40,109 +48,156 @@ src="{{ global['settings']
     <div id="header_logo" class="fe-none">
 
         <div id="header_logo_image">
-            <a> <img src="icon/img/icon-logo.png" alt="logo" /> </a>
+            <a> <img src="icon/img/icon-logo.png" alt="logo"/> </a>
         </div>
 
     </div>
 
-    </header>
+</header>
 
 
+<!-- if NO video -->
+<header ng-if="!page['page']['field_bamper_video']['und'][0]['uri']"
+style="background: url('{{ page['page']['field_bamper']['und'][0]['uri'] }}') top center no-repeat; background-size: cover;"
+class="about-header video-container">
+        <!--style="background: url('{{ page['page']['field_bamper']['und'][0]['uri'] }}') top center no-repeat; background-size: cover;">-->
+   
+   
+    <div id="header_center_logo-mobile" class="fe-none">
+        <a href="/">
+            <img class="fe-img"
+                 src="{{ global['settings']
+[languages[language1]]['logo_horisontal_invert'] }}">
+        </a>
+    </div>
+
+    <div class="fe-row">
+        <div class="header-h">
+            <h2>
+                    <span class="header-title-big"> 
+{{ page['page']['field_title_header'][languages[language1]][0]['value'] }}
+    </span>
+                <br>
+                            <span class="header-title-small"> 
+{{ page['page']['field_title_header'][languages[language2]][0]['value'] }}
+                             </span>
+            </h2>
+            <h3>
+                    <span class="header-title-smallest">
+
+{{  page['page']['field_description_perfomance'][languages[language1]][0]['value'] }}
+</span>
+            </h3>
+        </div>
+    </div>
+
+    <div class="scroll-arrow" id="scroll-arrow">
+        <img src="icon/img/about-s22-arrow.png" alt="">
+    </div>
+
+    <div id="header_logo" class="fe-none">
+
+        <div id="header_logo_image">
+            <a> <img src="icon/img/icon-logo.png" alt="logo"/> </a>
+        </div>
+
+    </div>
+
+</header>
 
 
-
-    <!-- Content -->
-    <div id="content">
-        <div class="fe-row" id="main">
-            <div class="fe-col-u-6 fe-col-b-6 fe-col-m-6">
-                <div class="about-spectacle">
-                    <div class="about-spectacle-title">
-                        <h3>
+<!-- Content -->
+<div id="content">
+    <div class="fe-row" id="main">
+        <div class="fe-col-u-6 fe-col-b-6 fe-col-m-6">
+            <div class="about-spectacle">
+                <div class="about-spectacle-title">
+                    <h3>
                             <span class="title-big"> 
 {{ page['page']['field_header_2'][languages[language1]][0]['value'] }}
                             </span>
-                            <br>
+                        <br>
                             <span class="title-small"> 
 {{ page['page']['field_header_2'][languages[language2]][0]['value'] }}
                              </span>
-                        </h3>
-                        <p class="title-additional">
-{{ page['page']['field_project_lenght'][languages[language1]][0]['value'] 
-+ ' | '}} 
-{{ page['page']['field_age'][languages[language1]][0]['value'] }}                       
-                        
-                        </p>
-                    </div>
+                    </h3>
+                    <p class="title-additional">
+                        {{ page['page']['field_project_lenght'][languages[language1]][0]['value']
+                        + ' | '}}
+                        {{ page['page']['field_age'][languages[language1]][0]['value'] }}
 
-<data-div ng-bind-html="
+                    </p>
+                </div>
+
+                <data-div ng-bind-html="
 page['page']['field_project_about'][languages[language1]][0]['value']">
-</data-div>
+                </data-div>
 
-<data-div ng-bind-html="
+                <data-div ng-bind-html="
 page['page']['field_project_about'][languages[language2]][0]['value']">
-</data-div>
+                </data-div>
 
-<data-repeat class="wrap_read" ng-repeat="target in
+                <data-repeat class="wrap_read" ng-repeat="target in
 page['page']['field_docu'][languages[language1]]">
-                        <img 
-ng-if="target['description']"
-                        src="icon/img/read-piece.png" alt="" />
+                    <img
+                            ng-if="target['description']"
+                            src="icon/img/read-piece.png" alt=""/>
 
                     <a target="_blank"
-href="{{ target['uri'] }}" 
- class="read-piece-a">
+                       href="{{ target['uri'] }}"
+                       class="read-piece-a">
 
-{{ target['description'] }}  
+                        {{ target['description'] }}
 
                     </a>
-</data-repeat>
+                </data-repeat>
 
-                </div>
             </div>
+        </div>
 
-            <div class="fe-col-u-6 fe-col-b-6 fe-col-m-6">
-                <div class="people-of-spectacle">
+        <div class="fe-col-u-6 fe-col-b-6 fe-col-m-6">
+            <div class="people-of-spectacle">
 
-  
-                    <div class="fe-row">
-                        <div class="people-of-spectacle-title">
-                            <h3>
+
+                <div class="fe-row">
+                    <div class="people-of-spectacle-title">
+                        <h3>
                                 <span class="title-big">
 {{ page['page']['field_title_people'][languages[language1]][0]['value'] }} 
                                  </span>
-                                <br>
+                            <br>
                                 <span class="title-small"> 
 {{ page['page']['field_title_people'][languages[language2]][0]['value'] }}
                                 </span>
-                            </h3>
-                        </div>
+                        </h3>
                     </div>
+                </div>
 
 
-<data-div ng-bind-html="
+                <data-div ng-bind-html="
 page['page']['field_project_people'][languages[language1]][0]['value']">
-</data-div>
+                </data-div>
 
 
-                    <div class="fe-row">
-                        <div class="music-of-spectacle-title">
-                            <h3>
+                <div class="fe-row">
+                    <div class="music-of-spectacle-title">
+                        <h3>
                                 <span class="title-big"> 
 {{ page['page']['field_title_music'][languages[language1]][0]['value'] }}
                                 </span>
-                                <br>
+                            <br>
                                 <span class="title-small">
 {{ page['page']['field_title_music'][languages[language2]][0]['value'] }}
 
                                  </span>
-                            </h3>
-                        </div>
+                        </h3>
                     </div>
+                </div>
 
 
-                    <div class="fe-row">
-                        <div class="fe-col-12">
-                            <!-- A U D I O  P L A Y E R -->
+                <div class="fe-row">
+                    <div class="fe-col-12">
+         <!-- A U D I O  P L A Y E R -->
 
     <!-- 
         https://github.com/DIYgod/APlayer
@@ -169,5 +224,3 @@ page['page']['field_project_people'][languages[language1]][0]['value']">
     <ng-include src="'/views/global/tabs.html'"></ng-include> 
 
     </div>
-
-

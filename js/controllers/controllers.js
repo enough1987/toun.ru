@@ -10,7 +10,7 @@ $scope, $location, $log) {
 
 taatrApp.controller("MainCtrl", function ($scope, 
 $routeParams, $location, $route, $log,
-$ocLazyLoad,
+$ocLazyLoad, 
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, feInitService) {
   
@@ -23,12 +23,12 @@ seoTagsService, feInitService) {
 
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
-   $scope.getPageWithStoradge("/content/go2json/first/frontpage", 'mainPage');
+   $scope.getPageWithStoradge( "/content/go2json/first/global", 'global' );
+   $scope.getPageWithStoradge( "/content/go2json/first/frontpage", 'page' );
 
    $scope.routeGoToView = routeService.setup();
  
-   seoTagsService.setup( 'mainPage');
+   seoTagsService.setup( $location.path() );
 
    feInitService.setup();
 
@@ -79,7 +79,9 @@ $ocLazyLoad,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
-  $scope.getPage = pageService.setup($scope);
+  $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);  
+  $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+
   var xhr = new XMLHttpRequest();      
   xhr.open("POST", 
         '/content/go2json/perfomance/'+$routeParams.perfomance);
@@ -93,8 +95,10 @@ seoTagsService) {
             else {
   console.log('status ' + xhr.status);              
   $scope.subview = '/views/perfomance/subview.html';
-  $scope.getPage("/content/go2json/perfomance/"+$routeParams.perfomance); 
+  $scope.getPageWithStoradge("/content/go2json/perfomance/"+$routeParams.perfomance);
+  $scope.$apply(); 
   console.log( $scope.subview );
+  
             }
         }
       }
@@ -108,9 +112,6 @@ seoTagsService) {
    $scope.changelanguage = languageService.change($scope );
    $log.debug( $routeParams.perfomance );
 
-
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
 
    $scope.routeGoToView = routeService.setup();
@@ -158,11 +159,9 @@ seoTagsService, getshoworhideFuncService) {
 
    $scope.changelanguage = languageService.change($scope);
 
-   $scope.getPage = pageService.setup($scope);
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
-
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
-   $scope.getPage("/content/go2json/projects/"+$routeParams.project);
+  $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);  
+  $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+  $scope.getPageWithStoradge("/content/go2json/projects/"+$routeParams.project);
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
@@ -185,7 +184,9 @@ $ocLazyLoad,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, getshoworhideFuncService) { 
 
-  $scope.getPage = pageService.setup($scope);
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+
   var xhr = new XMLHttpRequest();      
   xhr.open("POST", 
         '/content/go2json/people/'+$routeParams.people);
@@ -207,7 +208,7 @@ seoTagsService, getshoworhideFuncService) {
       $scope.subview = '/views/people/notnumber.html'; 
       console.log( $scope.subview );
   }
-  $scope.getPage("/content/go2json/people/"+$routeParams.people); 
+  $scope.getPageWithStoradge("/content/go2json/people/"+$routeParams.people); 
             }
         }
       }
@@ -220,9 +221,6 @@ seoTagsService, getshoworhideFuncService) {
 
    $scope.changelanguage = languageService.change($scope);
 
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
-
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
@@ -246,7 +244,9 @@ ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
 
-  $scope.getPage = pageService.setup($scope);
+  $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+  $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+
   var xhr = new XMLHttpRequest();      
   xhr.open("POST", 
         "/content/go2json/festival/"+$routeParams.festival);
@@ -260,7 +260,7 @@ seoTagsService) {
             else {
   console.log('status ' + xhr.status);              
   $scope.subview = '/views/festival/subview.html';
-  $scope.getPage("/content/go2json/festival/"+$routeParams.festival); 
+  $scope.getPageWithStoradge("/content/go2json/festival/"+$routeParams.festival); 
   console.log( $scope.subview );
             }
         }
@@ -275,9 +275,6 @@ seoTagsService) {
 
    $scope.changelanguage = languageService.change($scope);
 
-
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
@@ -299,7 +296,9 @@ seoTagsService) {
    $log.debug( $location.path() +" RequestCtrl" );
    $log.debug( $routeParams.request );
 
-   $scope.getPage = pageService.setup($scope);
+
+   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
    if(  $routeParams.request == 'awards' ||
         $routeParams.request == 'video'  ||
@@ -311,15 +310,11 @@ seoTagsService) {
         $routeParams.request == 'afisha' ||
         $routeParams.request == 'news'        
         ) {
-      $scope.getPage("/content/go2json/request/"+$routeParams.request);
+      $scope.getPageWithStoradge("/content/go2json/request/"+$routeParams.request);
       $scope.subview = '/views/request/'+$routeParams.request+'.html'; 
    } else {
       $scope.subview = '/views/global/404.html'; 
    }  
-
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
-
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
    languageService.setup($scope);
 
@@ -402,7 +397,10 @@ $ocLazyLoad, $routeParams,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
-  $scope.getPage = pageService.setup($scope);
+
+  $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+  $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+
   var xhr = new XMLHttpRequest();      
   xhr.open("POST", 
         "/content/go2json/pages/"+$routeParams.pages);
@@ -415,7 +413,7 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPage("/content/go2json/pages/"+$routeParams.pages); 
+  $scope.getPageWithStoradge("/content/go2json/pages/"+$routeParams.pages); 
   $scope.subview = '/views/pages/worldview_content.html'; 
             }
         }
@@ -425,10 +423,6 @@ seoTagsService) {
    $log.debug( $location.path() +" PagesCtrl" );
    $log.debug( $routeParams.pages );
  
-
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
-
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
    languageService.setup($scope);
 
@@ -482,7 +476,10 @@ $ocLazyLoad, $routeParams,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
-  $scope.getPage = pageService.setup($scope);
+
+  $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+  $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+
   var xhr = new XMLHttpRequest();      
   xhr.open("POST", 
         "/content/go2json/feedback/"+$routeParams.feedback);
@@ -495,7 +492,7 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPage("/content/go2json/feedback/"+$routeParams.feedback); 
+  $scope.getPageWithStoradge("/content/go2json/feedback/"+$routeParams.feedback); 
   $scope.subview = '/views/feedback/feedback_content.html'; 
             }
         }
@@ -505,10 +502,6 @@ seoTagsService) {
    $log.debug( $location.path() +" FeedbackCtrl" );
    $log.debug( $routeParams.feedback );
  
-
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
-
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
    languageService.setup($scope);
 
@@ -537,7 +530,9 @@ $ocLazyLoad, $routeParams,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
-  $scope.getPage = pageService.setup($scope);
+  $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
+  $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
+
   var xhr = new XMLHttpRequest();      
   xhr.open("POST", 
         "/content/go2json/simple/"+$routeParams.simple);
@@ -550,7 +545,7 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPage("/content/go2json/simple/"+$routeParams.simple); 
+  $scope.getPageWithStoradge("/content/go2json/simple/"+$routeParams.simple); 
   $scope.subview = '/views/simple/contacts_content.html'; 
             }
         }
@@ -560,10 +555,6 @@ seoTagsService) {
    $log.debug( $location.path() +" SimpleCtrl" );
    $log.debug( $routeParams.simple );
  
-
-   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
-
-   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
    languageService.setup($scope);
 
@@ -601,13 +592,13 @@ seoTagsService) {
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
    $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
-   $scope.getPageWithStoradge("/content/go2json/first/frontpage", 'mainPage');
+   $scope.getPageWithStoradge("/content/go2json/first/frontpage");
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
 
 
-   seoTagsService.setup('mainPage');
+   seoTagsService.setup();
 
    $scope.test = function(item){
         console.log( item ); 

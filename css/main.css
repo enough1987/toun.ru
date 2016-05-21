@@ -21,13 +21,16 @@
     width: 100%;
     height: 100vh;
 }
+.main-row {
+    width: 100%;
+}
 
 /* H E A D E R */
 .global-module-part-main .header_main {
-    max-width: 1370px;
+    max-width: 1500px;
     margin: auto;
     padding-top: 30px;
-    width: 90%;
+    width: 100%;
 }
 .global-module-part-main .header_left {
     width: 150px;
@@ -317,6 +320,9 @@
 }
 .global-module-part-main .main_more:hover {
     /*color: #ED8A8A;*/
+}
+.wallet {
+    float: right;
 }
 
 /* D I F F E R E N T */

@@ -1,6 +1,7 @@
 .library_content_top-heading-kca-mns {
-  font-size: 18px;
+    font-size: 18px;
 }
+
 .library_content_year-wrapper {
     position: relative;
     width: 90%;
@@ -8,6 +9,7 @@
     margin: 20px auto 15px;
     border-bottom: 2px solid #f3f3f3;
 }
+
 .library_content_year {
     position: absolute;
     display: inline-block;
@@ -17,55 +19,68 @@
     background: white;
     padding: 30px 10px 0;
 }
+
 .library_content_library-wrapper {
-  width: 75%;
-  margin: auto;
+    width: 75%;
+    margin: auto;
 }
+
 .library_content_document-wrapper {
-  margin: 10px 0;
+    margin: 10px 0;
 }
+
 .library_content_document-title {
-  margin-left: 6px;
+    margin-left: 6px;
 }
+
 .about-actor22_content-wrapper {
-  width: 80%;
-  margin: auto;
+    width: 80%;
+    margin: auto;
 }
+
 .about-actor22_actor-photo {
-  width: 100%;
+    width: 100%;
 }
+
 .about-actor22_actor-spectacles, .about-actor22_audio-player {
-  margin-top: 40px;
-  margin-left: 8%;
+    margin-top: 40px;
+    margin-left: 8%;
 }
+
 .about-actor22_content_biography-wrapper {
-  margin: 20px 10% 0;
+    margin: 20px 0 10% 10%;
 }
+
 .about-actor22_content_title {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
+
 .about-actor22_content_actor-position, .about-actor22_content_subtitle {
-  font-size: 18px;
-  font-weight: normal;
+    font-size: 18px;
+    font-weight: normal;
 }
+
 .about-actor22_content_actor-position:before, .about-actor22_content_separator:before {
-  content: "|";
-  margin: 0 10px;
+    content: "|";
+    margin: 0 10px;
 }
+
 .about-actor22_content_biography-paragraph {
-  font-size: 14px;
-  line-height: 26px;
-  margin-top: 30px;
+    font-size: 14px;
+    line-height: 26px;
+    margin-top: 30px;
+    text-align: justify;
 }
+
 .about-actor22_content_img {
-  margin-top: 20px;
-  text-align: right;
+    margin-top: 20px;
+    text-align: right;
 }
 
 @media screen and (max-width: 749px) {
-  .about-actor22_content_biography-wrapper {
-    margin: 20px 0 0;
-  }
+    .about-actor22_content_biography-wrapper {
+        margin: 20px 0 0;
+    }
 }

@@ -22,6 +22,10 @@
     transition: all .5s;
 }
 
+.white-space_festival_logo-box img {
+    width: 200px;
+}
+
 .white-space_festival_years {
     border-top: 2px solid #f3f3f3;
     padding: 10px 0;

@@ -1,101 +1,112 @@
-
 <!-- START OF TABS -->
 
 
 <!-- W H I T E   S P A C E   G A L L E R Y   S T A R T -->
-<div class="fe-row" id="perfomance-wrapper">
+<div 
+ng-if="page['page']['field_title_photo'][languages[language1]][0]['value'] || page['page']['field_title_video'][languages[language1]][0]['value'] || page['page']['field_title_press'][languages[language1]][0]['value'] || page['page']['field_title_docu'][languages[language1]][0]['value'] || page['page']['field_title_awards'][languages[language1]][0]['value'] || page['page']['field_title_comments'][languages[language1]][0]['value']"
+
+class="fe-row" id="perfomance-wrapper">
     <div class="fe-col-12 fe-col-m-only">
         <!--T A B S-->
         <div class="tabs">
             <ul class="tabs-links">
 
-                <li 
-display-none-dir
-dataa="{{ page['page']['field_title_photo']
+                <li
+ng-if="page['page']['field_title_photo'][languages[language1]][0]['value']"
+                        display-none-dir
+                        dataa="{{ page['page']['field_title_photo']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab1"
-dircanbestart="{{ page['page']['vid'] }}"
-                class="active tabs-item"><a class="tabs-link  gb-cursor-pointer" 
-                datahref="#tab1">
-{{ page['page']['field_title_photo']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
+                        datatargetfortabs="#tab1"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        class="active tabs-item"><a class="tabs-link  gb-cursor-pointer"
+                                                    datahref="#tab1">
+                    {{ page['page']['field_title_photo']
+                    [languages[language1]][0]['value'] }}
+                    &nbsp;&nbsp;&nbsp;|<br>
                     <span class="tabs-subheading">
 {{ page['page']['field_title_photo']
 [languages[language2]][0]['value'] }}                                       
                     </span></a></li>
 
-                <li 
-display-none-dir
-dataa="{{ page['page']['field_title_video']
+                <li
+ng-if="page['page']['field_title_video'][languages[language1]][0]['value']"
+                        display-none-dir
+                        dataa="{{ page['page']['field_title_video']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab2"
-dircanbestart="{{ page['page']['vid'] }}"
-                class="tabs-item"><a class="tabs-link  gb-cursor-pointer" 
-                datahref="#tab2">
-{{ page['page']['field_title_video']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
+                        datatargetfortabs="#tab2"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        class="tabs-item"><a class="tabs-link  gb-cursor-pointer"
+                                             datahref="#tab2">
+                    {{ page['page']['field_title_video']
+                    [languages[language1]][0]['value'] }}
+                    &nbsp;&nbsp;&nbsp;|<br>
                     <span class="tabs-subheading">
 {{ page['page']['field_title_video']
 [languages[language2]][0]['value'] }}                                       
                     </span></a></li>
 
-                <li 
-display-none-dir
-dataa="{{ page['page']['field_title_press']
+                <li
+ng-if="page['page']['field_title_press'][languages[language1]][0]['value']"
+                        display-none-dir
+                        dataa="{{ page['page']['field_title_press']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab3"
-dircanbestart="{{ page['page']['vid'] }}"
-                class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                datahref="#tab3">
-{{ page['page']['field_title_press']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
+                        datatargetfortabs="#tab3"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        class="tabs-item"><a class="tabs-link gb-cursor-pointer"
+                                             datahref="#tab3">
+                    {{ page['page']['field_title_press']
+                    [languages[language1]][0]['value'] }}
+                    &nbsp;&nbsp;&nbsp;|<br>
                     <span class="tabs-subheading">
 {{ page['page']['field_title_press']
 [languages[language2]][0]['value'] }}                                       
                     </span></a></li>
 
-                <li 
-display-none-dir
-dataa="{{ page['page']['field_title_docu']
+                <li
+ng-if="page['page']['field_title_docu'][languages[language1]][0]['value']"
+                        display-none-dir
+                        dataa="{{ page['page']['field_title_docu']
 [languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab4"
-dircanbestart="{{ page['page']['vid'] }}"
-                class="tabs-item"><a class="tabs-link gb-cursor-pointer" 
-                datahref="#tab4">
-{{ page['page']['field_title_docu']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
+                        datatargetfortabs="#tab4"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        class="tabs-item"><a class="tabs-link gb-cursor-pointer"
+                                             datahref="#tab4">
+                    {{ page['page']['field_title_docu']
+                    [languages[language1]][0]['value'] }}
+                    &nbsp;&nbsp;&nbsp;|<br>
                     <span class="tabs-subheading">
 {{ page['page']['field_title_docu']
 [languages[language2]][0]['value'] }}                                       
                     </span></a></li>
 
-                <li 
-display-none-dir
-shownodetabsdir
-dataa="{{ page['page']['field_title_photo']
-[languages[language1]][0]['value'] }}"
-datatargetfortabs="#tab5"
-dircanbestart="{{ page['page']['vid'] }}"
-                class="tabs-item"><a class="tabs-link  gb-cursor-pointer" 
-                datahref="#tab5">
-{{ page['page']['field_title_awards']
-[languages[language1]][0]['value'] }} 
-                &nbsp;&nbsp;&nbsp;|<br> 
+                <li
+ng-if="page['page']['field_title_awards'][languages[language1]][0]['value']"
+                        display-none-dir
+                        dataa="{{ page['page']['field_title_awards']
+                    [languages[language1]][0]['value'] }}"
+                        datatargetfortabs="#tab5"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        class="tabs-item"><a class="tabs-link  gb-cursor-pointer"
+                                             datahref="#tab5">
+                    {{ page['page']['field_title_awards']
+                    [languages[language1]][0]['value'] }}
+                    &nbsp;&nbsp;&nbsp;|<br>
                     <span class="tabs-subheading">
 {{ page['page']['field_title_awards']
 [languages[language2]][0]['value'] }}                                       
                     </span></a></li>
 
-                        <li 
-                        class="tabs-item"><a class="tabs-link  gb-cursor-pointer" 
-                        datahref="#tab6">
-{{ page['page']['field_title_comments'][languages[language1]][0]['value'] }}
-                        <br> <span
-                                class="tabs-subheading">
+                <li
+ng-if="page['page']['field_title_comments'][languages[language1]][0]['value']"
+						display-none-dir
+    dataa="{{ page['page']['field_title_comments'][languages[language1]][0]['value'] }}"
+                        datatargetfortabs="#tab6"
+                        dircanbestart="{{ page['page']['field_title_comments'][languages[language1]][0]['value'] }}"
+                        class="tabs-item"><a class="tabs-link  gb-cursor-pointer"
+                                             datahref="#tab6">
+                    {{ page['page']['field_title_comments'][languages[language1]][0]['value'] }}
+                    <br> <span
+                        class="tabs-subheading">
 {{ page['page']['field_title_comments'][languages[language2]][0]['value'] }}
                          </span></a></li>
             </ul>
@@ -104,10 +115,10 @@ dircanbestart="{{ page['page']['vid'] }}"
 
                 <div
 
-dataa="{{page['page']
+                        dataa="{{page['page']
 ['field_project_photo']['und']}}"
-dircanbestart="{{ page['page']['vid'] }}"
-datatargettab="#tab1"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        datatargettab="#tab1"
                         id="tab1" class="tab tab-active fe-col-12">
                     <!-- P H O T O   C A R O U S E L -->
                     <div class="prev-button photo-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
@@ -115,183 +126,186 @@ datatargettab="#tab1"
                     <div id="lightgallery" class="owl-carousel owl-theme">
 
 
-<data-repeat ng-repeat="item in page['page']
-['field_project_photo']['und']" >
-   
-                                <div 
-                                class="item" 
-data-src="{{item['uri']}}"
-                                >
-                                    <img 
-src="{{item['filename'] | changestartpath : 
-'/content/sites/default/files/styles/medium/public/' }}" 
-                                    />
-                                </div>
-</data-repeat>
+                        <data-repeat ng-repeat="item in page['page']
+['field_project_photo']['und']">
+
+                            <div
+                                    class="item"
+                                    data-src="{{item['uri']}}"
+                            >
+                                <img class="grayscale"
+                                        src="{{item['filename'] | changestartpath :
+'/content/sites/default/files/styles/medium/public/' }}"
+                                />
+                            </div>
+                        </data-repeat>
 
                     </div>
                 </div>
 
 
+                <div
 
-                        <div 
-
-dataa="{{page['page']
+                        dataa="{{page['page']
 ['field_project_video']['und']}}"
-dircanbestart="{{ page['page']['vid'] }}"
-datatargettab="#tab2"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        datatargettab="#tab2"
                         id="tab2" class="tab">
-                            <!-- V I D E O   C A R O U S E L -->
-                            <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
-                            <div class="next-button video-buttons"><img src="/icon/img/next_button.png" alt=""></div>
-                            <div id="video-gallery" class="owl-carousel owl-theme">
-                                <!--<div class="light-gal-item" data-src="https://www.youtube.com/watch?v=G8KpPw303PY">-->
+                    <!-- V I D E O   C A R O U S E L -->
+                    <div class="prev-button video-buttons"><img src="/icon/img/prev_button.png" alt=""></div>
+                    <div class="next-button video-buttons"><img src="/icon/img/next_button.png" alt=""></div>
+                    <div id="video-gallery" class="owl-carousel owl-theme">
+                        <!--<div class="light-gal-item" data-src="https://www.youtube.com/watch?v=G8KpPw303PY">-->
 
 
-   
-<data-repeat ng-repeat="item in page['page']
-['field_project_video']['und']" >
-                                <div class="light-gal-item" 
-data-src="{{ item['input'] | trusted }}">
-                                    <img class="grayscale" 
-src="{{ item['video_id'] 
+                        <data-repeat ng-repeat="item in page['page']
+['field_project_video']['und']">
+                            <div class="light-gal-item"
+                                 data-src="{{ item['input'] | trusted }}">
+                                <img class="grayscale"
+                                     src="{{ item['video_id']
 | changestartpath : 
 'http://img.youtube.com/vi/' 
 | changeendpath : 
 '/hqdefault.jpg' 
- }}" />
-                                </div>
-   
-</data-repeat>                                
-
-
-
+ }}"/>
                             </div>
-                        </div>
 
+                        </data-repeat>
 
-                <div 
-
-dataa="{{page['page']
-['field_press'][languages[language1]]}}"
-dircanbestart="{{ page['page']['vid'] }}"
-datatargettab="#tab3"
-                id="tab3" class="tab">
-                    <!-- P U B L I C A T I O N S -->
-                    <div class="fe-col-12">
-                        <!--<div class="gallery_heading-box">-->
-                            <!--<div class="common_top-heading">Пресса</div>-->
-                            <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
-                        <!--</div>-->
-<data-repeat ng-repeat="item in page['page']
-['field_press'][languages[language1]]" >
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
-
-                                    <span class="mass_media-text">
-{{ item['title'] }}
-                                    </span><br>
-                                    <a class="mass_media-link" 
-                                    href="{{ item['value'] }} "
-                                    target="_blank"
-                                    >
-{{ item['value'] }}                                    
-
-</a>
-                                </div>
-                            </div>
-                        </div>
-</data-repeat>
 
                     </div>
                 </div>
 
-                <div 
 
-dataa="{{page['page']['field_docu'][languages[language1]]}}"
-dircanbestart="{{ page['page']['vid'] }}"
-datatargettab="#tab4"
-                id="tab4" class="tab">
+                <div
+
+                        dataa="{{page['page']
+['field_press'][languages[language1]]}}"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        datatargettab="#tab3"
+                        id="tab3" class="tab">
+                    <!-- P U B L I C A T I O N S -->
+                    <div class="fe-col-12">
+                        <!--<div class="gallery_heading-box">-->
+                        <!--<div class="common_top-heading">Пресса</div>-->
+                        <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
+                        <!--</div>-->
+                        <data-repeat ng-repeat="item in page['page']
+['field_press'][languages[language1]]">
+                            <div class="mass_media-box white_space_media-marginless">
+                                <div class="mass_media-paragraph white_space_media-marginless">
+                                    <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/>
+                                    </div>
+                                    <div class="text-wrap">
+
+                                    <span class="mass_media-text">
+{{ item['title'] }}
+                                    </span><br>
+                                        <a class="mass_media-link"
+                                           href="{{ item['value'] }} "
+                                           target="_blank"
+                                        >
+                                            {{ item['value'] }}
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </data-repeat>
+
+                    </div>
+                </div>
+
+                <div
+
+                        dataa="{{page['page']['field_docu'][languages[language1]]}}"
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        datatargettab="#tab4"
+                        id="tab4" class="tab">
                     <!-- D O C S -->
 
-<data-repeat ng-repeat="item in 
-page['page']['field_docu'][languages[language1]]" >
-                    <p>
-                        <a target="_blank"
-href="{{ item['uri'] }}"
-                        ><img  
-src="/icon/img/docs.png"  
-alt=""/><span 
-class="white-space_gallery_docs-item">
+                    <data-repeat ng-repeat="item in
+page['page']['field_docu'][languages[language1]]">
+                        <p>
+                            <a target="_blank"
+                               href="{{ item['uri'] }}"
+                            ><img
+                                    src="/icon/img/docs.png"
+                                    alt=""/><span
+                                    class="white-space_gallery_docs-item">
 {{ item['filename'] }}
 </span></a>
-                    </p>
-</data-repeat>
+                        </p>
+                    </data-repeat>
 
                 </div>
 
-                <div 
+                <div
 
-dataa="{{ page['page']['field_page_awards']
+                        dataa="{{ page['page']['field_page_awards']
 [languages[language1]][0]['value'] }}"
-dircanbestart="{{ page['page']['vid'] }}"
-datatargettab="#tab5"
-                id="tab5" class="tab">
+                        dircanbestart="{{ page['page']['vid'] }}"
+                        datatargettab="#tab5"
+                        id="tab5" class="tab">
                     <!-- F E S T I V A L   R E S U L T S -->
-                
+
                     <p>
-{{ page['page']['field_page_awards']
-[languages[language1]][0]['value'] }}
-                   </p>
+                        {{ page['page']['field_page_awards']
+                        [languages[language1]][0]['value'] }}
+                    </p>
 
                 </div>
 
                 <!---->
-                <div id="tab6" class="tab">
+                <div 
+
+                        dataa="{{ page['page']['static'][languages[language1]]['review_title'] }}"
+                        dircanbestart="{{ page['page']['static'][languages[language1]]['review_title'] }}"
+                        datatargettab="#tab6"
+                id="tab6" class="tab">
                     <!-- F E E D B A C K -->
                     <div class="fe-row">
                         <div class="fe-col-12">
 
                             <form id="formx"
-                            class="feedback-form" 
-custom-submit-dir
+                                  class="feedback-form"
+                                  custom-submit-dir
                             >
                                 <h4 class="feedback-title">
-{{ page['page']['static'][languages[language1]]['review_title'] }}
+                                    {{ page['page']['static'][languages[language1]]['review_title'] }}
                                 </h4>
-                                <input 
-                class=" feedback feedback-name" type="text" 
-placeholder="{{ page['page']['static'][languages[language1]]['placeholder_name'] }}"
-required="required" min='1' max="100"
-alt="{{ page['page']['vid'] }}"
-/>
-                                <textarea 
-                class=" feedback feedback-text" name="textarea" rows="8" cols="40"
-placeholder="{{ page['page']['static'][languages[language1]]['placeholder_text'] }}"
-required="required" min='2' max="20000"
-></textarea>
+                                <input
+                                        class=" feedback feedback-name" type="text"
+                                        placeholder="{{ page['page']['static'][languages[language1]]['placeholder_name'] }}"
+                                        required="required" min='1' max="100"
+                                        alt="{{ page['page']['vid'] }}"
+                                />
+                                <textarea
+                                        class=" feedback feedback-text" name="textarea" rows="8" cols="40"
+                                        placeholder="{{ page['page']['static'][languages[language1]]['placeholder_text'] }}"
+                                        required="required" min='2' max="20000"
+                                ></textarea>
                                 <input class="submit-button" type="submit" name="submit-button"
-value="{{ page['page']['static'][languages[language1]]['send_button'] }}"
+                                       value="{{ page['page']['static'][languages[language1]]['send_button'] }}"
 
-/>
+                                />
                             </form>
 
 
-                                    <div 
-ng-repeat="item in page['comments']"
-                                    class="post" >
-                                        <p class="post-name">
-{{ item['comment_body']['#object']['subject'] }}
-                                        </p>
-                                        <p class="post-date">
-{{ item['comment_body']['#object']['created'] | fromtimestamp }}
-</p>
-                                        <p class="post-message">
-{{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
- </p>
-                                    </div>  
+                            <div
+                                    ng-repeat="item in page['comments']"
+                                    class="post">
+                                <p class="post-name">
+                                    {{ item['comment_body']['#object']['subject'] }}
+                                </p>
+                                <p class="post-date">
+                                    {{ item['comment_body']['#object']['created'] | fromtimestamp }}
+                                </p>
+                                <p class="post-message">
+                                    {{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
+                                </p>
+                            </div>
 
                         </div>
                     </div>
@@ -306,7 +320,7 @@ ng-repeat="item in page['comments']"
 
             <div class="accordion-section">
                 <a class="accordion-section-title activeTitle gb-cursor-pointer"
-                datahref="#accordion-1"><span
+                   datahref="#accordion-1"><span
                         class="inner-box-text">
 {{ page['page']['field_title_photo']
 [languages[language1]][0]['value'] }} 
@@ -318,20 +332,20 @@ ng-repeat="item in page['comments']"
                         <div id="lightgallery2" class="owl-carousel owl-theme">
 
 
-<data-repeat ng-repeat="item in page['page']
-['field_project_photo']['und']" >  
-                                <div 
-                                class="item" 
-data-src="{{item['uri']}}"
+                            <data-repeat ng-repeat="item in page['page']
+['field_project_photo']['und']">
+                                <div
+                                        class="item"
+                                        data-src="{{item['uri']}}"
                                 >
-                                    <img 
-src="
+                                    <img
+                                            src="
 {{item['filename'] | changestartpath : 
 '/content/sites/default/files/styles/medium/public/' }}
-" 
+"
                                     />
                                 </div>
-</data-repeat>
+                            </data-repeat>
 
 
                         </div>
@@ -340,8 +354,8 @@ src="
             </div>
 
             <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-2"><span
+                <a class="accordion-section-title gb-cursor-pointer"
+                   datahref="#accordion-2"><span
                         class="inner-box-text">
 {{ page['page']['field_title_video']
 [languages[language1]][0]['value'] }} 
@@ -351,28 +365,28 @@ src="
                     <!-- V I D E O   C A R O U S E L -->
                     <div id="video-gallery2" class="owl-carousel owl-theme">
 
-<data-repeat ng-repeat="item in page['page']
-['field_project_video']['und']" >
-                                <div class="light-gal-item" 
-data-src="{{ item['input'] | trusted }}">
-                                    <img  
-src="{{ item['video_id'] 
+                        <data-repeat ng-repeat="item in page['page']
+['field_project_video']['und']">
+                            <div class="light-gal-item"
+                                 data-src="{{ item['input'] | trusted }}">
+                                <img
+                                        src="{{ item['video_id']
 | changestartpath : 
 'http://img.youtube.com/vi/' 
 | changeendpath : 
 '/hqdefault.jpg' 
- }}" />
-                                </div>
-   
-</data-repeat>   
+ }}"/>
+                            </div>
+
+                        </data-repeat>
 
                     </div>
                 </div>
             </div>
 
             <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-3"><span
+                <a class="accordion-section-title gb-cursor-pointer"
+                   datahref="#accordion-3"><span
                         class="inner-box-text">
 {{ page['page']['field_title_docu']
 [languages[language1]][0]['value'] }} 
@@ -383,31 +397,32 @@ src="{{ item['video_id']
                     <!-- P U B L I C A T I O N S -->
                     <div class="fe-col-12">
                         <!--<div class="gallery_heading-box">-->
-                            <!--<div class="common_top-heading">Пресса</div>-->
-                            <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
+                        <!--<div class="common_top-heading">Пресса</div>-->
+                        <!--<div class="common_top-subheading">ёнгын вāрмаляныл</div>-->
                         <!--</div>-->
 
-<data-repeat ng-repeat="item in page['page']
-['field_press'][languages[language1]]" >
-                        <div class="mass_media-box white_space_media-marginless">
-                            <div class="mass_media-paragraph white_space_media-marginless">
-                                <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/></div>
-                                <div class="text-wrap">
+                        <data-repeat ng-repeat="item in page['page']
+['field_press'][languages[language1]]">
+                            <div class="mass_media-box white_space_media-marginless">
+                                <div class="mass_media-paragraph white_space_media-marginless">
+                                    <div class="img-wrap"><img class="mass_media-icon" src="icon/img/pen.png" alt=""/>
+                                    </div>
+                                    <div class="text-wrap">
 
                                     <span class="mass_media-text">
 {{ item['title'] }}
                                     </span><br>
-                                    <a class="mass_media-link" 
-                                    href="{{ item['value'] }} "
-                                    target="_blank"
-                                    >
-{{ item['value'] }}                                    
+                                        <a class="mass_media-link"
+                                           href="{{ item['value'] }} "
+                                           target="_blank"
+                                        >
+                                            {{ item['value'] }}
 
-</a>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-</data-repeat>
+                        </data-repeat>
 
                     </div>
 
@@ -415,8 +430,8 @@ src="{{ item['video_id']
             </div>
 
             <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-4"><span
+                <a class="accordion-section-title gb-cursor-pointer"
+                   datahref="#accordion-4"><span
                         class="inner-box-text">
 {{ page['page']['field_title_docu']
 [languages[language1]][0]['value'] }} 
@@ -426,26 +441,26 @@ src="{{ item['video_id']
                     <!-- D O C S -->
 
 
-<data-repeat ng-repeat="item in 
-page['page']['field_docu'][languages[language1]]" >
-                    <p>
-                        <a target="_blank"
-href="{{ item['uri'] }}"
-                        ><img  
-src="/icon/img/docs.png"  
-alt=""/><span 
-class="white-space_gallery_docs-item">
+                    <data-repeat ng-repeat="item in
+page['page']['field_docu'][languages[language1]]">
+                        <p>
+                            <a target="_blank"
+                               href="{{ item['uri'] }}"
+                            ><img
+                                    src="/icon/img/docs.png"
+                                    alt=""/><span
+                                    class="white-space_gallery_docs-item">
 {{ item['filename'] }}
 </span></a>
-                    </p>
-</data-repeat>
+                        </p>
+                    </data-repeat>
 
                 </div>
             </div>
 
             <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-5"><span
+                <a class="accordion-section-title gb-cursor-pointer"
+                   datahref="#accordion-5"><span
                         class="inner-box-text">
 {{ page['page']['field_title_awards']
 [languages[language1]][0]['value'] }} 
@@ -455,16 +470,16 @@ class="white-space_gallery_docs-item">
                     <!-- F E S T I V A L   R E S U L T S -->
 
                     <p>
-{{ page['page']['field_page_awards']
-[languages[language1]][0]['value'] }}
-                   </p>
-                    
+                        {{ page['page']['field_page_awards']
+                        [languages[language1]][0]['value'] }}
+                    </p>
+
                 </div>
             </div>
 
             <div class="accordion-section">
-                <a class="accordion-section-title gb-cursor-pointer" 
-                datahref="#accordion-6"><span
+                <a class="accordion-section-title gb-cursor-pointer"
+                   datahref="#accordion-6"><span
                         class="inner-box-text">
 {{ page['page']['field_title_comments'][languages[language1]][0]['value'] }}
                     </span></a>
@@ -475,43 +490,43 @@ class="white-space_gallery_docs-item">
                         <div class="fe-col-12">
 
                             <form id="formx"
-                            class="feedback-form" 
-custom-submit-dir
+                                  class="feedback-form"
+                                  custom-submit-dir
                             >
                                 <h4 class="feedback-title">
-{{ page['page']['static'][languages[language1]]['review_title'] }}
+                                    {{ page['page']['static'][languages[language1]]['review_title'] }}
                                 </h4>
-                                <input 
-                class=" feedback feedback-name" type="text" 
-placeholder="{{ page['page']['static'][languages[language1]]['placeholder_name'] }}"
-required="required" min='1' max="100"
-alt="{{ page['page']['vid'] }}"
-/>
-                                <textarea 
-                class=" feedback feedback-text" name="textarea" rows="8" cols="40"
-placeholder="{{ page['page']['static'][languages[language1]]['placeholder_text'] }}"
-required="required" min='2' max="20000"
-></textarea>
+                                <input
+                                        class=" feedback feedback-name" type="text"
+                                        placeholder="{{ page['page']['static'][languages[language1]]['placeholder_name'] }}"
+                                        required="required" min='1' max="100"
+                                        alt="{{ page['page']['vid'] }}"
+                                />
+                                <textarea
+                                        class=" feedback feedback-text" name="textarea" rows="8" cols="40"
+                                        placeholder="{{ page['page']['static'][languages[language1]]['placeholder_text'] }}"
+                                        required="required" min='2' max="20000"
+                                ></textarea>
                                 <input class="submit-button" type="submit" name="submit-button"
-value="{{ page['page']['static'][languages[language1]]['send_button'] }}"
+                                       value="{{ page['page']['static'][languages[language1]]['send_button'] }}"
 
-/>
+                                />
                             </form>
 
 
-                                    <div 
-ng-repeat="item in page['comments']"
-                                    class="post" >
-                                        <p class="post-name">
-{{ item['comment_body']['#object']['subject'] }}
-                                        </p>
-                                        <p class="post-date">
-{{ item['comment_body']['#object']['created'] | fromtimestamp }}
-</p>
-                                        <p class="post-message">
-{{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
- </p>
-                                    </div>  
+                            <div
+                                    ng-repeat="item in page['comments']"
+                                    class="post">
+                                <p class="post-name">
+                                    {{ item['comment_body']['#object']['subject'] }}
+                                </p>
+                                <p class="post-date">
+                                    {{ item['comment_body']['#object']['created'] | fromtimestamp }}
+                                </p>
+                                <p class="post-message">
+                                    {{ item['comment_body']['#object']['comment_body']['und'][0]['value'] }}
+                                </p>
+                            </div>
 
 
                         </div>
@@ -525,22 +540,19 @@ ng-repeat="item in page['comments']"
 <!-- W H I T E   S P A C E   G A L L E R Y   E N D -->
 
 
-
-<data-init-dir 
-        tabs-jquery-plagins-init-dir="{{page}}" >
-</data-init-dir >
-
+<data-init-dir
+        tabs-jquery-plagins-init-dir="{{page}}">
+</data-init-dir>
 
 
-
-<div 
+<div
         oc-lazy-load='[
             "/js/jquery-scroll.js",
             "/js/waypoints.init.js",
             "/js/accordion.js",
             "/js/menu.js"
         ]'>
- 
+
 </div>
 
 <!-- END OF TABS -->

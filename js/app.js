@@ -6,7 +6,7 @@ var customServices = angular.module("customServices", []);
 
 var taatrApp = angular.module("TaatrApp", 
 	["customServices", "customDirectives","customFilters", 
-	'ngRoute', 'ngSanitize',"oc.lazyLoad"])
+	'ngRoute', 'ngSanitize', 'ngCookies', "oc.lazyLoad"])
 .config(function($routeProvider, $locationProvider) {
     $routeProvider.
       when('/', {

@@ -1,55 +1,57 @@
 <!-- W H I T E   S P A C E   R E P E R T U A R   S T A R T -->
-<div class="fe-row">
-  <div class="afisha_content global_content-wrapper">
-    <h2 class="common_top-heading">
-{{ page['static'][languages[language1]]['header'] }}
-    </h2>
-    <h2 class="common_top-heading  afisha_content_top-heading-kca-mns">
-{{ page['static'][languages[language2]]['header'] }}
-    </h2>
+<div class="afisha_content-bg">
+    <div class="fe-row">
+        <div class="afisha_content global_content-wrapper">
+            <h2 class="common_top-heading">
+                {{ page['static'][languages[language1]]['header'] }}
+            </h2>
+            <h2 class="common_top-heading  afisha_content_top-heading-kca-mns">
+                {{ page['static'][languages[language2]]['header'] }}
+            </h2>
 
-    <div class="afisha_content_schedule">
+            <div class="afisha_content_schedule">
 
-<data-afisha-first_month 
-ng-if="showMonth( page['page']['widget']['first_month'] , 1 )" >
+                <data-afisha-first_month
+                        ng-if="showMonth( page['page']['widget']['first_month'] , 1 )">
 
-      <div class="fe-row">
-        <h3 class="afisha_content_month">
-{{ page['page']['static']['first_month'][languages[language1]]['title'] }}
-        <span class="afisha_content_month-arrow">></span></h3>
-        <h3 class="afisha_content_month-kca-mns">
-{{ page['page']['static']['first_month'][languages[language2]]['title'] }}
-        </h3>
-      </div>
+                    <div class="fe-row" id="2">
+                        <h3 class="afisha_content_month">
+                            {{ page['page']['static']['first_month'][languages[language1]]['title'] }}
+                            <span class="afisha_content_month-arrow"><a href="#3" class="to-next-month">
+                                &#0155;</a></span></h3>
+                        <h3 class="afisha_content_month-kca-mns">
+                            {{ page['page']['static']['first_month'][languages[language2]]['title'] }}
+                        </h3>
+                    </div>
 
-      <div class="fe-row afisha_content_head">
-        <div class="fe-col-5 fe-col-n-12"> 
+                    <div class="fe-row afisha_content_head">
+                        <div class="fe-col-5 fe-col-n-12">
           <span>
           {{ page['static'][languages[language1]]['event'] }} 
           </span>
-        </div>
-        <div class="fe-col-2 fe-col-n-12">
+                        </div>
+                        <div class="fe-col-2 fe-col-n-12">
           <span>
           {{ page['static'][languages[language1]]['time'] }} 
           </span>
-        </div>
-        <div class="fe-col-3 fe-col-n-12">
+                        </div>
+                        <div class="fe-col-3 fe-col-n-12">
           <span>
           {{ page['static'][languages[language1]]['header'] }} 
           </span>
-        </div>
-        <div class="fe-col-2 fe-col-n-12">
+                        </div>
+                        <div class="fe-col-2 fe-col-n-12">
           <span>
           {{ page['static'][languages[language1]]['Price'] }} 
           </span>
-        </div>
-      </div>
+                        </div>
+                    </div>
 
-<data-repeat ng-repeat="item in page['page']['widget']['first_month']" >
-      <div class="fe-row afisha_content_date-item">      
-        <div class="fe-col-5 fe-col-n-12">
-          <div class="afisha_content_title-box">
-            <p>
+                    <data-repeat ng-repeat="item in page['page']['widget']['first_month']">
+                        <div class="fe-row afisha_content_date-item">
+                            <div class="fe-col-5 fe-col-n-12">
+                                <div class="afisha_content_title-box">
+                                    <p>
               <span class="afisha_content_date">
 {{ item[languages[language1]]['item']['day'] }}
               </span><span class="afisha_content_weekday">
@@ -57,93 +59,93 @@ ng-if="showMonth( page['page']['widget']['first_month'] , 1 )" >
               </span class="afisha_content_age-rating"><span>
 {{ item[languages[language1]]['item']['age'] }}
               </span>
-            </p>
-            <h4 class="afisha_content_title">
-{{ item[languages[language1]]['item']['title'] }}
-            </h4>
-            <h4 class="afisha_content_title afisha_content_title-kca-mns">
-{{ item[languages[language1]]['item']['age'] }}
-            </h4>
-            <p class="afisha_content_description">
-{{ item[languages[language1]]['item']['body'] }}
-            </p>
-          </div>
-        </div>
-        <div class="fe-col-2 fe-col-n-12">
+                                    </p>
+                                    <h4 class="afisha_content_title">
+                                        {{ item[languages[language1]]['item']['title'] }}
+                                    </h4>
+                                    <h4 class="afisha_content_title afisha_content_title-kca-mns">
+                                        {{ item[languages[language1]]['item']['age'] }}
+                                    </h4>
+                                    <p class="afisha_content_description">
+                                        {{ item[languages[language1]]['item']['body'] }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="fe-col-2 fe-col-n-12">
           <span class="afisha_content_time">
 {{ item[languages[language1]]['item']['time'] }}
           </span>
-        </div>
-        <div class="fe-col-3 fe-col-n-12">
-          <div class="afisha_content_address-box">
+                            </div>
+                            <div class="fe-col-3 fe-col-n-12">
+                                <div class="afisha_content_address-box">
             <span class="afisha_content_teatr">
 {{ item[languages[language1]]['item']['place'] }}
             </span>
-            <!--
-            <span class="afisha_content_hall">
+                                    <!--
+                                    <span class="afisha_content_hall">
 
-            1 этаж</span>
-            -->
-          </div>
-        </div>
-        <div class="fe-col-2 fe-col-n-12">
-          <a href="" class="afisha_content_buy-link">
+                                    1 этаж</span>
+                                    -->
+                                </div>
+                            </div>
+                            <div class="fe-col-2 fe-col-n-12">
+                                <a href="" class="afisha_content_buy-link">
 
-          <!-- 100-200 р. -->
+                                    <!-- 100-200 р. -->
           <span ng-if="item[languages[language1]]['item']['buy_url']"
-          class="afisha_content_buy-icon">
-          <img 
-          src="/icon/img/buy.png" />
+                class="afisha_content_buy-icon">
+          <img
+                  src="/icon/img/buy.png"/>
           </span>
-          </a>
-        </div>
-      </div>
-</data-repeat>
+                                </a>
+                            </div>
+                        </div>
+                    </data-repeat>
 
-</data-afisha-first_month>
+                </data-afisha-first_month>
 
 
+                <data-afisha-second_month
+                        ng-if="showMonth( page['page']['widget']['second_month'] , 2 )">
 
-<data-afisha-second_month 
-ng-if="showMonth( page['page']['widget']['second_month'] , 2 )" >
+                    <div class="fe-row" id="3">
+                        <h3 class="afisha_content_month">
+                            {{ page['page']['static']['second_month'][languages[language1]]['title'] }}
+                            <span class="afisha_content_month-arrow"><a href="#4" class="to-next-month">
+                                &#0155;</a></span></h3>
+                        <h3 class="afisha_content_month-kca-mns">
+                            {{ page['page']['static']['second_month'][languages[language2]]['title'] }}
+                        </h3>
+                    </div>
 
-      <div class="fe-row">
-        <h3 class="afisha_content_month">
-{{ page['page']['static']['second_month'][languages[language1]]['title'] }}
-        <span class="afisha_content_month-arrow">></span></h3>
-        <h3 class="afisha_content_month-kca-mns">
-{{ page['page']['static']['second_month'][languages[language2]]['title'] }}
-        </h3>
-      </div>
-
-      <div class="fe-row afisha_content_head">
-        <div class="fe-col-5 fe-col-n-12"> 
+                    <div class="fe-row afisha_content_head">
+                        <div class="fe-col-5 fe-col-n-12">
           <span>
           {{ page['static'][languages[language1]]['event'] }} 
           </span>
-        </div>
-        <div class="fe-col-2 fe-col-n-12">
+                        </div>
+                        <div class="fe-col-2 fe-col-n-12">
           <span>
           {{ page['static'][languages[language1]]['time'] }} 
           </span>
-        </div>
-        <div class="fe-col-3 fe-col-n-12">
+                        </div>
+                        <div class="fe-col-3 fe-col-n-12">
           <span>
           {{ page['static'][languages[language1]]['header'] }} 
           </span>
-        </div>
-        <div class="fe-col-2 fe-col-n-12">
+                        </div>
+                        <div class="fe-col-2 fe-col-n-12">
           <span>
           {{ page['static'][languages[language1]]['Price'] }} 
           </span>
-        </div>
-      </div>
+                        </div>
+                    </div>
 
-<data-repeat ng-repeat="item in page['page']['widget']['second_month']" >
-      <div class="fe-row afisha_content_date-item">      
-        <div class="fe-col-5 fe-col-n-12">
-          <div class="afisha_content_title-box">
-            <p>
+                    <data-repeat ng-repeat="item in page['page']['widget']['second_month']">
+                        <div class="fe-row afisha_content_date-item">
+                            <div class="fe-col-5 fe-col-n-12">
+                                <div class="afisha_content_title-box">
+                                    <p>
               <span class="afisha_content_date">
 {{ item[languages[language1]]['item']['day'] }}
               </span><span class="afisha_content_weekday">
@@ -151,57 +153,63 @@ ng-if="showMonth( page['page']['widget']['second_month'] , 2 )" >
               </span class="afisha_content_age-rating"><span>
 {{ item[languages[language1]]['item']['age'] }}
               </span>
-            </p>
-            <h4 class="afisha_content_title">
-{{ item[languages[language1]]['item']['title'] }}
-            </h4>
-            <h4 class="afisha_content_title afisha_content_title-kca-mns">
-{{ item[languages[language1]]['item']['age'] }}
-            </h4>
-            <p class="afisha_content_description">
-{{ item[languages[language1]]['item']['body'] }}
-            </p>
-          </div>
-        </div>
-        <div class="fe-col-2 fe-col-n-12">
+                                    </p>
+                                    <h4 class="afisha_content_title">
+                                        {{ item[languages[language1]]['item']['title'] }}
+                                    </h4>
+                                    <h4 class="afisha_content_title afisha_content_title-kca-mns">
+                                        {{ item[languages[language1]]['item']['age'] }}
+                                    </h4>
+                                    <p class="afisha_content_description">
+                                        {{ item[languages[language1]]['item']['body'] }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="fe-col-2 fe-col-n-12">
           <span class="afisha_content_time">
 {{ item[languages[language1]]['item']['time'] }}
           </span>
-        </div>
-        <div class="fe-col-3 fe-col-n-12">
-          <div class="afisha_content_address-box">
+                            </div>
+                            <div class="fe-col-3 fe-col-n-12">
+                                <div class="afisha_content_address-box">
             <span class="afisha_content_teatr">
 {{ item[languages[language1]]['item']['place'] }}
             </span>
-            <!--
-            <span class="afisha_content_hall">
+                                    <!--
+                                    <span class="afisha_content_hall">
 
-            1 этаж</span>
-            -->
-          </div>
-        </div>
-        <div class="fe-col-2 fe-col-n-12">
-          <a href="" class="afisha_content_buy-link">
-          <!--
-          100-200 р.
-          --> 
+                                    1 этаж</span>
+                                    -->
+                                </div>
+                            </div>
+                            <div class="fe-col-2 fe-col-n-12">
+                                <a href="" class="afisha_content_buy-link">
+                                    <!--
+                                    100-200 р.
+                                    -->
           <span ng-if="item[languages[language1]]['item']['buy_url']"
-          class="afisha_content_buy-icon">
-          <img 
-          src="/icon/img/buy.png" />
+                class="afisha_content_buy-icon">
+          <img
+                  src="/icon/img/buy.png"/>
           </span>
-          </a>
+                                </a>
+                            </div>
+                        </div>
+                    </data-repeat>
+
+                </data-afisha-second_month>
+
+            </div>
         </div>
-      </div>
-</data-repeat>
-
-</data-afisha-second_month>     
-
     </div>
-  </div>
 </div>
 <!-- W H I T E   S P A C E   R E P E R T U A R   E N D -->
 
 
+<ng-include src="'/views/global/lazyload.html'"></ng-include>
 
-<ng-include src="'/views/global/lazyload.html'"></ng-include> 
+<div oc-lazy-load='[
+"/js/afisha-scroll.js"
+]'>
+
+</div>

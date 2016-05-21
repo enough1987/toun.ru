@@ -6,9 +6,14 @@
     <div class="gallery_heading-box">
         <h2 class="common_top-heading">
 
-        Хозяева</h2>
+{{page['page']['field_title_header']
+[languages[language1]][0]['value']}}
+</h2>
         <h2 class="common_top-heading  library_content_top-heading-kca-mns">
-        театрын мирт</h2>
+
+{{page['page']['field_title_header']
+[languages[language2]][0]['value']}}
+        </h2>
     </div>
     <div class="gallery_filters">
 
@@ -41,6 +46,13 @@ alt="" class="about-actor22_actor-photo" />
             </h4>
 
             <p class="about-actor22_content_subtitle">
+                
+<data-div ng-bind-html="
+page['page']['field_summary']
+[languages[language1]][0]['value']">
+</data-div>       
+                
+<!--   
                 <span>
 
                 Черная песня</span>
@@ -50,6 +62,7 @@ alt="" class="about-actor22_actor-photo" />
                 <span class="about-actor22_content_separator">
 
                 Дети неба</span>
+-->                
             </p>
         </div>
 
@@ -83,14 +96,19 @@ alt="" class="about-actor22_actor-photo" />
 {{ page['page']['field_patronymic'][languages[language1]][0]['value'] }}
             <span class="about-actor22_content_actor-position">
 {{ page['page']['field_position'][languages[language1]][0]['value'] }}        
-            Актриса</span></h3>
+            </span></h3>
 
             <p class="about-actor22_content_biography-paragraph">
-        {{ page['page']['field_body'][languages[language1]][0]['value'] }}                
+<data-div ng-bind-html="
+page['page']['field_body'][languages[language1]][0]['value']">
+</data-div>                    
+
             </p>
 
             <p class="about-actor22_content_biography-paragraph">
-        {{ page['page']['field_body'][languages[language2]][0]['value'] }}                
+<data-div ng-bind-html="
+page['page']['field_body'][languages[language2]][0]['value']">
+</data-div> 
             </p>
 
             <p class="about-actor22_content_img">
