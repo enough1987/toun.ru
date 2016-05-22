@@ -297,7 +297,7 @@ page['page']['field_docu'][languages[language1]]">
                                     ng-repeat="item in page['comments']"
                                     class="post">
                                 <p class="post-name">
-                                    {{ item['comment_body']['#object']['subject'] }}
+                                    {{ item['comment_body']['#object']['mail'] }}
                                 </p>
                                 <p class="post-date">
                                     {{ item['comment_body']['#object']['created'] | fromtimestamp }}
@@ -529,7 +529,7 @@ ng-if="page['page']['field_title_comments'][languages[language1]][0]['value']"
                                     ng-repeat="item in page['comments']"
                                     class="post">
                                 <p class="post-name">
-                                    {{ item['comment_body']['#object']['subject'] }}
+                                    {{ item['comment_body']['#object']['mail'] }}
                                 </p>
                                 <p class="post-date">
                                     {{ item['comment_body']['#object']['created'] | fromtimestamp }}

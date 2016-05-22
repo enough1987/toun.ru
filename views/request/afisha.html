@@ -60,12 +60,16 @@
 {{ item[languages[language1]]['item']['age'] }}
               </span>
                                     </p>
-                                    <h4 class="afisha_content_title">
+                                    <h4 
+ng-click="routeGoToView(item[languages[language1]]['item']['route'])"
+                                    class="afisha_content_title">
                                         {{ item[languages[language1]]['item']['title'] }}
                                     </h4>
+                                    <!--
                                     <h4 class="afisha_content_title afisha_content_title-kca-mns">
                                         {{ item[languages[language1]]['item']['age'] }}
                                     </h4>
+                                    -->
                                     <p class="afisha_content_description">
                                         {{ item[languages[language1]]['item']['body'] }}
                                     </p>
@@ -154,12 +158,16 @@
 {{ item[languages[language1]]['item']['age'] }}
               </span>
                                     </p>
-                                    <h4 class="afisha_content_title">
+                                    <h4 
+ng-click="routeGoToView(item[languages[language1]]['item']['route'])"
+                                    class="afisha_content_title">
                                         {{ item[languages[language1]]['item']['title'] }}
                                     </h4>
+                                    <!--
                                     <h4 class="afisha_content_title afisha_content_title-kca-mns">
                                         {{ item[languages[language1]]['item']['age'] }}
                                     </h4>
+                                    -->
                                     <p class="afisha_content_description">
                                         {{ item[languages[language1]]['item']['body'] }}
                                     </p>
@@ -184,6 +192,7 @@
                             </div>
                             <div class="fe-col-2 fe-col-n-12">
                                 <a href="" class="afisha_content_buy-link">
+{{ item[languages[language1]]['item']['price'] }}                                
                                     <!--
                                     100-200 р.
                                     -->
