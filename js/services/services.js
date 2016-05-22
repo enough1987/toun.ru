@@ -106,7 +106,7 @@ customServices.factory('pageService', function (
                 console.log( 'try to get json' );                
                     ajaxService.post(json, function(data){                 
                         scope['page'] = data;
-                console.log( 'got json' ); 
+                console.log( 'got json from server -' ); 
                 console.log( 'page' + " : ");                         
                 console.log( scope['page'] );  
                         localStorageService.set('page', scope['page'] );
@@ -118,6 +118,7 @@ customServices.factory('pageService', function (
         setupWithStoradge: function(scope){
             return function(json, nameOfPage) {
                 if( !nameOfPage ) {var nameOfPage = 'page'};
+
                 var lss = false;
                 if ( localStorageService.get('cache') ) {
                     if ( localStorageService.get('cache') == $cookies.get('cache') ){
@@ -255,8 +256,10 @@ customServices.factory('feInitService', function ($location) {
 Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
     get: function(){
         return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
-    }
+    },
+    configurable: true
 });
+
 
 
 function feInit() {

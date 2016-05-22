@@ -21,10 +21,11 @@ seoTagsService, feInitService) {
 
    $scope.changelanguage = languageService.change($scope );
 
+   $scope.getPage = pageService.setup($scope);
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
    $scope.getPageWithStoradge( "/content/go2json/first/global", 'global' );
-   $scope.getPageWithStoradge( "/content/go2json/first/frontpage" );
+   $scope.getPage( "/content/go2json/first/frontpage" );
    safeApply($scope);
 
    $scope.routeGoToView = routeService.setup();
@@ -80,6 +81,7 @@ $ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
+  $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);  
   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
@@ -98,7 +100,7 @@ seoTagsService) {
             else {
   console.log('status ' + xhr.status);              
   $scope.subview = '/views/perfomance/subview.html';
-  $scope.getPageWithStoradge("/content/go2json/perfomance/"+$routeParams.perfomance);
+  $scope.getPage("/content/go2json/perfomance/"+$routeParams.perfomance);
   safeApply($scope); 
   console.log( $scope.subview );
   
@@ -166,9 +168,10 @@ seoTagsService, getshoworhideFuncService) {
 
    $scope.changelanguage = languageService.change($scope);
 
+  $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);  
   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
-  $scope.getPageWithStoradge("/content/go2json/projects/"+$routeParams.project);
+  $scope.getPage("/content/go2json/projects/"+$routeParams.project);
   safeApply($scope);
 
    $scope.routeGoToView = routeService.setup();
@@ -192,6 +195,7 @@ $ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, getshoworhideFuncService) { 
 
+   $scope.getPage = pageService.setup($scope);
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
    $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
@@ -218,7 +222,7 @@ seoTagsService, getshoworhideFuncService) {
       $scope.subview = '/views/people/notnumber.html'; 
       console.log( $scope.subview );
   }
-    $scope.getPageWithStoradge("/content/go2json/people/"+$routeParams.people); 
+    $scope.getPage("/content/go2json/people/"+$routeParams.people); 
     safeApply($scope);
             }
         }
@@ -254,7 +258,7 @@ $ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
-
+  $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
@@ -273,7 +277,7 @@ seoTagsService) {
             else {
   console.log('status ' + xhr.status);              
   $scope.subview = '/views/festival/subview.html';
-  $scope.getPageWithStoradge("/content/go2json/festival/"+$routeParams.festival);
+  $scope.getPage("/content/go2json/festival/"+$routeParams.festival);
   safeApply($scope); 
   console.log( $scope.subview );
             }
@@ -310,7 +314,7 @@ seoTagsService) {
    $log.debug( $location.path() +" RequestCtrl" );
    $log.debug( $routeParams.request );
 
-
+   $scope.getPage = pageService.setup($scope);
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
    $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
@@ -324,7 +328,7 @@ seoTagsService) {
         $routeParams.request == 'afisha' ||
         $routeParams.request == 'news'        
         ) {
-      $scope.getPageWithStoradge("/content/go2json/request/"+$routeParams.request);
+      $scope.getPage("/content/go2json/request/"+$routeParams.request);
       $scope.subview = '/views/request/'+$routeParams.request+'.html';
       safeApply($scope); 
    } else {
@@ -414,7 +418,7 @@ $ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
-
+  $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
@@ -432,7 +436,7 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPageWithStoradge("/content/go2json/pages/"+$routeParams.pages);
+  $scope.getPage("/content/go2json/pages/"+$routeParams.pages);
   $scope.subview = '/views/pages/worldview_content.html'; 
   safeApply($scope); 
             }
@@ -496,7 +500,7 @@ $ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
-
+  $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
@@ -514,7 +518,7 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPageWithStoradge("/content/go2json/feedback/"+$routeParams.feedback);
+  $scope.getPage("/content/go2json/feedback/"+$routeParams.feedback);
   safeApply($scope); 
   $scope.subview = '/views/feedback/feedback_content.html'; 
             }
@@ -553,6 +557,8 @@ $ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
+
+  $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
 
@@ -570,7 +576,7 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPageWithStoradge("/content/go2json/simple/"+$routeParams.simple);
+  $scope.getPage("/content/go2json/simple/"+$routeParams.simple);
   safeApply($scope); 
   $scope.subview = '/views/simple/contacts_content.html'; 
             }
@@ -615,10 +621,11 @@ seoTagsService) {
 
    $scope.changelanguage = languageService.change($scope);
 
+   $scope.getPage = pageService.setup($scope);
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
    $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
-   $scope.getPageWithStoradge("/content/go2json/first/frontpage");
+   $scope.getPage("/content/go2json/first/frontpage");
    safeApply($scope);
 
    $scope.routeGoToView = routeService.setup();
