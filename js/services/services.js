@@ -104,7 +104,12 @@ customServices.factory('pageService', function (
                 var lss = false;
                 if ( localStorageService.get('cache') == $cookies.get('cache') ) {
                         lss = true;
+                } else {
+                    window.localStorage.clear();
+                    console.log( 'all localStorage clear' );
+                    
                 }
+
 
                 console.log( $cookies.get('cache') );
                 console.log( localStorageService.get('cache') );
