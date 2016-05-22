@@ -52,8 +52,15 @@ src="{{ video | getpropfromstring
 
 <ng-include src="'/views/global/lazyload.html'"></ng-include>
 
+
+<data-js-lazy-load 
+    js-lazy-load    src="/js/videogallery.js" >
+</data-js-lazy-load>
+
+<!--
 <div 
         oc-lazy-load='[
             "/js/videogallery.js"
         ]'>
 </div>
+-->

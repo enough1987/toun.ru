@@ -130,10 +130,16 @@ src="{{ page['page']['field_tamgi']['und'][0]['uri'] }}" alt="">
 
 
 
+<ng-include src="'/views/global/lazyload.html'"></ng-include>   
+
+<data-js-lazy-load 
+    js-lazy-load    src="/js/about-actor22_content_scroll.js" >
+</data-js-lazy-load>
+
+<!--
 <div 
 oc-lazy-load='[
-"/js/menu.js",
-"/js/accordion.js",
 "/js/about-actor22_content_scroll.js"
 ]'>
 </div>
+-->

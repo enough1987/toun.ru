@@ -1,4 +1,321 @@
-<!-- Main -->
+		
+
+		<data-wrapper class='global-module-part-main'>
+
+
+
+			<div class="top_part">
+
+
+
+    <!-- H E A D E R -->
+    <header class="header_main">
+			<div class="fe-row">
+				<!-- H E A D E R  L E F T -->
+				<div class="fe-col-3 fe-col-m-only">
+
+					<div class="header_left"
+ng-click="routeGoToView(page['header']['map_link'])"
+					>
+<p ng-bind-html="page['header'][languages[language1]]['adress_head']  | replaceNtoBR"></p>
+						<p class="header_left_scheme"> 
+{{ page['header'][languages[language1]]['title_map'] }}
+<img src="/icon/img/location.png" alt="icon" style="position: 
+relative; top: 4px; left: 8px;" /> </p>
+					</div>
+
+				</div>
+				<!-- H E A D E R  C E N T E R -->
+				<div class="fe-col-6 fe-col-m-only">
+					<div class="header_center">
+						<p class="header_center_title fe-col-m-only">
+{{ page['header'][languages[language1]]['slogan_top'] | uppercase}}
+</p>
+						<div class="header_center_logo">
+							<a  class="gb-cursor-default"><img 
+src="{{ global['settings'][languages[language1]]
+['logo_horisontal'] }}" alt="logo.png"></a>
+						</div>
+					</div>
+				</div>
+				<!-- H E A D E R  R I G H T -->
+				<div class="fe-col-3 fe-col-m-only">
+					<div class="header_right">
+						<p class="header_right_cecutient"> <a 
+						> 
+{{ page['header'][languages[language1]]['eyesight'] | firstUpperCase }}
+						<img 
+src="/icon/img/glasses.png" alt="icon" style="position: relative; top: 5px;" /> </a> </p>
+
+						
+{{ page['settings']['phone_first'] }}<br />
+{{ page['settings']['phone_second'] }}
+
+						<div class="language">
+							 
+								 <a > <div 								 
+								 ng-click="changelanguage('ru', 1)"
+								 class="{{ language1 == 'ru' ? 'language_element active-language': 'language_element' }}" > 
+								 РУС </div> </a>
+								 <a > <div 								 
+								 ng-click="changelanguage('en', 1)"
+								 class="{{ language1 == 'en' ? 'language_element active-language': 'language_element' }}"> 
+								 ENG </div> </a>
+								 <a > <div 
+								 ng-click="changelanguage('kh', 2)"
+								 class="{{ language2 == 'kh' ? 'language_element active-language': 'language_element' }}"> 
+								 Хнт </div> </a>
+								 <a > <div 
+								 ng-click="changelanguage('mns', 2)"
+								 class="{{ language2 == 'mns' ? 'language_element active-language': 'language_element' }}"> 
+								 Мнс </div> </a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- H E A D E R  C E N T E R  L O G O -->
+		<!--Логотип нужно брать из JSON для англ и рус версии (горизонтальный) !tech!
+			<div id="header_center_logo-mobile" class="fe-none">
+				<a href="index.html"><img class="fe-img" src="icon/img/logo.jpg" alt="logo.jpg"></a>
+			</div>-->
+			<div id="header_logo">
+				<div id="header_logo_image">
+					<a 
+ng-click="routeGoToView(page['header']['sun_link'])"
+					class="gb-cursor-default"> 
+					<img 
+					src="/icon/img/icon-logo.png" alt="logo" /></a>
+				</div>
+			</div>
+
+		</header>
+
+    <!-- END OF H E A D E R -->
+
+
+
+    <!-- M E N U -->
+    
+    <nav class="menu_main">
+          <ul class="fe-nav fe-col-m-only menu_list" id="menu_main">
+
+<data-repeat ng-repeat-start="item in global['menu']" >
+</data-repeat>
+              <li class="menu_item" ng-class=" $last ? 'gb-color-like-red menu_last-element' : '' ">
+                <p class="menu_paragraph">
+
+                  <a 
+ng-click="routeGoToView(item['field_link']['und'][0]['value'])" >
+                    <span class="menu_main-span">
+{{ item[languages[language1]]['und'][0]['value'] }} 
+</span><br/>
+                    <span class="menu_sub-span">
+{{ item[languages[language2]]['und'][0]['value'] }} 
+</span>
+                  </a>
+                </p>
+
+<data-submenu ng-if="item['children']" >
+                <ul class="submenu">
+    <data-repeat ng-repeat="child in item['children']">              
+                  <li class="submenu_item
+                  gb-cursor-pointer" ><a 
+
+ng-click="routeGoToView(child['field_link']['und'][0]['value'])"
+                  > 
+{{ child[languages[language1]]['und'][0]['value'] }} </a></li>
+    </data-repeat> 
+                </ul>
+
+</data-submenu>
+              </li>
+<data-repeat  ng-repeat-end >
+</data-repeat>
+
+          </ul>
+      <!-- M O B I L E  M E N U -->
+        <ul class="fe-none accordion" id="menu-small">
+
+            <data-repeat ng-repeat-start="item in global['menu']">
+            </data-repeat>
+
+            <data-set ng-init="itemofmenu='#menu-'+$index"></data-set>
+
+            <li class="accordion-section" 
+            ng-class=" $last ? 'gb-color-like-red menu_last-element' : '' "
+            >
+                <p class="menu-small_paragraph">
+
+                    <data-wrap-for-js class='js-only-click-accordion'
+                                      set-atr-for-menu-dir datamenuhref='true'
+                                      >
+
+                        <a 
+                        class="accordion-section-title">
+                            <span 
+                      ng-class="item['children'] ? '' : 'gb-opacity-zero' "
+                            class="menu-small-arrow">&#0155</span>
+                        </a>
+                        <a class="menu_main-span menu-small-link"
+ng-click="routeGoToView(item['field_link']['und'][0]['value'])"
+                        >
+                            {{ item[languages[language1]]['und'][0]['value'] }}
+                        </a>
+                    </data-wrap-for-js>
+
+                </p>
+                <data-submenu ng-if="item['children']">
+                    <div
+                            set-atr-for-menu-dir datamenuid='true'
+                            class="accordion-section-content">
+                        <ul>
+                            <data-repeat ng-repeat="child in item['children']">
+                                <li class="submenu-small_item"><a 
+ng-click="routeGoToView(child['field_link']['und'][0]['value'])"
+>
+{{ child[languages[language1]]['und'][0]['value'] }}
+                                </a></li>
+                            </data-repeat>
+                        </ul>
+                    </div>
+                </data-submenu>
+            </li>
+            <data-repeat ng-repeat-end>
+            </data-repeat>
+
+
+      </ul>
+
+        <button class="fe-none" id="small-menu-buttton"></button>
+
+      </nav>
+
+    <!-- END OF M E N U -->
+
+
+		<!-- VIDEO -->
+
+<div id="video"
+     ng-click="routeGoToView(page['lenta']['video_lenta_link'])"
+>
+
+    <video autoplay loop
+           video-set-dir
+           videoid='videoid'
+           fildname='video_lenta_mp4'
+           id='videoid'>
+    </video>
+
+    <div class="fe-none" id="video-image">
+
+        <img class="fe-img"
+             img-set-dir
+             fildname='video_lenta_jpg'
+
+             alt="people"/>
+
+    </div>
+
+</div>
+
+<div class="scroll-arrow" id="scroll-arrow">
+    <img src="icon/img/about-s22-arrow-black.png" alt="">
+</div>
+
+
+<script type="text/javascript">
+
+    if (screen.width < 1000) {
+
+        var video = fe.g("t", "video");
+        var videoImage = fe.g("i", "video-image");
+
+        video[0].style.display = "none";
+        videoImage.style.display = "block";
+
+    }
+
+</script>
+
+
+		<!-- END OF VIDEO -->
+
+
+			</div> <!-- end of class="top_part" -->
+
+			
+			
+			<!-- CONTENT -->
+			
+			
+			<div id="content">
+			
+			
+				<!-- Nearest-event -->
+				
+			
+				<div id="nearest-event">
+				
+					<div id="nearest-event_h"> <h3> <span class="title-big"> 
+{{ page['2-day']['static'][languages[language1]]['title'] }}
+					</span> <br / > <span class="title-small"> 
+{{ page['2-day']['static'][languages[language2]]['title'] }}
+					</span> </h3> </div>
+					
+					<div class="fe-row">
+					
+						<div class="fe-col-u-6 fe-col-b-6 fe-col-m-6"
+ng-repeat="item in 
+page['2-day']['widget']"	
+						>						
+							<div class="nearest-event_left">
+							
+								<div class="nearest-event_left_text">
+							
+								     <p class="nearest-event_date"> <span class="title-big"> 
+{{ item[languages[language1]]['item']['date_full'] }}
+								      <span> </p>
+<data-rout class='gb-cursor-pointer'
+ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
+>									
+									 <p class="nearest-event_title"> <span class="title-big"> <a > 
+{{ item[languages[language1]]['item']['title'] }}
+									  </a> </span> <br /> <span class="title-small"> 
+{{ item[languages[language2]]['item']['title'] }}
+									  </span> </p> 
+									 
+									 <p class="nearest-event_about">
+{{ item[languages[language1]]['item']['body'] | onlyCharacters : 85 }}								  
+									  </p>
+									 
+									 <p class="main_event_elements_status" style="padding-left:66px; margin-top: 10px;" > <a> 
+{{ item[languages[language1]]['item']['premier'] }}
+									  </a> </p> 
+</data-rout>									 
+								</div>
+
+<data-rout class='gb-cursor-pointer'
+ng-click="routeGoToView( item[languages[language1]]['item']['route'] )"
+>								 
+								<div class="nearest-event_left_image"> <img class="fe-img grayscale"  src="{{ item[languages[language1]]['item']['img']['src'] }}" 
+								alt="photo" /> </div>
+</data-rout>	
+
+							
+							</div>
+						
+						</div>						
+					
+					</div>
+				
+				</div>
+				
+				<!-- END OF CONTENT -->	
+
+
+
+				<!-- MAIN -->
 
 
 <div class="fe-row" id="main">
@@ -292,3 +609,15 @@ gb-cursor-pointer
 </div>
 
 </div>
+
+		<!-- END OF MAIN -->
+
+
+		<ng-include src="'/views/global/global-footer.html'"></ng-include>
+
+
+		</data-wrapper >
+
+
+
+<ng-include src="'/views/global/lazyload.html'"></ng-include>   

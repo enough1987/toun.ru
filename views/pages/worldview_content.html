@@ -168,9 +168,20 @@ ng-click="changelanguage('mns', 2); changelanguagelocaly(2)"
 <!-- W O R L D   V I E W   C O N T E N T   E N D -->
 
 
+
+
+<data-js-lazy-load 
+    js-lazy-load    src="/js/old-worldview-mns.js" >
+</data-js-lazy-load>
+
+<!--   
+    лейзи лоад в табсах, мы подключаем табсы
+<ng-include src="'/views/global/lazyload.html'"></ng-include>   
+
 <div 
         oc-lazy-load='[
             "/js/old-worldview-mns.js"
         ]'>
  
 </div>
+-->

@@ -52,9 +52,15 @@ href="{{item[languages[language1]]['item']['file']}}"
 
 <ng-include src="'/views/global/lazyload.html'"></ng-include>
 
+<data-js-lazy-load 
+    js-lazy-load    src="/js/library_content_scroll.js" >
+</data-js-lazy-load>
+
+<!--
 <div 
         oc-lazy-load='[
             "/js/library_content_scroll.js"
         ]'>
 </div>
+-->
 

@@ -2,6 +2,10 @@
 
 $(function() {
 
+    if ( document.getElementById("scroll-arrow") ) {
+
+    console.log( 'jquery-scroll.js is going' );  
+
     $("#scroll-arrow").on('click', function() {
         console.log('scroll');
         scrollToElem('content', 500);
@@ -17,4 +21,9 @@ $(function() {
             });
         }
     }
+
+    }   else {
+        console.log( 'jquery-scroll.js has no id, so jquery-scroll.js is not going' );     
+    }
+
 });
