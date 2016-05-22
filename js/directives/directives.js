@@ -247,9 +247,17 @@ customDirectives.directive('tabsJqueryPlaginsInitDir', function () {
         link: function (scope, element, attr) {
                 element.ready(function () {
 
+var numOfTry = 0;
+
 function JqueryPlaginsInit (){
 
 
+if( numOfTry > 12) {
+    numOfTry = 0;
+    clearInterval(intervalID); 
+    return '';
+}
+numOfTry++;
 
 if( ! element.attr('tabs-jquery-plagins-init-dir') ) {    
     console.log( 'page is not exist, so Jquery plagins can not be start' );    
@@ -409,7 +417,7 @@ else  {
             controls: 1
         }
     });
-
+    numOfTry = 0;
     clearInterval(intervalID); 
 
 }

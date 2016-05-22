@@ -318,7 +318,9 @@ page['page']['field_docu'][languages[language1]]">
     <div class="invisible fe-col-12">
         <div class="accordion accordion-about">
 
-            <div class="accordion-section">
+            <div 
+ng-if="page['page']['field_title_photo'][languages[language1]][0]['value']"
+            class="accordion-section">
                 <a class="accordion-section-title activeTitle gb-cursor-pointer"
                    datahref="#accordion-1"><span
                         class="inner-box-text">
@@ -353,7 +355,9 @@ page['page']['field_docu'][languages[language1]]">
                 </div>
             </div>
 
-            <div class="accordion-section">
+            <div 
+ng-if="page['page']['field_title_video'][languages[language1]][0]['value']"
+            class="accordion-section">
                 <a class="accordion-section-title gb-cursor-pointer"
                    datahref="#accordion-2"><span
                         class="inner-box-text">
@@ -384,12 +388,13 @@ page['page']['field_docu'][languages[language1]]">
                 </div>
             </div>
 
-            <div class="accordion-section">
+            <div 
+ng-if="page['page']['field_title_press'][languages[language1]][0]['value']"
+            class="accordion-section">
                 <a class="accordion-section-title gb-cursor-pointer"
                    datahref="#accordion-3"><span
                         class="inner-box-text">
-{{ page['page']['field_title_docu']
-[languages[language1]][0]['value'] }} 
+{{ page['page']['field_title_press'][languages[language1]][0]['value'] }} 
                 </span></a>
 
                 <div id="accordion-3" class="accordion-section-content">
@@ -429,7 +434,9 @@ page['page']['field_docu'][languages[language1]]">
                 </div>
             </div>
 
-            <div class="accordion-section">
+            <div 
+ng-if="page['page']['field_title_docu'][languages[language1]][0]['value']"
+            class="accordion-section">
                 <a class="accordion-section-title gb-cursor-pointer"
                    datahref="#accordion-4"><span
                         class="inner-box-text">
@@ -458,7 +465,9 @@ page['page']['field_docu'][languages[language1]]">
                 </div>
             </div>
 
-            <div class="accordion-section">
+            <div 
+ng-if="page['page']['field_title_awards'][languages[language1]][0]['value']"
+            class="accordion-section">
                 <a class="accordion-section-title gb-cursor-pointer"
                    datahref="#accordion-5"><span
                         class="inner-box-text">
@@ -477,7 +486,9 @@ page['page']['field_docu'][languages[language1]]">
                 </div>
             </div>
 
-            <div class="accordion-section">
+            <div 
+ng-if="page['page']['field_title_comments'][languages[language1]][0]['value']"
+            class="accordion-section">
                 <a class="accordion-section-title gb-cursor-pointer"
                    datahref="#accordion-6"><span
                         class="inner-box-text">
