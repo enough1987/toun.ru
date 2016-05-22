@@ -512,7 +512,7 @@ customDirectives.directive('initFeJsDir', function () {
         link: function (scope, element, attr) {
 
                 element.ready(function () {
-        setTimeout(feInit, 3500);         
+                    feInit();         
                 });
         }
     }
