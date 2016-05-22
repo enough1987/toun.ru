@@ -68,6 +68,7 @@ setcookie("cache", md5($global), time()+86400);
 
 		<script type="text/javascript" src="/js/fe.js"></script>
 		<script type="text/javascript" src="/js/fe-event-handler.js"></script>
+		<script type="text/javascript" src="/js/fe-event-main.js"></script>
 
 		<script src="/js/lib/lightgallery.min.js"></script>	
 		<script src="/js/lib/jquery.waypoints.min.js"></script>	

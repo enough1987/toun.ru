@@ -5,7 +5,14 @@
 function feInit () {
 setTimeout(function(){
 
-	console.log( "after load" );
+	if ( !document.getElementById("loader") ||
+		 !document.getElementById("fe-wrapper")
+		){
+		console.log( "feInit has no id, so feInit function is not going" );
+		return false;
+	}
+
+	console.log( "feInit function is going" );
 	
 	var loader = fe.g("i","loader");
 	loader.style.display = "none";
@@ -31,5 +38,5 @@ setTimeout(function(){
 	});
 
 
-}, 3500);
+}, 3000);
 }

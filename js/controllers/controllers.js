@@ -12,7 +12,7 @@ taatrApp.controller("MainCtrl", function ($scope,
 $routeParams, $location, $route, $log,
 $ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService, feInitService) {
+seoTagsService ) {
   
 
    $log.debug( $location.path() +" MainCtrl" );
@@ -32,7 +32,6 @@ seoTagsService, feInitService) {
  
    seoTagsService.setup( $location.path() );
 
-   feInitService.setup();
 
    $scope.showMonth = function( obj, month ) {  
         var bool = false;
@@ -625,7 +624,7 @@ seoTagsService) {
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
    $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
-   $scope.getPage("/content/go2json/first/frontpage");
+   $scope.page = true;
    safeApply($scope);
 
    $scope.routeGoToView = routeService.setup();

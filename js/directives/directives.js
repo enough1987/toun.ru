@@ -2,18 +2,6 @@
 
 // directives
 
-customDirectives.directive('initFeJsDir', function () {
-    return {
-        restrict: 'A', 
-        scope : false,       
-        link: function (scope, element, attr) {
-                element.ready(function () {
-        setTimeout(fe_init, 2500);         
-                });
-        }
-    }
-});
-
 
 customDirectives.directive('cssLazyLoad', function () {
     return {
@@ -511,6 +499,20 @@ customDirectives.directive('noneIfEnDir', function () {
                     if( scope.languages[scope.language1] != 'field_lang_en' ){
                         element.addClass('gb-display-none');                      
                     }
+                });
+        }
+    }
+});
+
+
+customDirectives.directive('initFeJsDir', function () {
+    return {
+        restrict: 'A', 
+        scope : false,       
+        link: function (scope, element, attr) {
+
+                element.ready(function () {
+        setTimeout(feInit, 3500);         
                 });
         }
     }

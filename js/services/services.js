@@ -248,68 +248,6 @@ customServices.factory('getshoworhideFuncService', function ($location) {
 });
 
 
-customServices.factory('feInitService', function ($location) {
-    return {
-
-        setup: function(){
-
-Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
-    get: function(){
-        return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
-    },
-    configurable: true
-});
-
-
-
-function feInit() {
-            try {
-    if(document.querySelector('video').playing){
-        console.log( 'video is plaing' );        
-    }else {
-        console.log( 'video is NOT plaing' );
-        setTimeout(function(){
-            feInit();
-        }, 500);           
-    }
-    
-    var loader = fe.g("i","loader");
-    loader.style.display = "none";
-
-    // Smooth page loading
-    var feWrapper  = fe.g("i","fe-wrapper");
-    feWrapper.style.transition = "opacity " + fe_s.loadSpeed + "s";
-    feWrapper.style.opacity = "1";
-
-    // User events
-    var headerLogo = fe.g("i","header_logo");
-    if(screen.height < 800) {
-        headerLogo = fe.g("i","header_logo");
-        headerLogo.style.padding = "25px 0px 22px";
-    } 
-
-    var headerLogoImage = fe.g("i","header_logo_image");
-    headerLogoImage.addEventListener("mouseover",function() {
-        var value = fe_g.logoDeg + 360;
-        headerLogoImage.style.transform = "rotate(" + value.toString() + "deg)";
-        headerLogoImage.style['-webkit-transform'] = "rotate(" + value.toString() + "deg)";     
-        fe_g.logoDeg = fe_g.logoDeg + 360 ;
-    });
-            } catch(e) {
-                console.log( e ); 
-            }
-}
-
- setTimeout(function(){
-            feInit();
- }, 3500);
- 
-          
-
-        }
-
-    }
-});
 
 
 
