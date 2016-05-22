@@ -2,6 +2,10 @@
     border: 4px solid red;
 }
 
+.gb-opacity-1 {
+    opacity: 1 !important;
+}
+
 .gb-cursor-pointer {
     cursor: pointer !important;
 }

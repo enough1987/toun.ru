@@ -519,8 +519,12 @@ customDirectives.directive('initFeJsDir', function () {
         scope : false,       
         link: function (scope, element, attr) {
 
+            console.log( attr['initFeJsDir'] );
+
                 element.ready(function () {
-                    feInit();         
+
+                    feInit2(); 
+
                 });
         }
     }

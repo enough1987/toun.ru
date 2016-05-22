@@ -5,15 +5,16 @@
     <div ng-click='test(debuger)'>DEBUG</div>
   -->   
 
-		<div id="loader" name='main-loader' >
+		<div id="loader"  ng-class="page ? 'gb-display-none' : 'gb-display-block'"
+		name='main-loader' >
 		
 			 <img src="/icon/img/loader2.gif" alt="loader" />
 		
 		</div>
 
 
-
-		<div id="fe-wrapper" >
+		<div ng-class="page ? 'gb-display-block gb-opacity-1' : 'gb-display-none'" 
+		id="fe-wrapper" >
 
 			<ng-include src="'/views/main/main.html'"></ng-include>	
 				

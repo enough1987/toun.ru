@@ -3,7 +3,6 @@
 
 // P A G E  L O A D
 function feInit () {
-setTimeout(function(){
 
 	if ( !document.getElementById("loader") ||
 		 !document.getElementById("fe-wrapper")
@@ -22,7 +21,13 @@ setTimeout(function(){
 	feWrapper.style.transition = "opacity " + fe_s.loadSpeed + "s";
 	feWrapper.style.opacity = "1";
 
+}
+
+function feInit2 () {
 	// User events
+    
+	console.log( "feInit2 function is going" );
+
 	var headerLogo = fe.g("i","header_logo");
 	if(screen.height < 800)	{
 		headerLogo = fe.g("i","header_logo");
@@ -36,7 +41,4 @@ setTimeout(function(){
 		headerLogoImage.style['-webkit-transform'] = "rotate(" + value.toString() + "deg)";		
 		fe_g.logoDeg = fe_g.logoDeg + 360 ;
 	});
-
-
-}, 3000);
 }
