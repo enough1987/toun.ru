@@ -2,6 +2,23 @@
 
 // services
 
+customServices.factory('safeApply', [function($rootScope) {
+            return function($scope, fn) {
+                var phase = $scope.$root.$$phase;
+                if(phase == '$apply' || phase == '$digest') {
+                    if (fn) {
+                        $scope.$eval(fn);
+                    }
+                } else {
+                    if (fn) {
+                        $scope.$apply(fn);
+                    } else {
+                        $scope.$apply();
+                    }
+                }
+            }
+}]);
+
 customServices.factory('ajaxService', function ($http) {
     return {
 
@@ -102,21 +119,19 @@ customServices.factory('pageService', function (
             return function(json, nameOfPage) {
                 if( !nameOfPage ) {var nameOfPage = 'page'};
                 var lss = false;
-                if ( localStorageService.get('cache') == $cookies.get('cache') ) {
-                        lss = true;
+                if ( localStorageService.get('cache') ) {
+                    if ( localStorageService.get('cache') == $cookies.get('cache') ){
+                        lss = true;                        
+                    } else {
+                        window.localStorage.clear();
+                        console.log( 'all localStorage clear' );                   
+                    }
                 } else {
                     window.localStorage.clear();
-                    console.log( 'all localStorage clear' );
-                    
+                    console.log( 'all localStorage clear' );                   
                 }
 
-
-                console.log( $cookies.get('cache') );
-                console.log( localStorageService.get('cache') );
-                console.log( lss );
-                console.log( $location.path() );
-                
-                
+                console.log( 'cache is the same = '+ lss );                           
 
                 if ( lss && nameOfPage == 'page' && localStorageService.get($location.path())  ||
                     lss && nameOfPage == 'global' && localStorageService.get('global') ) {

@@ -10,7 +10,7 @@ $scope, $location, $log) {
 
 taatrApp.controller("MainCtrl", function ($scope, 
 $routeParams, $location, $route, $log,
-$ocLazyLoad, 
+$ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, feInitService) {
   
@@ -24,7 +24,8 @@ seoTagsService, feInitService) {
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
 
    $scope.getPageWithStoradge( "/content/go2json/first/global", 'global' );
-   $scope.getPageWithStoradge( "/content/go2json/first/frontpage", 'page' );
+   $scope.getPageWithStoradge( "/content/go2json/first/frontpage" );
+   safeApply($scope);
 
    $scope.routeGoToView = routeService.setup();
  
@@ -75,7 +76,7 @@ bool = index <= 11 ? ( ($scope.first_len <= 11) ?
  
 taatrApp.controller("PerfomanceCtrl", function ($scope, $routeParams,
 $location, $log,
-$ocLazyLoad,
+$ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
@@ -96,7 +97,7 @@ seoTagsService) {
   console.log('status ' + xhr.status);              
   $scope.subview = '/views/perfomance/subview.html';
   $scope.getPageWithStoradge("/content/go2json/perfomance/"+$routeParams.perfomance);
-  $scope.$apply(); 
+  safeApply($scope); 
   console.log( $scope.subview );
   
             }
@@ -129,7 +130,7 @@ seoTagsService) {
 
 taatrApp.controller("ProjectsCtrl", function ($scope, $routeParams,
 $location, $log,
-$ocLazyLoad,
+$ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, getshoworhideFuncService) { 
 
@@ -162,6 +163,7 @@ seoTagsService, getshoworhideFuncService) {
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);  
   $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
   $scope.getPageWithStoradge("/content/go2json/projects/"+$routeParams.project);
+  safeApply($scope);
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
@@ -180,7 +182,7 @@ seoTagsService, getshoworhideFuncService) {
 
 taatrApp.controller("PeopleCtrl", function ($scope, $routeParams,
 $location, $log,
-$ocLazyLoad,
+$ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService, getshoworhideFuncService) { 
 
@@ -208,7 +210,8 @@ seoTagsService, getshoworhideFuncService) {
       $scope.subview = '/views/people/notnumber.html'; 
       console.log( $scope.subview );
   }
-  $scope.getPageWithStoradge("/content/go2json/people/"+$routeParams.people); 
+    $scope.getPageWithStoradge("/content/go2json/people/"+$routeParams.people); 
+    safeApply($scope);
             }
         }
       }
@@ -239,7 +242,7 @@ seoTagsService, getshoworhideFuncService) {
 });
 
 taatrApp.controller("FestivalCtrl", function ($scope, $location, $log,
-$ocLazyLoad, $routeParams,
+$ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
@@ -260,7 +263,8 @@ seoTagsService) {
             else {
   console.log('status ' + xhr.status);              
   $scope.subview = '/views/festival/subview.html';
-  $scope.getPageWithStoradge("/content/go2json/festival/"+$routeParams.festival); 
+  $scope.getPageWithStoradge("/content/go2json/festival/"+$routeParams.festival);
+  safeApply($scope); 
   console.log( $scope.subview );
             }
         }
@@ -289,7 +293,7 @@ seoTagsService) {
 
 
 taatrApp.controller("RequestCtrl", function ($scope, $location, $log,
-$ocLazyLoad, $routeParams, 
+$ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
@@ -311,7 +315,8 @@ seoTagsService) {
         $routeParams.request == 'news'        
         ) {
       $scope.getPageWithStoradge("/content/go2json/request/"+$routeParams.request);
-      $scope.subview = '/views/request/'+$routeParams.request+'.html'; 
+      $scope.subview = '/views/request/'+$routeParams.request+'.html';
+      safeApply($scope); 
    } else {
       $scope.subview = '/views/global/404.html'; 
    }  
@@ -380,7 +385,7 @@ seoTagsService) {
       console.log( $scope.items );
       
       clearInterval(intervalID); 
-      $scope.$apply();
+      safeApply($scope);
     }, 1000);
   }
 
@@ -393,7 +398,7 @@ seoTagsService) {
 });
 
 taatrApp.controller("PagesCtrl", function ($scope, $location, $log,
-$ocLazyLoad, $routeParams, 
+$ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
@@ -413,7 +418,8 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPageWithStoradge("/content/go2json/pages/"+$routeParams.pages); 
+  $scope.getPageWithStoradge("/content/go2json/pages/"+$routeParams.pages);
+  safeApply($scope); 
   $scope.subview = '/views/pages/worldview_content.html'; 
             }
         }
@@ -472,7 +478,7 @@ seoTagsService) {
 });
 
 taatrApp.controller("FeedbackCtrl", function ($scope, $location, $log,
-$ocLazyLoad, $routeParams, 
+$ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
@@ -492,7 +498,8 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPageWithStoradge("/content/go2json/feedback/"+$routeParams.feedback); 
+  $scope.getPageWithStoradge("/content/go2json/feedback/"+$routeParams.feedback);
+  safeApply($scope); 
   $scope.subview = '/views/feedback/feedback_content.html'; 
             }
         }
@@ -526,7 +533,7 @@ seoTagsService) {
 
 
 taatrApp.controller("SimpleCtrl", function ($scope, $location, $log,
-$ocLazyLoad, $routeParams, 
+$ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) {
 
@@ -545,7 +552,8 @@ seoTagsService) {
             }
             else {
   console.log('status ' + xhr.status);              
-  $scope.getPageWithStoradge("/content/go2json/simple/"+$routeParams.simple); 
+  $scope.getPageWithStoradge("/content/go2json/simple/"+$routeParams.simple);
+  safeApply($scope); 
   $scope.subview = '/views/simple/contacts_content.html'; 
             }
         }
@@ -578,7 +586,7 @@ seoTagsService) {
 
 
 taatrApp.controller("TestCtrl", function ($scope, $location, $log,
-$ocLazyLoad, $routeParams,
+$ocLazyLoad, $routeParams, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) { 
 
@@ -593,6 +601,7 @@ seoTagsService) {
 
    $scope.getPageWithStoradge("/content/go2json/first/global", 'global');
    $scope.getPageWithStoradge("/content/go2json/first/frontpage");
+   safeApply($scope);
 
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
