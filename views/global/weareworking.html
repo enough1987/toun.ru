@@ -19,3 +19,6 @@
 		</div>
   
 		<ng-include src="'/views/global/global-footer.html'"></ng-include>
+
+		<ng-include ng-if="page"
+		src="'/views/global/lazyload.html'"></ng-include>

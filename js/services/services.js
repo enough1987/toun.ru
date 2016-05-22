@@ -145,16 +145,13 @@ if ( nameOfPage == 'global' ) {
                 console.log( nameOfPage + " : "); 
                 console.log( scope[nameOfPage] );
                     localStorageService.set('cache', $cookies.get('cache') );
-if( ! localStorageService.get( $location.path() ) && nameOfPage == 'page' ) {
-    localStorageService.set( $location.path(), scope[nameOfPage] );   
-}
                     return scope[nameOfPage];
                 }
 
                 console.log( 'try to get json' );                
                     ajaxService.post(json, function(data){                 
                         scope[nameOfPage] = data;
-                console.log( 'got json' ); 
+                console.log( 'got json from server' ); 
                 console.log( nameOfPage + " : ");                         
                 console.log( scope[nameOfPage] ); 
                         localStorageService.set('cache', $cookies.get('cache') ); 
@@ -255,17 +252,22 @@ customServices.factory('feInitService', function ($location) {
 
         setup: function(){
 
+Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
+    get: function(){
+        return !!(this.currentTime > 0 && !this.paused && !this.ended && this.readyState > 2);
+    }
+});
+
+
 function feInit() {
-    console.log( " feInitService started" );
-
-    if( ! fe.g("i","loader") || 
-        ! fe.g("i","fe-wrapper") ||
-        ! fe.g("i","videoid")
-        ) {
-
+            try {
+    if(document.querySelector('video').playing){
+        console.log( 'video is plaing' );        
+    }else {
+        console.log( 'video is NOT plaing' );
         setTimeout(function(){
             feInit();
-        }, 500); 
+        }, 500);           
     }
     
     var loader = fe.g("i","loader");
@@ -290,6 +292,9 @@ function feInit() {
         headerLogoImage.style['-webkit-transform'] = "rotate(" + value.toString() + "deg)";     
         fe_g.logoDeg = fe_g.logoDeg + 360 ;
     });
+            } catch(e) {
+                console.log( e ); 
+            }
 }
 
  setTimeout(function(){

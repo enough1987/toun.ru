@@ -90,7 +90,9 @@ seoTagsService) {
           if (xhr.readyState == 4) {
             if (xhr.status != 200) {
   console.log('status ' + xhr.status);
-  $scope.subview = '/views/global/404.html'; 
+  $scope.subview = '/views/global/404.html';
+  $scope.page = true;
+  safeApply($scope);  
   console.log( $scope.subview );   
             }
             else {
@@ -148,9 +150,13 @@ seoTagsService, getshoworhideFuncService) {
       var subview = '/views/projects/sort.html'; 
    }
 
-   subviews[$routeParams.project] ?
-   $scope.subview = subview : 
-   $scope.subview = '/views/global/404.html';
+   if ( subviews[$routeParams.project] ) {
+      $scope.subview = subview; 
+   } else {
+      $scope.subview = '/views/global/404.html';
+      $scope.page = true;
+      safeApply($scope);  
+   }
 
 
    $log.debug( $location.path() +" ProjectCtrl" );
@@ -196,7 +202,9 @@ seoTagsService, getshoworhideFuncService) {
           if (xhr.readyState == 4) {
             if (xhr.status != 200) {
   console.log('status ' + xhr.status);
-  $scope.subview = '/views/global/404.html'; 
+  $scope.subview = '/views/global/404.html';
+  $scope.page = true; 
+  safeApply($scope);  
   console.log( $scope.subview );   
             }
             else {
@@ -258,6 +266,8 @@ seoTagsService) {
             if (xhr.status != 200) {
   console.log('status ' + xhr.status);
   $scope.subview = '/views/global/404.html'; 
+  $scope.page = true;
+  safeApply($scope); 
   console.log( $scope.subview );   
             }
             else {
@@ -318,7 +328,9 @@ seoTagsService) {
       $scope.subview = '/views/request/'+$routeParams.request+'.html';
       safeApply($scope); 
    } else {
-      $scope.subview = '/views/global/404.html'; 
+      $scope.subview = '/views/global/404.html';
+      $scope.page = true;
+      safeApply($scope); 
    }  
 
    languageService.setup($scope);
@@ -414,13 +426,15 @@ seoTagsService) {
             if (xhr.status != 200) {
   console.log('status ' + xhr.status);
   $scope.subview = '/views/global/404.html'; 
+  $scope.page = true;
+  safeApply($scope); 
   console.log( $scope.subview );   
             }
             else {
   console.log('status ' + xhr.status);              
   $scope.getPageWithStoradge("/content/go2json/pages/"+$routeParams.pages);
-  safeApply($scope); 
   $scope.subview = '/views/pages/worldview_content.html'; 
+  safeApply($scope); 
             }
         }
       }
@@ -493,7 +507,9 @@ seoTagsService) {
           if (xhr.readyState == 4) {
             if (xhr.status != 200) {
   console.log('status ' + xhr.status);
-  $scope.subview = '/views/global/404.html'; 
+  $scope.subview = '/views/global/404.html';
+  $scope.page = true; 
+  safeApply($scope); 
   console.log( $scope.subview );   
             }
             else {
@@ -548,6 +564,8 @@ seoTagsService) {
             if (xhr.status != 200) {
   console.log('status ' + xhr.status);
   $scope.subview = '/views/global/404.html'; 
+  $scope.page = true;
+  safeApply($scope); 
   console.log( $scope.subview );   
             }
             else {
@@ -591,7 +609,7 @@ ajaxService, localStorageService, languageService, pageService, routeService,
 seoTagsService) { 
 
    $log.debug( $location.path() +" TestCtrl" );
-   $log.debug( $routeParams.project );
+   $log.debug( $routeParams );
 
    languageService.setup($scope);
 
