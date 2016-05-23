@@ -53,7 +53,7 @@ src="{{ video | getpropfromstring
 <ng-include src="'/views/global/lazyload.html'"></ng-include>
 
 
-<data-js-lazy-load 
+<data-js-lazy-load ng-if="page['widget']"
     js-lazy-load    src="/js/videogallery.js" >
 </data-js-lazy-load>
 

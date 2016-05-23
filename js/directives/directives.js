@@ -524,6 +524,51 @@ customDirectives.directive('initFeJsDir', function () {
                     feInit2(); 
 
                 });
+                
+        }
+    }
+});
+
+customDirectives.directive('seoDir', function (localStorageService) {
+    return {
+        restrict: 'A', 
+        scope : false,       
+        link: function (scope, element, attr) {
+
+                element.ready(function () {
+
+$( 'title' ).html( '' );
+$( 'meta[name="description"]' ).attr('description', '' );  
+
+function seo (){
+    if ( ! attr['start'] ) { return ''};
+    if ( !name ) { var name  = 'page' };
+    var ar = [];
+    ar['en'] = 'field_lang_en';
+    ar['ru'] = 'field_lang_ru';
+
+    var page = localStorageService.get(name);
+    if ( ! page ) { return false };
+    var lang = localStorageService.get('language1');
+    if ( ! lang ) { return false };
+
+    if ( ! page['seo'] ) { return false };    
+
+    $( 'title' ).html( page['seo'][ar[lang]]['title'] );
+    $( 'meta[name="description"]' ).attr('description',
+    page['seo'][ar[lang]]['description'] );  
+    clearInterval(intervalID);
+    console.log( 'seo is done' );
+          
+}
+
+var intervalID = setInterval(function(){ 
+    seo();
+}, 500 ); 
+
+
+                });
+                
         }
     }
 });

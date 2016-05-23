@@ -90,7 +90,7 @@ customServices.factory('languageService', function (
                     localStorageService.set('language2',lang);
                     scope.language2 = localStorageService.get('language2');
                 }  
-                seoTagsService.setup(localStorageService, 'mainPage');     
+                seoTagsService.setup();     
             } 
         } 
 

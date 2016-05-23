@@ -11,8 +11,7 @@ $scope, $location, $log) {
 taatrApp.controller("MainCtrl", function ($scope, 
 $routeParams, $location, $route, $log,
 $ocLazyLoad, safeApply,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService ) {
+ajaxService, localStorageService, languageService, pageService, routeService ) {
   
 
    $log.debug( $location.path() +" MainCtrl" );
@@ -29,8 +28,6 @@ seoTagsService ) {
    safeApply($scope);
 
    $scope.routeGoToView = routeService.setup();
- 
-   seoTagsService.setup( $location.path() );
 
 
    $scope.showMonth = function( obj, month ) {  
@@ -77,8 +74,7 @@ bool = index <= 11 ? ( ($scope.first_len <= 11) ?
 taatrApp.controller("PerfomanceCtrl", function ($scope, $routeParams,
 $location, $log,
 $ocLazyLoad, safeApply,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) {
+ajaxService, localStorageService, languageService, pageService, routeService) {
 
   $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);  
@@ -120,7 +116,6 @@ seoTagsService) {
 
    $scope.routeGoToView = routeService.setup();
 
-   seoTagsService.setup();
 
 
    $scope.test = function(item){
@@ -135,7 +130,7 @@ taatrApp.controller("ProjectsCtrl", function ($scope, $routeParams,
 $location, $log,
 $ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService, getshoworhideFuncService) { 
+getshoworhideFuncService) { 
 
    var subviews = [];
    subviews ['new'] = 'notsort'; 
@@ -177,8 +172,6 @@ seoTagsService, getshoworhideFuncService) {
    $scope.hash = routeService.gethash();
 
 
-   seoTagsService.setup();
-
    $scope.test = function(item){
         console.log( item ); 
         return item;       
@@ -192,7 +185,7 @@ taatrApp.controller("PeopleCtrl", function ($scope, $routeParams,
 $location, $log,
 $ocLazyLoad, safeApply,
 ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService, getshoworhideFuncService) { 
+getshoworhideFuncService) { 
 
    $scope.getPage = pageService.setup($scope);
    $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
@@ -241,8 +234,6 @@ seoTagsService, getshoworhideFuncService) {
    console.log( $scope.hash );
    
 
-   seoTagsService.setup();
-
    $scope.test = function(item){
         console.log( item ); 
         return item;       
@@ -254,8 +245,7 @@ seoTagsService, getshoworhideFuncService) {
 
 taatrApp.controller("FestivalCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams, safeApply,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) {
+ajaxService, localStorageService, languageService, pageService, routeService) {
 
   $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
@@ -296,7 +286,6 @@ seoTagsService) {
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
 
-   seoTagsService.setup();
 
    $scope.test = function(item){
         console.log( item ); 
@@ -307,8 +296,7 @@ seoTagsService) {
 
 taatrApp.controller("RequestCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams, safeApply,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) {
+ajaxService, localStorageService, languageService, pageService, routeService) {
 
    $log.debug( $location.path() +" RequestCtrl" );
    $log.debug( $routeParams.request );
@@ -346,9 +334,6 @@ seoTagsService) {
 
    console.log( 'hash  - '+ $scope.hash );
    
-
-   seoTagsService.setup();
-
 
    $scope.showMonth = function( obj ) {  
         var bool = false;
@@ -414,8 +399,7 @@ seoTagsService) {
 
 taatrApp.controller("PagesCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams, safeApply,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) {
+ajaxService, localStorageService, languageService, pageService, routeService) {
 
   $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
@@ -458,8 +442,6 @@ seoTagsService) {
    console.log( $scope.hash );
    
 
-   seoTagsService.setup();
-
    $scope.changelanguagelocaly = function(cas){
       if(cas  == '1'){
         $('#lang1show').removeClass('gb-display-none').addClass('gb-display-block');
@@ -496,8 +478,7 @@ seoTagsService) {
 
 taatrApp.controller("FeedbackCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams, safeApply,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) {
+ajaxService, localStorageService, languageService, pageService, routeService) {
 
   $scope.getPage = pageService.setup($scope);
   $scope.getPageWithStoradge = pageService.setupWithStoradge($scope);
@@ -540,8 +521,6 @@ seoTagsService) {
    console.log( $scope.hash );
    
 
-   seoTagsService.setup();
-
    $scope.test = function(item){
         console.log( item ); 
         return item;       
@@ -553,8 +532,7 @@ seoTagsService) {
 
 taatrApp.controller("SimpleCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams, safeApply,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) {
+ajaxService, localStorageService, languageService, pageService, routeService) {
 
 
   $scope.getPage = pageService.setup($scope);
@@ -586,9 +564,6 @@ seoTagsService) {
    $log.debug( $location.path() +" SimpleCtrl" );
    $log.debug( $routeParams.simple );
  
-
-   languageService.setup($scope);
-
    $scope.changelanguage = languageService.change($scope);
 
 
@@ -597,8 +572,6 @@ seoTagsService) {
 
    console.log( $scope.hash );
    
-
-   seoTagsService.setup();
 
    $scope.test = function(item){
         console.log( item ); 
@@ -610,8 +583,7 @@ seoTagsService) {
 
 taatrApp.controller("TestCtrl", function ($scope, $location, $log,
 $ocLazyLoad, $routeParams, safeApply,
-ajaxService, localStorageService, languageService, pageService, routeService,
-seoTagsService) { 
+ajaxService, localStorageService, languageService, pageService, routeService) { 
 
    $log.debug( $location.path() +" TestCtrl" );
    $log.debug( $routeParams );
@@ -630,8 +602,6 @@ seoTagsService) {
    $scope.routeGoToView = routeService.setup();
    $scope.hash = routeService.gethash();
 
-
-   seoTagsService.setup();
 
    $scope.test = function(item){
         console.log( item ); 
